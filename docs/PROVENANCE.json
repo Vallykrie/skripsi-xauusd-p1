@@ -1,0 +1,355 @@
+{
+  "date": "2026-10-08",
+  "source_branch": "research/phase-4-experiments",
+  "source_state": "dirty working tree, existing changes preserved",
+  "copied_files": [
+    {
+      "source": "src/thesis_experiments/__init__.py",
+      "destination": "src/thesis_experiments/__init__.py",
+      "source_sha256": "5d7ea44565cc3ab8852c368792b39304093c6edd79159fc696efad231c54922a",
+      "public_sha256": "1c743ced8106fbb98646a270a7ee92e06c8351526bcb2cf4f7a674cda5cac3dd"
+    },
+    {
+      "source": "src/thesis_experiments/evaluation.py",
+      "destination": "src/thesis_experiments/evaluation.py",
+      "source_sha256": "cc0348813d3fa74a41e3c140ba585708fba3330d0837dc331c18149a75ad6349",
+      "public_sha256": "cc0348813d3fa74a41e3c140ba585708fba3330d0837dc331c18149a75ad6349"
+    },
+    {
+      "source": "src/thesis_experiments/features.py",
+      "destination": "src/thesis_experiments/features.py",
+      "source_sha256": "435c5e3833807da7135c909357ee6070f5c3988292acd375a401a58cc99247be",
+      "public_sha256": "435c5e3833807da7135c909357ee6070f5c3988292acd375a401a58cc99247be"
+    },
+    {
+      "source": "src/thesis_experiments/folds.py",
+      "destination": "src/thesis_experiments/folds.py",
+      "source_sha256": "27a3855542b89f3435fc4ad6c3060197b11e1eaa8ffc40b8daf693ba2858e7f4",
+      "public_sha256": "27a3855542b89f3435fc4ad6c3060197b11e1eaa8ffc40b8daf693ba2858e7f4"
+    },
+    {
+      "source": "src/thesis_experiments/full_data_features.py",
+      "destination": "src/thesis_experiments/full_data_features.py",
+      "source_sha256": "35466b5949f97488e5f90b932e7370a5f58584d4620f8195a7493d3d471d6bca",
+      "public_sha256": "35466b5949f97488e5f90b932e7370a5f58584d4620f8195a7493d3d471d6bca"
+    },
+    {
+      "source": "src/thesis_experiments/gaps.py",
+      "destination": "src/thesis_experiments/gaps.py",
+      "source_sha256": "850a8136ecc824012acb45da45a7f80cb79c529a63fa5dbf78d0e526ea51d385",
+      "public_sha256": "850a8136ecc824012acb45da45a7f80cb79c529a63fa5dbf78d0e526ea51d385"
+    },
+    {
+      "source": "src/thesis_experiments/macro_features.py",
+      "destination": "src/thesis_experiments/macro_features.py",
+      "source_sha256": "7f71667a997d58747988ab8934b23e06ddba066ec0ee6c2351a303af297b5834",
+      "public_sha256": "7f71667a997d58747988ab8934b23e06ddba066ec0ee6c2351a303af297b5834"
+    },
+    {
+      "source": "src/thesis_experiments/macro_gate.py",
+      "destination": "src/thesis_experiments/macro_gate.py",
+      "source_sha256": "8e189848f5acac2953c3840e9c3e042a0fa115e3cdd1f9641125ae43b29bb4f8",
+      "public_sha256": "8e189848f5acac2953c3840e9c3e042a0fa115e3cdd1f9641125ae43b29bb4f8"
+    },
+    {
+      "source": "src/thesis_experiments/market_audit.py",
+      "destination": "src/thesis_experiments/market_audit.py",
+      "source_sha256": "681387cf9890f60f820e8301b7ad2b8afb8e815bbd9c96b0110042d4cd5b0794",
+      "public_sha256": "681387cf9890f60f820e8301b7ad2b8afb8e815bbd9c96b0110042d4cd5b0794"
+    },
+    {
+      "source": "src/thesis_experiments/models.py",
+      "destination": "src/thesis_experiments/models.py",
+      "source_sha256": "3e1260d557e54f815948f079f1527e3dc53b59bc406490b74081f5dfc8483c6e",
+      "public_sha256": "3e1260d557e54f815948f079f1527e3dc53b59bc406490b74081f5dfc8483c6e"
+    },
+    {
+      "source": "src/thesis_experiments/protocol.py",
+      "destination": "src/thesis_experiments/protocol.py",
+      "source_sha256": "e255899b6723001639df853130ae16d4d1cfc1f9e9a34fb3ceb6edbc1ea1ef8b",
+      "public_sha256": "e255899b6723001639df853130ae16d4d1cfc1f9e9a34fb3ceb6edbc1ea1ef8b"
+    },
+    {
+      "source": "src/thesis_experiments/run_manifest.py",
+      "destination": "src/thesis_experiments/run_manifest.py",
+      "source_sha256": "3d45c9eacf7249acfdbddd93bb3aef910db1afa3ce503221cc98a1639c1d2fbe",
+      "public_sha256": "3d45c9eacf7249acfdbddd93bb3aef910db1afa3ce503221cc98a1639c1d2fbe"
+    },
+    {
+      "source": "configs/phase4-experiments.toml",
+      "destination": "configs/phase4-experiments.toml",
+      "source_sha256": "a1bf7c742fa4f50bfee3d4d7a84145ecfd1ab3c8dc2720968966be7d0ce1224a",
+      "public_sha256": "a1bf7c742fa4f50bfee3d4d7a84145ecfd1ab3c8dc2720968966be7d0ce1224a"
+    },
+    {
+      "source": "configs/phase4-market-gaps.toml",
+      "destination": "configs/phase4-market-gaps.toml",
+      "source_sha256": "e77fd095781bbbcc1f92d3f20e9cb76c9a696b7124ba2f29ddd5d9a7d7823074",
+      "public_sha256": "e77fd095781bbbcc1f92d3f20e9cb76c9a696b7124ba2f29ddd5d9a7d7823074"
+    },
+    {
+      "source": "tests/test_phase4_features.py",
+      "destination": "tests/test_phase4_features.py",
+      "source_sha256": "1248b4d929584d08547319d3e2b5386859279e68072ac618084995e182259852",
+      "public_sha256": "1248b4d929584d08547319d3e2b5386859279e68072ac618084995e182259852"
+    },
+    {
+      "source": "tests/test_phase4_gaps.py",
+      "destination": "tests/test_phase4_gaps.py",
+      "source_sha256": "9d7eae13737fc2d07ed653572775920a18fa503fc083be2b2f7bd016394340b2",
+      "public_sha256": "9d7eae13737fc2d07ed653572775920a18fa503fc083be2b2f7bd016394340b2"
+    },
+    {
+      "source": "tests/test_phase4_protocol.py",
+      "destination": "tests/test_phase4_protocol.py",
+      "source_sha256": "efb65512493fe3d29d89fc88868421df177a978ccf2f11e4957b2183b37a6d1c",
+      "public_sha256": "9c2cda6d6315f4c2ae5a89c1af945632fed4a12e76309d00a44e90848f275507"
+    },
+    {
+      "source": "tests/test_phase4_macro_features.py",
+      "destination": "tests/test_phase4_macro_features.py",
+      "source_sha256": "7a06788c9d4b6e7c1eaabf93f9484f66b102307a7fda6353351a2a29e2c98f10",
+      "public_sha256": "7a06788c9d4b6e7c1eaabf93f9484f66b102307a7fda6353351a2a29e2c98f10"
+    },
+    {
+      "source": "scripts/run_phase4_price_audit.py",
+      "destination": "scripts/run_phase4_price_audit.py",
+      "source_sha256": "f6f1f8fa5e6cc45f0eb789342540e0f257ee5cf13047160f54500917bae76134",
+      "public_sha256": "f6f1f8fa5e6cc45f0eb789342540e0f257ee5cf13047160f54500917bae76134"
+    },
+    {
+      "source": "scripts/run_phase4_full_data_features.py",
+      "destination": "scripts/run_phase4_full_data_features.py",
+      "source_sha256": "0d5fa1a8f8fbcbcf609b2a83235f9f98620f08bc6b0de05c052f9d48ced56cf4",
+      "public_sha256": "0d5fa1a8f8fbcbcf609b2a83235f9f98620f08bc6b0de05c052f9d48ced56cf4"
+    },
+    {
+      "source": "scripts/run_phase4_models.py",
+      "destination": "scripts/run_phase4_models.py",
+      "source_sha256": "2919728ba7842b54ea7e62006a09e98d8a902a098b984d08dc68aa6bd9b74a69",
+      "public_sha256": "2919728ba7842b54ea7e62006a09e98d8a902a098b984d08dc68aa6bd9b74a69"
+    },
+    {
+      "source": "scripts/verify_phase4_model_results.py",
+      "destination": "scripts/verify_phase4_model_results.py",
+      "source_sha256": "b5a97ff8d2cb38889faa11863723797ef7b3438cad4caa902b5346de9cb9aebd",
+      "public_sha256": "b5a97ff8d2cb38889faa11863723797ef7b3438cad4caa902b5346de9cb9aebd"
+    },
+    {
+      "source": "scripts/audit_phase4_macro_gate.py",
+      "destination": "scripts/audit_phase4_macro_gate.py",
+      "source_sha256": "f1ca8acd4043a232ccd86f2510b270d0e8ed24e5a63751a0821a8407beb45dbf",
+      "public_sha256": "f1ca8acd4043a232ccd86f2510b270d0e8ed24e5a63751a0821a8407beb45dbf"
+    },
+    {
+      "source": "scripts/write_phase4_run_manifest.py",
+      "destination": "scripts/write_phase4_run_manifest.py",
+      "source_sha256": "32c546881903e572d897b5b728f65cab36dec11ad73886fb94cea511558a716b",
+      "public_sha256": "32c546881903e572d897b5b728f65cab36dec11ad73886fb94cea511558a716b"
+    },
+    {
+      "source": "docs/experiments/run-manifests/phase4-environment.json",
+      "destination": "docs/experiments/run-manifests/phase4-environment.json",
+      "source_sha256": "63f3e5e168181acc4511429f4cc46d96c5ebd213c6875183d0d8e1f3f1f69d7a",
+      "public_sha256": "dfefa0e8fca5d37b0231393677eee7c6c69732b1a2b0624ad3552173a86feff3"
+    },
+    {
+      "source": "docs/experiments/PHASE4_RESULT_CHECKSUMS.json",
+      "destination": "hasil/checksum-run-privat.json",
+      "source_sha256": "c86ebe3dba78267463dc9cba0088dea34f8f55d88e113bb8f417c673804038d8",
+      "public_sha256": "c86ebe3dba78267463dc9cba0088dea34f8f55d88e113bb8f417c673804038d8"
+    },
+    {
+      "source": "docs/latex-skripsi/chapters/bab1-pendahuluan.tex",
+      "destination": "naskah/chapters/bab1-pendahuluan.tex",
+      "source_sha256": "621ef08299690f2eb7838187dddca3cbd272b45e75775b90ba6cd5bf2640bc8e",
+      "public_sha256": "621ef08299690f2eb7838187dddca3cbd272b45e75775b90ba6cd5bf2640bc8e"
+    },
+    {
+      "source": "docs/latex-skripsi/chapters/bab2-landasan-kepustakaan.tex",
+      "destination": "naskah/chapters/bab2-landasan-kepustakaan.tex",
+      "source_sha256": "c94a9ac4d2cd5cc7dceb0f96afaf15cbe82fc0fa480023d871966df444144ce7",
+      "public_sha256": "c94a9ac4d2cd5cc7dceb0f96afaf15cbe82fc0fa480023d871966df444144ce7"
+    },
+    {
+      "source": "docs/latex-skripsi/chapters/bab3-metodologi.tex",
+      "destination": "naskah/chapters/bab3-metodologi.tex",
+      "source_sha256": "d5f78ef43a6a38e1f7aa822d41a0ab0b5e326a9d8762fa3ea2c24c26b63556b9",
+      "public_sha256": "d5f78ef43a6a38e1f7aa822d41a0ab0b5e326a9d8762fa3ea2c24c26b63556b9"
+    },
+    {
+      "source": "docs/latex-skripsi/chapters/bab4-hasil.tex",
+      "destination": "naskah/chapters/bab4-hasil.tex",
+      "source_sha256": "d7006a5d064e8a77a095367e2ad3b513bcbe75a9ec66f9d9df7bcf941b59f43d",
+      "public_sha256": "d7006a5d064e8a77a095367e2ad3b513bcbe75a9ec66f9d9df7bcf941b59f43d"
+    },
+    {
+      "source": "docs/latex-skripsi/bibliography/references.bib",
+      "destination": "naskah/bibliography/references.bib",
+      "source_sha256": "fefc7427460dbfb9674d995b242ef56c0a190861d643ac2883dd1bfcaf6a0597",
+      "public_sha256": "fefc7427460dbfb9674d995b242ef56c0a190861d643ac2883dd1bfcaf6a0597"
+    },
+    {
+      "source": "docs/latex-skripsi/bibliography/filkom-authoryear.bbx",
+      "destination": "naskah/bibliography/filkom-authoryear.bbx",
+      "source_sha256": "e46e460d4ff7284f773edfd5c6079db19b8e7e8f8767aff098e4ee9691a71fb3",
+      "public_sha256": "e46e460d4ff7284f773edfd5c6079db19b8e7e8f8767aff098e4ee9691a71fb3"
+    },
+    {
+      "source": "docs/latex-skripsi/bibliography/filkom-authoryear.cbx",
+      "destination": "naskah/bibliography/filkom-authoryear.cbx",
+      "source_sha256": "ddfeb7dc96bb1ca4a784540bd21c1a1e4da4ff2310bf9509fb04e5752312d9c6",
+      "public_sha256": "ddfeb7dc96bb1ca4a784540bd21c1a1e4da4ff2310bf9509fb04e5752312d9c6"
+    },
+    {
+      "source": "docs/latex-skripsi/assets/delta-macro-f1-periode.tex",
+      "destination": "naskah/assets/delta-macro-f1-periode.tex",
+      "source_sha256": "8f6aa5b99f45cd0311cef41eddc806068f89f9395913831fa0eaa73829f7be3d",
+      "public_sha256": "8f6aa5b99f45cd0311cef41eddc806068f89f9395913831fa0eaa73829f7be3d"
+    },
+    {
+      "source": "docs/latex-skripsi/LICENSE",
+      "destination": "naskah/LICENSE",
+      "source_sha256": "df1deb1f58b0186a4c3b2a060658b6d9e4fdfab5250b7158e87e349c1fbcd7f5",
+      "public_sha256": "df1deb1f58b0186a4c3b2a060658b6d9e4fdfab5250b7158e87e349c1fbcd7f5"
+    }
+  ],
+  "aggregated_runs": [
+    {
+      "run": "metaquotes-demo-holiday_reset_sensitivity-0p25",
+      "private_summary_sha256": "184712a8348c25e7aa0996f321dcf64505af90c1d69c47bde8d74a2840b841f8",
+      "predictions_sha256": "ef245eb0f1123bf58c23cd363d516511aaa5f8c17268b3d4929b60916840798f"
+    },
+    {
+      "run": "metaquotes-demo-holiday_reset_sensitivity-0p25-k3",
+      "private_summary_sha256": "2b987a25be2d06c5bfd2f8fe283e7a6d2fbcc7f2cae61dccb1eb647d8d9bcd02",
+      "predictions_sha256": "323e4097c30fe11ceed0cb978ba54d3471e7abaa71b0ac093819b8d116699610"
+    },
+    {
+      "run": "metaquotes-demo-holiday_reset_sensitivity-0p5",
+      "private_summary_sha256": "9a09a5baa0cfabea2a3ec4c0a670fccc554e44e8e27aaa372e89f71406cc7cc5",
+      "predictions_sha256": "15d5f102253322cb3a155c8e8d67d6db7ab1d031e76fee51b7063bed4a68fecb"
+    },
+    {
+      "run": "metaquotes-demo-holiday_reset_sensitivity-0p5-k3",
+      "private_summary_sha256": "4bb9b701731bc423a35ebcfdfe17f3762b957c20f2b5cfb4c004847580af232c",
+      "predictions_sha256": "284ad5c214ed3527d2c08ce246d0ff957764afd79175190f9d206c772cfbd4b1"
+    },
+    {
+      "run": "metaquotes-demo-holiday_reset_sensitivity-1p0",
+      "private_summary_sha256": "93db72e8d34a63e1d27a4ee4bb80d396a727561d2260f3aeedc9df6636a8a7ca",
+      "predictions_sha256": "49c7704f0df1633339258a471fbbc9186dc0b78aaf0b3d30e9ff21137f383669"
+    },
+    {
+      "run": "metaquotes-demo-holiday_reset_sensitivity-1p0-k3",
+      "private_summary_sha256": "1c645c5f995b9ce17ccf626723516d2697050c938979da56018947ea1ea63024",
+      "predictions_sha256": "27e9742fa43f2773c40ad5e4fdde36f888437d8c2b3e99df99de9211bcdff4fc"
+    },
+    {
+      "run": "metaquotes-demo-primary-0p25",
+      "private_summary_sha256": "68692c1814998ca8bceb3399d2b4a5f933ab7efa9b1f32df76b4795476a6457d",
+      "predictions_sha256": "f02037c75c36a63bdcb70e23a1c5fcc5daa2aa751e74edabed31edd879d37d6b"
+    },
+    {
+      "run": "metaquotes-demo-primary-0p25-k3",
+      "private_summary_sha256": "8f020116bafc476f1d4bfcdc4ed8a5d8c12f88aefd1a89c27643ed2446a2676e",
+      "predictions_sha256": "517147e2d0439bc6f3d331406d67a0f5a54e9a312d380b0840ac2c1d7e137e9d"
+    },
+    {
+      "run": "metaquotes-demo-primary-0p5",
+      "private_summary_sha256": "120a8c850825c78a4ffbe2738141a4d026e88bed0bab467c8a1b14d0859c52aa",
+      "predictions_sha256": "061adaee152dea72c4e07a0299d33fb741f8e15e3ba22c34041546fc91257e04"
+    },
+    {
+      "run": "metaquotes-demo-primary-0p5-k3",
+      "private_summary_sha256": "0fa93e3762520f5bbec97b9c5614da04ea0402b8b822a1dc65d5ab64f6a29812",
+      "predictions_sha256": "afa3fbc12635a5d467114b9197b8da0daea3cbca99106cdfb7a60e50971b252d"
+    },
+    {
+      "run": "metaquotes-demo-primary-1p0",
+      "private_summary_sha256": "d1aec2d25c178dc03f759564c981703e2a006c81bca58d98f337511bc4587267",
+      "predictions_sha256": "de4fad31853a6fcc59520e5830468909c4acd216742eb75237092c32168bc2f4"
+    },
+    {
+      "run": "metaquotes-demo-primary-1p0-k3",
+      "private_summary_sha256": "4ff5ab11bca6002afe296c783ff7ecf04374787ba4f94d0461e33656998cdb40",
+      "predictions_sha256": "dc0274b55cd70db624d43dc7d2ceda154dd76e7d6c8390cf86388b664278946e"
+    },
+    {
+      "run": "ultima-markets-demo-holiday_reset_sensitivity-0p25",
+      "private_summary_sha256": "08707cf3264bffbfbf028571bb00a3255071250cb535fc13e15e67ccc482a339",
+      "predictions_sha256": "d028c23768d66b7a3345830595a803e93a6ca01504167a370f102a8f4c3a82ec"
+    },
+    {
+      "run": "ultima-markets-demo-holiday_reset_sensitivity-0p25-k3",
+      "private_summary_sha256": "8b339d5e523d702b257e6586632dac264c002b7f8fb2fea825642dd958a44ff5",
+      "predictions_sha256": "15ef7cb01eb8f4c444265020f33d232867f7caf6ef04d0789b2ab8b44870a578"
+    },
+    {
+      "run": "ultima-markets-demo-holiday_reset_sensitivity-0p5",
+      "private_summary_sha256": "51135023b56ca78b905482117576d0acff9ea7d2ad60536987d39f90e1328429",
+      "predictions_sha256": "72720292064147cbcb9df001b49e6c244d185c3b06f349e7bc80acf2226ac2c5"
+    },
+    {
+      "run": "ultima-markets-demo-holiday_reset_sensitivity-0p5-k3",
+      "private_summary_sha256": "e8e8cbff432241b2419965292073fe25493d4b508990c94eee41e22a939469ef",
+      "predictions_sha256": "77a5abb480b4a5698caaba2a9bb058df5f8fea5b7affaf84b08451889f442bfc"
+    },
+    {
+      "run": "ultima-markets-demo-holiday_reset_sensitivity-1p0",
+      "private_summary_sha256": "8010d9cbf614bd4fa981336ddafbf667b1a379ae327a584ef5ec9ec8c345b8ba",
+      "predictions_sha256": "caf99f4c2b9ff260bdebc2c91f5482fa8d1a796f5033c6567d8ed08a454aec4c"
+    },
+    {
+      "run": "ultima-markets-demo-holiday_reset_sensitivity-1p0-k3",
+      "private_summary_sha256": "1162469c02223eb3678b5276438c3f2fc01412f4f4ed91cbae5488ef7eef39e0",
+      "predictions_sha256": "02180b52011d79f590ab1fd5fae4d9d787ce77361fc11d32a5b7873dd5636620"
+    },
+    {
+      "run": "ultima-markets-demo-primary-0p25",
+      "private_summary_sha256": "016c659e12ab8ec47b3923794c1f5f9d5b9211eaf3bba3b4c4e1fa0c4d407f94",
+      "predictions_sha256": "c8659e4144ca1a61a4c470557616b597d72c488044c1509f5f3745b90e454a07"
+    },
+    {
+      "run": "ultima-markets-demo-primary-0p25-k3",
+      "private_summary_sha256": "405f7c6afad779f1657bf22b4090e586ba01b2ee6d18b0bfe1ee7105f7b27705",
+      "predictions_sha256": "666260ea5d61f793c8c88c71e026ef0669e12ab4c7894bec048a4a04907f39b6"
+    },
+    {
+      "run": "ultima-markets-demo-primary-0p5",
+      "private_summary_sha256": "7dc6548ba49e548f787b5b606febd2dc14984f93af48a4e75423c6c186799012",
+      "predictions_sha256": "c72aa56719aad7f1bb84ecb7b80cd41fe4bbd2675f909e5cd6bd8538ecf040d9"
+    },
+    {
+      "run": "ultima-markets-demo-primary-0p5-k3",
+      "private_summary_sha256": "c0aa5bd20099951d52fc177acb61fedf89dda9c59ab1e76d6cd76f12860fa8ad",
+      "predictions_sha256": "59f453061d1598814914e9b9db7def03dc6187a89940c24bcab8348e65d752ef"
+    },
+    {
+      "run": "ultima-markets-demo-primary-1p0",
+      "private_summary_sha256": "65cbbf717208062f078dc22aad04719b5aea71252e5d72bca245653293dc3f64",
+      "predictions_sha256": "04fcc0e41ab35f16eed32f7b4b6527b82b072e01827bbd8d6ddf47ac9405453a"
+    },
+    {
+      "run": "ultima-markets-demo-primary-1p0-k3",
+      "private_summary_sha256": "86b1a9ff8bbdde88de95ae4b335dc1d620f2e61c91350232d4fa0968177d78bd",
+      "predictions_sha256": "000446765417f35744a0079b8875ac62e73a18b0a31c6165a43c69581ae95d57"
+    }
+  ],
+  "excluded": [
+    "private Git history",
+    "raw vendor price/calendar",
+    "per-bar predictions",
+    "model binaries",
+    "credentials",
+    "signed forms",
+    "student number",
+    "staff identifiers"
+  ],
+  "p0_pdf_sha256": "7c79041ac798878d464e2ff6bd09adadb963ba3374aa162279088d6af228efbc",
+  "public_manifest_sanitization": {
+    "original_sha256": "63f3e5e168181acc4511429f4cc46d96c5ebd213c6875183d0d8e1f3f1f69d7a",
+    "public_sha256": "dfefa0e8fca5d37b0231393677eee7c6c69732b1a2b0624ad3552173a86feff3",
+    "change": "Only summary_path absolute workstation prefix removed; historical manifest remains private for hash-exact full replication."
+  }
+}

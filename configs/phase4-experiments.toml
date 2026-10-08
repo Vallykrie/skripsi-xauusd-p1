@@ -1,0 +1,90 @@
+[experiment]
+name = "xauusd-direction-classification-phase4"
+branch = "research/phase-4-experiments"
+timezone = "UTC"
+seed = 42
+
+[inputs.primary]
+name = "metaquotes-demo"
+path = "data/research/windows-feasibility-2026-08-09/metaquotes-demo/market.csv"
+sha256 = "30684142acadd612ade567eb7d2b52d6c9a4019655b515fd4c5f7e1456c7542a"
+
+[inputs.sensitivity]
+name = "ultima-markets-demo"
+path = "data/research/windows-feasibility-2026-08-09/ultima-markets-demo/market.csv"
+sha256 = "7d86a4f146034593fb687e4ca48895e828b59a186b6413b448401fb834dd2893"
+cutoff = "2022-09-01T00:00:00Z"
+
+[inputs.macro]
+name = "mt5-economic-calendar-private"
+path = "data/raw/macro_calendar/mt5-economic-calendar-2020-2026.csv"
+sha256 = "0e538e47593a57dad1af43eff79a02d714468693fe39b42c7733f49cd8b46f65"
+gate_status = "UNVERIFIED"
+
+[labels]
+horizon_hours = 1
+volatility_window = 24
+threshold_multipliers = [0.5, 0.25, 1.0]
+class_order = ["SELL", "HOLD", "BUY"]
+
+[features]
+warmup_bars = 50
+k1 = ["return_lag_0", "return_lag_1", "return_lag_2", "return_lag_3", "return_lag_4", "return_lag_5", "log_close_open", "log_high_low", "sigma_24"]
+k2 = ["return_lag_0", "return_lag_1", "return_lag_2", "return_lag_3", "return_lag_4", "return_lag_5", "log_close_open", "log_high_low", "sigma_24", "rsi_14", "macd_line_norm", "macd_signal_norm", "macd_hist_norm"]
+
+[evaluation]
+inner_validation_months = 18
+inner_block_months = 6
+purge_bars = 1
+primary_metric = "macro_f1"
+secondary_metrics = ["balanced_accuracy", "confusion_matrix"]
+
+[[evaluation.outer_folds]]
+name = "2023-H1"
+test_start = "2023-01-01T00:00:00Z"
+test_end = "2023-07-01T00:00:00Z"
+
+[[evaluation.outer_folds]]
+name = "2023-H2"
+test_start = "2023-07-01T00:00:00Z"
+test_end = "2024-01-01T00:00:00Z"
+
+[[evaluation.outer_folds]]
+name = "2024-H1"
+test_start = "2024-01-01T00:00:00Z"
+test_end = "2024-07-01T00:00:00Z"
+
+[[evaluation.outer_folds]]
+name = "2024-H2"
+test_start = "2024-07-01T00:00:00Z"
+test_end = "2025-01-01T00:00:00Z"
+
+[[evaluation.outer_folds]]
+name = "2025-H1"
+test_start = "2025-01-01T00:00:00Z"
+test_end = "2025-07-01T00:00:00Z"
+
+[[evaluation.outer_folds]]
+name = "2025-H2"
+test_start = "2025-07-01T00:00:00Z"
+test_end = "2026-01-01T00:00:00Z"
+
+[[evaluation.outer_folds]]
+name = "2026-Jan-Jul"
+test_start = "2026-01-01T00:00:00Z"
+test_end = "2026-08-01T00:00:00Z"
+
+[models.logistic_regression]
+penalty = "l2"
+solver = "lbfgs"
+max_iter = 2000
+c_values = [0.01, 0.1, 1.0, 10.0]
+class_weight = "balanced"
+
+[models.xgboost]
+max_depth = [3, 5]
+learning_rate = [0.05, 0.1]
+n_estimators = [100, 300]
+subsample = 0.8
+colsample_bytree = 0.8
+reg_lambda = 1.0

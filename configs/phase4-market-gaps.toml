@@ -1,0 +1,1203 @@
+version = 2
+
+[evidence.metaquotes-empirical-envelope]
+url = "https://www.mql5.com/en/docs/python_metatrader5/mt5copyratesrange_py"
+description = "The API documentation establishes UTC timestamp semantics only. The dated MetaQuotes session regimes below are empirical recurrences measured in the checksummed archived market input, not live-session documentation or proof for days outside that archive."
+
+[evidence.ultima-extracted-session-envelope]
+url = "https://www.mql5.com/en/docs/marketinformation/symbolinfosessiontrade"
+description = "The API documentation defines session-query semantics. The checksummed local read-only extraction records Ultima XAUUSD quote sessions at server/UTC offset zero as Mon-Thu 01:00-23:58 and Fri 01:00-23:57 on 2026-09-14; it is broker-session evidence, not retroactive proof of every historical day."
+artifact_path = "data/interim/phase4/session-audit/mt5-symbol-sessions-2026-09-14.csv"
+artifact_sha256 = "24f70a3a0402a0cc1becf58112c8ef3454bcbc7a644d8b690c8852c2b4243b29"
+
+[evidence.cme-holiday-2020]
+url = "https://www.cmegroup.com/trading/metals/files/metals-prod-guide-2020.pdf"
+description = "Official exchange-level CME 2020 metals holiday reference; it does not by itself define a broker-CFD session."
+
+[evidence.cme-holiday-2021]
+url = "https://www.cmegroup.com/trading/metals/files/metals-prod-guide-2021.pdf"
+description = "Official exchange-level CME 2021 metals holiday reference; it does not by itself define a broker-CFD session."
+
+[evidence.cme-holiday-2022]
+url = "https://www.cmegroup.com/trading/metals/files/metals-prod-guide-2022.pdf"
+description = "Official exchange-level CME 2022 metals holiday reference; it does not by itself define a broker-CFD session."
+
+[evidence.cme-holiday-2023]
+url = "https://www.cmegroup.com/trading/metals/files/metals-prod-guide-2023.pdf"
+description = "Official exchange-level CME 2023 metals holiday reference; it does not by itself define a broker-CFD session."
+
+[evidence.cme-holiday-2024]
+url = "https://www.cmegroup.com/trading/metals/files/metals-prod-guide-2024.pdf"
+description = "Official exchange-level CME 2024 metals holiday reference; it does not by itself define a broker-CFD session."
+
+[evidence.cme-holiday-2025]
+url = "https://www.cmegroup.com/trading-hours.html"
+description = "Official exchange-level CME holiday and trading-hours reference covering 2025; it does not by itself define a broker-CFD session."
+
+[evidence.cme-holiday-2026]
+url = "https://www.cmegroup.com/trading-hours.html"
+description = "Official exchange-level CME holiday and trading-hours reference covering 2026; it does not by itself define a broker-CFD session."
+
+[evidence.ultima-outage-2025-11-28]
+url = "https://www.ultimamarkets.com/ms/announcement/page/9/?v=3"
+description = "Official broker announcement archive containing the 28 November 2025 exchange outage notice; this supports the documented outage event, not ordinary session hours."
+
+[sources.metaquotes-demo]
+provenance = ["metaquotes-empirical-envelope", "cme-holiday-2020", "cme-holiday-2021", "cme-holiday-2022", "cme-holiday-2023", "cme-holiday-2024", "cme-holiday-2025", "cme-holiday-2026"]
+regular_closure_envelope = "Weekends are closed. Ordered dated weekday-hour regimes encode recurring patterns measured in the archived MetaQuotes input. They are empirical archive classifications, not a live API session result or proof beyond the audit range; unsupported one-off edge absences remain scheduled and reset state."
+session_regime_derivation = "Outcome-independent archive rule frozen before model scoring: weekday edge-hour signatures are eligible on days with at least 20 H1 bars; a configured regime requires at least five consecutive eligible conforming weekdays. Isolated contradictions do not redefine a regime."
+session_regime_support_min_days = 5
+session_regime_support_enforced = true
+expected_rows = 38799
+expected_total_gaps = 1705
+expected_reset_gaps = 9
+expected_segments = 10
+expected_unexplained_gaps = 9
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2020-01-01T00:00:00Z"
+end = "2020-03-09T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2020-03-09T00:00:00Z"
+end = "2020-03-30T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Both-edge-hours-closed regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2020-03-30T00:00:00Z"
+end = "2020-10-26T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2020-10-26T00:00:00Z"
+end = "2020-11-02T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2020-11-02T00:00:00Z"
+end = "2021-03-15T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2021-03-15T00:00:00Z"
+end = "2021-03-29T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2021-03-29T00:00:00Z"
+end = "2021-11-01T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2021-11-01T00:00:00Z"
+end = "2021-11-08T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2021-11-08T00:00:00Z"
+end = "2022-03-14T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2022-03-14T00:00:00Z"
+end = "2022-03-28T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2022-03-28T00:00:00Z"
+end = "2022-10-31T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2022-10-31T00:00:00Z"
+end = "2022-11-07T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2022-11-07T00:00:00Z"
+end = "2023-03-13T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2023-03-13T00:00:00Z"
+end = "2023-03-27T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2023-03-27T00:00:00Z"
+end = "2023-10-30T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2023-10-30T00:00:00Z"
+end = "2023-11-06T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2023-11-06T00:00:00Z"
+end = "2024-03-11T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2024-03-11T00:00:00Z"
+end = "2024-04-01T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2024-04-01T00:00:00Z"
+end = "2024-10-28T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2024-10-28T00:00:00Z"
+end = "2024-11-04T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2024-11-04T00:00:00Z"
+end = "2025-03-10T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2025-03-10T00:00:00Z"
+end = "2025-03-31T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2025-03-31T00:00:00Z"
+end = "2025-10-27T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2025-10-27T00:00:00Z"
+end = "2025-11-03T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2025-11-03T00:00:00Z"
+end = "2026-03-12T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Default 01-23 regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2026-03-12T00:00:00Z"
+end = "2026-03-30T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "DST-mismatch 00-22 regime recurring in the checksummed archived MetaQuotes input; the unsupported one-day 2026-03-11 edge absence remains scheduled and therefore resets if missing."
+
+[[sources.metaquotes-demo.session_regimes]]
+start = "2026-03-30T00:00:00Z"
+end = "2026-08-01T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+provenance = ["metaquotes-empirical-envelope"]
+description = "Post-2026-03-30 both-edge-hours-closed regime recurring in the checksummed archived MetaQuotes input."
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-01-20T20:00:00Z"
+end = "2020-01-21T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-02-17T20:00:00Z"
+end = "2020-02-18T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-04-10T01:00:00Z"
+end = "2020-04-11T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-05-25T20:00:00Z"
+end = "2020-05-26T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-07-03T20:00:00Z"
+end = "2020-07-04T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-09-07T20:00:00Z"
+end = "2020-09-08T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-11-26T20:00:00Z"
+end = "2020-11-27T00:00:00Z"
+event = "Thanksgiving"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-11-27T21:00:00Z"
+end = "2020-11-28T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-12-24T21:00:00Z"
+end = "2020-12-26T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2020-12-31T21:00:00Z"
+end = "2021-01-02T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2020"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-01-18T20:00:00Z"
+end = "2021-01-19T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-02-15T20:00:00Z"
+end = "2021-02-16T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-04-02T01:00:00Z"
+end = "2021-04-03T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-05-31T20:00:00Z"
+end = "2021-06-01T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-07-05T20:00:00Z"
+end = "2021-07-06T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-09-06T20:00:00Z"
+end = "2021-09-07T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-11-25T20:00:00Z"
+end = "2021-11-26T00:00:00Z"
+event = "Thanksgiving"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-11-26T21:00:00Z"
+end = "2021-11-27T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-12-24T01:00:00Z"
+end = "2021-12-25T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2021-12-31T21:00:00Z"
+end = "2022-01-01T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2021"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-01-17T22:00:00Z"
+end = "2022-01-18T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-02-21T22:00:00Z"
+end = "2022-02-22T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-04-15T01:00:00Z"
+end = "2022-04-16T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-05-30T22:00:00Z"
+end = "2022-05-31T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-06-20T22:00:00Z"
+end = "2022-06-21T00:00:00Z"
+event = "Juneteenth"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-07-04T22:00:00Z"
+end = "2022-07-05T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-09-05T22:00:00Z"
+end = "2022-09-06T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-11-24T22:00:00Z"
+end = "2022-11-25T00:00:00Z"
+event = "Thanksgiving"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-11-25T21:00:00Z"
+end = "2022-11-26T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2022-12-26T01:00:00Z"
+end = "2022-12-27T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-01-02T01:00:00Z"
+end = "2023-01-03T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-01-16T22:00:00Z"
+end = "2023-01-17T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-02-20T22:00:00Z"
+end = "2023-02-21T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-04-07T01:00:00Z"
+end = "2023-04-08T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-05-29T22:00:00Z"
+end = "2023-05-30T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-06-19T22:00:00Z"
+end = "2023-06-20T00:00:00Z"
+event = "Juneteenth"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-07-04T22:00:00Z"
+end = "2023-07-05T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-09-04T22:00:00Z"
+end = "2023-09-05T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-11-23T22:00:00Z"
+end = "2023-11-24T00:00:00Z"
+event = "Thanksgiving"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-11-24T21:00:00Z"
+end = "2023-11-25T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2023-12-25T01:00:00Z"
+end = "2023-12-26T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-01-01T01:00:00Z"
+end = "2024-01-02T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-01-15T22:00:00Z"
+end = "2024-01-16T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-02-19T22:00:00Z"
+end = "2024-02-20T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-03-29T00:00:00Z"
+end = "2024-03-30T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-05-27T22:00:00Z"
+end = "2024-05-28T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-06-19T22:00:00Z"
+end = "2024-06-20T00:00:00Z"
+event = "Juneteenth"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-07-04T22:00:00Z"
+end = "2024-07-05T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-09-02T22:00:00Z"
+end = "2024-09-03T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-11-28T22:00:00Z"
+end = "2024-11-29T00:00:00Z"
+event = "Thanksgiving"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-11-29T22:00:00Z"
+end = "2024-11-30T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2024-12-24T21:00:00Z"
+end = "2024-12-26T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-01-01T01:00:00Z"
+end = "2025-01-02T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-01-20T22:00:00Z"
+end = "2025-01-21T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-02-17T22:00:00Z"
+end = "2025-02-18T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-04-18T01:00:00Z"
+end = "2025-04-19T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-05-26T22:00:00Z"
+end = "2025-05-27T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-06-19T22:00:00Z"
+end = "2025-06-20T00:00:00Z"
+event = "Juneteenth"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-07-04T20:00:00Z"
+end = "2025-07-05T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-09-01T22:00:00Z"
+end = "2025-09-02T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-11-28T22:00:00Z"
+end = "2025-11-29T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2025-12-24T21:00:00Z"
+end = "2025-12-26T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2026-01-01T01:00:00Z"
+end = "2026-01-02T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2026-01-19T22:00:00Z"
+end = "2026-01-20T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2026-02-16T22:00:00Z"
+end = "2026-02-17T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2026-04-03T01:00:00Z"
+end = "2026-04-04T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2026-05-25T22:00:00Z"
+end = "2026-05-26T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2026-06-19T21:00:00Z"
+end = "2026-06-20T00:00:00Z"
+event = "Juneteenth"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.metaquotes-demo.exceptions]]
+start = "2026-07-03T21:00:00Z"
+end = "2026-07-04T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[sources.ultima-markets-demo]
+provenance = ["ultima-extracted-session-envelope", "cme-holiday-2022", "cme-holiday-2023", "cme-holiday-2024", "cme-holiday-2025", "cme-holiday-2026", "ultima-outage-2025-11-28"]
+regular_closure_envelope = "After the experiment cutoff, weekends and weekday UTC hour 00 are closed while integer H1 bar hours 01 through 23 are scheduled. The 23:00 bar is scheduled because the checksummed 2026-09-14 quote-session extraction closes at 23:58 Mon-Thu and 23:57 Fri; this evidence is not overstated as retroactive proof for every historical day."
+session_regime_derivation = "The point-in-time MT5 quote-session extraction defines the frozen candidate envelope; archive weekdays with at least 20 H1 bars provide a minimum five-consecutive-day consistency check, not retroactive broker proof."
+session_regime_support_min_days = 5
+session_regime_support_enforced = true
+expected_rows = 23135
+expected_total_gaps = 1010
+expected_reset_gaps = 1
+expected_segments = 2
+expected_unexplained_gaps = 0
+
+[[sources.ultima-markets-demo.session_regimes]]
+start = "2022-09-01T00:00:00Z"
+end = "2026-08-01T00:00:00Z"
+scheduled_weekdays = [0, 1, 2, 3, 4]
+scheduled_hours_utc = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+provenance = ["ultima-extracted-session-envelope"]
+description = "Post-cutoff integer H1 regime supported by the checksummed Ultima quote-session extraction; it is applied conservatively within this archived audit and is not claimed as universal historical proof."
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2022-09-05T22:00:00Z"
+end = "2022-09-06T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2022-11-24T22:00:00Z"
+end = "2022-11-25T00:00:00Z"
+event = "Thanksgiving"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2022-11-25T21:00:00Z"
+end = "2022-11-26T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2022-12-26T01:00:00Z"
+end = "2022-12-27T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2022"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-01-02T01:00:00Z"
+end = "2023-01-03T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-01-16T22:00:00Z"
+end = "2023-01-17T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-02-20T22:00:00Z"
+end = "2023-02-21T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-04-07T01:00:00Z"
+end = "2023-04-08T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-05-29T22:00:00Z"
+end = "2023-05-30T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-06-19T22:00:00Z"
+end = "2023-06-20T00:00:00Z"
+event = "Juneteenth"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-07-04T22:00:00Z"
+end = "2023-07-05T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-09-04T22:00:00Z"
+end = "2023-09-05T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-11-23T22:00:00Z"
+end = "2023-11-24T00:00:00Z"
+event = "Thanksgiving"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-11-24T21:00:00Z"
+end = "2023-11-25T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2023-12-25T01:00:00Z"
+end = "2023-12-26T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2023"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-01-01T01:00:00Z"
+end = "2024-01-02T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-01-15T22:00:00Z"
+end = "2024-01-16T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-02-19T22:00:00Z"
+end = "2024-02-20T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-03-29T01:00:00Z"
+end = "2024-03-30T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-05-27T21:00:00Z"
+end = "2024-05-28T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-06-19T21:00:00Z"
+end = "2024-06-20T00:00:00Z"
+event = "Juneteenth"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-07-04T21:00:00Z"
+end = "2024-07-05T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-09-02T21:00:00Z"
+end = "2024-09-03T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-11-28T22:00:00Z"
+end = "2024-11-29T00:00:00Z"
+event = "Thanksgiving"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-11-29T22:00:00Z"
+end = "2024-11-30T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2024-12-24T21:00:00Z"
+end = "2024-12-26T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2024"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-01-01T01:00:00Z"
+end = "2025-01-02T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-01-20T22:00:00Z"
+end = "2025-01-21T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-02-17T22:00:00Z"
+end = "2025-02-18T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-04-18T01:00:00Z"
+end = "2025-04-19T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-05-26T22:00:00Z"
+end = "2025-05-27T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-06-19T21:00:00Z"
+end = "2025-06-20T00:00:00Z"
+event = "Juneteenth"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-07-04T20:00:00Z"
+end = "2025-07-05T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-09-01T22:00:00Z"
+end = "2025-09-02T00:00:00Z"
+event = "Labor Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-11-27T22:00:00Z"
+end = "2025-11-28T00:00:00Z"
+event = "Thanksgiving"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-11-28T12:00:00Z"
+end = "2025-11-28T20:00:00Z"
+event = "Documented exchange outage"
+classification = "documented_exchange_outage"
+evidence_identifier = "ultima-outage-2025-11-28"
+normal_market_closure = false
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-11-28T22:00:00Z"
+end = "2025-11-29T00:00:00Z"
+event = "Black Friday early close"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2025-12-24T21:00:00Z"
+end = "2025-12-26T00:00:00Z"
+event = "Christmas closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2025"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2026-01-01T01:00:00Z"
+end = "2026-01-02T00:00:00Z"
+event = "New Year closure"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2026-01-19T22:00:00Z"
+end = "2026-01-20T00:00:00Z"
+event = "Martin Luther King Jr. Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2026-02-16T22:00:00Z"
+end = "2026-02-17T00:00:00Z"
+event = "Presidents Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2026-04-03T01:00:00Z"
+end = "2026-04-04T00:00:00Z"
+event = "Good Friday"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2026-05-25T22:00:00Z"
+end = "2026-05-26T00:00:00Z"
+event = "Memorial Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2026-06-19T20:00:00Z"
+end = "2026-06-20T00:00:00Z"
+event = "Juneteenth"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true
+
+[[sources.ultima-markets-demo.exceptions]]
+start = "2026-07-03T20:00:00Z"
+end = "2026-07-04T00:00:00Z"
+event = "Observed Independence Day"
+classification = "exchange_aligned_observed_closure"
+evidence_identifier = "cme-holiday-2026"
+normal_market_closure = true

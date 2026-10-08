@@ -1,0 +1,4491 @@
+{
+  "source": "metaquotes-demo",
+  "policy": "primary",
+  "threshold": 0.25,
+  "paired": {
+    "logistic_regression": {
+      "macro_f1": {
+        "total_folds": 7,
+        "paired_folds": 7,
+        "deltas": [
+          0.0036386644607036,
+          0.0032823598572145896,
+          0.006964274839867668,
+          -0.0003104918695097658,
+          0.004872094063253285,
+          0.002232764750452032,
+          0.003034231342027238
+        ],
+        "mean": 0.003387699634858378,
+        "median": 0.0032823598572145896,
+        "sample_std": 0.002243688616725407,
+        "positive_folds": 6
+      },
+      "balanced_accuracy": {
+        "total_folds": 7,
+        "paired_folds": 7,
+        "deltas": [
+          -0.0004649994569349003,
+          -0.0018790851667419006,
+          0.005274334916406054,
+          0.0004992527868459273,
+          0.0041580087852075565,
+          0.002088380155299996,
+          0.0028932643771990563
+        ],
+        "mean": 0.0017955937710402556,
+        "median": 0.002088380155299996,
+        "sample_std": 0.002558231689647682,
+        "positive_folds": 5
+      },
+      "fixed_macro_f1": {
+        "total_folds": 7,
+        "paired_folds": 7,
+        "deltas": [
+          0.0036386644607036,
+          0.0032823598572145896,
+          0.006964274839867668,
+          0.00039524527077011706,
+          0.0038352777575039187,
+          0.002206847814147317,
+          0.0025882545762349607
+        ],
+        "mean": 0.0032729892252060244,
+        "median": 0.0032823598572145896,
+        "sample_std": 0.0019984366133026063,
+        "positive_folds": 7
+      },
+      "fixed_balanced_accuracy": {
+        "total_folds": 7,
+        "paired_folds": 7,
+        "deltas": [
+          -0.0004649994569349003,
+          -0.0018790851667419006,
+          0.005274334916406054,
+          0.0012421063586156023,
+          0.0028803810893061055,
+          0.0019532493977810206,
+          0.002030589064611399
+        ],
+        "mean": 0.0015766537432919114,
+        "median": 0.0019532493977810206,
+        "sample_std": 0.0023073373460398504,
+        "positive_folds": 5
+      }
+    },
+    "xgboost": {
+      "macro_f1": {
+        "total_folds": 7,
+        "paired_folds": 7,
+        "deltas": [
+          0.006589011985630222,
+          -0.004014852515291822,
+          -0.003739890939892243,
+          -0.0027652886740574534,
+          -0.005658448496123569,
+          -0.005399733899087544,
+          0.020895463489989163
+        ],
+        "mean": 0.0008437515644523933,
+        "median": -0.003739890939892243,
+        "sample_std": 0.009780762312379504,
+        "positive_folds": 2
+      },
+      "balanced_accuracy": {
+        "total_folds": 7,
+        "paired_folds": 7,
+        "deltas": [
+          0.0049928043879657324,
+          -0.005943880223174325,
+          0.0027890060439579867,
+          -0.00285066308203924,
+          -0.00867226380847086,
+          -0.01007716246996132,
+          0.011137851690725231
+        ],
+        "mean": -0.001232043922999542,
+        "median": -0.00285066308203924,
+        "sample_std": 0.00781394288202579,
+        "positive_folds": 3
+      },
+      "fixed_macro_f1": {
+        "total_folds": 7,
+        "paired_folds": 7,
+        "deltas": [
+          0.006589011985630222,
+          -0.004014852515291822,
+          0.010956298719640545,
+          -0.0027652886740574534,
+          -0.005658448496123569,
+          -0.00829760119186973,
+          0.0054767551521493485
+        ],
+        "mean": 0.0003265535685825057,
+        "median": -0.0027652886740574534,
+        "sample_std": 0.0072725286070058305,
+        "positive_folds": 3
+      },
+      "fixed_balanced_accuracy": {
+        "total_folds": 7,
+        "paired_folds": 7,
+        "deltas": [
+          0.0049928043879657324,
+          -0.005943880223174325,
+          0.011534818322725127,
+          -0.00285066308203924,
+          -0.00867226380847086,
+          -0.009638046228918395,
+          0.009384103964569845
+        ],
+        "mean": -0.00017044666676315927,
+        "median": -0.00285066308203924,
+        "sample_std": 0.008731115420708207,
+        "positive_folds": 3
+      }
+    }
+  },
+  "k3_status": "NOT TESTED",
+  "confusion_order": [
+    "SELL",
+    "HOLD",
+    "BUY"
+  ],
+  "run": "metaquotes-demo-primary-0p25",
+  "source_summary_sha256": "68692c1814998ca8bceb3399d2b4a5f933ab7efa9b1f32df76b4795476a6457d",
+  "predictions_sha256": "f02037c75c36a63bdcb70e23a1c5fcc5daa2aa751e74edabed31edd879d37d6b",
+  "folds": [
+    {
+      "fold": "2023-H1",
+      "train_rows": 16756,
+      "test_rows": 2807,
+      "train_end_before": "2023-01-01T00:00:00+00:00",
+      "test_end": "2023-07-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2807,
+              "class_counts": {
+                "SELL": 1023,
+                "HOLD": 792,
+                "BUY": 992
+              },
+              "macro_f1": 0.3830241312816623,
+              "balanced_accuracy": 0.4059309492777235,
+              "confusion_matrix": [
+                [
+                  312,
+                  427,
+                  284
+                ],
+                [
+                  161,
+                  497,
+                  134
+                ],
+                [
+                  280,
+                  429,
+                  283
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2807,
+              "class_counts": {
+                "SELL": 1023,
+                "HOLD": 792,
+                "BUY": 992
+              },
+              "macro_f1": 0.3830241312816623,
+              "balanced_accuracy": 0.4059309492777235,
+              "confusion_matrix": [
+                [
+                  312,
+                  427,
+                  284
+                ],
+                [
+                  161,
+                  497,
+                  134
+                ],
+                [
+                  280,
+                  429,
+                  283
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.365942288809369,
+                  0.35961077309692907,
+                  0.36843959505576634
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3646642189873548
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3653855496340042,
+                  0.35816506639161644,
+                  0.3684723074943385
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36400764117331974
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.36542063134137703,
+                  0.3599353156661496,
+                  0.36775005984601655
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3643686689511811
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3657514025597805,
+                  0.35958250990988233,
+                  0.36775005984601655
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3643613241052264
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2807,
+              "class_counts": {
+                "SELL": 1023,
+                "HOLD": 792,
+                "BUY": 992
+              },
+              "macro_f1": 0.3866627957423659,
+              "balanced_accuracy": 0.4054659498207886,
+              "confusion_matrix": [
+                [
+                  331,
+                  410,
+                  282
+                ],
+                [
+                  174,
+                  474,
+                  144
+                ],
+                [
+                  282,
+                  418,
+                  292
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2807,
+              "class_counts": {
+                "SELL": 1023,
+                "HOLD": 792,
+                "BUY": 992
+              },
+              "macro_f1": 0.3866627957423659,
+              "balanced_accuracy": 0.4054659498207886,
+              "confusion_matrix": [
+                [
+                  331,
+                  410,
+                  282
+                ],
+                [
+                  174,
+                  474,
+                  144
+                ],
+                [
+                  282,
+                  418,
+                  292
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.37199821094557933,
+                  0.3681944382100331,
+                  0.3688911430142315
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.369694597389948
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37107751472090866,
+                  0.3706421540163353,
+                  0.3660108894389425
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3692435193920622
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.37076120697542514,
+                  0.37096630780696477,
+                  0.3652864151994044
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36900464332726474
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3711239319489686,
+                  0.37130145817698507,
+                  0.3645538690161725
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3689930863807087
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2807,
+              "class_counts": {
+                "SELL": 1023,
+                "HOLD": 792,
+                "BUY": 992
+              },
+              "macro_f1": 0.38739609854714363,
+              "balanced_accuracy": 0.40421690018464207,
+              "confusion_matrix": [
+                [
+                  329,
+                  383,
+                  311
+                ],
+                [
+                  192,
+                  463,
+                  137
+                ],
+                [
+                  289,
+                  399,
+                  304
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2807,
+              "class_counts": {
+                "SELL": 1023,
+                "HOLD": 792,
+                "BUY": 992
+              },
+              "macro_f1": 0.38739609854714363,
+              "balanced_accuracy": 0.40421690018464207,
+              "confusion_matrix": [
+                [
+                  329,
+                  383,
+                  311
+                ],
+                [
+                  192,
+                  463,
+                  137
+                ],
+                [
+                  289,
+                  399,
+                  304
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38188687734888677,
+                  0.36792687565545323,
+                  0.3641926289669086
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3713354606570829
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3838343662229939,
+                  0.36354238858865057,
+                  0.3635487154609242
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3703084900908562
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3886440929496224,
+                  0.3565437816048635,
+                  0.35997103270653946
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36838630242034176
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3785218006054784,
+                  0.360688210369515,
+                  0.36645655050875264
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.368555520494582
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3823386329485749,
+                  0.3686834841490749,
+                  0.36062718106557085
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37054976605440687
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3740113817197326,
+                  0.36134654923395565,
+                  0.3639703714721278
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.366442767475272
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3713718760998919,
+                  0.3614444778172677,
+                  0.3656696425278074
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36616199881498906
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3619162963615598,
+                  0.3578807239145723,
+                  0.36703965621806384
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36227889216473197
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2807,
+              "class_counts": {
+                "SELL": 1023,
+                "HOLD": 792,
+                "BUY": 992
+              },
+              "macro_f1": 0.39398511053277385,
+              "balanced_accuracy": 0.4092097045726078,
+              "confusion_matrix": [
+                [
+                  325,
+                  378,
+                  320
+                ],
+                [
+                  188,
+                  458,
+                  146
+                ],
+                [
+                  290,
+                  373,
+                  329
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2807,
+              "class_counts": {
+                "SELL": 1023,
+                "HOLD": 792,
+                "BUY": 992
+              },
+              "macro_f1": 0.39398511053277385,
+              "balanced_accuracy": 0.4092097045726078,
+              "confusion_matrix": [
+                [
+                  325,
+                  378,
+                  320
+                ],
+                [
+                  188,
+                  458,
+                  146
+                ],
+                [
+                  290,
+                  373,
+                  329
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3901375702856509,
+                  0.37227067303910094,
+                  0.3736766724747875
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3786949719331798
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39202411869604603,
+                  0.3697296929246776,
+                  0.3667002373904598
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3761513496703945
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.380026553378681,
+                  0.36831633314091894,
+                  0.3679490803142002
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3720973222779334
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38842137600114834,
+                  0.35929070849733,
+                  0.36005600071425015
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3692560284042428
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3807941644049952,
+                  0.3641796588218207,
+                  0.36968081061883185
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37155154461521595
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3817673009347675,
+                  0.3632101727932558,
+                  0.3571508018185106
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3673760918488446
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3710997967694536,
+                  0.36922102499136145,
+                  0.36349175186769517
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36793752454283674
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37794149557476997,
+                  0.3722643049109767,
+                  0.35913489815021915
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36978023287865525
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "BUY",
+        "scores": {
+          "n": 2807,
+          "class_counts": {
+            "SELL": 1023,
+            "HOLD": 792,
+            "BUY": 992
+          },
+          "macro_f1": 0.17408089848205668,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              1023
+            ],
+            [
+              0,
+              0,
+              792
+            ],
+            [
+              0,
+              0,
+              992
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2023-H2",
+      "train_rows": 19563,
+      "test_rows": 2829,
+      "train_end_before": "2023-07-01T00:00:00+00:00",
+      "test_end": "2024-01-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2829,
+              "class_counts": {
+                "SELL": 1027,
+                "HOLD": 821,
+                "BUY": 981
+              },
+              "macro_f1": 0.3904641520271331,
+              "balanced_accuracy": 0.3986748227792774,
+              "confusion_matrix": [
+                [
+                  495,
+                  281,
+                  251
+                ],
+                [
+                  275,
+                  377,
+                  169
+                ],
+                [
+                  440,
+                  291,
+                  250
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2829,
+              "class_counts": {
+                "SELL": 1027,
+                "HOLD": 821,
+                "BUY": 981
+              },
+              "macro_f1": 0.3904641520271331,
+              "balanced_accuracy": 0.3986748227792774,
+              "confusion_matrix": [
+                [
+                  495,
+                  281,
+                  251
+                ],
+                [
+                  275,
+                  377,
+                  169
+                ],
+                [
+                  440,
+                  291,
+                  250
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.35961077309692907,
+                  0.36843959505576634,
+                  0.3830241312816623
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37035816647811926
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.35816506639161644,
+                  0.3684723074943385,
+                  0.3819199212850699
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3695190983903416
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3599353156661496,
+                  0.36775005984601655,
+                  0.3822240614245822
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36996981231224946
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.35958250990988233,
+                  0.36775005984601655,
+                  0.3822240614245822
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36985221039349375
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2829,
+              "class_counts": {
+                "SELL": 1027,
+                "HOLD": 821,
+                "BUY": 981
+              },
+              "macro_f1": 0.39374651188434767,
+              "balanced_accuracy": 0.3967957376125355,
+              "confusion_matrix": [
+                [
+                  441,
+                  261,
+                  325
+                ],
+                [
+                  248,
+                  367,
+                  206
+                ],
+                [
+                  394,
+                  279,
+                  308
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2829,
+              "class_counts": {
+                "SELL": 1027,
+                "HOLD": 821,
+                "BUY": 981
+              },
+              "macro_f1": 0.39374651188434767,
+              "balanced_accuracy": 0.3967957376125355,
+              "confusion_matrix": [
+                [
+                  441,
+                  261,
+                  325
+                ],
+                [
+                  248,
+                  367,
+                  206
+                ],
+                [
+                  394,
+                  279,
+                  308
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3681944382100331,
+                  0.3688911430142315,
+                  0.3866627957423659
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3745827923222102
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3706421540163353,
+                  0.3660108894389425,
+                  0.38656101905397017
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37440468750308264
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.37096630780696477,
+                  0.3652864151994044,
+                  0.38656632014020703
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.374273014382192
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.37130145817698507,
+                  0.3645538690161725,
+                  0.38656101905397017
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3741387820823759
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2829,
+              "class_counts": {
+                "SELL": 1027,
+                "HOLD": 821,
+                "BUY": 981
+              },
+              "macro_f1": 0.397459580973555,
+              "balanced_accuracy": 0.402487207590614,
+              "confusion_matrix": [
+                [
+                  506,
+                  248,
+                  273
+                ],
+                [
+                  282,
+                  355,
+                  184
+                ],
+                [
+                  439,
+                  265,
+                  277
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2829,
+              "class_counts": {
+                "SELL": 1027,
+                "HOLD": 821,
+                "BUY": 981
+              },
+              "macro_f1": 0.397459580973555,
+              "balanced_accuracy": 0.402487207590614,
+              "confusion_matrix": [
+                [
+                  506,
+                  248,
+                  273
+                ],
+                [
+                  282,
+                  355,
+                  184
+                ],
+                [
+                  439,
+                  265,
+                  277
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.36792687565545323,
+                  0.3641926289669086,
+                  0.38739609854714363
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3731718677231685
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.36354238858865057,
+                  0.3635487154609242,
+                  0.3908591851490644
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37265009639954644
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3565437816048635,
+                  0.35997103270653946,
+                  0.3889324394732048
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36848241792820263
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.360688210369515,
+                  0.36645655050875264,
+                  0.3897920306760086
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3723122638514254
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3686834841490749,
+                  0.36062718106557085,
+                  0.3754437325703421
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3682514659283293
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.36134654923395565,
+                  0.3639703714721278,
+                  0.38518450060512976
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37016714043707105
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3614444778172677,
+                  0.3656696425278074,
+                  0.38793724626048404
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37168378886851966
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3578807239145723,
+                  0.36703965621806384,
+                  0.3850236076349632
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36998132925586646
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2829,
+              "class_counts": {
+                "SELL": 1027,
+                "HOLD": 821,
+                "BUY": 981
+              },
+              "macro_f1": 0.39344472845826317,
+              "balanced_accuracy": 0.3965433273674397,
+              "confusion_matrix": [
+                [
+                  468,
+                  255,
+                  304
+                ],
+                [
+                  263,
+                  354,
+                  204
+                ],
+                [
+                  421,
+                  263,
+                  297
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2829,
+              "class_counts": {
+                "SELL": 1027,
+                "HOLD": 821,
+                "BUY": 981
+              },
+              "macro_f1": 0.39344472845826317,
+              "balanced_accuracy": 0.3965433273674397,
+              "confusion_matrix": [
+                [
+                  468,
+                  255,
+                  304
+                ],
+                [
+                  263,
+                  354,
+                  204
+                ],
+                [
+                  421,
+                  263,
+                  297
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.37227067303910094,
+                  0.3736766724747875,
+                  0.39398511053277385
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37997748534888737
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3697296929246776,
+                  0.3667002373904598,
+                  0.39118688709570276
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37587227247028004
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.36831633314091894,
+                  0.3679490803142002,
+                  0.3902585369945221
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3755079834832138
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.35929070849733,
+                  0.36005600071425015,
+                  0.3873911767080358
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.368912628639872
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3641796588218207,
+                  0.36968081061883185,
+                  0.38567574783154557
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3731787390907327
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3632101727932558,
+                  0.3571508018185106,
+                  0.3825081417483
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3676230387866888
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.36922102499136145,
+                  0.36349175186769517,
+                  0.390763413538775
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3744920634659439
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3722643049109767,
+                  0.35913489815021915,
+                  0.38557438119892057
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3723245280867054
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "BUY",
+        "scores": {
+          "n": 2829,
+          "class_counts": {
+            "SELL": 1027,
+            "HOLD": 821,
+            "BUY": 981
+          },
+          "macro_f1": 0.1716535433070866,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              1027
+            ],
+            [
+              0,
+              0,
+              821
+            ],
+            [
+              0,
+              0,
+              981
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2024-H1",
+      "train_rows": 22393,
+      "test_rows": 2808,
+      "train_end_before": "2024-01-01T00:00:00+00:00",
+      "test_end": "2024-07-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2808,
+              "class_counts": {
+                "SELL": 970,
+                "HOLD": 770,
+                "BUY": 1068
+              },
+              "macro_f1": 0.3750054023338214,
+              "balanced_accuracy": 0.3940886082783453,
+              "confusion_matrix": [
+                [
+                  368,
+                  366,
+                  236
+                ],
+                [
+                  228,
+                  425,
+                  117
+                ],
+                [
+                  395,
+                  405,
+                  268
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2808,
+              "class_counts": {
+                "SELL": 970,
+                "HOLD": 770,
+                "BUY": 1068
+              },
+              "macro_f1": 0.3750054023338214,
+              "balanced_accuracy": 0.3940886082783453,
+              "confusion_matrix": [
+                [
+                  368,
+                  366,
+                  236
+                ],
+                [
+                  228,
+                  425,
+                  117
+                ],
+                [
+                  395,
+                  405,
+                  268
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.36843959505576634,
+                  0.3830241312816623,
+                  0.3904641520271331
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38064262612152056
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3684723074943385,
+                  0.3819199212850699,
+                  0.38985459387140947
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38008227421693935
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.36775005984601655,
+                  0.3822240614245822,
+                  0.38975551680592174
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3799098793588402
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.36775005984601655,
+                  0.3822240614245822,
+                  0.38975551680592174
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3799098793588402
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2808,
+              "class_counts": {
+                "SELL": 970,
+                "HOLD": 770,
+                "BUY": 1068
+              },
+              "macro_f1": 0.38196967717368907,
+              "balanced_accuracy": 0.39936294319475135,
+              "confusion_matrix": [
+                [
+                  367,
+                  362,
+                  241
+                ],
+                [
+                  227,
+                  425,
+                  118
+                ],
+                [
+                  397,
+                  385,
+                  286
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2808,
+              "class_counts": {
+                "SELL": 970,
+                "HOLD": 770,
+                "BUY": 1068
+              },
+              "macro_f1": 0.38196967717368907,
+              "balanced_accuracy": 0.39936294319475135,
+              "confusion_matrix": [
+                [
+                  367,
+                  362,
+                  241
+                ],
+                [
+                  227,
+                  425,
+                  118
+                ],
+                [
+                  397,
+                  385,
+                  286
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3688911430142315,
+                  0.3866627957423659,
+                  0.39374651188434767
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38310015021364835
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3660108894389425,
+                  0.38656101905397017,
+                  0.3957097245177283
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3827605443368803
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3652864151994044,
+                  0.38656632014020703,
+                  0.39503654415708267
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.382296426498898
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3645538690161725,
+                  0.38656101905397017,
+                  0.3950326303631874
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38204917281111
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2808,
+              "class_counts": {
+                "SELL": 970,
+                "HOLD": 770,
+                "BUY": 1068
+              },
+              "macro_f1": 0.37945454536349926,
+              "balanced_accuracy": 0.38635369932717323,
+              "confusion_matrix": [
+                [
+                  342,
+                  328,
+                  300
+                ],
+                [
+                  230,
+                  360,
+                  180
+                ],
+                [
+                  376,
+                  330,
+                  362
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2808,
+              "class_counts": {
+                "SELL": 970,
+                "HOLD": 770,
+                "BUY": 1068
+              },
+              "macro_f1": 0.37945454536349926,
+              "balanced_accuracy": 0.38635369932717323,
+              "confusion_matrix": [
+                [
+                  342,
+                  328,
+                  300
+                ],
+                [
+                  230,
+                  360,
+                  180
+                ],
+                [
+                  376,
+                  330,
+                  362
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3641926289669086,
+                  0.38739609854714363,
+                  0.397459580973555
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38301610282920245
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3635487154609242,
+                  0.3908591851490644,
+                  0.3954943392518035
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3833007466205974
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.35997103270653946,
+                  0.3889324394732048,
+                  0.39976409823003894
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38288919013659445
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.36645655050875264,
+                  0.3897920306760086,
+                  0.3926240124839651
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38295753122290876
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.36062718106557085,
+                  0.3754437325703421,
+                  0.39492210833724933
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3769976739910541
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3639703714721278,
+                  0.38518450060512976,
+                  0.40648774818088934
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3852142067527156
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3656696425278074,
+                  0.38793724626048404,
+                  0.39215057817600124
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38191915565476425
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.36703965621806384,
+                  0.3850236076349632,
+                  0.37933381924198245
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37713236103166986
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2808,
+              "class_counts": {
+                "SELL": 970,
+                "HOLD": 770,
+                "BUY": 1068
+              },
+              "macro_f1": 0.375714654423607,
+              "balanced_accuracy": 0.3891427053711312,
+              "confusion_matrix": [
+                [
+                  358,
+                  354,
+                  258
+                ],
+                [
+                  221,
+                  397,
+                  152
+                ],
+                [
+                  390,
+                  376,
+                  302
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2808,
+              "class_counts": {
+                "SELL": 970,
+                "HOLD": 770,
+                "BUY": 1068
+              },
+              "macro_f1": 0.3904108440831398,
+              "balanced_accuracy": 0.39788851764989835,
+              "confusion_matrix": [
+                [
+                  355,
+                  316,
+                  299
+                ],
+                [
+                  220,
+                  372,
+                  178
+                ],
+                [
+                  360,
+                  340,
+                  368
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3736766724747875,
+                  0.39398511053277385,
+                  0.39344472845826317
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3870355038219415
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3667002373904598,
+                  0.39118688709570276,
+                  0.39656490333784505
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38481734260800254
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3679490803142002,
+                  0.3902585369945221,
+                  0.39126568404795387
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3831577671188921
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.36005600071425015,
+                  0.3873911767080358,
+                  0.3847215162533962
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3773895645585607
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.36968081061883185,
+                  0.38567574783154557,
+                  0.39031671370649573
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3818910907189577
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3571508018185106,
+                  0.3825081417483,
+                  0.38618683497181056
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37528192617954037
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.36349175186769517,
+                  0.390763413538775,
+                  0.37648406829887837
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37691307790178286
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.35913489815021915,
+                  0.38557438119892057,
+                  0.3831683021344352
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3759591938278583
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "BUY",
+        "scores": {
+          "n": 2808,
+          "class_counts": {
+            "SELL": 970,
+            "HOLD": 770,
+            "BUY": 1068
+          },
+          "macro_f1": 0.18369453044375647,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              970
+            ],
+            [
+              0,
+              0,
+              770
+            ],
+            [
+              0,
+              0,
+              1068
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2024-H2",
+      "train_rows": 25201,
+      "test_rows": 2870,
+      "train_end_before": "2024-07-01T00:00:00+00:00",
+      "test_end": "2025-01-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2870,
+              "class_counts": {
+                "SELL": 980,
+                "HOLD": 733,
+                "BUY": 1157
+              },
+              "macro_f1": 0.3668592119373446,
+              "balanced_accuracy": 0.39119783369748884,
+              "confusion_matrix": [
+                [
+                  343,
+                  401,
+                  236
+                ],
+                [
+                  192,
+                  413,
+                  128
+                ],
+                [
+                  359,
+                  497,
+                  301
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2870,
+              "class_counts": {
+                "SELL": 980,
+                "HOLD": 733,
+                "BUY": 1157
+              },
+              "macro_f1": 0.3668592119373446,
+              "balanced_accuracy": 0.39119783369748884,
+              "confusion_matrix": [
+                [
+                  343,
+                  401,
+                  236
+                ],
+                [
+                  192,
+                  413,
+                  128
+                ],
+                [
+                  359,
+                  497,
+                  301
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3830241312816623,
+                  0.3904641520271331,
+                  0.3750054023338214
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38283122854753887
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3819199212850699,
+                  0.38985459387140947,
+                  0.37533251211929536
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38236900909192495
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3822240614245822,
+                  0.38975551680592174,
+                  0.37562156700274213
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38253371507774864
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3822240614245822,
+                  0.38975551680592174,
+                  0.37562156700274213
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38253371507774864
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2870,
+              "class_counts": {
+                "SELL": 980,
+                "HOLD": 733,
+                "BUY": 1157
+              },
+              "macro_f1": 0.36654872006783484,
+              "balanced_accuracy": 0.39169708648433477,
+              "confusion_matrix": [
+                [
+                  359,
+                  387,
+                  234
+                ],
+                [
+                  205,
+                  411,
+                  117
+                ],
+                [
+                  373,
+                  497,
+                  287
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2870,
+              "class_counts": {
+                "SELL": 980,
+                "HOLD": 733,
+                "BUY": 1157
+              },
+              "macro_f1": 0.3672544572081147,
+              "balanced_accuracy": 0.39243994005610444,
+              "confusion_matrix": [
+                [
+                  359,
+                  387,
+                  234
+                ],
+                [
+                  204,
+                  412,
+                  117
+                ],
+                [
+                  373,
+                  496,
+                  288
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3866627957423659,
+                  0.39374651188434767,
+                  0.38196967717368907
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38745966160013423
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38656101905397017,
+                  0.3957097245177283,
+                  0.3830242580958254
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38843166722250794
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.38656632014020703,
+                  0.39503654415708267,
+                  0.38299798595254014
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3882002834166099
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.38656101905397017,
+                  0.3950326303631874,
+                  0.38298640200144835
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3881933504728687
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2870,
+              "class_counts": {
+                "SELL": 980,
+                "HOLD": 733,
+                "BUY": 1157
+              },
+              "macro_f1": 0.3879379558082459,
+              "balanced_accuracy": 0.3985180183541543,
+              "confusion_matrix": [
+                [
+                  385,
+                  307,
+                  288
+                ],
+                [
+                  213,
+                  347,
+                  173
+                ],
+                [
+                  387,
+                  389,
+                  381
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2870,
+              "class_counts": {
+                "SELL": 980,
+                "HOLD": 733,
+                "BUY": 1157
+              },
+              "macro_f1": 0.3879379558082459,
+              "balanced_accuracy": 0.3985180183541543,
+              "confusion_matrix": [
+                [
+                  385,
+                  307,
+                  288
+                ],
+                [
+                  213,
+                  347,
+                  173
+                ],
+                [
+                  387,
+                  389,
+                  381
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38739609854714363,
+                  0.397459580973555,
+                  0.379182420298279
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3880126999396592
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3908591851490644,
+                  0.3954943392518035,
+                  0.38608027580284626
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3908112667345714
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3889324394732048,
+                  0.39976409823003894,
+                  0.38027064274910644
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3896557268174501
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3897920306760086,
+                  0.3926240124839651,
+                  0.3834058825750781
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38860730857835063
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3754437325703421,
+                  0.39492210833724933,
+                  0.3832278051975618
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3845312153683844
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38518450060512976,
+                  0.40648774818088934,
+                  0.37945454536349926
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3903755980498394
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38793724626048404,
+                  0.39215057817600124,
+                  0.38408810458917686
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.388058643008554
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3850236076349632,
+                  0.37933381924198245,
+                  0.3764382836425974
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38026523683984764
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2870,
+              "class_counts": {
+                "SELL": 980,
+                "HOLD": 733,
+                "BUY": 1157
+              },
+              "macro_f1": 0.38517266713418846,
+              "balanced_accuracy": 0.39566735527211505,
+              "confusion_matrix": [
+                [
+                  401,
+                  306,
+                  273
+                ],
+                [
+                  223,
+                  337,
+                  173
+                ],
+                [
+                  402,
+                  387,
+                  368
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2870,
+              "class_counts": {
+                "SELL": 980,
+                "HOLD": 733,
+                "BUY": 1157
+              },
+              "macro_f1": 0.38517266713418846,
+              "balanced_accuracy": 0.39566735527211505,
+              "confusion_matrix": [
+                [
+                  401,
+                  306,
+                  273
+                ],
+                [
+                  223,
+                  337,
+                  173
+                ],
+                [
+                  402,
+                  387,
+                  368
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39398511053277385,
+                  0.39344472845826317,
+                  0.375714654423607
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38771483113821464
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39118688709570276,
+                  0.39656490333784505,
+                  0.37958262891105504
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38911147311486766
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3902585369945221,
+                  0.39126568404795387,
+                  0.38083487884969935
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3874530332973918
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3873911767080358,
+                  0.3847215162533962,
+                  0.38266431709236315
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3849256700179317
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38567574783154557,
+                  0.39031671370649573,
+                  0.38191322490459995
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3859685621475471
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3825081417483,
+                  0.38618683497181056,
+                  0.3904108440831398
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38636860693441677
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.390763413538775,
+                  0.37648406829887837,
+                  0.3848007145668539
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3840160654681691
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38557438119892057,
+                  0.3831683021344352,
+                  0.37630053497833077
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3816810727705622
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "BUY",
+        "scores": {
+          "n": 2870,
+          "class_counts": {
+            "SELL": 980,
+            "HOLD": 733,
+            "BUY": 1157
+          },
+          "macro_f1": 0.191540435394421,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              980
+            ],
+            [
+              0,
+              0,
+              733
+            ],
+            [
+              0,
+              0,
+              1157
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2025-H1",
+      "train_rows": 28071,
+      "test_rows": 2735,
+      "train_end_before": "2025-01-01T00:00:00+00:00",
+      "test_end": "2025-07-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2735,
+              "class_counts": {
+                "SELL": 959,
+                "HOLD": 686,
+                "BUY": 1090
+              },
+              "macro_f1": 0.351244073527392,
+              "balanced_accuracy": 0.3786613312706051,
+              "confusion_matrix": [
+                [
+                  258,
+                  455,
+                  246
+                ],
+                [
+                  169,
+                  399,
+                  118
+                ],
+                [
+                  302,
+                  477,
+                  311
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2735,
+              "class_counts": {
+                "SELL": 959,
+                "HOLD": 686,
+                "BUY": 1090
+              },
+              "macro_f1": 0.351244073527392,
+              "balanced_accuracy": 0.3786613312706051,
+              "confusion_matrix": [
+                [
+                  258,
+                  455,
+                  246
+                ],
+                [
+                  169,
+                  399,
+                  118
+                ],
+                [
+                  302,
+                  477,
+                  311
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3904641520271331,
+                  0.3750054023338214,
+                  0.3668592119373446
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37744292209943303
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38985459387140947,
+                  0.37533251211929536,
+                  0.365454722475172
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3768806094886256
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.38975551680592174,
+                  0.37562156700274213,
+                  0.3647318895185472
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3767029911090704
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.38975551680592174,
+                  0.37562156700274213,
+                  0.3647318895185472
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3767029911090704
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2735,
+              "class_counts": {
+                "SELL": 959,
+                "HOLD": 686,
+                "BUY": 1090
+              },
+              "macro_f1": 0.3561161675906453,
+              "balanced_accuracy": 0.38281934005581264,
+              "confusion_matrix": [
+                [
+                  274,
+                  448,
+                  237
+                ],
+                [
+                  161,
+                  398,
+                  127
+                ],
+                [
+                  303,
+                  479,
+                  308
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2735,
+              "class_counts": {
+                "SELL": 959,
+                "HOLD": 686,
+                "BUY": 1090
+              },
+              "macro_f1": 0.3550793512848959,
+              "balanced_accuracy": 0.3815417123599112,
+              "confusion_matrix": [
+                [
+                  274,
+                  449,
+                  236
+                ],
+                [
+                  162,
+                  396,
+                  128
+                ],
+                [
+                  304,
+                  479,
+                  307
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.39374651188434767,
+                  0.38196967717368907,
+                  0.3672544572081147
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3809902154220505
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3957097245177283,
+                  0.3830242580958254,
+                  0.36654872006783484
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38176090089379616
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.39503654415708267,
+                  0.38299798595254014,
+                  0.36655028174585613
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.381528270618493
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3950326303631874,
+                  0.38298640200144835,
+                  0.36655028174585613
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3815231047034973
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2735,
+              "class_counts": {
+                "SELL": 959,
+                "HOLD": 686,
+                "BUY": 1090
+              },
+              "macro_f1": 0.3715439732504209,
+              "balanced_accuracy": 0.38700647147150374,
+              "confusion_matrix": [
+                [
+                  306,
+                  367,
+                  286
+                ],
+                [
+                  172,
+                  351,
+                  163
+                ],
+                [
+                  330,
+                  400,
+                  360
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2735,
+              "class_counts": {
+                "SELL": 959,
+                "HOLD": 686,
+                "BUY": 1090
+              },
+              "macro_f1": 0.3715439732504209,
+              "balanced_accuracy": 0.38700647147150374,
+              "confusion_matrix": [
+                [
+                  306,
+                  367,
+                  286
+                ],
+                [
+                  172,
+                  351,
+                  163
+                ],
+                [
+                  330,
+                  400,
+                  360
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.397459580973555,
+                  0.379182420298279,
+                  0.37573970689980135
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38412723605721183
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3954943392518035,
+                  0.38608027580284626,
+                  0.3879379558082459
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38983752362096524
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39976409823003894,
+                  0.38027064274910644,
+                  0.3854270045670464
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38848724851539723
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3926240124839651,
+                  0.3834058825750781,
+                  0.38769566496242325
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3879085200071555
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39492210833724933,
+                  0.3832278051975618,
+                  0.3809606856361174
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38637019972364284
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.40648774818088934,
+                  0.37945454536349926,
+                  0.37919799977460483
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3883800977729978
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39215057817600124,
+                  0.38408810458917686,
+                  0.3831581470357785
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38646560993365225
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37933381924198245,
+                  0.3764382836425974,
+                  0.3844165218065505
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38006287489704343
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2735,
+              "class_counts": {
+                "SELL": 959,
+                "HOLD": 686,
+                "BUY": 1090
+              },
+              "macro_f1": 0.3658855247542973,
+              "balanced_accuracy": 0.3783342076630329,
+              "confusion_matrix": [
+                [
+                  319,
+                  359,
+                  281
+                ],
+                [
+                  192,
+                  327,
+                  167
+                ],
+                [
+                  339,
+                  396,
+                  355
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2735,
+              "class_counts": {
+                "SELL": 959,
+                "HOLD": 686,
+                "BUY": 1090
+              },
+              "macro_f1": 0.3658855247542973,
+              "balanced_accuracy": 0.3783342076630329,
+              "confusion_matrix": [
+                [
+                  319,
+                  359,
+                  281
+                ],
+                [
+                  192,
+                  327,
+                  167
+                ],
+                [
+                  339,
+                  396,
+                  355
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39344472845826317,
+                  0.375714654423607,
+                  0.3799917388720737
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3830503739179813
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39656490333784505,
+                  0.37958262891105504,
+                  0.38517266713418846
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3871067331276962
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39126568404795387,
+                  0.38083487884969935,
+                  0.38622182193049487
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3861074616093827
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3847215162533962,
+                  0.38266431709236315,
+                  0.3872742720785269
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3848867018080954
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39031671370649573,
+                  0.38191322490459995,
+                  0.3810450300795361
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38442498956354393
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38618683497181056,
+                  0.3904108440831398,
+                  0.3840980848018048
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38689858795225174
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.37648406829887837,
+                  0.3848007145668539,
+                  0.3919988400259882
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3844278742972402
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3831683021344352,
+                  0.37630053497833077,
+                  0.37748032250423336
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37898305320566644
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "BUY",
+        "scores": {
+          "n": 2735,
+          "class_counts": {
+            "SELL": 959,
+            "HOLD": 686,
+            "BUY": 1090
+          },
+          "macro_f1": 0.18997821350762525,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              959
+            ],
+            [
+              0,
+              0,
+              686
+            ],
+            [
+              0,
+              0,
+              1090
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2025-H2",
+      "train_rows": 30807,
+      "test_rows": 2746,
+      "train_end_before": "2025-07-01T00:00:00+00:00",
+      "test_end": "2026-01-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2746,
+              "class_counts": {
+                "SELL": 969,
+                "HOLD": 662,
+                "BUY": 1115
+              },
+              "macro_f1": 0.33969418871367574,
+              "balanced_accuracy": 0.36899172884055864,
+              "confusion_matrix": [
+                [
+                  279,
+                  462,
+                  228
+                ],
+                [
+                  147,
+                  373,
+                  142
+                ],
+                [
+                  324,
+                  506,
+                  285
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2746,
+              "class_counts": {
+                "SELL": 969,
+                "HOLD": 662,
+                "BUY": 1115
+              },
+              "macro_f1": 0.33969418871367574,
+              "balanced_accuracy": 0.36899172884055864,
+              "confusion_matrix": [
+                [
+                  279,
+                  462,
+                  228
+                ],
+                [
+                  147,
+                  373,
+                  142
+                ],
+                [
+                  324,
+                  506,
+                  285
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3750054023338214,
+                  0.3668592119373446,
+                  0.351244073527392
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36436956259951936
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37533251211929536,
+                  0.365454722475172,
+                  0.35055002464877
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3637790864144124
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.37562156700274213,
+                  0.3647318895185472,
+                  0.35055002464877
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3636344937233531
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.37562156700274213,
+                  0.3647318895185472,
+                  0.35055002464877
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3636344937233531
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2746,
+              "class_counts": {
+                "SELL": 969,
+                "HOLD": 662,
+                "BUY": 1115
+              },
+              "macro_f1": 0.34192695346412777,
+              "balanced_accuracy": 0.37108010899585864,
+              "confusion_matrix": [
+                [
+                  281,
+                  459,
+                  229
+                ],
+                [
+                  151,
+                  374,
+                  137
+                ],
+                [
+                  323,
+                  504,
+                  288
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2746,
+              "class_counts": {
+                "SELL": 969,
+                "HOLD": 662,
+                "BUY": 1115
+              },
+              "macro_f1": 0.34190103652782305,
+              "balanced_accuracy": 0.37094497823833966,
+              "confusion_matrix": [
+                [
+                  278,
+                  461,
+                  230
+                ],
+                [
+                  150,
+                  374,
+                  138
+                ],
+                [
+                  322,
+                  502,
+                  291
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.38196967717368907,
+                  0.3672544572081147,
+                  0.3550793512848959
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3681011618888999
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3830242580958254,
+                  0.36654872006783484,
+                  0.3561161675906453
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36856304858476846
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.38299798595254014,
+                  0.36655028174585613,
+                  0.3553007730772488
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3682830135918817
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.38298640200144835,
+                  0.36655028174585613,
+                  0.3553007730772488
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36827915227485114
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2746,
+              "class_counts": {
+                "SELL": 969,
+                "HOLD": 662,
+                "BUY": 1115
+              },
+              "macro_f1": 0.35468763401728315,
+              "balanced_accuracy": 0.3719814537420731,
+              "confusion_matrix": [
+                [
+                  293,
+                  389,
+                  287
+                ],
+                [
+                  163,
+                  329,
+                  170
+                ],
+                [
+                  349,
+                  413,
+                  353
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2746,
+              "class_counts": {
+                "SELL": 969,
+                "HOLD": 662,
+                "BUY": 1115
+              },
+              "macro_f1": 0.35468763401728315,
+              "balanced_accuracy": 0.3719814537420731,
+              "confusion_matrix": [
+                [
+                  293,
+                  389,
+                  287
+                ],
+                [
+                  163,
+                  329,
+                  170
+                ],
+                [
+                  349,
+                  413,
+                  353
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.379182420298279,
+                  0.37573970689980135,
+                  0.3625847134728337
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.372502280223638
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38608027580284626,
+                  0.3879379558082459,
+                  0.3715439732504209
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.381854068287171
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38027064274910644,
+                  0.3854270045670464,
+                  0.3685120893263856
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37806991221417946
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3834058825750781,
+                  0.38769566496242325,
+                  0.3675057878420216
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.379535778459841
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3832278051975618,
+                  0.3809606856361174,
+                  0.3701794234090836
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3781226380809209
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37945454536349926,
+                  0.37919799977460483,
+                  0.37899286110262587
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37921513541357665
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38408810458917686,
+                  0.3831581470357785,
+                  0.36660076938478375
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37794900700324635
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3764382836425974,
+                  0.3844165218065505,
+                  0.35483796326357364
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3718975895709072
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2746,
+              "class_counts": {
+                "SELL": 969,
+                "HOLD": 662,
+                "BUY": 1115
+              },
+              "macro_f1": 0.3492879001181956,
+              "balanced_accuracy": 0.36190429127211177,
+              "confusion_matrix": [
+                [
+                  296,
+                  354,
+                  319
+                ],
+                [
+                  165,
+                  301,
+                  196
+                ],
+                [
+                  383,
+                  369,
+                  363
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2746,
+              "class_counts": {
+                "SELL": 969,
+                "HOLD": 662,
+                "BUY": 1115
+              },
+              "macro_f1": 0.3463900328254134,
+              "balanced_accuracy": 0.3623434075131547,
+              "confusion_matrix": [
+                [
+                  275,
+                  379,
+                  315
+                ],
+                [
+                  157,
+                  318,
+                  187
+                ],
+                [
+                  362,
+                  393,
+                  360
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.375714654423607,
+                  0.3799917388720737,
+                  0.3621164823616134
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.372607625219098
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37958262891105504,
+                  0.38517266713418846,
+                  0.3658855247542973
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37688027359984694
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38083487884969935,
+                  0.38622182193049487,
+                  0.3668127331078151
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3779564779626698
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38266431709236315,
+                  0.3872742720785269,
+                  0.36805604345840287
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3793315442097643
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38191322490459995,
+                  0.3810450300795361,
+                  0.369155253124648
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3773711693695947
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3904108440831398,
+                  0.3840980848018048,
+                  0.3678983483153018
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3808024257334155
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3848007145668539,
+                  0.3919988400259882,
+                  0.3650244101896179
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38060798826082
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37630053497833077,
+                  0.37748032250423336,
+                  0.3613740624022512
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3717183066282718
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "BUY",
+        "scores": {
+          "n": 2746,
+          "class_counts": {
+            "SELL": 969,
+            "HOLD": 662,
+            "BUY": 1115
+          },
+          "macro_f1": 0.1925235258568592,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              969
+            ],
+            [
+              0,
+              0,
+              662
+            ],
+            [
+              0,
+              0,
+              1115
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2026-Jan-Jul",
+      "train_rows": 33554,
+      "test_rows": 3103,
+      "train_end_before": "2026-01-01T00:00:00+00:00",
+      "test_end": "2026-08-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 3103,
+              "class_counts": {
+                "SELL": 1169,
+                "HOLD": 775,
+                "BUY": 1159
+              },
+              "macro_f1": 0.3288274397925249,
+              "balanced_accuracy": 0.37869297353174985,
+              "confusion_matrix": [
+                [
+                  220,
+                  682,
+                  267
+                ],
+                [
+                  99,
+                  532,
+                  144
+                ],
+                [
+                  198,
+                  658,
+                  303
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 3103,
+              "class_counts": {
+                "SELL": 1169,
+                "HOLD": 775,
+                "BUY": 1159
+              },
+              "macro_f1": 0.3288274397925249,
+              "balanced_accuracy": 0.37869297353174985,
+              "confusion_matrix": [
+                [
+                  220,
+                  682,
+                  267
+                ],
+                [
+                  99,
+                  532,
+                  144
+                ],
+                [
+                  198,
+                  658,
+                  303
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3668592119373446,
+                  0.351244073527392,
+                  0.33969418871367574
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3525991580594708
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.365454722475172,
+                  0.35055002464877,
+                  0.3390369204450257
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3516805558563226
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3647318895185472,
+                  0.35055002464877,
+                  0.3394215479606211
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35156782070931275
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3647318895185472,
+                  0.35055002464877,
+                  0.3394215479606211
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35156782070931275
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 3103,
+              "class_counts": {
+                "SELL": 1169,
+                "HOLD": 775,
+                "BUY": 1159
+              },
+              "macro_f1": 0.3318616711345521,
+              "balanced_accuracy": 0.3815862379089489,
+              "confusion_matrix": [
+                [
+                  213,
+                  682,
+                  274
+                ],
+                [
+                  96,
+                  532,
+                  147
+                ],
+                [
+                  182,
+                  657,
+                  320
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 3103,
+              "class_counts": {
+                "SELL": 1169,
+                "HOLD": 775,
+                "BUY": 1159
+              },
+              "macro_f1": 0.33141569436875984,
+              "balanced_accuracy": 0.38072356259636125,
+              "confusion_matrix": [
+                [
+                  214,
+                  682,
+                  273
+                ],
+                [
+                  97,
+                  530,
+                  148
+                ],
+                [
+                  181,
+                  659,
+                  319
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3672544572081147,
+                  0.3550793512848959,
+                  0.34190103652782305
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35474494834027787
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.36654872006783484,
+                  0.3561161675906453,
+                  0.34192695346412777
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35486394704086927
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.36655028174585613,
+                  0.3553007730772488,
+                  0.34154827616007055
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3544664436610585
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.36655028174585613,
+                  0.3553007730772488,
+                  0.34154827616007055
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3544664436610585
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 3103,
+              "class_counts": {
+                "SELL": 1169,
+                "HOLD": 775,
+                "BUY": 1159
+              },
+              "macro_f1": 0.336414370657186,
+              "balanced_accuracy": 0.3650592127554293,
+              "confusion_matrix": [
+                [
+                  259,
+                  581,
+                  329
+                ],
+                [
+                  152,
+                  437,
+                  186
+                ],
+                [
+                  246,
+                  554,
+                  359
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 3103,
+              "class_counts": {
+                "SELL": 1169,
+                "HOLD": 775,
+                "BUY": 1159
+              },
+              "macro_f1": 0.336414370657186,
+              "balanced_accuracy": 0.3650592127554293,
+              "confusion_matrix": [
+                [
+                  259,
+                  581,
+                  329
+                ],
+                [
+                  152,
+                  437,
+                  186
+                ],
+                [
+                  246,
+                  554,
+                  359
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 3,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.37573970689980135,
+                  0.3625847134728337,
+                  0.3480241282630793
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3621161828785715
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3879379558082459,
+                  0.3715439732504209,
+                  0.35468763401728315
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37138985435864996
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3854270045670464,
+                  0.3685120893263856,
+                  0.353744105574539
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36922773315599033
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38769566496242325,
+                  0.3675057878420216,
+                  0.3555240057246865
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3702418195097104
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3809606856361174,
+                  0.3701794234090836,
+                  0.35137847852424514
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36750619585648203
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37919799977460483,
+                  0.37899286110262587,
+                  0.3500640305340951
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36941829713710866
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3831581470357785,
+                  0.36660076938478375,
+                  0.35361107411800813
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3677899968461901
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3844165218065505,
+                  0.35483796326357364,
+                  0.3484138355482522
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3625561068727921
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 3103,
+              "class_counts": {
+                "SELL": 1169,
+                "HOLD": 775,
+                "BUY": 1159
+              },
+              "macro_f1": 0.35730983414717515,
+              "balanced_accuracy": 0.3761970644461545,
+              "confusion_matrix": [
+                [
+                  310,
+                  496,
+                  363
+                ],
+                [
+                  175,
+                  401,
+                  199
+                ],
+                [
+                  310,
+                  448,
+                  401
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 3103,
+              "class_counts": {
+                "SELL": 1169,
+                "HOLD": 775,
+                "BUY": 1159
+              },
+              "macro_f1": 0.34189112580933534,
+              "balanced_accuracy": 0.37444331671999914,
+              "confusion_matrix": [
+                [
+                  235,
+                  589,
+                  345
+                ],
+                [
+                  134,
+                  454,
+                  187
+                ],
+                [
+                  207,
+                  562,
+                  390
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 300,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3799917388720737,
+                  0.3621164823616134,
+                  0.35687272433772493
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36632698185713736
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38517266713418846,
+                  0.3658855247542973,
+                  0.3463900328254134
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3658160749046331
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38622182193049487,
+                  0.3668127331078151,
+                  0.3590996061463266
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3707113870615455
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3872742720785269,
+                  0.36805604345840287,
+                  0.3488638863567517
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36806473396456046
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3810450300795361,
+                  0.369155253124648,
+                  0.354831943788999
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36834407566439437
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3840980848018048,
+                  0.3678983483153018,
+                  0.3492879001181956
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36709477774510074
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3919988400259882,
+                  0.3650244101896179,
+                  0.3586436370226991
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37188896241276836
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37748032250423336,
+                  0.3613740624022512,
+                  0.3543412134766976
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3643985327943941
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "BUY",
+        "scores": {
+          "n": 3103,
+          "class_counts": {
+            "SELL": 1169,
+            "HOLD": 775,
+            "BUY": 1159
+          },
+          "macro_f1": 0.18129203816674488,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              1169
+            ],
+            [
+              0,
+              0,
+              775
+            ],
+            [
+              0,
+              0,
+              1159
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

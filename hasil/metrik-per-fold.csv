@@ -1,0 +1,841 @@
+run,source,policy,threshold,fold,model,configuration,status,test_rows,macro_f1,balanced_accuracy,selected_params,reason
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K1,TESTED,2525,0.3819988689288729,0.40554657576847486,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K2,TESTED,2525,0.38513635517789063,0.40552285300649915,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K1,TESTED,2525,0.37681359536750714,0.3958077006299467,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K2,TESTED,2525,0.37556345622176296,0.3944393745495745,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K1,TESTED,2622,0.38735312029568164,0.39652745007655027,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K2,TESTED,2622,0.39541138138754367,0.3993640170581481,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K1,TESTED,2622,0.39303461943263684,0.3956009709395614,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K2,TESTED,2622,0.396831221296383,0.39979165691280055,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K1,TESTED,2526,0.3730968421828022,0.3930747069740905,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K2,TESTED,2526,0.3753505917864821,0.3938686722938065,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K1,TESTED,2526,0.38098639375243654,0.3909685543608789,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K2,TESTED,2526,0.37432957062697564,0.38534314495738237,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K1,TESTED,2662,0.36728396308907046,0.3905078656180329,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K2,TESTED,2662,0.361337300922689,0.38546193520982447,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K1,TESTED,2662,0.38351100507597646,0.3897168460131209,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K2,TESTED,2662,0.3749654188496101,0.38402221660086605,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K1,TESTED,2453,0.3428017522372428,0.3726712670125634,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K2,TESTED,2453,0.3558020450829135,0.3840939114253623,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K1,TESTED,2453,0.3762366571115346,0.38614259025698877,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K2,TESTED,2453,0.369751909940154,0.3784005121528236,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K1,TESTED,2596,0.3413209706084082,0.36889833003396505,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K2,TESTED,2596,0.3482946083576189,0.37581680811173507,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K1,TESTED,2596,0.35047817339168813,0.3623438336928136,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K2,TESTED,2596,0.34323771299237255,0.3571083936788885,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K1,TESTED,2774,0.3296963588147738,0.37547378101659196,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K2,TESTED,2774,0.32941851707228276,0.37520670637710096,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K1,TESTED,2774,0.3605011650587229,0.3769101025400701,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K2,TESTED,2774,0.3582507324850202,0.374529395035947,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K1,TESTED,2525,0.3819988689288729,0.40554657576847486,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K2,TESTED,2525,0.38513635517789063,0.40552285300649915,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K3,TESTED,2525,0.3918473710336617,0.4077290698702425,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K1,TESTED,2525,0.37681359536750714,0.3958077006299467,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K2,TESTED,2525,0.37556345622176296,0.3944393745495745,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K3,TESTED,2525,0.38761017044306306,0.40241997599995133,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K1,TESTED,2622,0.38735312029568164,0.39652745007655027,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K2,TESTED,2622,0.39541138138754367,0.3993640170581481,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K3,TESTED,2622,0.4049172947649902,0.40829371366033335,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K1,TESTED,2622,0.39303461943263684,0.3956009709395614,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K2,TESTED,2622,0.396831221296383,0.39979165691280055,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K3,TESTED,2622,0.3847261378419566,0.389344450018275,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K1,TESTED,2526,0.3730968421828022,0.3930747069740905,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K2,TESTED,2526,0.3753505917864821,0.3938686722938065,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K3,TESTED,2526,0.36875880963395585,0.3849691267468162,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K1,TESTED,2526,0.38098639375243654,0.3909685543608789,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K2,TESTED,2526,0.37432957062697564,0.38534314495738237,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K3,TESTED,2526,0.3795194209456458,0.3891628348379194,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K1,TESTED,2662,0.36728396308907046,0.3905078656180329,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K2,TESTED,2662,0.361337300922689,0.38546193520982447,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K3,TESTED,2662,0.3608659855824841,0.3808531463721085,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K1,TESTED,2662,0.38351100507597646,0.3897168460131209,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K2,TESTED,2662,0.3749654188496101,0.38402221660086605,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K3,TESTED,2662,0.38159260075844986,0.390091231696353,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K1,TESTED,2453,0.3428017522372428,0.3726712670125634,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K2,TESTED,2453,0.3558020450829135,0.3840939114253623,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K3,TESTED,2453,0.3441739842107138,0.3726626611390967,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K1,TESTED,2453,0.3762366571115346,0.38614259025698877,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K2,TESTED,2453,0.369751909940154,0.3784005121528236,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K3,TESTED,2453,0.37168079354286804,0.38346825623800984,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K1,TESTED,2596,0.3413209706084082,0.36889833003396505,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K2,TESTED,2596,0.3482946083576189,0.37581680811173507,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K3,TESTED,2596,0.34494227556484686,0.368539532485531,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K1,TESTED,2596,0.35047817339168813,0.3623438336928136,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K2,TESTED,2596,0.34323771299237255,0.3571083936788885,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K3,TESTED,2596,0.3500002038614187,0.3637519156722359,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K1,TESTED,2774,0.3296963588147738,0.37547378101659196,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K2,TESTED,2774,0.32941851707228276,0.37520670637710096,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K3,TESTED,2774,0.33039866304852394,0.3741398927554558,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K1,TESTED,2774,0.3605011650587229,0.3769101025400701,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K2,TESTED,2774,0.3582507324850202,0.374529395035947,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p25-k3,metaquotes-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K3,TESTED,2774,0.3539381156808114,0.37298035992176687,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K1,TESTED,2525,0.4229988986131652,0.4229019242341454,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K2,TESTED,2525,0.4201401651674086,0.42028071316611887,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K1,TESTED,2525,0.4188159243758735,0.4191097267185917,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K2,TESTED,2525,0.411106452736991,0.41149725695801753,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K1,TESTED,2622,0.3935515854325244,0.40050044915570054,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K2,TESTED,2622,0.3951919800221823,0.401595285359244,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K1,TESTED,2622,0.3888180839702117,0.40431774921540736,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K2,TESTED,2622,0.38110442399966177,0.3986059239986354,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K1,TESTED,2526,0.39939067028239794,0.4013571035599801,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K2,TESTED,2526,0.40274399191870175,0.40439798931745646,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K1,TESTED,2526,0.39724470718025523,0.40108174944385117,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K2,TESTED,2526,0.3891892348137936,0.3906819993139911,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K1,TESTED,2662,0.3889356622937994,0.3915397014279327,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K2,TESTED,2662,0.3889429521436983,0.3918215205590238,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K1,TESTED,2662,0.3983920952503011,0.4014258239395203,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K2,TESTED,2662,0.40083879213273005,0.40488853746831666,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K1,TESTED,2453,0.39266243972823495,0.3954368159608113,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K2,TESTED,2453,0.3868014262135746,0.3901072155268092,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K1,TESTED,2453,0.38981163056097773,0.39010185423014715,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K2,TESTED,2453,0.38971641433417853,0.38995132354986567,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K1,TESTED,2596,0.3777021305378026,0.38113288021849273,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K2,TESTED,2596,0.3797114032380418,0.38337338033981455,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K1,TESTED,2596,0.3747790515992371,0.3752699242460434,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K2,TESTED,2596,0.3763900495726578,0.3769088893153372,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K1,TESTED,2774,0.3717503774828872,0.3765103611907487,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K2,TESTED,2774,0.3743463843968839,0.37961093533810913,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K1,TESTED,2774,0.36392557205493997,0.3659752906596448,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K2,TESTED,2774,0.386005516657222,0.3869373064823732,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K1,TESTED,2525,0.4229988986131652,0.4229019242341454,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K2,TESTED,2525,0.4201401651674086,0.42028071316611887,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K3,TESTED,2525,0.4144900043672994,0.41511928633795064,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K1,TESTED,2525,0.4188159243758735,0.4191097267185917,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K2,TESTED,2525,0.411106452736991,0.41149725695801753,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K3,TESTED,2525,0.4200160906075024,0.421070867688182,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K1,TESTED,2622,0.3935515854325244,0.40050044915570054,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K2,TESTED,2622,0.3951919800221823,0.401595285359244,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K3,TESTED,2622,0.39516123064925157,0.403923512630886,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K1,TESTED,2622,0.3888180839702117,0.40431774921540736,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K2,TESTED,2622,0.38110442399966177,0.3986059239986354,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K3,TESTED,2622,0.39098615687987187,0.40852360725502773,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K1,TESTED,2526,0.39939067028239794,0.4013571035599801,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K2,TESTED,2526,0.40274399191870175,0.40439798931745646,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K3,TESTED,2526,0.3939270067080787,0.39776446819196565,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K1,TESTED,2526,0.39724470718025523,0.40108174944385117,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K2,TESTED,2526,0.3891892348137936,0.3906819993139911,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K3,TESTED,2526,0.39875682119049954,0.4020926358222044,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K1,TESTED,2662,0.3889356622937994,0.3915397014279327,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K2,TESTED,2662,0.3889429521436983,0.3918215205590238,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K3,TESTED,2662,0.3850343899889443,0.38886886436373974,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K1,TESTED,2662,0.3983920952503011,0.4014258239395203,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K2,TESTED,2662,0.40083879213273005,0.40488853746831666,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K3,TESTED,2662,0.40053187047998157,0.4052150683528295,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K1,TESTED,2453,0.39266243972823495,0.3954368159608113,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K2,TESTED,2453,0.3868014262135746,0.3901072155268092,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K3,TESTED,2453,0.3896760486338038,0.3928886717068196,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K1,TESTED,2453,0.38981163056097773,0.39010185423014715,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K2,TESTED,2453,0.38971641433417853,0.38995132354986567,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K3,TESTED,2453,0.39663810597848964,0.39671467933849563,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K1,TESTED,2596,0.3777021305378026,0.38113288021849273,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K2,TESTED,2596,0.3797114032380418,0.38337338033981455,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K3,TESTED,2596,0.38734062467851826,0.38989478737097577,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K1,TESTED,2596,0.3747790515992371,0.3752699242460434,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K2,TESTED,2596,0.3763900495726578,0.3769088893153372,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K3,TESTED,2596,0.37253114662245196,0.3723512633261728,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K1,TESTED,2774,0.3717503774828872,0.3765103611907487,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K2,TESTED,2774,0.3743463843968839,0.37961093533810913,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K3,TESTED,2774,0.38008037177380066,0.3844334145719995,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K1,TESTED,2774,0.36392557205493997,0.3659752906596448,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K2,TESTED,2774,0.386005516657222,0.3869373064823732,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-0p5-k3,metaquotes-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K3,TESTED,2774,0.37709927776482405,0.3798624292436769,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K1,TESTED,2525,0.38541434309321376,0.40849648244956066,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K2,TESTED,2525,0.37725594803302304,0.40037130716521907,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K1,TESTED,2525,0.4018282214986107,0.43669746742970883,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K2,TESTED,2525,0.39259358348720436,0.40398465029806435,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K1,TESTED,2622,0.36607190950742013,0.41400590315234326,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K2,TESTED,2622,0.3627109851143973,0.4179809421071557,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K1,TESTED,2622,0.3680244075603695,0.42044947860481846,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K2,TESTED,2622,0.37861327956929086,0.42130678413040873,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K1,TESTED,2526,0.3932508771459034,0.4243896160583087,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K2,TESTED,2526,0.3915723552980115,0.42152267474348243,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K1,TESTED,2526,0.3711850872625901,0.3927636227187646,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K2,TESTED,2526,0.3680066876267601,0.3909230490439066,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K1,TESTED,2662,0.39060749704560543,0.40878181810626435,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K2,TESTED,2662,0.3898277665710308,0.40712453922092934,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K1,TESTED,2662,0.3982128889319531,0.423883480279363,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K2,TESTED,2662,0.4086597702000079,0.42900039720361605,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K1,TESTED,2453,0.3874014950646736,0.40025948196039324,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K2,TESTED,2453,0.38691518799758046,0.3997941317945149,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K1,TESTED,2453,0.38163315345137755,0.39671530465627963,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K2,TESTED,2453,0.3866403059194712,0.39725432192961785,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K1,TESTED,2596,0.38216054244823444,0.39465935469885394,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K2,TESTED,2596,0.38074780578908834,0.39226748159928637,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K1,TESTED,2596,0.3674464348339059,0.3826722336656627,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K2,TESTED,2596,0.377091338068338,0.38811123958190774,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K1,TESTED,2774,0.3784917888952248,0.38496117750755715,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K2,TESTED,2774,0.3873954914874353,0.3941877979241264,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K1,TESTED,2774,0.3877541764484847,0.3951706133278887,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K2,TESTED,2774,0.3994537738539412,0.4012624314784083,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K1,TESTED,2525,0.38541434309321376,0.40849648244956066,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K2,TESTED,2525,0.37725594803302304,0.40037130716521907,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K3,TESTED,2525,0.3872201354510349,0.4209680082429152,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K1,TESTED,2525,0.4018282214986107,0.43669746742970883,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K2,TESTED,2525,0.39259358348720436,0.40398465029806435,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K3,TESTED,2525,0.4013167869159999,0.4197811127107796,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K1,TESTED,2622,0.36607190950742013,0.41400590315234326,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K2,TESTED,2622,0.3627109851143973,0.4179809421071557,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K3,TESTED,2622,0.3544320644513015,0.4111286907187662,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K1,TESTED,2622,0.3680244075603695,0.42044947860481846,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K2,TESTED,2622,0.37861327956929086,0.42130678413040873,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K3,TESTED,2622,0.3874298055189284,0.4401453314155579,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K1,TESTED,2526,0.3932508771459034,0.4243896160583087,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K2,TESTED,2526,0.3915723552980115,0.42152267474348243,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K3,TESTED,2526,0.389747149201642,0.42467824259150744,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K1,TESTED,2526,0.3711850872625901,0.3927636227187646,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K2,TESTED,2526,0.3680066876267601,0.3909230490439066,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K3,TESTED,2526,0.36088368384999797,0.3754861814929131,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K1,TESTED,2662,0.39060749704560543,0.40878181810626435,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K2,TESTED,2662,0.3898277665710308,0.40712453922092934,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K3,TESTED,2662,0.38256135702431665,0.40142541237630724,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K1,TESTED,2662,0.3982128889319531,0.423883480279363,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K2,TESTED,2662,0.4086597702000079,0.42900039720361605,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K3,TESTED,2662,0.3901403274229674,0.4172666212587757,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K1,TESTED,2453,0.3874014950646736,0.40025948196039324,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K2,TESTED,2453,0.38691518799758046,0.3997941317945149,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K3,TESTED,2453,0.39682973835808316,0.41070017482839144,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K1,TESTED,2453,0.38163315345137755,0.39671530465627963,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K2,TESTED,2453,0.3866403059194712,0.39725432192961785,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K3,TESTED,2453,0.40264718124732846,0.4132203170246769,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K1,TESTED,2596,0.38216054244823444,0.39465935469885394,"{""C"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K2,TESTED,2596,0.38074780578908834,0.39226748159928637,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K3,TESTED,2596,0.38304502929400824,0.39771593302965585,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K1,TESTED,2596,0.3674464348339059,0.3826722336656627,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K2,TESTED,2596,0.377091338068338,0.38811123958190774,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K3,TESTED,2596,0.3675991567077472,0.3764672502279042,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K1,TESTED,2774,0.3784917888952248,0.38496117750755715,"{""C"": 1.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K2,TESTED,2774,0.3873954914874353,0.3941877979241264,"{""C"": 10.0}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K3,TESTED,2774,0.3895989357460192,0.3961481512447178,"{""C"": 0.01}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K1,TESTED,2774,0.3877541764484847,0.3951706133278887,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K2,TESTED,2774,0.3994537738539412,0.4012624314784083,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-holiday_reset_sensitivity-1p0-k3,metaquotes-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K3,TESTED,2774,0.38922827245187896,0.39230795957571535,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2023-H1,logistic_regression,K1,TESTED,2807,0.3830241312816623,0.4059309492777235,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2023-H1,logistic_regression,K2,TESTED,2807,0.3866627957423659,0.4054659498207886,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2023-H1,xgboost,K1,TESTED,2807,0.38739609854714363,0.40421690018464207,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2023-H1,xgboost,K2,TESTED,2807,0.39398511053277385,0.4092097045726078,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2023-H2,logistic_regression,K1,TESTED,2829,0.3904641520271331,0.3986748227792774,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2023-H2,logistic_regression,K2,TESTED,2829,0.39374651188434767,0.3967957376125355,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2023-H2,xgboost,K1,TESTED,2829,0.397459580973555,0.402487207590614,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2023-H2,xgboost,K2,TESTED,2829,0.39344472845826317,0.3965433273674397,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2024-H1,logistic_regression,K1,TESTED,2808,0.3750054023338214,0.3940886082783453,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2024-H1,logistic_regression,K2,TESTED,2808,0.38196967717368907,0.39936294319475135,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2024-H1,xgboost,K1,TESTED,2808,0.37945454536349926,0.38635369932717323,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2024-H1,xgboost,K2,TESTED,2808,0.375714654423607,0.3891427053711312,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2024-H2,logistic_regression,K1,TESTED,2870,0.3668592119373446,0.39119783369748884,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2024-H2,logistic_regression,K2,TESTED,2870,0.36654872006783484,0.39169708648433477,"{""C"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2024-H2,xgboost,K1,TESTED,2870,0.3879379558082459,0.3985180183541543,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2024-H2,xgboost,K2,TESTED,2870,0.38517266713418846,0.39566735527211505,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2025-H1,logistic_regression,K1,TESTED,2735,0.351244073527392,0.3786613312706051,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2025-H1,logistic_regression,K2,TESTED,2735,0.3561161675906453,0.38281934005581264,"{""C"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2025-H1,xgboost,K1,TESTED,2735,0.3715439732504209,0.38700647147150374,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2025-H1,xgboost,K2,TESTED,2735,0.3658855247542973,0.3783342076630329,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2025-H2,logistic_regression,K1,TESTED,2746,0.33969418871367574,0.36899172884055864,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2025-H2,logistic_regression,K2,TESTED,2746,0.34192695346412777,0.37108010899585864,"{""C"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2025-H2,xgboost,K1,TESTED,2746,0.35468763401728315,0.3719814537420731,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2025-H2,xgboost,K2,TESTED,2746,0.3492879001181956,0.36190429127211177,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K1,TESTED,3103,0.3288274397925249,0.37869297353174985,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K2,TESTED,3103,0.3318616711345521,0.3815862379089489,"{""C"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2026-Jan-Jul,xgboost,K1,TESTED,3103,0.336414370657186,0.3650592127554293,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25,metaquotes-demo,primary,0.25,2026-Jan-Jul,xgboost,K2,TESTED,3103,0.35730983414717515,0.3761970644461545,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H1,logistic_regression,K1,TESTED,2807,0.3830241312816623,0.4059309492777235,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H1,logistic_regression,K2,TESTED,2807,0.3866627957423659,0.4054659498207886,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H1,logistic_regression,K3,TESTED,2807,0.38976186463571505,0.4047124470511567,"{""C"": 1.0}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H1,xgboost,K1,TESTED,2807,0.38739609854714363,0.40421690018464207,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H1,xgboost,K2,TESTED,2807,0.39398511053277385,0.4092097045726078,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H1,xgboost,K3,TESTED,2807,0.38761281704436873,0.4032699304876724,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H2,logistic_regression,K1,TESTED,2829,0.3904641520271331,0.3986748227792774,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H2,logistic_regression,K2,TESTED,2829,0.39374651188434767,0.3967957376125355,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H2,logistic_regression,K3,TESTED,2829,0.4042962939180544,0.407327262426489,"{""C"": 10.0}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H2,xgboost,K1,TESTED,2829,0.397459580973555,0.402487207590614,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H2,xgboost,K2,TESTED,2829,0.39344472845826317,0.3965433273674397,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2023-H2,xgboost,K3,TESTED,2829,0.38395988385436675,0.38291526042046536,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H1,logistic_regression,K1,TESTED,2808,0.3750054023338214,0.3940886082783453,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H1,logistic_regression,K2,TESTED,2808,0.38196967717368907,0.39936294319475135,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H1,logistic_regression,K3,TESTED,2808,0.3672878621179811,0.3823708866393913,"{""C"": 10.0}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H1,xgboost,K1,TESTED,2808,0.37945454536349926,0.38635369932717323,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H1,xgboost,K2,TESTED,2808,0.375714654423607,0.3891427053711312,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H1,xgboost,K3,TESTED,2808,0.3832705774497241,0.38785959911872103,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H2,logistic_regression,K1,TESTED,2870,0.3668592119373446,0.39119783369748884,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H2,logistic_regression,K2,TESTED,2870,0.36654872006783484,0.39169708648433477,"{""C"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H2,logistic_regression,K3,TESTED,2870,0.36974628369514234,0.3906235732344492,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H2,xgboost,K1,TESTED,2870,0.3879379558082459,0.3985180183541543,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H2,xgboost,K2,TESTED,2870,0.38517266713418846,0.39566735527211505,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2024-H2,xgboost,K3,TESTED,2870,0.38645940015982344,0.39404997911772116,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H1,logistic_regression,K1,TESTED,2735,0.351244073527392,0.3786613312706051,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H1,logistic_regression,K2,TESTED,2735,0.3561161675906453,0.38281934005581264,"{""C"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H1,logistic_regression,K3,TESTED,2735,0.3522445300291077,0.3777115951086216,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H1,xgboost,K1,TESTED,2735,0.3715439732504209,0.38700647147150374,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H1,xgboost,K2,TESTED,2735,0.3658855247542973,0.3783342076630329,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H1,xgboost,K3,TESTED,2735,0.35830883088308835,0.36515356542019856,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H2,logistic_regression,K1,TESTED,2746,0.33969418871367574,0.36899172884055864,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H2,logistic_regression,K2,TESTED,2746,0.34192695346412777,0.37108010899585864,"{""C"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H2,logistic_regression,K3,TESTED,2746,0.33795380065960484,0.36277198708209313,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H2,xgboost,K1,TESTED,2746,0.35468763401728315,0.3719814537420731,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H2,xgboost,K2,TESTED,2746,0.3492879001181956,0.36190429127211177,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2025-H2,xgboost,K3,TESTED,2746,0.36043387493344053,0.37258000093776333,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K1,TESTED,3103,0.3288274397925249,0.37869297353174985,"{""C"": 0.01}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K2,TESTED,3103,0.3318616711345521,0.3815862379089489,"{""C"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K3,TESTED,3103,0.33400204469824396,0.379776207079763,"{""C"": 10.0}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2026-Jan-Jul,xgboost,K1,TESTED,3103,0.336414370657186,0.3650592127554293,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2026-Jan-Jul,xgboost,K2,TESTED,3103,0.35730983414717515,0.3761970644461545,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p25-k3,metaquotes-demo,primary,0.25,2026-Jan-Jul,xgboost,K3,TESTED,3103,0.3552837117476306,0.3652748241246282,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2023-H1,logistic_regression,K1,TESTED,2807,0.4237922723723678,0.42367467644284224,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2023-H1,logistic_regression,K2,TESTED,2807,0.42355496396540876,0.42369774234687463,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2023-H1,xgboost,K1,TESTED,2807,0.42458263267227175,0.42522114152036866,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2023-H1,xgboost,K2,TESTED,2807,0.41331809608303754,0.41383163186677613,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2023-H2,logistic_regression,K1,TESTED,2829,0.3912271704727124,0.39944652456420277,"{""C"": 1.0}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2023-H2,logistic_regression,K2,TESTED,2829,0.39240669690996777,0.3998074618162076,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2023-H2,xgboost,K1,TESTED,2829,0.39304857277507593,0.40970290761394573,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2023-H2,xgboost,K2,TESTED,2829,0.38469588584644354,0.4021805225632204,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2024-H1,logistic_regression,K1,TESTED,2808,0.3949741208291892,0.39637668229937423,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2024-H1,logistic_regression,K2,TESTED,2808,0.39870067486346555,0.4003672131519122,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2024-H1,xgboost,K1,TESTED,2808,0.39289739846952415,0.39812870362526526,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2024-H1,xgboost,K2,TESTED,2808,0.4006742708307795,0.40367407673859884,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2024-H2,logistic_regression,K1,TESTED,2870,0.3891278025090041,0.39135884777582003,"{""C"": 0.1}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2024-H2,logistic_regression,K2,TESTED,2870,0.3883122635211529,0.391458323412226,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2024-H2,xgboost,K1,TESTED,2870,0.3874310240411402,0.3897122085178659,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2024-H2,xgboost,K2,TESTED,2870,0.4003502177198752,0.4049364784566461,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2025-H1,logistic_regression,K1,TESTED,2735,0.39124069474861695,0.39394956612378085,"{""C"": 0.1}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2025-H1,logistic_regression,K2,TESTED,2735,0.3872470116524441,0.3900102367688505,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2025-H1,xgboost,K1,TESTED,2735,0.38951103217410776,0.3901050290518679,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2025-H1,xgboost,K2,TESTED,2735,0.38692937847537356,0.3875486346234818,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2025-H2,logistic_regression,K1,TESTED,2746,0.37949647686639243,0.38375352333739915,"{""C"": 0.1}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2025-H2,logistic_regression,K2,TESTED,2746,0.378420280302203,0.38275737274681987,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2025-H2,xgboost,K1,TESTED,2746,0.3765296531018849,0.37707151304998443,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2025-H2,xgboost,K2,TESTED,2746,0.3826923167481015,0.38288521115224805,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K1,TESTED,3103,0.37623994571225,0.38188789919917476,"{""C"": 1.0}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K2,TESTED,3103,0.3779733232608941,0.3837403354510763,"{""C"": 1.0}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2026-Jan-Jul,xgboost,K1,TESTED,3103,0.36724438400060405,0.3692387272316134,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5,metaquotes-demo,primary,0.5,2026-Jan-Jul,xgboost,K2,TESTED,3103,0.38560501919047335,0.3870546977271953,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H1,logistic_regression,K1,TESTED,2807,0.4237922723723678,0.42367467644284224,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H1,logistic_regression,K2,TESTED,2807,0.42355496396540876,0.42369774234687463,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H1,logistic_regression,K3,TESTED,2807,0.4132613066347537,0.41428419339298195,"{""C"": 10.0}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H1,xgboost,K1,TESTED,2807,0.42458263267227175,0.42522114152036866,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H1,xgboost,K2,TESTED,2807,0.41331809608303754,0.41383163186677613,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H1,xgboost,K3,TESTED,2807,0.42763691261516207,0.4286167862276493,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H2,logistic_regression,K1,TESTED,2829,0.3912271704727124,0.39944652456420277,"{""C"": 1.0}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H2,logistic_regression,K2,TESTED,2829,0.39240669690996777,0.3998074618162076,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H2,logistic_regression,K3,TESTED,2829,0.3893392554623958,0.39982797564336714,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H2,xgboost,K1,TESTED,2829,0.39304857277507593,0.40970290761394573,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H2,xgboost,K2,TESTED,2829,0.38469588584644354,0.4021805225632204,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2023-H2,xgboost,K3,TESTED,2829,0.38807387325142706,0.4105561767177788,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H1,logistic_regression,K1,TESTED,2808,0.3949741208291892,0.39637668229937423,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H1,logistic_regression,K2,TESTED,2808,0.39870067486346555,0.4003672131519122,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H1,logistic_regression,K3,TESTED,2808,0.39509116007355893,0.39836594897353605,"{""C"": 0.1}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H1,xgboost,K1,TESTED,2808,0.39289739846952415,0.39812870362526526,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H1,xgboost,K2,TESTED,2808,0.4006742708307795,0.40367407673859884,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H1,xgboost,K3,TESTED,2808,0.3941005992042473,0.3973878559543311,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H2,logistic_regression,K1,TESTED,2870,0.3891278025090041,0.39135884777582003,"{""C"": 0.1}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H2,logistic_regression,K2,TESTED,2870,0.3883122635211529,0.391458323412226,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H2,logistic_regression,K3,TESTED,2870,0.38706880010613115,0.39082204972723567,"{""C"": 0.1}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H2,xgboost,K1,TESTED,2870,0.3874310240411402,0.3897122085178659,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H2,xgboost,K2,TESTED,2870,0.4003502177198752,0.4049364784566461,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2024-H2,xgboost,K3,TESTED,2870,0.39197916032239716,0.3960011323290527,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H1,logistic_regression,K1,TESTED,2735,0.39124069474861695,0.39394956612378085,"{""C"": 0.1}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H1,logistic_regression,K2,TESTED,2735,0.3872470116524441,0.3900102367688505,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H1,logistic_regression,K3,TESTED,2735,0.3894629261862581,0.3928241111659107,"{""C"": 10.0}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H1,xgboost,K1,TESTED,2735,0.38951103217410776,0.3901050290518679,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H1,xgboost,K2,TESTED,2735,0.38692937847537356,0.3875486346234818,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H1,xgboost,K3,TESTED,2735,0.39186774976575994,0.3923252384879849,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H2,logistic_regression,K1,TESTED,2746,0.37949647686639243,0.38375352333739915,"{""C"": 0.1}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H2,logistic_regression,K2,TESTED,2746,0.378420280302203,0.38275737274681987,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H2,logistic_regression,K3,TESTED,2746,0.3824112639823816,0.3861075020335418,"{""C"": 10.0}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H2,xgboost,K1,TESTED,2746,0.3765296531018849,0.37707151304998443,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H2,xgboost,K2,TESTED,2746,0.3826923167481015,0.38288521115224805,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2025-H2,xgboost,K3,TESTED,2746,0.37950129599426113,0.37959221130019216,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K1,TESTED,3103,0.37623994571225,0.38188789919917476,"{""C"": 1.0}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K2,TESTED,3103,0.3779733232608941,0.3837403354510763,"{""C"": 1.0}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K3,TESTED,3103,0.37981915898365265,0.38551747922698404,"{""C"": 0.01}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2026-Jan-Jul,xgboost,K1,TESTED,3103,0.36724438400060405,0.3692387272316134,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2026-Jan-Jul,xgboost,K2,TESTED,3103,0.38560501919047335,0.3870546977271953,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-0p5-k3,metaquotes-demo,primary,0.5,2026-Jan-Jul,xgboost,K3,TESTED,3103,0.38337403267467046,0.3850748159059967,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2023-H1,logistic_regression,K1,TESTED,2807,0.3860682543878468,0.4112076517968031,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2023-H1,logistic_regression,K2,TESTED,2807,0.3836867948876049,0.40756630426078005,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2023-H1,xgboost,K1,TESTED,2807,0.40789690385568766,0.426385644752239,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2023-H1,xgboost,K2,TESTED,2807,0.39034229449023666,0.40512959271320703,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2023-H2,logistic_regression,K1,TESTED,2829,0.35884674739250927,0.41014773204302085,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2023-H2,logistic_regression,K2,TESTED,2829,0.3618736814444488,0.4199467919702564,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2023-H2,xgboost,K1,TESTED,2829,0.3692964363830767,0.43015014301796933,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2023-H2,xgboost,K2,TESTED,2829,0.38906182062226186,0.4443485447794974,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2024-H1,logistic_regression,K1,TESTED,2808,0.38444533919819096,0.414686015879343,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2024-H1,logistic_regression,K2,TESTED,2808,0.38173770628837467,0.41030353322840235,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2024-H1,xgboost,K1,TESTED,2808,0.37781405483647323,0.40230718310977,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2024-H1,xgboost,K2,TESTED,2808,0.37182011852511315,0.3933774422339498,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2024-H2,logistic_regression,K1,TESTED,2870,0.39369872002525064,0.41387041820317955,"{""C"": 1.0}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2024-H2,logistic_regression,K2,TESTED,2870,0.39225893631638953,0.41199258042130227,"{""C"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2024-H2,xgboost,K1,TESTED,2870,0.41137527895331666,0.44205734383344825,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2024-H2,xgboost,K2,TESTED,2870,0.3971057000491948,0.4198959738696601,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2025-H1,logistic_regression,K1,TESTED,2735,0.3852330043433967,0.3984633411175296,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2025-H1,logistic_regression,K2,TESTED,2735,0.3871580204033336,0.4019157394888963,"{""C"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2025-H1,xgboost,K1,TESTED,2735,0.3809409186109766,0.3980202154993299,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2025-H1,xgboost,K2,TESTED,2735,0.378810526787017,0.3920050489975165,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2025-H2,logistic_regression,K1,TESTED,2746,0.38572140346516376,0.3982872424062905,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2025-H2,logistic_regression,K2,TESTED,2746,0.37987231529603754,0.3902873106331364,"{""C"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2025-H2,xgboost,K1,TESTED,2746,0.37748952502780536,0.3906958980015689,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2025-H2,xgboost,K2,TESTED,2746,0.37873172138758454,0.39395399365314493,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K1,TESTED,3103,0.37687228481757656,0.3839627928847862,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K2,TESTED,3103,0.38847854261760645,0.3964183868520454,"{""C"": 10.0}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2026-Jan-Jul,xgboost,K1,TESTED,3103,0.38886084014464695,0.39834349757311655,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-1p0,metaquotes-demo,primary,1.0,2026-Jan-Jul,xgboost,K2,TESTED,3103,0.39814546598276696,0.40649730138101475,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H1,logistic_regression,K1,TESTED,2807,0.3860682543878468,0.4112076517968031,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H1,logistic_regression,K2,TESTED,2807,0.3836867948876049,0.40756630426078005,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H1,logistic_regression,K3,TESTED,2807,0.3824538293939543,0.41211378703839846,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H1,xgboost,K1,TESTED,2807,0.40789690385568766,0.426385644752239,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H1,xgboost,K2,TESTED,2807,0.39034229449023666,0.40512959271320703,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H1,xgboost,K3,TESTED,2807,0.4066313475159788,0.4253720947735184,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H2,logistic_regression,K1,TESTED,2829,0.35884674739250927,0.41014773204302085,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H2,logistic_regression,K2,TESTED,2829,0.3618736814444488,0.4199467919702564,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H2,logistic_regression,K3,TESTED,2829,0.3522163518980042,0.40907836336905473,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H2,xgboost,K1,TESTED,2829,0.3692964363830767,0.43015014301796933,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H2,xgboost,K2,TESTED,2829,0.38906182062226186,0.4443485447794974,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2023-H2,xgboost,K3,TESTED,2829,0.37798379123796977,0.4306637345476914,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H1,logistic_regression,K1,TESTED,2808,0.38444533919819096,0.414686015879343,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H1,logistic_regression,K2,TESTED,2808,0.38173770628837467,0.41030353322840235,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H1,logistic_regression,K3,TESTED,2808,0.37735467797617855,0.40927363256876687,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H1,xgboost,K1,TESTED,2808,0.37781405483647323,0.40230718310977,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H1,xgboost,K2,TESTED,2808,0.37182011852511315,0.3933774422339498,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H1,xgboost,K3,TESTED,2808,0.37753230956484635,0.39913668145550635,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H2,logistic_regression,K1,TESTED,2870,0.39369872002525064,0.41387041820317955,"{""C"": 1.0}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H2,logistic_regression,K2,TESTED,2870,0.39225893631638953,0.41199258042130227,"{""C"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H2,logistic_regression,K3,TESTED,2870,0.3907767308550441,0.4122440728974219,"{""C"": 10.0}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H2,xgboost,K1,TESTED,2870,0.41137527895331666,0.44205734383344825,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H2,xgboost,K2,TESTED,2870,0.3971057000491948,0.4198959738696601,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2024-H2,xgboost,K3,TESTED,2870,0.416677421028901,0.44101279296017576,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H1,logistic_regression,K1,TESTED,2735,0.3852330043433967,0.3984633411175296,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H1,logistic_regression,K2,TESTED,2735,0.3871580204033336,0.4019157394888963,"{""C"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H1,logistic_regression,K3,TESTED,2735,0.38891221927813513,0.40269784247049706,"{""C"": 10.0}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H1,xgboost,K1,TESTED,2735,0.3809409186109766,0.3980202154993299,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H1,xgboost,K2,TESTED,2735,0.378810526787017,0.3920050489975165,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H1,xgboost,K3,TESTED,2735,0.3969071504937607,0.4101801212305663,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H2,logistic_regression,K1,TESTED,2746,0.38572140346516376,0.3982872424062905,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H2,logistic_regression,K2,TESTED,2746,0.37987231529603754,0.3902873106331364,"{""C"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H2,logistic_regression,K3,TESTED,2746,0.38035324569485235,0.3927508624629434,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H2,xgboost,K1,TESTED,2746,0.37748952502780536,0.3906958980015689,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H2,xgboost,K2,TESTED,2746,0.37873172138758454,0.39395399365314493,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2025-H2,xgboost,K3,TESTED,2746,0.37253287008364216,0.38318916895305727,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K1,TESTED,3103,0.37687228481757656,0.3839627928847862,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K2,TESTED,3103,0.38847854261760645,0.3964183868520454,"{""C"": 10.0}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K3,TESTED,3103,0.3883888340462343,0.39466171186418714,"{""C"": 0.01}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2026-Jan-Jul,xgboost,K1,TESTED,3103,0.38886084014464695,0.39834349757311655,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2026-Jan-Jul,xgboost,K2,TESTED,3103,0.39814546598276696,0.40649730138101475,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+metaquotes-demo-primary-1p0-k3,metaquotes-demo,primary,1.0,2026-Jan-Jul,xgboost,K3,TESTED,3103,0.39823419902060836,0.40166270834974566,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K1,TESTED,2660,0.37437859144449864,0.39405736563631305,"{""C"": 1.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K2,TESTED,2660,0.36239682076636365,0.38243064557946593,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K1,TESTED,2660,0.3657893210119425,0.37289214415348715,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K2,TESTED,2660,0.37908393173892657,0.39041242954128624,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K1,TESTED,2502,0.33909958379437577,0.37041623667010665,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K2,TESTED,2502,0.3496493366487039,0.3790304022395407,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K1,TESTED,2502,0.37340450660990426,0.3817206979585543,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K2,TESTED,2502,0.370262178707716,0.3773519329086747,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K1,TESTED,2660,0.3470727154669704,0.3752137432123344,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K2,TESTED,2660,0.3497909713173624,0.3751572699704484,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K1,TESTED,2660,0.3578341189515872,0.36829704007368663,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K2,TESTED,2660,0.3550906102499673,0.3645665828069055,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K1,TESTED,2956,0.3327287563617782,0.3746890938999414,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K2,TESTED,2956,0.3331936468350761,0.3753315031917493,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K1,TESTED,2956,0.34862091095299624,0.3625826283328794,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K2,TESTED,2956,0.3684356937500393,0.38434548041816496,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,logistic_regression,K3,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H1,xgboost,K3,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,logistic_regression,K3,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2023-H2,xgboost,K3,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,logistic_regression,K3,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H1,xgboost,K3,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K1,TESTED,2660,0.37437859144449864,0.39405736563631305,"{""C"": 1.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K2,TESTED,2660,0.36239682076636365,0.38243064557946593,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,logistic_regression,K3,TESTED,2660,0.3720251288268437,0.3845372050816697,"{""C"": 1.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K1,TESTED,2660,0.3657893210119425,0.37289214415348715,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K2,TESTED,2660,0.37908393173892657,0.39041242954128624,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2024-H2,xgboost,K3,TESTED,2660,0.38540495055057716,0.393147331931361,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K1,TESTED,2502,0.33909958379437577,0.37041623667010665,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K2,TESTED,2502,0.3496493366487039,0.3790304022395407,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,logistic_regression,K3,TESTED,2502,0.3530206147203607,0.3749819104895437,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K1,TESTED,2502,0.37340450660990426,0.3817206979585543,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K2,TESTED,2502,0.370262178707716,0.3773519329086747,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H1,xgboost,K3,TESTED,2502,0.36716488946983333,0.3796519696807943,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K1,TESTED,2660,0.3470727154669704,0.3752137432123344,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K2,TESTED,2660,0.3497909713173624,0.3751572699704484,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,logistic_regression,K3,TESTED,2660,0.3536921656790983,0.37289085108378806,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K1,TESTED,2660,0.3578341189515872,0.36829704007368663,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K2,TESTED,2660,0.3550906102499673,0.3645665828069055,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2025-H2,xgboost,K3,TESTED,2660,0.36271070628907615,0.3688898181486149,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K1,TESTED,2956,0.3327287563617782,0.3746890938999414,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K2,TESTED,2956,0.3331936468350761,0.3753315031917493,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,logistic_regression,K3,TESTED,2956,0.33609248616432524,0.3701415610115852,"{""C"": 1.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K1,TESTED,2956,0.34862091095299624,0.3625826283328794,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K2,TESTED,2956,0.3684356937500393,0.38434548041816496,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p25-k3,ultima-markets-demo,holiday_reset_sensitivity,0.25,2026-Jan-Jul,xgboost,K3,TESTED,2956,0.3675835694162501,0.37589277394031967,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K1,TESTED,2660,0.387285979698962,0.3941003539603061,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K2,TESTED,2660,0.37625048892413865,0.38645777165888523,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K1,TESTED,2660,0.39129797016773643,0.3942725196625377,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K2,TESTED,2660,0.39393802750884394,0.3977309306434644,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K1,TESTED,2502,0.390658128294289,0.39880548217542944,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K2,TESTED,2502,0.38133488009212363,0.3906606028091089,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K1,TESTED,2502,0.38505577926876794,0.38651119518869953,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K2,TESTED,2502,0.37423890150500894,0.37554818912463905,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K1,TESTED,2660,0.3798012137214655,0.3848356878127556,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K2,TESTED,2660,0.38393074966504886,0.3883856712233685,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K1,TESTED,2660,0.36527892881008817,0.365710842415585,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K2,TESTED,2660,0.37096790762110426,0.37115312942649514,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K1,TESTED,2956,0.37696873313084533,0.3829819742847944,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K2,TESTED,2956,0.38660333154218124,0.391046899719864,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K1,TESTED,2956,0.3651625993032967,0.3652557834372386,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K2,TESTED,2956,0.3682327278774484,0.3688129381698193,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,logistic_regression,K3,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H1,xgboost,K3,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,logistic_regression,K3,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2023-H2,xgboost,K3,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,logistic_regression,K3,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H1,xgboost,K3,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K1,TESTED,2660,0.387285979698962,0.3941003539603061,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K2,TESTED,2660,0.37625048892413865,0.38645777165888523,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,logistic_regression,K3,TESTED,2660,0.39012942788864874,0.3978311672590185,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K1,TESTED,2660,0.39129797016773643,0.3942725196625377,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K2,TESTED,2660,0.39393802750884394,0.3977309306434644,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2024-H2,xgboost,K3,TESTED,2660,0.38656219594123514,0.3922809169561116,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K1,TESTED,2502,0.390658128294289,0.39880548217542944,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K2,TESTED,2502,0.38133488009212363,0.3906606028091089,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,logistic_regression,K3,TESTED,2502,0.3906524181037337,0.3959994281830837,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K1,TESTED,2502,0.38505577926876794,0.38651119518869953,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K2,TESTED,2502,0.37423890150500894,0.37554818912463905,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H1,xgboost,K3,TESTED,2502,0.3982015717221872,0.3982490618914169,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K1,TESTED,2660,0.3798012137214655,0.3848356878127556,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K2,TESTED,2660,0.38393074966504886,0.3883856712233685,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,logistic_regression,K3,TESTED,2660,0.38179200393563,0.38299484133865097,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K1,TESTED,2660,0.36527892881008817,0.365710842415585,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K2,TESTED,2660,0.37096790762110426,0.37115312942649514,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2025-H2,xgboost,K3,TESTED,2660,0.37584118228557656,0.3758016686846668,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K1,TESTED,2956,0.37696873313084533,0.3829819742847944,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K2,TESTED,2956,0.38660333154218124,0.391046899719864,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,logistic_regression,K3,TESTED,2956,0.3830843891973363,0.38608494785095565,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K1,TESTED,2956,0.3651625993032967,0.3652557834372386,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K2,TESTED,2956,0.3682327278774484,0.3688129381698193,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-0p5-k3,ultima-markets-demo,holiday_reset_sensitivity,0.5,2026-Jan-Jul,xgboost,K3,TESTED,2956,0.3665507734913119,0.3673955560472249,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K1,TESTED,2660,0.38935001770593974,0.41419264514501153,"{""C"": 1.0}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K2,TESTED,2660,0.3835070151820597,0.4103228296909624,"{""C"": 1.0}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K1,TESTED,2660,0.3958021876839884,0.402732194033984,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K2,TESTED,2660,0.3972795416442576,0.4216917971828103,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K1,TESTED,2502,0.3754188546967103,0.38926065408969696,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K2,TESTED,2502,0.3560489529569842,0.36790437821983457,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K1,TESTED,2502,0.37144895211208157,0.3745393283443903,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K2,TESTED,2502,0.3905739348225095,0.39847773744330944,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K1,TESTED,2660,0.3673314089646709,0.379377677642579,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K2,TESTED,2660,0.37449081015704727,0.38639755281129773,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K1,TESTED,2660,0.38249984932111336,0.39978819432047064,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K2,TESTED,2660,0.37816323352739856,0.39365986725881114,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K1,TESTED,2956,0.36944058329965807,0.3812104159796299,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K2,TESTED,2956,0.3856916588150927,0.39512748038572365,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K1,TESTED,2956,0.3825959939332107,0.39026322230764116,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K2,TESTED,2956,0.3918684946828394,0.3955367929381138,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,logistic_regression,K3,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K1,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K2,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H1,xgboost,K3,NOT TESTED,2525,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,logistic_regression,K3,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K1,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K2,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2023-H2,xgboost,K3,NOT TESTED,2622,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,logistic_regression,K3,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K1,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K2,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H1,xgboost,K3,NOT TESTED,2524,,,null,No candidate passed all inner blocks
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K1,TESTED,2660,0.38935001770593974,0.41419264514501153,"{""C"": 1.0}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K2,TESTED,2660,0.3835070151820597,0.4103228296909624,"{""C"": 1.0}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,logistic_regression,K3,TESTED,2660,0.3817101219661434,0.4126973913501922,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K1,TESTED,2660,0.3958021876839884,0.402732194033984,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K2,TESTED,2660,0.3972795416442576,0.4216917971828103,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2024-H2,xgboost,K3,TESTED,2660,0.4015171520590817,0.4152541420777083,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K1,TESTED,2502,0.3754188546967103,0.38926065408969696,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K2,TESTED,2502,0.3560489529569842,0.36790437821983457,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,logistic_regression,K3,TESTED,2502,0.3688374686742744,0.38719811384613495,"{""C"": 1.0}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K1,TESTED,2502,0.37144895211208157,0.3745393283443903,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K2,TESTED,2502,0.3905739348225095,0.39847773744330944,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H1,xgboost,K3,TESTED,2502,0.4020106407359246,0.4083950377974807,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K1,TESTED,2660,0.3673314089646709,0.379377677642579,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K2,TESTED,2660,0.37449081015704727,0.38639755281129773,"{""C"": 10.0}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,logistic_regression,K3,TESTED,2660,0.3772795698363667,0.3976328970779219,"{""C"": 0.01}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K1,TESTED,2660,0.38249984932111336,0.39978819432047064,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K2,TESTED,2660,0.37816323352739856,0.39365986725881114,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2025-H2,xgboost,K3,TESTED,2660,0.3721438817413762,0.37994334386258405,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K1,TESTED,2956,0.36944058329965807,0.3812104159796299,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K2,TESTED,2956,0.3856916588150927,0.39512748038572365,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,logistic_regression,K3,TESTED,2956,0.37393859335753715,0.38675675337847043,"{""C"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K1,TESTED,2956,0.3825959939332107,0.39026322230764116,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K2,TESTED,2956,0.3918684946828394,0.3955367929381138,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-holiday_reset_sensitivity-1p0-k3,ultima-markets-demo,holiday_reset_sensitivity,1.0,2026-Jan-Jul,xgboost,K3,TESTED,2956,0.38211833411635304,0.3827459560252145,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2023-H1,logistic_regression,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2023-H1,logistic_regression,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2023-H1,xgboost,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2023-H1,xgboost,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2023-H2,logistic_regression,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2023-H2,logistic_regression,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2023-H2,xgboost,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2023-H2,xgboost,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2024-H1,logistic_regression,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2024-H1,logistic_regression,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2024-H1,xgboost,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2024-H1,xgboost,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2024-H2,logistic_regression,K1,TESTED,2868,0.3667837392220505,0.38957901144330037,"{""C"": 0.01}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2024-H2,logistic_regression,K2,TESTED,2868,0.3613450143441268,0.38431448614748004,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2024-H2,xgboost,K1,TESTED,2868,0.375400169398739,0.38346134406936155,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2024-H2,xgboost,K2,TESTED,2868,0.38730653114807945,0.39559443843880776,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2025-H1,logistic_regression,K1,TESTED,2784,0.34731196189179836,0.3782346065214548,"{""C"": 0.01}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2025-H1,logistic_regression,K2,TESTED,2784,0.35565802041114053,0.3834777039516141,"{""C"": 1.0}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2025-H1,xgboost,K1,TESTED,2784,0.36721823466617104,0.37402887199906115,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2025-H1,xgboost,K2,TESTED,2784,0.3715560728872445,0.3770905270516997,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2025-H2,logistic_regression,K1,TESTED,2813,0.3441721336221956,0.3753296448176355,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2025-H2,logistic_regression,K2,TESTED,2813,0.35167749608731064,0.3792900258196099,"{""C"": 1.0}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2025-H2,xgboost,K1,TESTED,2813,0.35535112063777374,0.3632950378615288,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2025-H2,xgboost,K2,TESTED,2813,0.3662300965096286,0.3747494412983576,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K1,TESTED,3285,0.33710887326120503,0.38176265038852203,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K2,TESTED,3285,0.3343191445187104,0.3804821767869884,"{""C"": 0.01}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2026-Jan-Jul,xgboost,K1,TESTED,3285,0.3543020656593809,0.37142200478319776,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25,ultima-markets-demo,primary,0.25,2026-Jan-Jul,xgboost,K2,TESTED,3285,0.35642971505244797,0.37485480449804526,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H1,logistic_regression,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H1,logistic_regression,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H1,logistic_regression,K3,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H1,xgboost,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H1,xgboost,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H1,xgboost,K3,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H2,logistic_regression,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H2,logistic_regression,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H2,logistic_regression,K3,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H2,xgboost,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H2,xgboost,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2023-H2,xgboost,K3,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H1,logistic_regression,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H1,logistic_regression,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H1,logistic_regression,K3,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H1,xgboost,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H1,xgboost,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H1,xgboost,K3,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H2,logistic_regression,K1,TESTED,2868,0.3667837392220505,0.38957901144330037,"{""C"": 0.01}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H2,logistic_regression,K2,TESTED,2868,0.3613450143441268,0.38431448614748004,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H2,logistic_regression,K3,TESTED,2868,0.3724288403355218,0.3858575536584577,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H2,xgboost,K1,TESTED,2868,0.375400169398739,0.38346134406936155,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H2,xgboost,K2,TESTED,2868,0.38730653114807945,0.39559443843880776,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2024-H2,xgboost,K3,TESTED,2868,0.3882075981729507,0.39355087930667887,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H1,logistic_regression,K1,TESTED,2784,0.34731196189179836,0.3782346065214548,"{""C"": 0.01}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H1,logistic_regression,K2,TESTED,2784,0.35565802041114053,0.3834777039516141,"{""C"": 1.0}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H1,logistic_regression,K3,TESTED,2784,0.355369162740826,0.3774622021165303,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H1,xgboost,K1,TESTED,2784,0.36721823466617104,0.37402887199906115,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H1,xgboost,K2,TESTED,2784,0.3715560728872445,0.3770905270516997,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H1,xgboost,K3,TESTED,2784,0.373062973815604,0.3777957270935981,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H2,logistic_regression,K1,TESTED,2813,0.3441721336221956,0.3753296448176355,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H2,logistic_regression,K2,TESTED,2813,0.35167749608731064,0.3792900258196099,"{""C"": 1.0}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H2,logistic_regression,K3,TESTED,2813,0.3560178045763001,0.3749774132656382,"{""C"": 0.01}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H2,xgboost,K1,TESTED,2813,0.35535112063777374,0.3632950378615288,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H2,xgboost,K2,TESTED,2813,0.3662300965096286,0.3747494412983576,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2025-H2,xgboost,K3,TESTED,2813,0.36507997513858087,0.37205311462604956,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K1,TESTED,3285,0.33710887326120503,0.38176265038852203,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K2,TESTED,3285,0.3343191445187104,0.3804821767869884,"{""C"": 0.01}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2026-Jan-Jul,logistic_regression,K3,TESTED,3285,0.3367139624106059,0.3751419393759738,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2026-Jan-Jul,xgboost,K1,TESTED,3285,0.3543020656593809,0.37142200478319776,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2026-Jan-Jul,xgboost,K2,TESTED,3285,0.35642971505244797,0.37485480449804526,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p25-k3,ultima-markets-demo,primary,0.25,2026-Jan-Jul,xgboost,K3,TESTED,3285,0.3715289586959661,0.38141544632416924,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2023-H1,logistic_regression,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2023-H1,logistic_regression,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2023-H1,xgboost,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2023-H1,xgboost,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2023-H2,logistic_regression,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2023-H2,logistic_regression,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2023-H2,xgboost,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2023-H2,xgboost,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2024-H1,logistic_regression,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2024-H1,logistic_regression,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2024-H1,xgboost,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2024-H1,xgboost,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2024-H2,logistic_regression,K1,TESTED,2868,0.3834983949282253,0.3904849713774358,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2024-H2,logistic_regression,K2,TESTED,2868,0.385911257134137,0.3945645008949743,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2024-H2,xgboost,K1,TESTED,2868,0.39696409984483133,0.4015210139318963,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2024-H2,xgboost,K2,TESTED,2868,0.39819074537280724,0.4026730778968875,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2025-H1,logistic_regression,K1,TESTED,2784,0.3889120680573126,0.396969328837432,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2025-H1,logistic_regression,K2,TESTED,2784,0.37995554142344856,0.38967489867053356,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2025-H1,xgboost,K1,TESTED,2784,0.3886246327301642,0.38989702810723365,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2025-H1,xgboost,K2,TESTED,2784,0.3784881831003048,0.3798218086130076,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2025-H2,logistic_regression,K1,TESTED,2813,0.3755574653653569,0.38133547504666976,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2025-H2,logistic_regression,K2,TESTED,2813,0.3765018887849794,0.3811805600463481,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2025-H2,xgboost,K1,TESTED,2813,0.37351208062379193,0.3745623090788246,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2025-H2,xgboost,K2,TESTED,2813,0.3864070244491346,0.38746743574629045,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K1,TESTED,3285,0.37496651304367923,0.3823962321957142,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K2,TESTED,3285,0.3818647345797541,0.38829300573879744,"{""C"": 0.01}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2026-Jan-Jul,xgboost,K1,TESTED,3285,0.36425491454197073,0.36537392033906807,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5,ultima-markets-demo,primary,0.5,2026-Jan-Jul,xgboost,K2,TESTED,3285,0.3710294244278196,0.3723235284876884,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H1,logistic_regression,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H1,logistic_regression,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H1,logistic_regression,K3,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H1,xgboost,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H1,xgboost,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H1,xgboost,K3,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H2,logistic_regression,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H2,logistic_regression,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H2,logistic_regression,K3,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H2,xgboost,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H2,xgboost,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2023-H2,xgboost,K3,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H1,logistic_regression,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H1,logistic_regression,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H1,logistic_regression,K3,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H1,xgboost,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H1,xgboost,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H1,xgboost,K3,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H2,logistic_regression,K1,TESTED,2868,0.3834983949282253,0.3904849713774358,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H2,logistic_regression,K2,TESTED,2868,0.385911257134137,0.3945645008949743,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H2,logistic_regression,K3,TESTED,2868,0.3900281993693897,0.39580536776407343,"{""C"": 1.0}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H2,xgboost,K1,TESTED,2868,0.39696409984483133,0.4015210139318963,"{""max_depth"": 3, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H2,xgboost,K2,TESTED,2868,0.39819074537280724,0.4026730778968875,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2024-H2,xgboost,K3,TESTED,2868,0.3996728749676813,0.40314527765218316,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H1,logistic_regression,K1,TESTED,2784,0.3889120680573126,0.396969328837432,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H1,logistic_regression,K2,TESTED,2784,0.37995554142344856,0.38967489867053356,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H1,logistic_regression,K3,TESTED,2784,0.391622532404829,0.3959839064268134,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H1,xgboost,K1,TESTED,2784,0.3886246327301642,0.38989702810723365,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H1,xgboost,K2,TESTED,2784,0.3784881831003048,0.3798218086130076,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H1,xgboost,K3,TESTED,2784,0.38245894888073345,0.3832013481848602,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H2,logistic_regression,K1,TESTED,2813,0.3755574653653569,0.38133547504666976,"{""C"": 10.0}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H2,logistic_regression,K2,TESTED,2813,0.3765018887849794,0.3811805600463481,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H2,logistic_regression,K3,TESTED,2813,0.38019936605119325,0.3809791413049212,"{""C"": 1.0}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H2,xgboost,K1,TESTED,2813,0.37351208062379193,0.3745623090788246,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H2,xgboost,K2,TESTED,2813,0.3864070244491346,0.38746743574629045,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2025-H2,xgboost,K3,TESTED,2813,0.3843922427826376,0.38448563174282513,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K1,TESTED,3285,0.37496651304367923,0.3823962321957142,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K2,TESTED,3285,0.3818647345797541,0.38829300573879744,"{""C"": 0.01}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2026-Jan-Jul,logistic_regression,K3,TESTED,3285,0.3815151835488407,0.38613048383305526,"{""C"": 0.1}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2026-Jan-Jul,xgboost,K1,TESTED,3285,0.36425491454197073,0.36537392033906807,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2026-Jan-Jul,xgboost,K2,TESTED,3285,0.3710294244278196,0.3723235284876884,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-0p5-k3,ultima-markets-demo,primary,0.5,2026-Jan-Jul,xgboost,K3,TESTED,3285,0.3701885573774137,0.37091021122604667,"{""max_depth"": 3, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2023-H1,logistic_regression,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2023-H1,logistic_regression,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2023-H1,xgboost,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2023-H1,xgboost,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2023-H2,logistic_regression,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2023-H2,logistic_regression,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2023-H2,xgboost,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2023-H2,xgboost,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2024-H1,logistic_regression,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2024-H1,logistic_regression,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2024-H1,xgboost,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2024-H1,xgboost,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2024-H2,logistic_regression,K1,TESTED,2868,0.3815646115017217,0.40491317853761194,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2024-H2,logistic_regression,K2,TESTED,2868,0.3790499185345774,0.40521674283927894,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2024-H2,xgboost,K1,TESTED,2868,0.3897401757668719,0.41156051150517264,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2024-H2,xgboost,K2,TESTED,2868,0.3887374046045912,0.4031713437821796,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2025-H1,logistic_regression,K1,TESTED,2784,0.3806800514257885,0.39642643714393183,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2025-H1,logistic_regression,K2,TESTED,2784,0.3658497475692491,0.37818441115097423,"{""C"": 1.0}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2025-H1,xgboost,K1,TESTED,2784,0.3743856861369598,0.3788710009164915,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2025-H1,xgboost,K2,TESTED,2784,0.3806657409208394,0.38368283936355385,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2025-H2,logistic_regression,K1,TESTED,2813,0.38251587800922576,0.3957171526353917,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2025-H2,logistic_regression,K2,TESTED,2813,0.38745468444357245,0.4008646966823068,"{""C"": 0.01}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2025-H2,xgboost,K1,TESTED,2813,0.38663958757849953,0.40586738015459184,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2025-H2,xgboost,K2,TESTED,2813,0.36651073496473935,0.37359060110632436,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K1,TESTED,3285,0.3687233704603512,0.3836582784062352,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K2,TESTED,3285,0.377176508068837,0.3894650653835112,"{""C"": 0.01}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2026-Jan-Jul,xgboost,K1,TESTED,3285,0.38295887409146245,0.3920194306748886,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0,ultima-markets-demo,primary,1.0,2026-Jan-Jul,xgboost,K2,TESTED,3285,0.38855010070773505,0.39735564252498695,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H1,logistic_regression,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H1,logistic_regression,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H1,logistic_regression,K3,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H1,xgboost,K1,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H1,xgboost,K2,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H1,xgboost,K3,NOT TESTED,2807,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H2,logistic_regression,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H2,logistic_regression,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H2,logistic_regression,K3,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H2,xgboost,K1,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H2,xgboost,K2,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2023-H2,xgboost,K3,NOT TESTED,2829,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H1,logistic_regression,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H1,logistic_regression,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H1,logistic_regression,K3,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H1,xgboost,K1,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H1,xgboost,K2,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H1,xgboost,K3,NOT TESTED,2806,,,null,No candidate passed all inner blocks
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H2,logistic_regression,K1,TESTED,2868,0.3815646115017217,0.40491317853761194,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H2,logistic_regression,K2,TESTED,2868,0.3790499185345774,0.40521674283927894,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H2,logistic_regression,K3,TESTED,2868,0.389366898384458,0.42087690397746264,"{""C"": 0.01}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H2,xgboost,K1,TESTED,2868,0.3897401757668719,0.41156051150517264,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H2,xgboost,K2,TESTED,2868,0.3887374046045912,0.4031713437821796,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2024-H2,xgboost,K3,TESTED,2868,0.4087187015129458,0.4273390082154707,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H1,logistic_regression,K1,TESTED,2784,0.3806800514257885,0.39642643714393183,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H1,logistic_regression,K2,TESTED,2784,0.3658497475692491,0.37818441115097423,"{""C"": 1.0}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H1,logistic_regression,K3,TESTED,2784,0.3695203947588806,0.3861472014166973,"{""C"": 0.01}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H1,xgboost,K1,TESTED,2784,0.3743856861369598,0.3788710009164915,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H1,xgboost,K2,TESTED,2784,0.3806657409208394,0.38368283936355385,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H1,xgboost,K3,TESTED,2784,0.3944976829068845,0.39474910982648176,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.1}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H2,logistic_regression,K1,TESTED,2813,0.38251587800922576,0.3957171526353917,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H2,logistic_regression,K2,TESTED,2813,0.38745468444357245,0.4008646966823068,"{""C"": 0.01}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H2,logistic_regression,K3,TESTED,2813,0.37257485586273403,0.39033324118229773,"{""C"": 0.01}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H2,xgboost,K1,TESTED,2813,0.38663958757849953,0.40586738015459184,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H2,xgboost,K2,TESTED,2813,0.36651073496473935,0.37359060110632436,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2025-H2,xgboost,K3,TESTED,2813,0.36905360853757024,0.3762451482053159,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K1,TESTED,3285,0.3687233704603512,0.3836582784062352,"{""C"": 10.0}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K2,TESTED,3285,0.377176508068837,0.3894650653835112,"{""C"": 0.01}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2026-Jan-Jul,logistic_regression,K3,TESTED,3285,0.3739542373981975,0.3859846029076773,"{""C"": 0.01}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2026-Jan-Jul,xgboost,K1,TESTED,3285,0.38295887409146245,0.3920194306748886,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2026-Jan-Jul,xgboost,K2,TESTED,3285,0.38855010070773505,0.39735564252498695,"{""max_depth"": 5, ""n_estimators"": 100, ""learning_rate"": 0.05}",
+ultima-markets-demo-primary-1p0-k3,ultima-markets-demo,primary,1.0,2026-Jan-Jul,xgboost,K3,TESTED,3285,0.382353546379949,0.3844843798414838,"{""max_depth"": 5, ""n_estimators"": 300, ""learning_rate"": 0.05}",

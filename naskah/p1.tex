@@ -1,0 +1,33 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman12-regular.otf}[BoldFont=lmroman12-bold.otf,ItalicFont=lmroman12-italic.otf,BoldItalicFont=lmroman10-bolditalic.otf]
+\usepackage{polyglossia}
+\setdefaultlanguage{indonesian}
+\usepackage{amsmath,amssymb,array,booktabs,longtable,graphicx}
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\pgfplotsset{compat=1.18}
+\makeatletter\def\input@path{{bibliography/}}\makeatother
+\usepackage[backend=biber,style=filkom-authoryear,language=english,autolang=none]{biblatex}
+\DeclareLanguageMapping{indonesian}{english}
+\addbibresource{bibliography/references.bib}
+\usepackage{xurl,hyperref}
+\hypersetup{hidelinks}
+\emergencystretch=3em
+\title{Dokumentasi Penelitian untuk P1\\Klasifikasi Arah XAUUSD}
+\author{Nathan}
+\date{8 Oktober 2026 -- Draf untuk pembahasan P1}
+\begin{document}
+\renewcommand{\chaptername}{BAB}
+\renewcommand{\contentsname}{DAFTAR ISI}
+\maketitle
+\chapter*{Status dokumen}
+Dokumen ini adalah salinan kurasi Bab 1--4 untuk pembahasan P1, bukan naskah yang telah disahkan. Naskah resmi tetap pada repositori penelitian privat. Hasil K3 terbatas pada snapshot retrospektif. Perhitungan manual dan latihan tersedia terpisah pada direktori belajar. Persentase kemajuan formal ditentukan oleh pembimbing terhadap target berita acara P0.
+\tableofcontents
+\input{chapters/bab1-pendahuluan}
+\input{chapters/bab2-landasan-kepustakaan}
+\input{chapters/bab3-metodologi}
+\input{chapters/bab4-hasil}
+\printbibliography[heading=bibintoc,title={DAFTAR REFERENSI}]
+\end{document}

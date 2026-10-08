@@ -1,0 +1,6315 @@
+{
+  "source": "ultima-markets-demo",
+  "policy": "holiday_reset_sensitivity",
+  "threshold": 1.0,
+  "paired": {
+    "logistic_regression": {
+      "macro_f1": {
+        "total_folds": 7,
+        "paired_folds": 4,
+        "deltas": [
+          -0.0058430025238800365,
+          -0.019369901739726136,
+          0.007159401192376347,
+          0.016251075515434643
+        ],
+        "mean": -0.00045060688894879575,
+        "median": 0.0006581993342481551,
+        "sample_std": 0.015533577249182933,
+        "positive_folds": 2
+      },
+      "balanced_accuracy": {
+        "total_folds": 7,
+        "paired_folds": 4,
+        "deltas": [
+          -0.0038698154540491303,
+          -0.021356275869862384,
+          0.007019875168718714,
+          0.013917064406093749
+        ],
+        "mean": -0.001072287937274763,
+        "median": 0.001575029857334792,
+        "sample_std": 0.015377799084655766,
+        "positive_folds": 2
+      },
+      "fixed_macro_f1": {
+        "total_folds": 7,
+        "paired_folds": 4,
+        "deltas": [
+          -0.0058430025238800365,
+          -0.017315644337918323,
+          0.009090476260681157,
+          0.016251075515434643
+        ],
+        "mean": 0.0005457262285793602,
+        "median": 0.0016237368684005604,
+        "sample_std": 0.015050084860441602,
+        "positive_folds": 2
+      },
+      "fixed_balanced_accuracy": {
+        "total_folds": 7,
+        "paired_folds": 4,
+        "deltas": [
+          -0.0038698154540491303,
+          -0.01883365136586168,
+          0.009043020193151896,
+          0.013917064406093749
+        ],
+        "mean": 6.415444483370836e-05,
+        "median": 0.002586602369551383,
+        "sample_std": 0.014664314146311877,
+        "positive_folds": 2
+      },
+      "k3_minus_k2": {
+        "macro_f1": {
+          "total_folds": 7,
+          "paired_folds": 4,
+          "deltas": [
+            -0.0017968932159163065,
+            0.012788515717290228,
+            0.002788759679319408,
+            -0.011753065457555556
+          ],
+          "mean": 0.0005068291807844433,
+          "median": 0.0004959332317015508,
+          "sample_std": 0.010192467552158146,
+          "positive_folds": 2
+        },
+        "balanced_accuracy": {
+          "total_folds": 7,
+          "paired_folds": 4,
+          "deltas": [
+            0.002374561659229779,
+            0.01929373562630038,
+            0.011235344266624148,
+            -0.00837072700725322
+          ],
+          "mean": 0.006133228636225271,
+          "median": 0.006804952962926963,
+          "sample_std": 0.011884483369695747,
+          "positive_folds": 3
+        }
+      },
+      "k3_minus_k2_fixed": {
+        "macro_f1": {
+          "total_folds": 7,
+          "paired_folds": 4,
+          "deltas": [
+            0.0005080168321915379,
+            0.014330591283768956,
+            0.0008576846110145975,
+            -0.011753065457555556
+          ],
+          "mean": 0.000985806817354884,
+          "median": 0.0006828507216030677,
+          "sample_std": 0.010655309128336104,
+          "positive_folds": 3
+        },
+        "balanced_accuracy": {
+          "total_folds": 7,
+          "paired_folds": 4,
+          "deltas": [
+            0.004595240186570149,
+            0.020069852474304317,
+            0.009212199242190966,
+            -0.00837072700725322
+          ],
+          "mean": 0.006376641223953053,
+          "median": 0.006903719714380557,
+          "sample_std": 0.011778549472442418,
+          "positive_folds": 3
+        }
+      }
+    },
+    "xgboost": {
+      "macro_f1": {
+        "total_folds": 7,
+        "paired_folds": 4,
+        "deltas": [
+          0.001477353960269212,
+          0.01912498271042795,
+          -0.004336615793714804,
+          0.00927250074962871
+        ],
+        "mean": 0.006384555406652767,
+        "median": 0.005374927354948961,
+        "sample_std": 0.010160099312667118,
+        "positive_folds": 3
+      },
+      "balanced_accuracy": {
+        "total_folds": 7,
+        "paired_folds": 4,
+        "deltas": [
+          0.018959603148826276,
+          0.023938409098919144,
+          -0.0061283270616595,
+          0.005273570630472624
+        ],
+        "mean": 0.010510813954139636,
+        "median": 0.01211658688964945,
+        "sample_std": 0.013613376774375316,
+        "positive_folds": 3
+      },
+      "fixed_macro_f1": {
+        "total_folds": 7,
+        "paired_folds": 4,
+        "deltas": [
+          -0.00942585152385017,
+          0.012681181190502877,
+          -0.004336615793714804,
+          0.004780177145007225
+        ],
+        "mean": 0.0009247227544862818,
+        "median": 0.0002217806756462104,
+        "sample_std": 0.00979617127122156,
+        "positive_folds": 2
+      },
+      "fixed_balanced_accuracy": {
+        "total_folds": 7,
+        "paired_folds": 4,
+        "deltas": [
+          -0.014212279348659984,
+          0.010486877871593192,
+          -0.0061283270616595,
+          0.0024277476623517646
+        ],
+        "mean": -0.0018564952190936318,
+        "median": -0.0018502896996538676,
+        "sample_std": 0.010671262734883044,
+        "positive_folds": 2
+      },
+      "k3_minus_k2": {
+        "macro_f1": {
+          "total_folds": 7,
+          "paired_folds": 4,
+          "deltas": [
+            0.004237610414824067,
+            0.011436705913415057,
+            -0.006019351786022364,
+            -0.009750160566486366
+          ],
+          "mean": -2.3799006067401485e-05,
+          "median": -0.0008908706855991488,
+          "sample_std": 0.009661807036008076,
+          "positive_folds": 2
+        },
+        "balanced_accuracy": {
+          "total_folds": 7,
+          "paired_folds": 4,
+          "deltas": [
+            -0.006437655105102025,
+            0.009917300354171266,
+            -0.013716523396227087,
+            -0.012790836912899284
+          ],
+          "mean": -0.0057569287650142825,
+          "median": -0.009614246009000654,
+          "sample_std": 0.010938858218250021,
+          "positive_folds": 1
+        }
+      },
+      "k3_minus_k2_fixed": {
+        "macro_f1": {
+          "total_folds": 7,
+          "paired_folds": 4,
+          "deltas": [
+            0.005104343918470977,
+            0.0035502028041702882,
+            -0.005205629885744523,
+            -0.0007624442534193143
+          ],
+          "mean": 0.0006716181458693571,
+          "median": 0.001393879275375487,
+          "sample_std": 0.004638027123690091,
+          "positive_folds": 2
+        },
+        "balanced_accuracy": {
+          "total_folds": 7,
+          "paired_folds": 4,
+          "deltas": [
+            0.004791071548944703,
+            0.0010810448697186614,
+            -0.007584397015515387,
+            0.0003131650102430328
+          ],
+          "mean": -0.0003497788966522475,
+          "median": 0.0006971049399808471,
+          "sample_std": 0.005204318524196311,
+          "positive_folds": 3
+        }
+      }
+    }
+  },
+  "k3_status": "TESTED",
+  "confusion_order": [
+    "BUY",
+    "HOLD",
+    "SELL"
+  ],
+  "run": "ultima-markets-demo-holiday_reset_sensitivity-1p0-k3",
+  "source_summary_sha256": "1162469c02223eb3678b5276438c3f2fc01412f4f4ed91cbae5488ef7eef39e0",
+  "predictions_sha256": "02180b52011d79f590ab1fd5fae4d9d787ce77361fc11d32a5b7873dd5636620",
+  "folds": [
+    {
+      "fold": "2023-H1",
+      "train_rows": 1674,
+      "test_rows": 2525,
+      "train_end_before": "2023-01-01T00:00:00+00:00",
+      "test_end": "2023-07-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K2": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K3": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K2": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K3": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-3",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "HOLD",
+        "scores": {
+          "n": 2525,
+          "class_counts": {
+            "SELL": 297,
+            "HOLD": 1924,
+            "BUY": 304
+          },
+          "macro_f1": 0.2883044878999026,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              304,
+              0
+            ],
+            [
+              0,
+              1924,
+              0
+            ],
+            [
+              0,
+              297,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2023-H2",
+      "train_rows": 4199,
+      "test_rows": 2622,
+      "train_end_before": "2023-07-01T00:00:00+00:00",
+      "test_end": "2024-01-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3753776748083359
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37993108267069814
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3824663795495013
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.38044514620513764
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K2": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3663983340488712
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.36408486606817997
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.367898541102663
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.36640957429598225
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K3": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.33832422674586954
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.33205234953588364
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3220392289380459
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3221896607066515
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39102297163261995
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39095278835226316
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39573221738490466
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3938020397631634
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3942459707161645
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.390573521609618
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3849501463723645
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37832543245214695
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K2": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3908318306265317
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39233395765112755
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39442931439673107
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3895737731677553
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3917131072210573
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3927590422495924
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38070897500115625
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3644536530284869
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K3": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3854354064557901
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38285902529389954
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39278313269478476
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38549892955319925
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39597145405887596
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3871913178957682
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38559085600406395
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37587704160772556
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  },
+                  {
+                    "block": "inner-2",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "HOLD",
+        "scores": {
+          "n": 2622,
+          "class_counts": {
+            "SELL": 310,
+            "HOLD": 2025,
+            "BUY": 287
+          },
+          "macro_f1": 0.2905100064557779,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              287,
+              0
+            ],
+            [
+              0,
+              2025,
+              0
+            ],
+            [
+              0,
+              310,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2024-H1",
+      "train_rows": 6822,
+      "test_rows": 2524,
+      "train_end_before": "2024-01-01T00:00:00+00:00",
+      "test_end": "2024-07-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3753776748083359,
+                  0.295494939349188
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37993108267069814,
+                  0.29520337474449426
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3824663795495013,
+                  0.29607142373618117
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.38044514620513764,
+                  0.295936759977963
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K2": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3663983340488712,
+                  0.29505777759110147
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.36408486606817997,
+                  0.29701907050571635
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.367898541102663,
+                  0.2954079968807127
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.36640957429598225,
+                  0.2914517415642843
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K3": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.33832422674586954,
+                  0.28315745959700195
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.33205234953588364,
+                  0.28591176826470943
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3220392289380459,
+                  0.291510069516756
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3221896607066515,
+                  0.2916272640264091
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39102297163261995,
+                  0.32405559737557793
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39095278835226316,
+                  0.3232007644354114
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39573221738490466,
+                  0.33794779008506604
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3938020397631634,
+                  0.3435102010359918
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3942459707161645,
+                  0.3393846414157469
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.390573521609618,
+                  0.3577626770451889
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3849501463723645,
+                  0.36992126631988254
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37832543245214695,
+                  0.3900589514574657
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K2": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3908318306265317,
+                  0.31357689614342293
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39233395765112755,
+                  0.3332309604457116
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39442931439673107,
+                  0.34362209361833945
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3895737731677553,
+                  0.3668225007021005
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3917131072210573,
+                  0.34945876165226936
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3927590422495924,
+                  0.3715401247987738
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38070897500115625,
+                  0.3749881845176272
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3644536530284869,
+                  0.38549086870789856
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          },
+          "K3": {
+            "status": "NOT TESTED",
+            "reason": "No candidate passed all inner blocks",
+            "scores": null,
+            "fixed_scores": null,
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3854354064557901,
+                  0.3236774633442884
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38285902529389954,
+                  0.32905187537437824
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39278313269478476,
+                  0.3439413961021704
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38549892955319925,
+                  0.35548523004703975
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39597145405887596,
+                  0.33922478782441523
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3871913178957682,
+                  0.3646287299928659
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38559085600406395,
+                  0.3869092974777848
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37587704160772556,
+                  0.3738251061228845
+                ],
+                "failures": [
+                  {
+                    "block": "inner-1",
+                    "reason": "Empty inner training or validation block"
+                  }
+                ],
+                "mean_macro_f1": null
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "HOLD",
+        "scores": {
+          "n": 2524,
+          "class_counts": {
+            "SELL": 305,
+            "HOLD": 1908,
+            "BUY": 311
+          },
+          "macro_f1": 0.2870036101083033,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              311,
+              0
+            ],
+            [
+              0,
+              1908,
+              0
+            ],
+            [
+              0,
+              305,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2024-H2",
+      "train_rows": 9346,
+      "test_rows": 2660,
+      "train_end_before": "2024-07-01T00:00:00+00:00",
+      "test_end": "2025-01-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.38935001770593974,
+              "balanced_accuracy": 0.41419264514501153,
+              "confusion_matrix": [
+                [
+                  85,
+                  141,
+                  131
+                ],
+                [
+                  337,
+                  1254,
+                  381
+                ],
+                [
+                  84,
+                  125,
+                  122
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.38935001770593974,
+              "balanced_accuracy": 0.41419264514501153,
+              "confusion_matrix": [
+                [
+                  85,
+                  141,
+                  131
+                ],
+                [
+                  337,
+                  1254,
+                  381
+                ],
+                [
+                  84,
+                  125,
+                  122
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 1.0
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3753776748083359,
+                  0.295494939349188,
+                  0.39316478357268286
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35467913257673556
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37993108267069814,
+                  0.29520337474449426,
+                  0.39320285515382647
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35611243752300625
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3824663795495013,
+                  0.29607142373618117,
+                  0.393839598469425
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3574591339183692
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.38044514620513764,
+                  0.295936759977963,
+                  0.39446897032194644
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.356950292168349
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.3835070151820597,
+              "balanced_accuracy": 0.4103228296909624,
+              "confusion_matrix": [
+                [
+                  67,
+                  142,
+                  148
+                ],
+                [
+                  252,
+                  1265,
+                  455
+                ],
+                [
+                  65,
+                  133,
+                  133
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.3835070151820597,
+              "balanced_accuracy": 0.4103228296909624,
+              "confusion_matrix": [
+                [
+                  67,
+                  142,
+                  148
+                ],
+                [
+                  252,
+                  1265,
+                  455
+                ],
+                [
+                  65,
+                  133,
+                  133
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 1.0
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3663983340488712,
+                  0.29505777759110147,
+                  0.3817935355676912
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3477498824025546
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.36408486606817997,
+                  0.29701907050571635,
+                  0.3822680480533858
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3477906615424274
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.367898541102663,
+                  0.2954079968807127,
+                  0.3822896973709573
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.34853207845144435
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.36640957429598225,
+                  0.2914517415642843,
+                  0.3847033209193096
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3475215455931921
+              }
+            ]
+          },
+          "K3": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.3817101219661434,
+              "balanced_accuracy": 0.4126973913501922,
+              "confusion_matrix": [
+                [
+                  64,
+                  147,
+                  146
+                ],
+                [
+                  253,
+                  1242,
+                  477
+                ],
+                [
+                  64,
+                  125,
+                  142
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.38401503201425125,
+              "balanced_accuracy": 0.41491806987753255,
+              "confusion_matrix": [
+                [
+                  68,
+                  145,
+                  144
+                ],
+                [
+                  259,
+                  1239,
+                  474
+                ],
+                [
+                  68,
+                  122,
+                  141
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.33832422674586954,
+                  0.28315745959700195,
+                  0.3857746474485461
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.33575211126380583
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.33205234953588364,
+                  0.28591176826470943,
+                  0.3819267236158253
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3332969471388061
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3220392289380459,
+                  0.291510069516756,
+                  0.3844439175452699
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3326644053333572
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3221896607066515,
+                  0.2916272640264091,
+                  0.3840555271549027
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3326241506293211
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.3958021876839884,
+              "balanced_accuracy": 0.402732194033984,
+              "confusion_matrix": [
+                [
+                  75,
+                  193,
+                  89
+                ],
+                [
+                  265,
+                  1444,
+                  263
+                ],
+                [
+                  71,
+                  172,
+                  88
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.3958021876839884,
+              "balanced_accuracy": 0.402732194033984,
+              "confusion_matrix": [
+                [
+                  75,
+                  193,
+                  89
+                ],
+                [
+                  265,
+                  1444,
+                  263
+                ],
+                [
+                  71,
+                  172,
+                  88
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 300,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39102297163261995,
+                  0.32405559737557793,
+                  0.389281955751108
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3681201749197687
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39095278835226316,
+                  0.3232007644354114,
+                  0.3814899469267578
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3652144999048108
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39573221738490466,
+                  0.33794779008506604,
+                  0.3774350334692545
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37037168031307505
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3938020397631634,
+                  0.3435102010359918,
+                  0.3812561097861509
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3728561168617687
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3942459707161645,
+                  0.3393846414157469,
+                  0.38652644744395664
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37338568652528936
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.390573521609618,
+                  0.3577626770451889,
+                  0.3852282062160129
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3778548016236066
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3849501463723645,
+                  0.36992126631988254,
+                  0.38480154448760245
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37989098572661656
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37832543245214695,
+                  0.3900589514574657,
+                  0.3940049782531971
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38746312072093664
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.3972795416442576,
+              "balanced_accuracy": 0.4216917971828103,
+              "confusion_matrix": [
+                [
+                  95,
+                  152,
+                  110
+                ],
+                [
+                  367,
+                  1261,
+                  344
+                ],
+                [
+                  76,
+                  136,
+                  119
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.3863763361601382,
+              "balanced_accuracy": 0.38851991468532404,
+              "confusion_matrix": [
+                [
+                  66,
+                  217,
+                  74
+                ],
+                [
+                  233,
+                  1499,
+                  240
+                ],
+                [
+                  61,
+                  197,
+                  73
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3908318306265317,
+                  0.31357689614342293,
+                  0.3862510516851998
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36355325948505146
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39233395765112755,
+                  0.3332309604457116,
+                  0.3836625848576027
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3697425009848139
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39442931439673107,
+                  0.34362209361833945,
+                  0.38459358362522683
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3742149972134325
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3895737731677553,
+                  0.3668225007021005,
+                  0.38447729164631733
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.380291188505391
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3917131072210573,
+                  0.34945876165226936,
+                  0.39899793178128035
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38005660021820237
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3927590422495924,
+                  0.3715401247987738,
+                  0.38949709299063745
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3845987533463346
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38070897500115625,
+                  0.3749881845176272,
+                  0.3946675830855771
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38345491420145356
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3644536530284869,
+                  0.38549086870789856,
+                  0.3791198522797385
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.376354791338708
+              }
+            ]
+          },
+          "K3": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.4015171520590817,
+              "balanced_accuracy": 0.4152541420777083,
+              "confusion_matrix": [
+                [
+                  84,
+                  172,
+                  101
+                ],
+                [
+                  292,
+                  1379,
+                  301
+                ],
+                [
+                  76,
+                  152,
+                  103
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 331,
+                "HOLD": 1972,
+                "BUY": 357
+              },
+              "macro_f1": 0.3914806800786092,
+              "balanced_accuracy": 0.39331098623426874,
+              "confusion_matrix": [
+                [
+                  63,
+                  209,
+                  85
+                ],
+                [
+                  213,
+                  1532,
+                  227
+                ],
+                [
+                  62,
+                  194,
+                  75
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 300,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3854354064557901,
+                  0.3236774633442884,
+                  0.38503778808789874
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36471688596265905
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38285902529389954,
+                  0.32905187537437824,
+                  0.38309242467555055
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36500110844794276
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39278313269478476,
+                  0.3439413961021704,
+                  0.38481512350547936
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3738465507674782
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38549892955319925,
+                  0.35548523004703975,
+                  0.402207217503058
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3810637923677656
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39597145405887596,
+                  0.33922478782441523,
+                  0.39898878570251456
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37806167586193523
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3871913178957682,
+                  0.3646287299928659,
+                  0.3855447241722872
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37912159068697376
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38559085600406395,
+                  0.3869092974777848,
+                  0.39682932339320004
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38977649229168293
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37587704160772556,
+                  0.3738251061228845,
+                  0.3934822642328049
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38106147065447166
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "HOLD",
+        "scores": {
+          "n": 2660,
+          "class_counts": {
+            "SELL": 331,
+            "HOLD": 1972,
+            "BUY": 357
+          },
+          "macro_f1": 0.28382268278641337,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              357,
+              0
+            ],
+            [
+              0,
+              1972,
+              0
+            ],
+            [
+              0,
+              331,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2025-H1",
+      "train_rows": 12006,
+      "test_rows": 2502,
+      "train_end_before": "2025-01-01T00:00:00+00:00",
+      "test_end": "2025-07-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.3754188546967103,
+              "balanced_accuracy": 0.38926065408969696,
+              "confusion_matrix": [
+                [
+                  58,
+                  171,
+                  115
+                ],
+                [
+                  276,
+                  1278,
+                  306
+                ],
+                [
+                  57,
+                  148,
+                  93
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.3754188546967103,
+              "balanced_accuracy": 0.38926065408969696,
+              "confusion_matrix": [
+                [
+                  58,
+                  171,
+                  115
+                ],
+                [
+                  276,
+                  1278,
+                  306
+                ],
+                [
+                  57,
+                  148,
+                  93
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.295494939349188,
+                  0.39316478357268286,
+                  0.39118173258517747
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35994715183568277
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.29520337474449426,
+                  0.39320285515382647,
+                  0.38933134555389076
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3592458584840705
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.29607142373618117,
+                  0.393839598469425,
+                  0.38935001770593974
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35975367997051527
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.295936759977963,
+                  0.39446897032194644,
+                  0.38936145029117464
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3599223935303613
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.3560489529569842,
+              "balanced_accuracy": 0.36790437821983457,
+              "confusion_matrix": [
+                [
+                  47,
+                  168,
+                  129
+                ],
+                [
+                  265,
+                  1262,
+                  333
+                ],
+                [
+                  68,
+                  144,
+                  86
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.358103210358792,
+              "balanced_accuracy": 0.3704270027238353,
+              "confusion_matrix": [
+                [
+                  46,
+                  169,
+                  129
+                ],
+                [
+                  266,
+                  1269,
+                  325
+                ],
+                [
+                  66,
+                  144,
+                  88
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.29505777759110147,
+                  0.3817935355676912,
+                  0.381121487107503
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3526576000887652
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.29701907050571635,
+                  0.3822680480533858,
+                  0.3853063854024826
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35486450132052827
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.2954079968807127,
+                  0.3822896973709573,
+                  0.3835070151820597
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3537349031445765
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.2914517415642843,
+                  0.3847033209193096,
+                  0.3835691137224598
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35324139206868455
+              }
+            ]
+          },
+          "K3": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.3688374686742744,
+              "balanced_accuracy": 0.38719811384613495,
+              "confusion_matrix": [
+                [
+                  52,
+                  162,
+                  130
+                ],
+                [
+                  228,
+                  1249,
+                  383
+                ],
+                [
+                  61,
+                  136,
+                  101
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.37243380164256096,
+              "balanced_accuracy": 0.3904968551981396,
+              "confusion_matrix": [
+                [
+                  53,
+                  160,
+                  131
+                ],
+                [
+                  223,
+                  1262,
+                  375
+                ],
+                [
+                  61,
+                  136,
+                  101
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 1.0
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.28315745959700195,
+                  0.3857746474485461,
+                  0.3817101219661434
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3502140763372305
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.28591176826470943,
+                  0.3819267236158253,
+                  0.3853067351910195
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3510484090238514
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.291510069516756,
+                  0.3844439175452699,
+                  0.38401503201425125
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3533230063587591
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.2916272640264091,
+                  0.3840555271549027,
+                  0.3838301015078012
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.35317096422970434
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.37144895211208157,
+              "balanced_accuracy": 0.3745393283443903,
+              "confusion_matrix": [
+                [
+                  68,
+                  200,
+                  76
+                ],
+                [
+                  240,
+                  1354,
+                  266
+                ],
+                [
+                  47,
+                  192,
+                  59
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.37144895211208157,
+              "balanced_accuracy": 0.3745393283443903,
+              "confusion_matrix": [
+                [
+                  68,
+                  200,
+                  76
+                ],
+                [
+                  240,
+                  1354,
+                  266
+                ],
+                [
+                  47,
+                  192,
+                  59
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 300,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.32405559737557793,
+                  0.389281955751108,
+                  0.39254728955401014
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3686282808935653
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3232007644354114,
+                  0.3814899469267578,
+                  0.37772437520902585
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.360805028857065
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.33794779008506604,
+                  0.3774350334692545,
+                  0.385451592203417
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36694480525257916
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3435102010359918,
+                  0.3812561097861509,
+                  0.39067347731480956
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3718132627123174
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3393846414157469,
+                  0.38652644744395664,
+                  0.3892151817009674
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37170875685355703
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3577626770451889,
+                  0.3852282062160129,
+                  0.40126760963459013
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38141949763193067
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.36992126631988254,
+                  0.38480154448760245,
+                  0.4000972216303654
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3849400108126168
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3900589514574657,
+                  0.3940049782531971,
+                  0.3958021876839884
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.39328870579821706
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.3905739348225095,
+              "balanced_accuracy": 0.39847773744330944,
+              "confusion_matrix": [
+                [
+                  85,
+                  178,
+                  81
+                ],
+                [
+                  263,
+                  1327,
+                  270
+                ],
+                [
+                  63,
+                  165,
+                  70
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.38413013330258444,
+              "balanced_accuracy": 0.3850262062159835,
+              "confusion_matrix": [
+                [
+                  68,
+                  207,
+                  69
+                ],
+                [
+                  214,
+                  1425,
+                  221
+                ],
+                [
+                  43,
+                  198,
+                  57
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 300,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.31357689614342293,
+                  0.3862510516851998,
+                  0.3835888960238731
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36113894795083196
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3332309604457116,
+                  0.3836625848576027,
+                  0.37600249817782455
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3642986811603796
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.34362209361833945,
+                  0.38459358362522683,
+                  0.38610108244762964
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3714389198970653
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3668225007021005,
+                  0.38447729164631733,
+                  0.38722448511632096
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3795080924882463
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.34945876165226936,
+                  0.39899793178128035,
+                  0.38893426093970557
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3791303181244184
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3715401247987738,
+                  0.38949709299063745,
+                  0.3972795416442576
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3861055864778897
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3749881845176272,
+                  0.3946675830855771,
+                  0.39320966858047113
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38762181206122515
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38549086870789856,
+                  0.3791198522797385,
+                  0.3863763361601382
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3836623523825917
+              }
+            ]
+          },
+          "K3": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.4020106407359246,
+              "balanced_accuracy": 0.4083950377974807,
+              "confusion_matrix": [
+                [
+                  81,
+                  181,
+                  82
+                ],
+                [
+                  238,
+                  1379,
+                  243
+                ],
+                [
+                  59,
+                  165,
+                  74
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2502,
+              "class_counts": {
+                "SELL": 298,
+                "HOLD": 1860,
+                "BUY": 344
+              },
+              "macro_f1": 0.38768033610675473,
+              "balanced_accuracy": 0.38610725108570215,
+              "confusion_matrix": [
+                [
+                  63,
+                  217,
+                  64
+                ],
+                [
+                  170,
+                  1508,
+                  182
+                ],
+                [
+                  52,
+                  197,
+                  49
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 300,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3236774633442884,
+                  0.38503778808789874,
+                  0.37750287447175884
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36207270863464863
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.32905187537437824,
+                  0.38309242467555055,
+                  0.38168185832497237
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.36460871945830037
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3439413961021704,
+                  0.38481512350547936,
+                  0.39220937181962084
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37365529714242357
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.35548523004703975,
+                  0.402207217503058,
+                  0.39525771669309545
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3843167214143977
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.33922478782441523,
+                  0.39898878570251456,
+                  0.3985977858066791
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37893711977786965
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3646287299928659,
+                  0.3855447241722872,
+                  0.39986674213464846
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3833467320999338
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3869092974777848,
+                  0.39682932339320004,
+                  0.4015171520590817
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3950852576433555
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3738251061228845,
+                  0.3934822642328049,
+                  0.3914806800786092
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38626268347809956
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "HOLD",
+        "scores": {
+          "n": 2502,
+          "class_counts": {
+            "SELL": 298,
+            "HOLD": 1860,
+            "BUY": 344
+          },
+          "macro_f1": 0.28427326914259515,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              344,
+              0
+            ],
+            [
+              0,
+              1860,
+              0
+            ],
+            [
+              0,
+              298,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2025-H2",
+      "train_rows": 14509,
+      "test_rows": 2660,
+      "train_end_before": "2025-07-01T00:00:00+00:00",
+      "test_end": "2026-01-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.3673314089646709,
+              "balanced_accuracy": 0.379377677642579,
+              "confusion_matrix": [
+                [
+                  81,
+                  177,
+                  144
+                ],
+                [
+                  301,
+                  1238,
+                  379
+                ],
+                [
+                  78,
+                  163,
+                  99
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.3673314089646709,
+              "balanced_accuracy": 0.379377677642579,
+              "confusion_matrix": [
+                [
+                  81,
+                  177,
+                  144
+                ],
+                [
+                  301,
+                  1238,
+                  379
+                ],
+                [
+                  78,
+                  163,
+                  99
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.39316478357268286,
+                  0.39118173258517747,
+                  0.3754188546967103
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3865884569515236
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39320285515382647,
+                  0.38933134555389076,
+                  0.37623351482309886
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3862559051769387
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.393839598469425,
+                  0.38935001770593974,
+                  0.3752958491636145
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3861618217796598
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.39446897032194644,
+                  0.38936145029117464,
+                  0.37366963704628725
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3858333525531361
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.37449081015704727,
+              "balanced_accuracy": 0.38639755281129773,
+              "confusion_matrix": [
+                [
+                  99,
+                  175,
+                  128
+                ],
+                [
+                  327,
+                  1232,
+                  359
+                ],
+                [
+                  86,
+                  162,
+                  92
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.3764218852253521,
+              "balanced_accuracy": 0.3884206978357309,
+              "confusion_matrix": [
+                [
+                  99,
+                  176,
+                  127
+                ],
+                [
+                  325,
+                  1238,
+                  355
+                ],
+                [
+                  85,
+                  162,
+                  93
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 10.0
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3817935355676912,
+                  0.381121487107503,
+                  0.358103210358792
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3736727443446621
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3822680480533858,
+                  0.3853063854024826,
+                  0.3560489529569842
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3745411288042842
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3822896973709573,
+                  0.3835070151820597,
+                  0.3564549850008952
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37408389918463736
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3847033209193096,
+                  0.3835691137224598,
+                  0.35631129475585227
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3748612431325405
+              }
+            ]
+          },
+          "K3": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.3772795698363667,
+              "balanced_accuracy": 0.3976328970779219,
+              "confusion_matrix": [
+                [
+                  101,
+                  162,
+                  139
+                ],
+                [
+                  324,
+                  1163,
+                  431
+                ],
+                [
+                  77,
+                  149,
+                  114
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.3772795698363667,
+              "balanced_accuracy": 0.3976328970779219,
+              "confusion_matrix": [
+                [
+                  101,
+                  162,
+                  139
+                ],
+                [
+                  324,
+                  1163,
+                  431
+                ],
+                [
+                  77,
+                  149,
+                  114
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.01
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3857746474485461,
+                  0.3817101219661434,
+                  0.37243380164256096
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3799728570190835
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3819267236158253,
+                  0.3853067351910195,
+                  0.3711676311619266
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3794670299895904
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3844439175452699,
+                  0.38401503201425125,
+                  0.3688374686742744
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37909880607793184
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3840555271549027,
+                  0.3838301015078012,
+                  0.36863262529544977
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37883941798605125
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.38249984932111336,
+              "balanced_accuracy": 0.39978819432047064,
+              "confusion_matrix": [
+                [
+                  125,
+                  157,
+                  120
+                ],
+                [
+                  386,
+                  1185,
+                  347
+                ],
+                [
+                  86,
+                  162,
+                  92
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.38249984932111336,
+              "balanced_accuracy": 0.39978819432047064,
+              "confusion_matrix": [
+                [
+                  125,
+                  157,
+                  120
+                ],
+                [
+                  386,
+                  1185,
+                  347
+                ],
+                [
+                  86,
+                  162,
+                  92
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 100,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.389281955751108,
+                  0.39254728955401014,
+                  0.3815117369451608
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38778032741675966
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3814899469267578,
+                  0.37772437520902585,
+                  0.3837049049941584
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3809730757099807
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3774350334692545,
+                  0.385451592203417,
+                  0.3803923629129167
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3810929961951961
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3812561097861509,
+                  0.39067347731480956,
+                  0.36984126281400637
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38059028330498895
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38652644744395664,
+                  0.3892151817009674,
+                  0.3965341927607722
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.39075860730189876
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3852282062160129,
+                  0.40126760963459013,
+                  0.37961434772573677
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38870338785877995
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38480154448760245,
+                  0.4000972216303654,
+                  0.382920665826146
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38927314398137125
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3940049782531971,
+                  0.3958021876839884,
+                  0.37144895211208157
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.387085372683089
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.37816323352739856,
+              "balanced_accuracy": 0.39365986725881114,
+              "confusion_matrix": [
+                [
+                  108,
+                  176,
+                  118
+                ],
+                [
+                  377,
+                  1197,
+                  344
+                ],
+                [
+                  79,
+                  163,
+                  98
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.37816323352739856,
+              "balanced_accuracy": 0.39365986725881114,
+              "confusion_matrix": [
+                [
+                  108,
+                  176,
+                  118
+                ],
+                [
+                  377,
+                  1197,
+                  344
+                ],
+                [
+                  79,
+                  163,
+                  98
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 100,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3862510516851998,
+                  0.3835888960238731,
+                  0.38480505868931325
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38488166879946206
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3836625848576027,
+                  0.37600249817782455,
+                  0.39640440461023846
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38535649588188853
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38459358362522683,
+                  0.38610108244762964,
+                  0.38773279468900884
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38614248692062175
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38447729164631733,
+                  0.38722448511632096,
+                  0.3802016782771564
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3839678183465982
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39899793178128035,
+                  0.38893426093970557,
+                  0.3941810757956545
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3940377561722135
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38949709299063745,
+                  0.3972795416442576,
+                  0.3953274155608626
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3940346833985859
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3946675830855771,
+                  0.39320966858047113,
+                  0.3905739348225095
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.39281706216285256
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3791198522797385,
+                  0.3863763361601382,
+                  0.38413013330258444
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3832087739141537
+              }
+            ]
+          },
+          "K3": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.3721438817413762,
+              "balanced_accuracy": 0.37994334386258405,
+              "confusion_matrix": [
+                [
+                  95,
+                  189,
+                  118
+                ],
+                [
+                  329,
+                  1276,
+                  313
+                ],
+                [
+                  76,
+                  183,
+                  81
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2660,
+              "class_counts": {
+                "SELL": 340,
+                "HOLD": 1918,
+                "BUY": 402
+              },
+              "macro_f1": 0.37295760364165403,
+              "balanced_accuracy": 0.38607547024329575,
+              "confusion_matrix": [
+                [
+                  109,
+                  163,
+                  130
+                ],
+                [
+                  397,
+                  1205,
+                  316
+                ],
+                [
+                  84,
+                  168,
+                  88
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 300,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38503778808789874,
+                  0.37750287447175884,
+                  0.39537807326964697
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3859729119431015
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38309242467555055,
+                  0.38168185832497237,
+                  0.40379017714158744
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3895214867140368
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38481512350547936,
+                  0.39220937181962084,
+                  0.40161394630676367
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3928794805439546
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.402207217503058,
+                  0.39525771669309545,
+                  0.3948709334952721
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3974452892304752
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39898878570251456,
+                  0.3985977858066791,
+                  0.3982841983238463
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.39862358994434666
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3855447241722872,
+                  0.39986674213464846,
+                  0.4014701510057547
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3956272057708968
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39682932339320004,
+                  0.4015171520590817,
+                  0.4020106407359246
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.4001190387294021
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3934822642328049,
+                  0.3914806800786092,
+                  0.38768033610675473
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.39088109347272293
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "HOLD",
+        "scores": {
+          "n": 2660,
+          "class_counts": {
+            "SELL": 340,
+            "HOLD": 1918,
+            "BUY": 402
+          },
+          "macro_f1": 0.2793068297655454,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              402,
+              0
+            ],
+            [
+              0,
+              1918,
+              0
+            ],
+            [
+              0,
+              340,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "fold": "2026-Jan-Jul",
+      "train_rows": 17170,
+      "test_rows": 2956,
+      "train_end_before": "2026-01-01T00:00:00+00:00",
+      "test_end": "2026-08-01T00:00:00+00:00",
+      "models": {
+        "logistic_regression": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.36944058329965807,
+              "balanced_accuracy": 0.3812104159796299,
+              "confusion_matrix": [
+                [
+                  31,
+                  215,
+                  115
+                ],
+                [
+                  139,
+                  1703,
+                  390
+                ],
+                [
+                  31,
+                  225,
+                  107
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.36944058329965807,
+              "balanced_accuracy": 0.3812104159796299,
+              "confusion_matrix": [
+                [
+                  31,
+                  215,
+                  115
+                ],
+                [
+                  139,
+                  1703,
+                  390
+                ],
+                [
+                  31,
+                  225,
+                  107
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.39118173258517747,
+                  0.3754188546967103,
+                  0.3673314089646709
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3779773320821862
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38933134555389076,
+                  0.37623351482309886,
+                  0.36964221759480903
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3784023593239329
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.38935001770593974,
+                  0.3752958491636145,
+                  0.37020506010964277
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37828364232639905
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.38936145029117464,
+                  0.37366963704628725,
+                  0.36952058000068727
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37751722244604974
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.3856916588150927,
+              "balanced_accuracy": 0.39512748038572365,
+              "confusion_matrix": [
+                [
+                  46,
+                  213,
+                  102
+                ],
+                [
+                  163,
+                  1685,
+                  384
+                ],
+                [
+                  28,
+                  225,
+                  110
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.3856916588150927,
+              "balanced_accuracy": 0.39512748038572365,
+              "confusion_matrix": [
+                [
+                  46,
+                  213,
+                  102
+                ],
+                [
+                  163,
+                  1685,
+                  384
+                ],
+                [
+                  28,
+                  225,
+                  110
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.381121487107503,
+                  0.358103210358792,
+                  0.3764218852253521
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.371882194230549
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3853063854024826,
+                  0.3560489529569842,
+                  0.3754133296218489
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3722562226604385
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.3835070151820597,
+                  0.3564549850008952,
+                  0.3744845927162263
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3714821976330604
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3835691137224598,
+                  0.35631129475585227,
+                  0.37449081015704727
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37145707287845314
+              }
+            ]
+          },
+          "K3": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.37393859335753715,
+              "balanced_accuracy": 0.38675675337847043,
+              "confusion_matrix": [
+                [
+                  37,
+                  213,
+                  111
+                ],
+                [
+                  175,
+                  1660,
+                  397
+                ],
+                [
+                  38,
+                  211,
+                  114
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.37393859335753715,
+              "balanced_accuracy": 0.38675675337847043,
+              "confusion_matrix": [
+                [
+                  37,
+                  213,
+                  111
+                ],
+                [
+                  175,
+                  1660,
+                  397
+                ],
+                [
+                  38,
+                  211,
+                  114
+                ]
+              ]
+            },
+            "selected_params": {
+              "C": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "C": 0.01
+                },
+                "inner_macro_f1": [
+                  0.3817101219661434,
+                  0.37243380164256096,
+                  0.3772795698363667
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3771411644816904
+              },
+              {
+                "params": {
+                  "C": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3853067351910195,
+                  0.3711676311619266,
+                  0.3795708266583288
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3786817310037583
+              },
+              {
+                "params": {
+                  "C": 1.0
+                },
+                "inner_macro_f1": [
+                  0.38401503201425125,
+                  0.3688374686742744,
+                  0.38078395659555864
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37787881909469473
+              },
+              {
+                "params": {
+                  "C": 10.0
+                },
+                "inner_macro_f1": [
+                  0.3838301015078012,
+                  0.36863262529544977,
+                  0.3803775011387612
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.37761340931400406
+              }
+            ]
+          }
+        },
+        "xgboost": {
+          "K1": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.3825959939332107,
+              "balanced_accuracy": 0.39026322230764116,
+              "confusion_matrix": [
+                [
+                  78,
+                  198,
+                  85
+                ],
+                [
+                  270,
+                  1596,
+                  366
+                ],
+                [
+                  68,
+                  208,
+                  87
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.3825959939332107,
+              "balanced_accuracy": 0.39026322230764116,
+              "confusion_matrix": [
+                [
+                  78,
+                  198,
+                  85
+                ],
+                [
+                  270,
+                  1596,
+                  366
+                ],
+                [
+                  68,
+                  208,
+                  87
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 100,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39254728955401014,
+                  0.3815117369451608,
+                  0.37670268875529184
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38358723841815423
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37772437520902585,
+                  0.3837049049941584,
+                  0.3715487869615422
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3776593557215755
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.385451592203417,
+                  0.3803923629129167,
+                  0.37027617082174774
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3787067086460272
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39067347731480956,
+                  0.36984126281400637,
+                  0.36436862516515406
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3749611217646567
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3892151817009674,
+                  0.3965341927607722,
+                  0.38249984932111336
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38941640792761767
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.40126760963459013,
+                  0.37961434772573677,
+                  0.37411954746792736
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38500050160941807
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.4000972216303654,
+                  0.382920665826146,
+                  0.37063390284906284
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38455059676852477
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3958021876839884,
+                  0.37144895211208157,
+                  0.3764543364445722
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38123515874688074
+              }
+            ]
+          },
+          "K2": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.3918684946828394,
+              "balanced_accuracy": 0.3955367929381138,
+              "confusion_matrix": [
+                [
+                  84,
+                  219,
+                  58
+                ],
+                [
+                  240,
+                  1668,
+                  324
+                ],
+                [
+                  62,
+                  226,
+                  75
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.3873761710782179,
+              "balanced_accuracy": 0.3926909699699929,
+              "confusion_matrix": [
+                [
+                  78,
+                  203,
+                  80
+                ],
+                [
+                  256,
+                  1643,
+                  333
+                ],
+                [
+                  60,
+                  221,
+                  82
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 100,
+              "learning_rate": 0.1
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3835888960238731,
+                  0.38480505868931325,
+                  0.37418239868402914
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3808587844657385
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.37600249817782455,
+                  0.39640440461023846,
+                  0.37138129540713
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.381262732731731
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38610108244762964,
+                  0.38773279468900884,
+                  0.36965067392439366
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.381161517020344
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38722448511632096,
+                  0.3802016782771564,
+                  0.36925289811729184
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3788930205035897
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.38893426093970557,
+                  0.3941810757956545,
+                  0.37816323352739856
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38709285675425287
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3972795416442576,
+                  0.3953274155608626,
+                  0.37912235763456215
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.39057643827989413
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39320966858047113,
+                  0.3905739348225095,
+                  0.37395079513988877
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38591146618095645
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3863763361601382,
+                  0.38413013330258444,
+                  0.3848167421637765
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.385107737208833
+              }
+            ]
+          },
+          "K3": {
+            "status": "TESTED",
+            "scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.38211833411635304,
+              "balanced_accuracy": 0.3827459560252145,
+              "confusion_matrix": [
+                [
+                  73,
+                  236,
+                  52
+                ],
+                [
+                  211,
+                  1718,
+                  303
+                ],
+                [
+                  68,
+                  231,
+                  64
+                ]
+              ]
+            },
+            "fixed_scores": {
+              "n": 2956,
+              "class_counts": {
+                "SELL": 363,
+                "HOLD": 2232,
+                "BUY": 361
+              },
+              "macro_f1": 0.3866137268247986,
+              "balanced_accuracy": 0.39300413498023595,
+              "confusion_matrix": [
+                [
+                  84,
+                  199,
+                  78
+                ],
+                [
+                  251,
+                  1608,
+                  373
+                ],
+                [
+                  63,
+                  218,
+                  82
+                ]
+              ]
+            },
+            "selected_params": {
+              "max_depth": 5,
+              "n_estimators": 300,
+              "learning_rate": 0.05
+            },
+            "dropped_columns": [],
+            "candidates": [
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.37750287447175884,
+                  0.39537807326964697,
+                  0.3689857052010552
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.380622217647487
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.38168185832497237,
+                  0.40379017714158744,
+                  0.3642905182946931
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3832541845870843
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.39220937181962084,
+                  0.40161394630676367,
+                  0.3631521731551708
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38565849709385175
+              },
+              {
+                "params": {
+                  "max_depth": 3,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39525771669309545,
+                  0.3948709334952721,
+                  0.3617208620577657
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38394983741537775
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.3985977858066791,
+                  0.3982841983238463,
+                  0.37295760364165403
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.38994652925739315
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 100,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.39986674213464846,
+                  0.4014701510057547,
+                  0.37252928309129857
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.39128872541056725
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.05
+                },
+                "inner_macro_f1": [
+                  0.4015171520590817,
+                  0.4020106407359246,
+                  0.3721438817413762
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.39189055817879415
+              },
+              {
+                "params": {
+                  "max_depth": 5,
+                  "n_estimators": 300,
+                  "learning_rate": 0.1
+                },
+                "inner_macro_f1": [
+                  0.3914806800786092,
+                  0.38768033610675473,
+                  0.3621843741493052
+                ],
+                "failures": [],
+                "mean_macro_f1": 0.3804484634448897
+              }
+            ]
+          }
+        }
+      },
+      "majority_diagnostic": {
+        "train_majority_class": "HOLD",
+        "scores": {
+          "n": 2956,
+          "class_counts": {
+            "SELL": 363,
+            "HOLD": 2232,
+            "BUY": 361
+          },
+          "macro_f1": 0.28681572860447185,
+          "balanced_accuracy": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              0,
+              361,
+              0
+            ],
+            [
+              0,
+              2232,
+              0
+            ],
+            [
+              0,
+              363,
+              0
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}
