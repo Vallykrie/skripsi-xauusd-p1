@@ -32,3 +32,7 @@ Atas permintaan mahasiswa, isi repo dipindahkan ke folder bernomor agar mudah di
 | `docs/CAPAIAN_P1.md`, `VERIFIKASI.md`, `PROVENANCE.*` | `lampiran/` |
 
 Tambahan: `03_web_belajar/` (web animasi offline beserta tesnya) dan `06_presentasi/`. Perubahan kode hanya pada path di `scripts/smoke_p1.py` dan `scripts/verify_agents.sh`.
+
+## Notebook dan data vendor (12 Oktober 2026)
+
+Repo berstatus privat (satu kolaborator: pemilik). Atas permintaan mahasiswa, `04_koding/notebook/` ditambahkan beserta `data/` (harga XAUUSD H1 MetaQuotes-Demo SHA-256 `30684142…542a` dan kalender MT5 SHA-256 `0e538e47…6f65`, sama dengan konfigurasi beku) dan `output/`. Ketentuan redistribusi MetaQuotes/MT5 belum diperiksa (NOT TESTED); hapus `data/`, `output/`, dan output sel sebelum repo dijadikan publik. Notebook menghasilkan ulang 42 Macro-F1 run `metaquotes-demo-primary-0p5-k3` dengan selisih maksimum 5,6×10⁻¹⁷.

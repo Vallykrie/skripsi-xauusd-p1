@@ -1,5 +1,7 @@
 # 04 · Koding: peta kode dari metode ke fungsi
 
+Untuk memahami alurnya, mulai dari [`notebook/`](notebook/README.md): empat notebook ringkas yang hasilnya identik dengan kode di bawah.
+
 Folder ini adalah proyek Python penelitian: `src/thesis_experiments/` (modul), `tests/` (tes portabel dengan data sintetis), `configs/` (protokol beku), `scripts/` (run dan pemeriksaan), `docs/experiments/run-manifests/` (manifes lingkungan tersanitasi). Urutan tabel mengikuti alur Bab 3. Data input privat tidak disertakan. Uraian metode: [METODOLOGI.md](METODOLOGI.md); batas reproduksi: [REPRODUKSI.md](REPRODUKSI.md).
 
 Semua berkas di tabel berada di `src/thesis_experiments/`.

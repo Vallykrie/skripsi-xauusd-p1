@@ -12,3 +12,7 @@ node_modules/
 .env*
 01_dokumentasi/sumber-latex/build/
 .DS_Store
+
+# Notebook P1: data vendor dan output sengaja disertakan karena repo privat
+!04_koding/notebook/data/
+!04_koding/notebook/output/*.parquet
