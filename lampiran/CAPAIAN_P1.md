@@ -8,12 +8,12 @@ Berita acara P0 yang diberikan mahasiswa: konsultasi 21 September 2026, peneliti
 
 | Target | Bukti paket | Status dan batas |
 |---|---|---|
-| Rumusan masalah dan landasan | naskah Bab 1–2 | draf substantif; review pembimbing belum terverifikasi |
-| Dokumentasi metode | Bab 3, METODOLOGI.md, configs | tersedia; protokol tidak ditentukan ulang oleh skor |
-| Kode pengolahan data/fitur | src/thesis_experiments, tests | tersedia; tes publik memakai data sintetis |
-| Kode model dan evaluasi | models.py, folds.py, evaluation.py | tersedia; nested chronological evaluation |
-| Hasil awal | Bab 4, hasil/ | agregat 24 run tersedia; input/prediksi privat |
-| Perhitungan manual | Excel dan PANDUAN_MANUAL.md | return/label, RSI/MACD, praproses, bobot, softmax/pelatihan Logistik, satu iterasi XGBoost multikelas, metrik, selisih fitur |
+| Rumusan masalah dan landasan | `01_dokumentasi` Bab 1–2 | draf substantif; review pembimbing belum terverifikasi |
+| Dokumentasi metode | Bab 3, `04_koding/METODOLOGI.md`, `04_koding/configs` | tersedia; protokol tidak ditentukan ulang oleh skor |
+| Kode pengolahan data/fitur | `04_koding/src/thesis_experiments`, `04_koding/tests` | tersedia; tes publik memakai data sintetis |
+| Kode model dan evaluasi | `04_koding/src/thesis_experiments/` models.py, folds.py, evaluation.py | tersedia; nested chronological evaluation |
+| Hasil awal | Bab 4, `05_hasil/` | agregat 24 run tersedia; input/prediksi privat |
+| Perhitungan manual | `02_perhitungan_manual/` dan `03_web_belajar/` | return/label, RSI/MACD, praproses, bobot, softmax/pelatihan Logistik, satu iterasi XGBoost multikelas, metrik, selisih fitur |
 | Pemahaman mahasiswa | latihan dengan kunci jawaban | kemampuan menjelaskan mandiri: NOT TESTED |
 | Penilaian minimum 50% | dinilai terhadap target P0 | pengesahan pembimbing: NOT TESTED |
 | Bimbingan dan logbook | ditangani melalui pertemuan nyata | jumlah catatan sah: NOT TESTED |

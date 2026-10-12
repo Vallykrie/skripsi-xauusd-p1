@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="id">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lab P1 XAUUSD</title>
+<meta name="description" content="Web belajar dan alat presentasi P1: label, fitur, Regresi Logistik, XGBoost, walk-forward dan evaluasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Tata letak: bilah bab di atas; tiap bab = kolom narasi langkah + panggung visual. Emas batangan untuk aksen, tiga warna kelas tetap. */
+:root{
+  --bg:#eef1f4; --surface:#ffffff; --sunk:#e3e8ed; --ink:#14202b; --muted:#566473; --line:#cfd7df;
+  --gold:#9a6b00; --gold-soft:#f3e3b8; --sell:#bf3b33; --hold:#55667d; --buy:#137a5e; --k3:#4b4fb0;
+  --sell-soft:#f6dcd9; --hold-soft:#dde3ea; --buy-soft:#d4eee5;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e151c; --surface:#151f29; --sunk:#1b2733; --ink:#e4eaf0; --muted:#94a3b1; --line:#2a3846;
+  --gold:#e2b24a; --gold-soft:#3a3018; --sell:#f0756c; --hold:#9fb0c6; --buy:#45c79f; --k3:#9da1f5;
+  --sell-soft:#3b2222; --hold-soft:#26313e; --buy-soft:#173a30; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e151c; --surface:#151f29; --sunk:#1b2733; --ink:#e4eaf0; --muted:#94a3b1; --line:#2a3846;
+  --gold:#e2b24a; --gold-soft:#3a3018; --sell:#f0756c; --hold:#9fb0c6; --buy:#45c79f; --k3:#9da1f5;
+  --sell-soft:#3b2222; --hold-soft:#26313e; --buy-soft:#173a30; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{font:16px/1.55 var(--f-body);margin:0}
+button,select,input{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+.mono,code{font-family:var(--f-mono);font-size:.9em}
+a{color:var(--gold)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+
+/* Kepala */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:16px;padding:10px 16px;max-width:1440px;margin:0 auto}
+.brand{display:flex;flex-direction:column;flex:none}
+.brand b{font-family:var(--f-display);font-weight:800;font-size:18px;letter-spacing:.01em}
+.brand span{font-size:12px;color:var(--muted)}
+.chap-nav{display:flex;gap:4px;overflow-x:auto;flex:1;min-width:0;scrollbar-width:thin;padding-block:2px}
+.chap-nav button{flex:none;border:1px solid transparent;background:none;padding:6px 10px;border-radius:999px;cursor:pointer;font-size:14px;color:var(--muted);white-space:nowrap}
+.chap-nav button .n{font-family:var(--f-mono);font-size:11px;margin-right:6px;opacity:.8}
+.chap-nav button:hover{color:var(--ink);background:var(--sunk)}
+.chap-nav button[aria-current="true"]{color:var(--ink);background:var(--gold-soft);border-color:var(--gold)}
+.tool-btn{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:14px}
+.tool-btn:hover{border-color:var(--gold)}
+
+/* Bab */
+main{max-width:1440px;margin:0 auto;padding-inline:16px;padding-block:20px 48px}
+.chapter-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin-bottom:14px}
+.chapter-head h2{font-size:clamp(24px,3vw,34px);font-weight:800}
+.chapter-head p{margin:0;color:var(--muted);max-width:70ch}
+.layout{display:grid;grid-template-columns:minmax(260px,340px) minmax(0,1fr);gap:20px;align-items:start}
+.narr{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 72px);max-height:calc(100vh - 96px);overflow:auto}
+.narr ol{list-style:none;margin:0;padding:0;counter-reset:s}
+.narr li{counter-increment:s;border-radius:8px}
+.narr li>button{all:unset;box-sizing:border-box;display:flex;gap:10px;width:100%;padding:8px 10px;cursor:pointer;border-radius:8px;font-size:14.5px;line-height:1.35;color:var(--muted)}
+.narr li>button::before{content:counter(s);font-family:var(--f-mono);font-size:11px;min-width:22px;height:22px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);flex:none}
+.narr li>button:hover{background:var(--sunk);color:var(--ink)}
+.narr li>button:focus-visible{outline:3px solid var(--gold)}
+.narr li.done>button::before{background:var(--sunk)}
+.narr li.on{background:var(--gold-soft)}
+.narr li.on>button{color:var(--ink);font-weight:700}
+.narr li.on>button::before{background:var(--gold);border-color:var(--gold);color:var(--surface)}
+.narr .desc{padding:0 12px 12px 42px;font-size:14.5px}
+.narr .desc p{margin:.4em 0}
+.stage{min-width:0;display:flex;flex-direction:column;gap:12px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.ctrls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 12px}
+.ctrls:empty{display:none}
+.ctrl{display:flex;align-items:center;gap:8px;font-size:14px}
+.ctrl>span{color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:none;padding:5px 11px;cursor:pointer;font-size:14px}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+input[type=range]{accent-color:var(--gold);width:160px;max-width:40vw}
+select{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:4px 8px}
+.vis{padding:12px;min-height:280px}
+.svgwrap{overflow-x:auto}
+.svgwrap svg{display:block;width:100%;min-width:640px;height:auto}
+.stepbar{display:flex;align-items:center;gap:10px;padding:8px 12px;flex-wrap:wrap}
+.stepbar .count{font-family:var(--f-mono);font-size:13px;color:var(--muted);min-width:64px}
+.stepbar .prog{flex:1;min-width:80px;height:6px;background:var(--sunk);border-radius:3px;overflow:hidden}
+.stepbar .prog i{display:block;height:100%;background:var(--gold);transition:width .35s}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:7px 14px;cursor:pointer;font-size:14px}
+.btn:hover:not(:disabled){border-color:var(--gold)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.primary{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.caption{display:none;padding:10px 14px;font-size:18px}
+.caption b{font-family:var(--f-display)}
+
+/* Elemen SVG */
+svg text{fill:var(--ink);font-family:var(--f-body);font-size:13px}
+svg .mut{fill:var(--muted)}
+svg .mono{font-family:var(--f-mono);font-size:12px}
+svg .axis{stroke:var(--line);stroke-width:1}
+svg .grid{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.fs{fill:var(--sell)} .fh{fill:var(--hold)} .fb{fill:var(--buy)} .fg{fill:var(--gold)}
+.ss{stroke:var(--sell)} .sh{stroke:var(--hold)} .sb{stroke:var(--buy)} .sg{stroke:var(--gold)}
+.node rect.box{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.node.split rect.box{stroke:var(--ink)}
+.node.leaf rect.box{fill:var(--sunk)}
+.node.scan rect.box{stroke:var(--gold);stroke-width:2.5;stroke-dasharray:6 4;animation:dash 1.2s linear infinite}
+.node.onpath rect.box{stroke:var(--gold);stroke-width:3}
+.node.ghost{opacity:.18}
+@keyframes dash{to{stroke-dashoffset:-20}}
+.edge{fill:none;stroke:var(--muted);stroke-width:1.6}
+.edge.new{stroke-dasharray:400;stroke-dashoffset:400;animation:draw .7s ease forwards}
+.edge.onpath{stroke:var(--gold);stroke-width:3.5}
+@keyframes draw{to{stroke-dashoffset:0}}
+.dot{transition:transform .8s cubic-bezier(.5,0,.2,1)}
+.dot text{fill:#fff;font-family:var(--f-mono);font-size:11px;font-weight:600}
+.probe{transition:transform .55s cubic-bezier(.5,0,.2,1)}
+.pop{animation:pop .45s ease both}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.grow{transform-box:fill-box;transform-origin:bottom;animation:growy .5s ease both}
+@keyframes growy{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+/* Kartu dan tabel */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;background:var(--surface)}
+.card h3{font-size:16px;margin-bottom:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 10px;font-size:13px;border:1px solid var(--line);background:var(--sunk);margin:2px}
+.chip.ok{background:var(--buy-soft);border-color:var(--buy)}
+.chip.wait{background:var(--gold-soft);border-color:var(--gold)}
+.chip.nt{background:var(--sell-soft);border-color:var(--sell)}
+.lab{font-weight:700;font-family:var(--f-mono);font-size:12px;border-radius:5px;padding:1px 6px;color:#fff}
+.lab.S{background:var(--sell)} .lab.H{background:var(--hold)} .lab.B{background:var(--buy)}
+.tbl-wrap{overflow-x:auto}
+table.t{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+table.t th,table.t td{padding:5px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+table.t th{color:var(--muted);font-weight:700;font-size:12.5px;letter-spacing:.02em}
+table.t td:first-child,table.t th:first-child{text-align:left}
+table.t td.num{font-family:var(--f-mono);font-size:13px}
+table.t tr.hi td{background:var(--gold-soft)}
+.formula{font-family:var(--f-mono);font-size:14px;background:var(--sunk);border-radius:8px;padding:10px 12px;overflow-x:auto;line-height:1.7;white-space:nowrap}
+.formula .v{color:var(--gold);font-weight:600}
+.note{font-size:13.5px;color:var(--muted);margin:8px 0 0}
+.split2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px;align-items:start}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14px}
+.kv dt{color:var(--muted)} .kv dd{margin:0;font-family:var(--f-mono)}
+.bars{display:grid;gap:6px}
+.bar{display:grid;grid-template-columns:64px 1fr 72px;gap:8px;align-items:center;font-size:14px}
+.bar .track{height:16px;background:var(--sunk);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%;transition:width .7s cubic-bezier(.5,0,.2,1)}
+.bar .val{font-family:var(--f-mono);font-size:13px;text-align:right}
+.big-label{font-family:var(--f-display);font-weight:800;font-size:28px}
+.flowrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.flowrow .arrow{color:var(--muted)}
+.cm{display:grid;grid-template-columns:90px repeat(3,minmax(64px,1fr));gap:4px;max-width:440px;font-variant-numeric:tabular-nums}
+.cm div{padding:10px 6px;text-align:center;border-radius:6px;font-family:var(--f-mono);transition:background .3s,outline-color .3s}
+.cm .hd{font-family:var(--f-body);font-size:12.5px;color:var(--muted);background:none}
+.cm .cell{background:var(--sunk)}
+.cm .tp{background:var(--buy-soft);outline:2px solid var(--buy)}
+.cm .fp{background:var(--gold-soft)}
+.cm .fn{background:var(--sell-soft)}
+.qa{display:grid;gap:12px}
+.qa .q{font-family:var(--f-display);font-size:22px;font-weight:700}
+.qa .a{font-size:16px;max-width:72ch}
+.qa .a[hidden]{display:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+/* Mode presentasi */
+body.present .narr{display:none}
+body.present .layout{grid-template-columns:minmax(0,1fr)}
+body.present .caption{display:block}
+body.present .chapter-head p{display:none}
+body.present .vis{font-size:17px}
+
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .narr{position:static;max-height:none;order:2}
+  .split2{grid-template-columns:minmax(0,1fr)}
+  .brand span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand"><b>Lab P1 · XAUUSD</b><span>Penilaian Kemajuan 1 · batas 27 Okt 2026</span></div>
+    <nav class="chap-nav" id="chapNav" aria-label="Bab"></nav>
+    <button class="tool-btn" id="presentBtn" aria-pressed="false" title="Mode presentasi (P)">Presentasi</button>
+  </div>
+</header>
+<main id="main"></main>
+
+<script id="lab-math">
+// ===== Matematika contoh sintetis (konsisten dengan workbook Perhitungan_Manual_P1.xlsx) =====
+const LabMath=(()=>{
+const CLOSES=[2000,2002,2001,2004,2002,2003,2000,2002,2002,2006,2004,2005,2004,2006,2005,2008,2006,2007,2004,2006,2006,2010,2008,2009,2008,2010,2009,2012,2010,2011,2008,2010,2010,2014,2012,2013,2012,2014,2013,2016,2014,2015,2012,2014,2014,2018,2016,2017,2016,2018,2017,2020,2018,2019,2016,2018,2018,2022,2020,2021,2020];
+const mean=a=>a.reduce((s,x)=>s+x,0)/a.length;
+const std=(a,ddof=1)=>{const m=mean(a);return Math.sqrt(a.reduce((s,x)=>s+(x-m)**2,0)/(a.length-ddof));};
+function softmax(z){const m=Math.max(...z),e=z.map(x=>Math.exp(x-m)),s=e.reduce((a,b)=>a+b,0);return e.map(x=>x/s);}
+function target(next=2017,mult=.5){
+  const returns=CLOSES.slice(1,50).map((c,i)=>Math.log(c/CLOSES[i]));
+  const win=returns.slice(-24),sigma=std(win),delta=mult*sigma,q=Math.log(next/CLOSES[49]);
+  return {returns,win,mean:mean(win),sigma,delta,q,label:q>delta?'BUY':q<-delta?'SELL':'HOLD'};
+}
+function ema(v,p){const out=Array(v.length).fill(null);if(v.length<p)return out;out[p-1]=mean(v.slice(0,p));const a=2/(p+1);for(let i=p;i<v.length;i++)out[i]=a*v[i]+(1-a)*out[i-1];return out;}
+function indicators(c=CLOSES){
+  const rsi=Array(c.length).fill(null),ag=Array(c.length).fill(null),al=Array(c.length).fill(null);let g=0,l=0;
+  for(let i=1;i<c.length;i++){const d=c[i]-c[i-1],up=Math.max(d,0),dn=Math.max(-d,0);
+    if(i<=14){g+=up;l+=dn;if(i===14){g/=14;l/=14;}}else{g=(13*g+up)/14;l=(13*l+dn)/14;}
+    if(i>=14){ag[i]=g;al[i]=l;rsi[i]=g===0&&l===0?50:l===0?100:100-100/(1+g/l);}}
+  const e12=ema(c,12),e26=ema(c,26),macd=c.map((_,i)=>e26[i]===null?null:e12[i]-e26[i]);
+  const sig=[...Array(25).fill(null),...ema(macd.slice(25),9)];
+  return {rsi,ag,al,e12,e26,macd,sig,hist:macd.map((m,i)=>sig[i]===null?null:m-sig[i])};
+}
+// Data latih kecil: satu fitur x, label 0=SELL,1=HOLD,2=BUY, bobot kelas 1.
+const TX=[-2,-1,0,1,2,3],TY=[0,0,1,1,2,2];
+function logistic(eta=.1){
+  const mu=mean(TX),sd=std(TX,0),xs=TX.map(v=>(v-mu)/sd);
+  const grad=[0,1,2].map(c=>xs.reduce((s,v,i)=>s+(1/3-(TY[i]===c?1:0))*v,0));
+  const beta=grad.map(g=>-eta*g);
+  const G=TX.map((_,i)=>[0,1,2].map(c=>1/3-(TY[i]===c?1:0)));
+  return {mu,sd,xs,grad,beta,G,prob:(x,t=1)=>softmax(beta.map(b=>t*b*(x-mu)/sd))};
+}
+// Pohon gradient boosting: pencarian greedy semua titik tengah; lambda=1, gamma=0, min_child_weight=0.5.
+function buildTree(g,h,maxDepth,lambda=1,mcw=.5){
+  const events=[];
+  function grow(idx,depth,id){
+    const G=idx.reduce((s,i)=>s+g[i],0),H=idx.reduce((s,i)=>s+h[i],0);
+    const node={id,idx,G,H,w:-G/(H+lambda),depth};
+    if(depth>=maxDepth){node.reason='depth';events.push({type:'leaf',node});return node;}
+    const cands=[];
+    for(let k=1;k<idx.length;k++){
+      const L=idx.slice(0,k),R=idx.slice(k),cut=(TX[idx[k-1]]+TX[idx[k]])/2;
+      const gl=L.reduce((s,i)=>s+g[i],0),hl=L.reduce((s,i)=>s+h[i],0),gr=G-gl,hr=H-hl;
+      cands.push({cut,L,R,gl,hl,gr,hr,valid:hl>=mcw&&hr>=mcw,gain:.5*(gl*gl/(hl+lambda)+gr*gr/(hr+lambda)-G*G/(H+lambda))});
+    }
+    let best=null;for(const c of cands)if(c.valid&&(!best||c.gain>best.gain+1e-12))best=c;
+    events.push({type:'scan',node,cands,best});
+    if(!best||best.gain<=1e-12){node.reason=best?'gain':cands.length?'mcw':'single';events.push({type:'leaf',node});return node;}
+    node.cut=best.cut;node.gain=best.gain;events.push({type:'split',node});
+    node.left=grow(best.L,depth+1,id+'L');node.right=grow(best.R,depth+1,id+'R');return node;
+  }
+  return {root:grow(TX.map((_,i)=>i),0,'R'),events};
+}
+function leafOf(n,x){const path=[n];while(n.left){n=x<n.cut?n.left:n.right;path.push(n);}return path;}
+function boost(maxDepth=2,rounds=3,eta=.1){
+  let F=TX.map(()=>[0,0,0]);const out=[];
+  for(let r=0;r<rounds;r++){
+    const P=F.map(softmax);
+    const trees=[0,1,2].map(c=>{const g=TY.map((y,i)=>P[i][c]-(y===c?1:0)),h=P.map(p=>Math.max(2*p[c]*(1-p[c]),1e-16));return {...buildTree(g,h,maxDepth),g,h};});
+    out.push({F:F.map(a=>a.slice()),P,trees});
+    F=F.map((z,i)=>z.map((v,c)=>v+eta*leafOf(trees[c].root,TX[i]).at(-1).w));
+  }
+  return out;
+}
+function predict(rounds,x,upto,eta=.1){let z=[0,0,0];for(let r=0;r<upto;r++)z=z.map((v,c)=>v+eta*leafOf(rounds[r].trees[c].root,x).at(-1).w);return z;}
+function metrics(m){ // baris = label benar, kolom = prediksi
+  const cls=m.map((row,i)=>{const tp=row[i],sup=row.reduce((a,b)=>a+b,0),col=m.reduce((s,r)=>s+r[i],0),fp=col-tp,fn=sup-tp;
+    return {tp,fp,fn,sup,col,precision:col?tp/col:0,recall:sup?tp/sup:null,f1:(2*tp+fp+fn)?2*tp/(2*tp+fp+fn):0};});
+  const n=m.flat().reduce((a,b)=>a+b,0);
+  return {cls,n,macroF1:mean(cls.map(c=>c.f1)),balanced:mean(cls.map(c=>c.recall)),accuracy:m.reduce((s,r,i)=>s+r[i],0)/n};
+}
+return {CLOSES,mean,std,softmax,target,ema,indicators,TX,TY,logistic,buildTree,leafOf,boost,predict,metrics};
+})();
+if(typeof module!=='undefined')module.exports=LabMath;
+</script>
+
+<script>
+(()=>{
+const M=LabMath;
+const $=(s,r=document)=>r.querySelector(s);
+const NS='http://www.w3.org/2000/svg';
+function S(tag,attrs={},parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function T(parent,x,y,s,attrs={}){const t=S('text',{x,y,...attrs},parent);t.textContent=s;return t;}
+function H(html){const d=document.createElement('div');d.innerHTML=html.trim();return d.firstElementChild;}
+function svg(w,h){return S('svg',{viewBox:`0 0 ${w} ${h}`,role:'img'});}
+const f=(v,d=3)=>{if(v==null||Number.isNaN(v))return '—';const r=Number(v.toFixed(d));const s=Math.abs(r).toFixed(d).replace('.',',');return r<0?'−'+s:s;};
+const sg=(v,d=3)=>(v>0?'+':'')+f(v,d);
+const CN=['SELL','HOLD','BUY'],CK=['S','H','B'],CF=['fs','fh','fb'],CS=['ss','sh','sb'],CV=['var(--sell)','var(--hold)','var(--buy)'];
+const lab=c=>`<span class="lab ${CK[c]}">${CN[c]}</span>`;
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const later=(fn,ms)=>setTimeout(fn,reduced?0:ms);
+
+// ===== Mesin langkah =====
+const CH=[];let active=null,step=0,timer=null,lastKey='';
+function seg(id,opts,val,onpick){
+  const w=H(`<div class="seg" role="group" id="${id}"></div>`);
+  opts.forEach(([v,l])=>{const b=H(`<button type="button" aria-pressed="${v===val}">${l}</button>`);b.onclick=()=>{w.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');onpick(v);};w.appendChild(b);});
+  return w;
+}
+function ctrl(label,node){const c=H(`<label class="ctrl"><span>${label}</span></label>`);c.appendChild(node);return c;}
+function range(id,min,max,stp,val,oninput,fmt=v=>v){
+  const wrap=document.createElement('span');wrap.style.display='inline-flex';wrap.style.gap='8px';wrap.style.alignItems='center';
+  const r=H(`<input type="range" id="${id}" min="${min}" max="${max}" step="${stp}" value="${val}">`),o=H(`<output class="mono">${fmt(val)}</output>`);
+  r.oninput=()=>{o.textContent=fmt(+r.value);oninput(+r.value);};wrap.append(r,o);return wrap;
+}
+function buildShell(){
+  const nav=$('#chapNav'),main=$('#main');
+  CH.forEach((c,i)=>{
+    const b=H(`<button type="button" data-id="${c.id}"><span class="n">${String(i).padStart(2,'0')}</span>${c.short}</button>`);
+    b.onclick=()=>go(c.id);nav.appendChild(b);
+    const sec=H(`<section id="sec-${c.id}" hidden aria-labelledby="h-${c.id}">
+      <div class="chapter-head"><h2 id="h-${c.id}">${c.title}</h2><p>${c.lede}</p></div>
+      <div class="layout"><aside class="narr" aria-label="Langkah"><ol></ol></aside>
+      <div class="stage"><div class="panel ctrls"></div><div class="panel caption"></div><div class="panel vis"></div>
+      <div class="panel stepbar"><button class="btn" data-a="prev" type="button">← Sebelumnya</button><span class="count"></span><div class="prog"><i></i></div><button class="btn" data-a="play" type="button">▶ Putar</button><button class="btn primary" data-a="next" type="button">Berikutnya →</button></div></div></div></section>`);
+    main.appendChild(sec);c.sec=sec;c.vis=$('.vis',sec);c.ctrls=$('.ctrls',sec);
+    sec.querySelector('[data-a=prev]').onclick=()=>{stop();setStep(step-1);};
+    sec.querySelector('[data-a=next]').onclick=()=>{stop();setStep(step+1);};
+    sec.querySelector('[data-a=play]').onclick=()=>timer?stop():play();
+  });
+}
+function go(id,keepStep){
+  stop();const c=CH.find(x=>x.id===id)||CH[0];
+  if(active)active.sec.hidden=true;active=c;c.sec.hidden=false;
+  document.querySelectorAll('#chapNav button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.id===c.id)));
+  if(!c.ready){c.init&&c.init();c.ready=true;}
+  if(!keepStep)step=0;lastKey='';
+  try{history.replaceState(null,'','#'+c.id);}catch(e){}
+  try{localStorage.setItem('labp1-ch',c.id);}catch(e){}
+  render();
+  const nb=document.querySelector(`#chapNav button[data-id="${c.id}"]`);nb&&nb.scrollIntoView({block:'nearest',inline:'nearest'});
+}
+function setStep(i){const n=active.steps().length;step=Math.max(0,Math.min(n-1,i));render();}
+function render(){
+  const c=active,steps=c.steps();step=Math.min(step,steps.length-1);const s=steps[step];
+  const ol=$('.narr ol',c.sec);ol.innerHTML='';
+  steps.forEach((st,i)=>{const li=document.createElement('li');li.className=i===step?'on':i<step?'done':'';
+    const b=H(`<button type="button">${st.t}</button>`);b.onclick=()=>{stop();setStep(i);};li.appendChild(b);
+    if(i===step&&st.d){li.appendChild(H(`<div class="desc">${st.d}</div>`));}ol.appendChild(li);});
+  $('.caption',c.sec).innerHTML=`<b>${step+1}. ${s.t}</b>`;
+  $('.count',c.sec).textContent=`${step+1} / ${steps.length}`;
+  $('.prog i',c.sec).style.width=`${(step+1)/steps.length*100}%`;
+  $('[data-a=prev]',c.sec).disabled=step===0;$('[data-a=next]',c.sec).disabled=step===steps.length-1;
+  $('[data-a=play]',c.sec).textContent=timer?'❚❚ Jeda':step===steps.length-1?'↺ Ulangi':'▶ Putar';
+  c.draw(step,s,steps);
+}
+function play(){
+  if(step>=active.steps().length-1)step=-1;
+  const tick=()=>{if(step>=active.steps().length-1){stop();return;}setStep(step+1);timer=setTimeout(tick,active.pace||3600);};
+  timer=1;tick();
+}
+function stop(){if(timer&&timer!==1)clearTimeout(timer);timer=null;if(active)$('[data-a=play]',active.sec).textContent=step===active.steps().length-1?'↺ Ulangi':'▶ Putar';}
+
+// ================= 00 PETA P1 =================
+const DEADLINE=new Date('2026-10-27T23:59:00+07:00');
+CH.push({id:'peta',short:'Peta P1',title:'Apa yang dinilai di P1',
+  lede:'Berita acara P0 menetapkan target minimum 50%: koding 50% dan dokumentasi sampai perhitungan manual, paling lambat Selasa, 27 Oktober 2026.',
+  steps:()=>[
+    {t:'Kesepakatan berita acara P0',d:'<p>Ini dasar penilaian P1. Ruang lingkup tidak berubah: data trading emas, masalah klasifikasi, metode Regresi Logistik dan XGBoost.</p>'},
+    {t:'Target P1 vs bukti yang sudah ada',d:'<p>Tunjukkan bukti untuk tiap butir. Pengesahan tetap keputusan pembimbing, jadi butir itu ditandai NOT TESTED sampai disahkan.</p>'},
+    {t:'Alur penelitian dalam satu layar',d:'<p>Pakai diagram ini untuk membuka presentasi. Klik kotak untuk lompat ke bab penjelasannya.</p>'},
+    {t:'Urutan bicara 10–15 menit',d:'<p>Bagian perhitungan manual paling lama karena itu inti target P1.</p>'},
+  ],
+  draw(i){
+    const v=this.vis;v.innerHTML='';
+    if(i===0){
+      v.appendChild(H(`<div class="split2"><div class="tbl-wrap"><table class="t"><thead><tr><th>Kesepakatan</th><th style="text-align:left">Isi berita acara P0 (21 Sep 2026)</th></tr></thead><tbody>
+      <tr><td>Ruang lingkup</td><td style="text-align:left;white-space:normal">Objek: data trading emas · Masalah: klasifikasi · Metodologi: Logistic Regression + XGBoost</td></tr>
+      <tr class="hi"><td>P1 · min 50%</td><td style="text-align:left;white-space:normal">Koding 50%, dokumentasi sampai perhitungan manual. Batas: <b>Selasa, 27 Oktober 2026</b></td></tr>
+      <tr><td>P2 · min 80%</td><td style="text-align:left;white-space:normal">Koding selesai, eksperimen dan dokumentasi selesai. Batas: Jumat, 11 Desember 2026</td></tr>
+      </tbody></table></div>
+      <div class="card pop"><h3>Sisa waktu ke batas P1</h3><div class="big-label" id="cd"></div><p class="note">Jendela SIAM Penilaian Kemajuan 1: 4 Agustus – 27 Oktober 2026. Target internal di roadmap: 20 Oktober.</p></div></div>`));
+      const d=Math.ceil((DEADLINE-new Date())/864e5);$('#cd',v).textContent=d>0?`${d} hari lagi`:d===0?'Hari ini':'Sudah lewat';
+    }
+    if(i===1){
+      const rows=[
+        ['Koding 50%','Pipeline audit harga → label → fitur K1/K2/K3 → nested walk-forward → Logistik/XGBoost → metrik. Tes lulus di repo publik.','ok','Melebihi 50%: 24 run sudah berjalan'],
+        ['Dokumentasi','Draf Bab 1–4 (PDF 40 halaman) dengan Bab 3 sebagai protokol.','ok','Tersedia'],
+        ['Perhitungan manual','Excel 8 tab berumus aktif + panduan + web ini: label, RSI/MACD, praproses, Logistik, XGBoost, metrik.','ok','Tersedia'],
+        ['Penguasaan mahasiswa','Mampu menjelaskan tiap langkah tanpa melihat kunci.','wait','Latihan di bab 08'],
+        ['Logbook bimbingan','Catatan sah per pembimbing sebelum P1.','nt','NOT TESTED'],
+        ['Pengesahan P1','Penilaian dan tanda tangan pembimbing.','nt','NOT TESTED'],
+      ];
+      const w=H('<div class="cards"></div>');
+      rows.forEach((r,k)=>{const c=H(`<div class="card pop" style="animation-delay:${k*90}ms"><h3>${r[0]}</h3><p style="margin:.2em 0 .5em;font-size:14.5px">${r[1]}</p><span class="chip ${r[2]}">${r[3]}</span></div>`);w.appendChild(c);});
+      v.appendChild(w);
+    }
+    if(i===2){
+      const nodes=[['Data H1 MT5','Audit gap & masker','label'],['Label 1 bar','δ = 0,5·σ24','label'],['Fitur K1/K2/K3','harga · RSI/MACD · makro','fitur'],['Walk-forward','7 periode uji · purge','walkforward'],['Model','Logistik · XGBoost','xgboost'],['Evaluasi','Macro-F1 · K2−K1 · K3−K2','evaluasi']];
+      const s=svg(900,190),wrap=H('<div class="svgwrap"></div>');wrap.appendChild(s);
+      nodes.forEach((n,k)=>{const x=12+k*148,g=S('g',{class:'pop',style:`animation-delay:${k*120}ms;cursor:pointer`,tabindex:0,role:'button','aria-label':n[0]},s);
+        S('rect',{x,y:50,width:128,height:86,rx:10,fill:'var(--surface)',stroke:k===4?'var(--gold)':'var(--ink)','stroke-width':k===4?2.5:1.4},g);
+        T(g,x+64,84,n[0],{'text-anchor':'middle','font-weight':700});T(g,x+64,108,n[1],{'text-anchor':'middle',class:'mut','font-size':11.5});
+        T(g,x+10,40,String(k+1),{class:'mono mut'});
+        g.onclick=()=>go(n[2]);g.onkeydown=e=>{if(e.key==='Enter')go(n[2]);};
+        if(k<nodes.length-1)S('path',{d:`M${x+130} 93 h16`,stroke:'var(--muted)','stroke-width':2,'marker-end':'url(#ar)'},s);});
+      const defs=S('defs',{},s),mk=S('marker',{id:'ar',viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:7,markerHeight:7,orient:'auto'},defs);S('path',{d:'M0 0 10 5 0 10z',fill:'var(--muted)'},mk);
+      T(s,450,170,'Klik kotak untuk membuka babnya',{'text-anchor':'middle',class:'mut','font-size':12});
+      v.appendChild(wrap);
+      v.appendChild(H('<p class="note">Pertanyaan penelitian: seberapa besar perubahan Macro-F1 saat fitur teknikal ditambahkan (K2−K1) dan saat fitur makro ditambahkan (K3−K2), pada bar uji yang sama.</p>'));
+    }
+    if(i===3){
+      const ag=[['2 mnt','Masalah dan dua rumusan: K2−K1, K3−K2'],['2 mnt','Target, waktu keputusan, audit gap'],['5 mnt','Perhitungan manual: label, RSI/MACD, Logistik, pohon XGBoost'],['3 mnt','Walk-forward, purge, pemilihan parameter, hasil asli'],['2 mnt','Batasan K3, logbook, rencana P2']];
+      const w=H('<div class="bars"></div>');
+      ag.forEach((a,k)=>{const m=parseInt(a[0]);w.appendChild(H(`<div class="bar" style="grid-template-columns:64px 1fr"><span class="mono">${a[0]}</span><div><div class="track" style="height:auto;background:none"><div class="fill pop" style="width:${m/5*100}%;background:${k===2?'var(--gold)':'var(--hold-soft)'};height:10px;border-radius:4px;animation-delay:${k*100}ms"></div></div><div style="font-size:14.5px;margin-top:4px">${a[1]}</div></div></div>`));});
+      v.appendChild(w);
+    }
+  }});
+
+// ================= 01 LABEL =================
+const LB={next:2017,mult:.5};
+CH.push({id:'label',short:'Label',title:'Dari harga ke label BUY/HOLD/SELL',
+  lede:'Label dibuat dari close bar berikutnya dengan ambang yang mengikuti volatilitas 24 jam terakhir. Angka di sini sintetis, sama dengan tab Harga_Target di Excel.',
+  init(){const c=this.ctrls;c.appendChild(ctrl('Close bar berikutnya',range('lbNext',2008,2028,1,LB.next,v=>{LB.next=v;render();})));
+    const sel=H('<select id="lbMult"><option value="0.25">0,25 (sensitivitas)</option><option value="0.5" selected>0,5 (utama)</option><option value="1">1,0 (sensitivitas)</option></select>');sel.onchange=()=>{LB.mult=+sel.value;render();};c.appendChild(ctrl('Pengali σ',sel));},
+  steps:()=>[
+    {t:'Satu bar H1 selesai: apa yang sudah diketahui?',d:'<p>Bar ke-50 (baris Excel 56) baru ditutup di 2018. Keputusan dibuat sekarang. Close bar berikutnya belum diketahui saat prediksi.</p>'},
+    {t:'Log-return 24 bar terakhir',d:'<p>r<sub>t</sub> = ln(C<sub>t</sub>/C<sub>t−1</sub>). 24 return butuh 25 harga penutupan (kotak emas di grafik atas).</p>'},
+    {t:'Volatilitas σ24 (STDEV.S)',d:'<p>Simpangan baku sampel, pembagi 23. Garis putus-putus menunjukkan rata-rata ± σ.</p>'},
+    {t:'Ambang δ = pengali × σ24',d:'<p>Zona HOLD adalah [−δ, δ]. Pengali utama 0,5 dibekukan sebelum skor dibaca; 0,25 dan 1,0 hanya sensitivitas.</p>'},
+    {t:'Bandingkan return berikutnya q dengan δ',d:'<p>q = ln(C<sub>t+1</sub>/C<sub>t</sub>). Geser slider "Close bar berikutnya" untuk melihat label berubah.</p>'},
+    {t:'Kapan tiap informasi tersedia',d:'<p>Fitur hanya memakai data sampai waktu keputusan τ<sub>t</sub>. Label baru diketahui satu jam kemudian. Inilah pencegah look-ahead.</p>'},
+  ],
+  draw(i){
+    const v=this.vis;v.innerHTML='';const tg=M.target(LB.next,LB.mult);const C=M.CLOSES.slice(0,50).concat([LB.next]);
+    const s=svg(820,380),wrap=H('<div class="svgwrap"></div>');wrap.appendChild(s);v.appendChild(wrap);
+    // Panel atas: harga
+    const lo=Math.min(...C,2000)-2,hi=Math.max(...C)+2,X=k=>60+k*(660/50),Y=p=>160-(p-lo)/(hi-lo)*130;
+    T(s,60,18,'Close XAUUSD sintetis (bar 1–51)',{class:'mut','font-size':12});
+    [lo+2,Math.round((lo+hi)/2),hi-2].forEach(p=>{S('line',{x1:56,x2:780,y1:Y(p),y2:Y(p),class:'grid'},s);T(s,50,Y(p)+4,String(Math.round(p)),{'text-anchor':'end',class:'mono mut','font-size':11});});
+    if(i>=1)S('rect',{x:X(25)-4,y:24,width:X(49)-X(25)+8,height:142,rx:6,fill:'var(--gold-soft)',class:'pop'},s);
+    let d='';C.slice(0,50).forEach((p,k)=>d+=(k?'L':'M')+X(k)+' '+Y(p));S('path',{d,fill:'none',stroke:'var(--ink)','stroke-width':1.6},s);
+    S('circle',{cx:X(49),cy:Y(C[49]),r:5,fill:'var(--gold)'},s);T(s,X(49)-8,Y(C[49])+20,'C_t=2018',{'text-anchor':'end','font-size':12,'font-weight':700});
+    const ci=tg.label==='BUY'?2:tg.label==='SELL'?0:1;
+    if(i>=4){S('path',{d:`M${X(49)} ${Y(C[49])} L${X(50)} ${Y(LB.next)}`,stroke:CV[ci],'stroke-width':2,'stroke-dasharray':'4 3',fill:'none'},s);S('circle',{cx:X(50),cy:Y(LB.next),r:5,class:CF[ci]+' pop'},s);T(s,X(50)+8,Y(LB.next)+4,`C_t+1=${LB.next}`,{'font-size':12,'font-weight':700});}
+    else{S('rect',{x:X(50)-6,y:30,width:12,height:130,rx:4,fill:'var(--sunk)'},s);T(s,X(50),178,'?',{'text-anchor':'middle',class:'mut','font-weight':700});}
+    // Panel bawah
+    const g=S('g',{transform:'translate(0,200)'},s);
+    if(i===0){T(g,60,30,'Tersedia saat keputusan: OHLC bar 1–50 → fitur.',{});T(g,60,58,'Belum tersedia: close bar 51 → hanya dipakai untuk membentuk label historis.',{class:'mut'});
+      T(g,60,100,'Label tidak datang dari vendor. Kita membuatnya sendiri dari harga berikutnya.',{'font-weight':700});}
+    if(i===1||i===2){
+      const R=tg.win,mx=Math.max(...R.map(Math.abs))*1.15,bx=k=>70+k*29,base=80,sc=r=>r/mx*70;
+      S('line',{x1:60,x2:780,y1:base,y2:base,class:'axis'},g);
+      R.forEach((r,k)=>{S('rect',{x:bx(k),y:r>=0?base-sc(r):base,width:20,height:Math.abs(sc(r)),class:(r>=0?'fb':'fs')+' grow',style:`animation-delay:${k*25}ms`,opacity:.85},g);});
+      T(g,60,175,'24 log-return (r_{t−23} … r_t), masing-masing ln(C_t / C_{t−1})',{class:'mut','font-size':12});
+      if(i===2){[tg.mean,tg.mean+tg.sigma,tg.mean-tg.sigma].forEach((y,k)=>{S('line',{x1:60,x2:780,y1:base-sc(y),y2:base-sc(y),stroke:k?'var(--gold)':'var(--ink)','stroke-width':k?2:1,'stroke-dasharray':k?'6 4':'0',class:'pop'},g);});
+        T(g,784,base-sc(tg.mean+tg.sigma)+4,'+σ',{class:'fg','font-weight':700});T(g,784,base-sc(tg.mean-tg.sigma)+4,'−σ',{class:'fg','font-weight':700});}
+    }
+    if(i===3||i===4){
+      const R=Math.max(2.4*tg.delta,Math.abs(tg.q)*1.25),x0=70,x1=770,P=q=>x0+(q+R)/(2*R)*(x1-x0),y=70;
+      S('rect',{x:x0,y:y-16,width:P(-tg.delta)-x0,height:32,fill:'var(--sell-soft)'},g);S('rect',{x:P(-tg.delta),y:y-16,width:P(tg.delta)-P(-tg.delta),height:32,fill:'var(--hold-soft)'},g);S('rect',{x:P(tg.delta),y:y-16,width:x1-P(tg.delta),height:32,fill:'var(--buy-soft)'},g);
+      T(g,(x0+P(-tg.delta))/2,y+5,'SELL',{'text-anchor':'middle',class:'fs','font-weight':700});T(g,P(0),y+5,'HOLD',{'text-anchor':'middle',class:'fh','font-weight':700});T(g,(P(tg.delta)+x1)/2,y+5,'BUY',{'text-anchor':'middle',class:'fb','font-weight':700});
+      [[-tg.delta,'−δ'],[0,'0'],[tg.delta,'+δ']].forEach(([q,l])=>{S('line',{x1:P(q),x2:P(q),y1:y-22,y2:y+22,stroke:'var(--ink)'},g);T(g,P(q),y+40,l,{'text-anchor':'middle','font-weight':700});T(g,P(q),y+56,f(q,6),{'text-anchor':'middle',class:'mono mut'});});
+      if(i===4){const m=S('g',{class:'probe',style:`transform:translate(${P(tg.q)}px,${y-30}px)`},g);S('path',{d:'M0 0 -8 -14 8 -14z',class:CF[ci]},m);T(m,0,-20,'q = '+f(tg.q,6),{'text-anchor':'middle','font-weight':700});
+        T(g,70,150,`Karena ${tg.label==='HOLD'?'−δ ≤ q ≤ δ':tg.label==='BUY'?'q > δ':'q < −δ'}, label = ${tg.label}`,{'font-size':15,'font-weight':700});}
+    }
+    if(i===5){
+      const xs=[110,330,550,770],labels=['o_t','τ_t (keputusan)','τ_t+1','berikutnya'];
+      S('line',{x1:80,x2:790,y1:70,y2:70,class:'axis'},g);
+      S('rect',{x:110,y:56,width:220,height:28,rx:5,fill:'var(--hold-soft)'},g);T(g,220,75,'bar t (fitur)',{'text-anchor':'middle'});
+      S('rect',{x:330,y:56,width:220,height:28,rx:5,fill:'var(--gold-soft)',class:'pop'},g);T(g,440,75,'bar t+1 (target q)',{'text-anchor':'middle'});
+      xs.slice(0,3).forEach((x,k)=>{S('line',{x1:x,x2:x,y1:48,y2:92,stroke:'var(--ink)'},g);T(g,x,112,labels[k],{'text-anchor':'middle','font-weight':700});});
+      T(g,330,140,'Fitur ≤ τ_t',{'text-anchor':'middle',class:'fb','font-weight':700});T(g,550,140,'Label diketahui di sini',{'text-anchor':'middle',class:'fg','font-weight':700});
+      T(g,80,170,'Syarat data riil: bar t+1 dibuka tepat 1 jam setelah bar t, satu segmen, dan label berakhir di dalam periode uji yang sama.',{class:'mut','font-size':12});
+    }
+    v.appendChild(H(`<dl class="kv" style="margin-top:6px"><dt>r_t (bar 50)</dt><dd>${f(Math.log(2018/2016),10)}</dd><dt>σ24</dt><dd>${i>=2?f(tg.sigma,10):'…'}</dd><dt>δ = ${String(LB.mult).replace('.',',')}·σ24</dt><dd>${i>=3?f(tg.delta,10):'…'}</dd><dt>q = ln(${LB.next}/2018)</dt><dd>${i>=4?f(tg.q,10):'…'}</dd><dt>Label</dt><dd>${i>=4?lab(ci):'…'}</dd></dl>`));
+  }});
+
+// ================= 02 FITUR =================
+const FT={bar:56,age:2};
+const IND=M.indicators();
+CH.push({id:'fitur',short:'Fitur K1–K3',title:'Tiga konfigurasi fitur',
+  lede:'K1 hanya harga. K2 menambah RSI dan MACD. K3 menambah fitur makro yang lolos gerbang waktu. Yang dibandingkan adalah perubahan skor ketika kelompok fitur ditambahkan.',
+  steps:()=>[
+    {t:'K1 ⊂ K2 ⊂ K3',d:'<p>Konfigurasi bertingkat. Bar uji yang dipakai sama untuk ketiganya, supaya selisih skor adil.</p>'},
+    {t:'RSI 14: seed rata-rata, lalu Wilder',d:'<p>14 perubahan pertama dirata-rata biasa. Sesudahnya: rata-rata baru = (13 × lama + nilai baru) / 14. Geser slider untuk menelusuri.</p>'},
+    {t:'MACD: EMA12 − EMA26, sinyal EMA9',d:'<p>EMA diawali rata-rata p harga pertama. Histogram = MACD − sinyal. Di model, ketiganya dibagi close.</p>'},
+    {t:'Gerbang waktu fitur makro (K3)',d:'<p>Nilai rilis boleh dipakai hanya setelah waktu rilis dan selama berumur kurang dari 168 jam. Geser umur rilis.</p>'},
+  ],
+  draw(i){
+    const v=this.vis,c=this.ctrls;v.innerHTML='';const newCtrl=this._cs!==i;if(newCtrl){c.innerHTML='';this._cs=i;}
+    if(i===0){
+      const k1=['r_t','r_t−1','r_t−2','r_t−3','r_t−4','r_t−5','ln(C/O)','ln(H/L)','σ24'],k2=['RSI14','MACD/C','sinyal/C','hist/C'],k3=['surprise CPI/NFP/pengangguran','penanda pascarilis rate/FOMC','indikator nilai hilang'];
+      const w=H('<div class="cards"></div>');
+      [['K1 · harga',k1,[]],['K2 · harga + teknikal',k1,k2],['K3 · + makro',k1.concat(k2),k3]].forEach(([n,base,add],k)=>{
+        const card=H(`<div class="card pop" style="animation-delay:${k*150}ms"><h3>${n}</h3></div>`);
+        base.forEach(x=>card.appendChild(H(`<span class="chip">${x}</span>`)));add.forEach(x=>card.appendChild(H(`<span class="chip wait">${x}</span>`)));
+        card.appendChild(H(`<p class="note">${base.length+add.length} kolom${k===2?' (rincian makro mengikuti audit fitur)':''}</p>`));w.appendChild(card);});
+      v.appendChild(w);
+      v.appendChild(H('<p class="note">Target q tidak pernah menjadi fitur. Kolom makro K3 di sini disederhanakan; jumlah kolom pasti ada pada audit fitur Phase 4.</p>'));
+      return;
+    }
+    if(i===1||i===2){
+      if(newCtrl)c.appendChild(ctrl('Bar (baris Excel)',range('ftBar',i===1?21:32,66,1,Math.max(FT.bar,i===1?21:32),x=>{FT.bar=x;this.draw(i);},x=>x)));
+      const b=Math.max(FT.bar,i===1?21:32)-6;// baris Excel 7 = indeks 0
+      const C=M.CLOSES,s=svg(820,380),wrap=H('<div class="svgwrap"></div>');wrap.appendChild(s);v.appendChild(wrap);
+      const X=k=>60+k*(720/60),lo=1998,hi=2024,Y=p=>150-(p-lo)/(hi-lo)*130;
+      let d='';C.forEach((p,k)=>d+=(k?'L':'M')+X(k)+' '+Y(p));S('path',{d,fill:'none',stroke:'var(--ink)','stroke-width':1.4,opacity:.7},s);
+      T(s,60,16,'Close',{class:'mut','font-size':12});
+      S('line',{x1:X(b),x2:X(b),y1:20,y2:360,stroke:'var(--gold)','stroke-width':2},s);
+      if(i===1){
+        S('rect',{x:X(0),y:20,width:X(14)-X(0),height:340,fill:'var(--gold-soft)',opacity:.6},s);T(s,X(7),34,'seed: 14 perubahan',{'text-anchor':'middle','font-size':11.5});
+        const Yr=r=>360-r/100*170;[30,50,70].forEach(r=>{S('line',{x1:56,x2:780,y1:Yr(r),y2:Yr(r),class:'grid'},s);T(s,50,Yr(r)+4,String(r),{'text-anchor':'end',class:'mono mut','font-size':11});});
+        let dr='';IND.rsi.forEach((r,k)=>{if(r!==null)dr+=(dr?'L':'M')+X(k)+' '+Yr(r);});S('path',{d:dr,fill:'none',stroke:'var(--gold)','stroke-width':2},s);
+        T(s,60,186,'RSI 14',{class:'mut','font-size':12});
+        const k=b,dd=C[k]-C[k-1];
+        v.appendChild(H(`<div class="formula">Δ = ${C[k]} − ${C[k-1]} = <span class="v">${sg(dd,0)}</span> → gain ${Math.max(dd,0)}, loss ${Math.max(-dd,0)}<br>${k===14?'seed: ḡ = Σgain/14 = <span class="v">'+f(IND.ag[k],6)+'</span>, ℓ̄ = Σloss/14 = <span class="v">'+f(IND.al[k],6)+'</span>':'ḡ = (13·'+f(IND.ag[k-1],6)+' + '+Math.max(dd,0)+')/14 = <span class="v">'+f(IND.ag[k],6)+'</span> · ℓ̄ = (13·'+f(IND.al[k-1],6)+' + '+Math.max(-dd,0)+')/14 = <span class="v">'+f(IND.al[k],6)+'</span>'}<br>RSI = 100 − 100/(1 + ḡ/ℓ̄) = <span class="v">${f(IND.rsi[k],6)}</span> (baris Excel ${k+7})</div>`));
+      }else{
+        [['e12','var(--buy)','EMA12'],['e26','var(--sell)','EMA26']].forEach(([key,col,n])=>{let de='';IND[key].forEach((e,k)=>{if(e!==null)de+=(de?'L':'M')+X(k)+' '+Y(e);});S('path',{d:de,fill:'none',stroke:col,'stroke-width':1.8},s);});
+        const vals=IND.macd.filter(x=>x!==null),mx=Math.max(...vals.map(Math.abs))*1.2,Ym=m=>280-m/mx*80;
+        S('line',{x1:56,x2:780,y1:280,y2:280,class:'axis'},s);
+        IND.hist.forEach((h,k)=>{if(h!==null)S('rect',{x:X(k)-4,y:h>=0?Ym(h):280,width:8,height:Math.abs(Ym(h)-280),fill:h>=0?'var(--buy)':'var(--sell)',opacity:.5},s);});
+        [['macd','var(--ink)'],['sig','var(--gold)']].forEach(([key,col])=>{let dm='';IND[key].forEach((m,k)=>{if(m!==null)dm+=(dm?'L':'M')+X(k)+' '+Ym(m);});S('path',{d:dm,fill:'none',stroke:col,'stroke-width':2},s);});
+        T(s,60,196,'MACD (hitam), sinyal (emas), histogram (batang)',{class:'mut','font-size':12});
+        const legend=H('<div class="legend"><span><i style="background:var(--buy)"></i>EMA12 (seed baris 18)</span><span><i style="background:var(--sell)"></i>EMA26 (seed baris 32)</span><span><i style="background:var(--gold)"></i>Sinyal9 (seed baris 40)</span></div>');v.appendChild(legend);
+        const k=b,C0=C[k];
+        v.appendChild(H(`<div class="formula">EMA12 = ${f(IND.e12[k],4)} · EMA26 = ${f(IND.e26[k],4)} · MACD = <span class="v">${f(IND.macd[k],4)}</span> · sinyal = ${IND.sig[k]===null?'belum ada':f(IND.sig[k],4)}<br>MACD/C = <span class="v">${f(IND.macd[k]/C0,10)}</span> · hist/C = <span class="v">${IND.hist[k]===null?'—':f(IND.hist[k]/C0,10)}</span> (baris Excel ${k+7})</div>`));
+      }
+      return;
+    }
+    // makro
+    if(newCtrl)c.appendChild(ctrl('Umur rilis saat keputusan (jam)',range('ftAge',-24,200,1,FT.age,x=>{FT.age=x;this.draw(3);},x=>x)));
+    const age=FT.age,ok=age>0&&age<168;
+    const s=svg(820,240),wrap=H('<div class="svgwrap"></div>');wrap.appendChild(s);v.appendChild(wrap);
+    const X=h=>100+(h+24)/(224)*660;
+    S('rect',{x:X(0),y:60,width:X(168)-X(0),height:40,fill:'var(--buy-soft)'},s);S('rect',{x:X(-24),y:60,width:X(0)-X(-24),height:40,fill:'var(--sell-soft)'},s);S('rect',{x:X(168),y:60,width:X(200)-X(168),height:40,fill:'var(--sunk)'},s);
+    T(s,X(84),85,'boleh dipakai: 0 < umur < 168 jam',{'text-anchor':'middle',class:'fb','font-weight':700});T(s,X(-12),85,'belum rilis',{'text-anchor':'middle',class:'fs','font-size':12});T(s,X(184),85,'basi',{'text-anchor':'middle',class:'mut','font-size':12});
+    S('line',{x1:X(0),x2:X(0),y1:40,y2:120,stroke:'var(--ink)','stroke-width':2},s);T(s,X(0),34,'waktu rilis CPI',{'text-anchor':'middle','font-weight':700});
+    const m=S('g',{class:'probe',style:`transform:translate(${X(age)}px,130px)`},s);S('path',{d:'M0 0 -9 16 9 16z',fill:ok?'var(--buy)':'var(--sell)'},m);T(m,0,34,'keputusan',{'text-anchor':'middle','font-weight':700});
+    T(s,100,200,ok?`Surprise = actual − forecast = 3,2 − 3,0 = +0,2 (sintetis)`:age<=0?'Nilai rilis belum boleh dipakai: itu kebocoran masa depan.':'Rilis terlalu lama: fitur surprise dikosongkan lalu diisi median latih + indikator hilang.',{'font-size':15,'font-weight':700,class:ok?'':'fs'});
+    v.appendChild(H('<p class="note">Batas K3: vintage forecast/actual independen tidak tersedia, sehingga hasil K3 berlaku untuk snapshot kalender retrospektif. Sepuluh jangkar waktu rilis resmi cocok.</p>'));
+  }});
+
+// ================= 03 LOGISTIK =================
+const LG={x:3};const LGM=M.logistic();
+CH.push({id:'logistik',short:'Logistik',title:'Regresi Logistik multinomial: satu langkah belajar',
+  lede:'Enam sampel sintetis dengan satu fitur x. Tiap kelas punya skor (logit) sendiri; softmax mengubah tiga skor menjadi peluang. Sama dengan tab Logistik di Excel.',
+  init(){this.ctrls.appendChild(ctrl('x uji',range('lgX',-3,4,.5,LG.x,v=>{LG.x=v;render();},v=>f(v,1))));},
+  steps:()=>[
+    {t:'Standardisasi dengan mean/std data latih',d:'<p>x′ = (x − 0,5)/1,7078. Std memakai STDEV.P (ddof=0) seperti StandardScaler. Data uji tidak ikut menghitung mean.</p>'},
+    {t:'Koefisien nol → semua peluang 1/3',d:'<p>Ketiga logit 0, softmax memberi 1/3 untuk tiap kelas. Model belum tahu apa-apa.</p>'},
+    {t:'Gradien: p − y untuk tiap kelas',d:'<p>Kelas benar mendapat gradien −2/3, kelas lain +1/3. Dikalikan x′ lalu dijumlahkan.</p>'},
+    {t:'Perbarui β: β′ = β − η·Σ g·x′',d:'<p>η = 0,1. Kelas BUY naik bersama x, SELL turun, HOLD tetap nol karena simetris.</p>'},
+    {t:'Prediksi: softmax dari logit baru',d:'<p>Pita di grafik adalah peluang tiap kelas untuk semua x. Geser x uji. Prediksi = kelas dengan peluang terbesar.</p>'},
+    {t:'Bedanya dengan model penelitian',d:'<p>Produksi memakai solver lbfgs dengan L2 dan kisi C = {0,01; 0,1; 1; 10} yang dipilih lewat validasi internal. Contoh ini hanya satu langkah gradient descent.</p>'},
+  ],
+  draw(i){
+    const v=this.vis;v.innerHTML='';const L=LGM;
+    const s=svg(820,300),wrap=H('<div class="svgwrap"></div>');wrap.appendChild(s);v.appendChild(wrap);
+    if(i===0){
+      const X1=x=>90+(x+3)/7*680,X2=x=>90+(x+2)/4.5*680;
+      S('line',{x1:80,x2:780,y1:80,y2:80,class:'axis'},s);S('line',{x1:80,x2:780,y1:210,y2:210,class:'axis'},s);
+      T(s,80,60,'x mentah',{class:'mut'});T(s,80,190,'x′ terstandar',{class:'mut'});
+      M.TX.forEach((x,k)=>{const c=M.TY[k];S('line',{x1:X1(x),y1:88,x2:X2(L.xs[k]),y2:202,stroke:CV[c],'stroke-dasharray':'3 3',class:'pop',style:`animation-delay:${k*80}ms`},s);
+        S('circle',{cx:X1(x),cy:80,r:9,class:CF[c]},s);T(s,X1(x),110,String(x).replace('-','−'),{'text-anchor':'middle',class:'mono'});
+        S('circle',{cx:X2(L.xs[k]),cy:210,r:9,class:CF[c]+' pop',style:`animation-delay:${k*80+200}ms`},s);T(s,X2(L.xs[k]),236,f(L.xs[k],3),{'text-anchor':'middle',class:'mono'});});
+      S('line',{x1:X1(.5),x2:X1(.5),y1:60,y2:96,stroke:'var(--gold)','stroke-width':2},s);T(s,X1(.5),52,'mean = 0,5',{'text-anchor':'middle',class:'fg','font-weight':700});
+      v.appendChild(H(`<div class="formula">σ = √(17,5/6) = <span class="v">${f(L.sd,9)}</span> · x′(3) = (3 − 0,5)/${f(L.sd,6)} = <span class="v">${f(L.xs[5],9)}</span></div>`));
+      return;
+    }
+    if(i===2||i===3){
+      const W=i===2?L.grad:L.beta,mx=Math.max(...W.map(Math.abs))*1.2;
+      T(s,40,26,i===2?'Σ g·x′ per kelas (gradien koefisien)':'β baru = −η · Σ g·x′',{class:'mut'});
+      S('line',{x1:410,x2:410,y1:40,y2:270,class:'axis'},s);
+      W.forEach((w,c)=>{const y=70+c*70,len=w/mx*330;S('rect',{x:len>=0?410:410+len,y,width:Math.abs(len)||2,height:38,rx:4,class:CF[c]+' pop',style:`animation-delay:${c*150}ms`},s);
+        T(s,40,y+25,CN[c],{'font-weight':700,class:CF[c]});T(s,len>=0?410+len+8:410+len-8,y+25,f(w,6),{class:'mono','text-anchor':len>=0?'start':'end'});});
+      if(i===2){const rows=M.TX.map((x,k)=>`<tr><td>${lab(M.TY[k])} x=${x}</td><td class="num">${f(L.xs[k],3)}</td>${L.G[k].map(g=>`<td class="num">${sg(g,3)}</td>`).join('')}</tr>`).join('');
+        v.appendChild(H(`<div class="tbl-wrap"><table class="t"><thead><tr><th>Sampel</th><th>x′</th><th>g SELL</th><th>g HOLD</th><th>g BUY</th></tr></thead><tbody>${rows}</tbody></table></div>`));}
+      else v.appendChild(H(`<div class="formula">β_SELL = −0,1 × ${f(L.grad[0],6)} = <span class="v">${f(L.beta[0],9)}</span> · β_BUY = <span class="v">${f(L.beta[2],9)}</span> · bias tetap 0 (kelas seimbang)</div>`));
+      return;
+    }
+    // pita peluang
+    const tt=i===1?0:1,X=x=>70+(x+3)/7*700,Y=p=>260-p*220;
+    const xs=[];for(let x=-3;x<=4.0001;x+=.1)xs.push(x);
+    let acc=xs.map(()=>0);
+    [0,1,2].forEach(c=>{const top=xs.map((x,k)=>acc[k]+L.prob(x,tt)[c]);
+      let d='M'+xs.map((x,k)=>X(x)+' '+Y(top[k])).join('L')+'L'+xs.slice().reverse().map((x,k)=>X(x)+' '+Y(acc[xs.length-1-k])).join('L')+'Z';
+      S('path',{d,fill:CV[c],opacity:.28},s);acc=top;});
+    [0,1/3,2/3,1].forEach(p=>{T(s,62,Y(p)+4,f(p,2),{'text-anchor':'end',class:'mono mut','font-size':11});});
+    M.TX.forEach((x,k)=>S('circle',{cx:X(x),cy:272,r:6,class:CF[M.TY[k]]},s));T(s,X(-3),292,'x = −3',{class:'mono mut','font-size':11});T(s,X(4),292,'x = 4',{class:'mono mut','font-size':11,'text-anchor':'end'});
+    const p=L.prob(LG.x,tt);S('line',{x1:X(LG.x),x2:X(LG.x),y1:30,y2:262,stroke:'var(--gold)','stroke-width':2.5},s);
+    T(s,X(LG.x),24,'x uji = '+f(LG.x,1),{'text-anchor':'middle',class:'fg','font-weight':700});
+    T(s,780,Y(.15),'SELL',{'text-anchor':'end',class:'fs','font-weight':700,opacity:.8});
+    const best=p.indexOf(Math.max(...p));
+    const bars=H('<div class="bars" style="margin-top:8px"></div>');
+    p.forEach((q,c)=>bars.appendChild(H(`<div class="bar"><span>${lab(c)}</span><div class="track"><div class="fill" style="width:${q*100}%;background:${CV[c]}"></div></div><span class="val">${f(q,4)}</span></div>`)));
+    v.appendChild(bars);
+    const z=L.beta.map(b=>b*(LG.x-L.mu)/L.sd*tt);
+    v.appendChild(H(`<div class="formula">z = [${z.map(q=>f(q,4)).join(' ; ')}] → softmax → p = [${p.map(q=>f(q,4)).join(' ; ')}] → prediksi <span class="v">${CN[best]}</span>${i===1?' (masih seri)':''}</div>`));
+  }});
+
+// ================= 04 XGBOOST =================
+const XG={cls:1,depth:2,round:1,x:0};let XGR=M.boost(2,3);
+const NN={R:'Akar',RL:'Kiri',RR:'Kanan',RLL:'Kiri-kiri',RLR:'Kiri-kanan',RRL:'Kanan-kiri',RRR:'Kanan-kanan'};
+const nodeName=id=>NN[id]||id;
+const fc=v=>f(v,1);
+function xgSteps(){
+  const Rd=XGR[XG.round-1],Tr=Rd.trees[XG.cls],cn=CN[XG.cls],r=XG.round,ev=Tr.events,steps=[];
+  steps.push({k:'start',t:r===1?'Titik awal: tiga skor nol, p = 1/3':`Iterasi ${r}: mulai dari skor iterasi sebelumnya`,d:r===1?'<p>XGBoost multikelas membangun <b>satu pohon per kelas</b> di tiap iterasi. Kita ikuti pohon kelas <b>'+cn+'</b>. Semua logit awal 0, jadi tiap kelas p = 1/3.</p>':`<p>Skor latih sudah bergeser oleh pohon iterasi sebelumnya. Peluang p baru inilah yang dipakai. Alurnya persis sama dengan iterasi 1.</p>`});
+  steps.push({k:'gh',t:`Hitung g dan h tiap sampel (pohon ${cn})`,d:`<p>g = p − y (y = 1 bila label ${cn}). h = 2p(1−p), aproksimasi diagonal Hessian softmax di XGBoost.</p><p>Sampel ${cn} punya g negatif: pohon akan mendorong skornya naik.</p>`});
+  steps.push({k:'root',t:'Akar: jumlahkan G dan H',d:'<p>G = Σg, H = Σh atas semua sampel di simpul. Semua sampel mulai di akar.</p>'});
+  ev.forEach(e=>{const nm=nodeName(e.node.id);
+    if(e.type==='scan')steps.push({k:'scan',e,t:`Coba semua titik potong di ${nm}`,d:`<p>${e.cands.length} kandidat (titik tengah antar-x berurutan). Untuk tiap kandidat hitung G/H kiri-kanan lalu gain. Kandidat dengan H anak &lt; 0,5 tidak sah.</p>${e.best&&e.best.gain>1e-12?`<p>Terbaik: x &lt; ${fc(e.best.cut)}, gain ${f(e.best.gain,4)}.</p>`:'<p>Tidak ada kandidat sah dengan gain positif.</p>'}`});
+    if(e.type==='split')steps.push({k:'split',e,t:`Belah ${nm}: x < ${fc(e.node.cut)} ?`,d:'<p>Sampel yang menjawab "ya" turun ke kiri, sisanya ke kanan. Nilai tepat di batas masuk kanan.</p>'});
+    if(e.type==='leaf'){const why=e.node.reason==='depth'?'kedalaman maksimum tercapai':e.node.reason==='gain'?'tidak ada gain positif':e.node.reason==='mcw'?'semua kandidat membuat H anak < 0,5':'hanya satu sampel';
+      steps.push({k:'leaf',e,t:`${nm} berhenti → daun`,d:`<p>Alasan: ${why}. Bobot daun w = −G/(H + λ).</p>`});}
+  });
+  steps.push({k:'leaves',t:'Bobot daun = koreksi skor kelas',d:'<p>Daun tidak berisi kelas, tetapi tambahan logit. Sebelum ditambahkan, w dikali learning rate η = 0,1.</p>'});
+  steps.push({k:'trace',t:'Telusuri satu sampel uji',d:'<p>Geser "x uji" lalu lihat jalurnya. Pertanyaan di tiap simpul hanya: x &lt; batas?</p>'});
+  steps.push({k:'three',t:'Alur yang sama untuk 3 kelas → softmax',d:'<p>Langkah 2 sampai sebelumnya diulang untuk pohon SELL, HOLD, dan BUY. Daun yang dicapai sampel ditambahkan ke logit kelasnya, lalu softmax.</p>'});
+  steps.push({k:'rounds',t:'Iterasi berikutnya: ulangi dengan p baru',d:'<p>Setiap iterasi menghitung ulang p → g,h → tiga pohon baru. Di penelitian: kedalaman 3–5, 100–300 iterasi, jadi 300–900 pohon.</p>'});
+  return steps;
+}
+const TW=820,BW=176,BH=108;
+function npos(id){const d=id.length-1;let idx=0;for(const ch of id.slice(1))idx=idx*2+(ch==='R'?1:0);return {x:TW*(2*idx+1)/2**(d+1),y:24+d*156,d};}
+CH.push({id:'xgboost',short:'XGBoost',title:'XGBoost: pohon tumbuh langkah demi langkah',
+  lede:'Enam sampel sintetis yang sama, satu fitur x. Pohon dibangun dari gradien, bukan dari label langsung. Kedalaman 1 / iterasi 1 identik dengan tab XGBoost di Excel; kedalaman 2 dan iterasi 2–3 adalah perluasan untuk belajar.',
+  pace:3200,
+  init(){
+    const c=this.ctrls;
+    c.appendChild(ctrl('Pohon kelas',seg('xgCls',[[0,'SELL'],[1,'HOLD'],[2,'BUY']],XG.cls,v=>{XG.cls=v;step=0;render();})));
+    c.appendChild(ctrl('Kedalaman',seg('xgDepth',[[1,'1'],[2,'2']],XG.depth,v=>{XG.depth=v;XGR=M.boost(v,3);step=0;render();})));
+    c.appendChild(ctrl('Iterasi',seg('xgRound',[[1,'1'],[2,'2'],[3,'3']],XG.round,v=>{XG.round=v;step=0;render();})));
+    c.appendChild(ctrl('x uji',range('xgX',-3,4,.5,XG.x,v=>{XG.x=v;const k=xgSteps()[step].k;if(k==='trace'||k==='three'||k==='rounds')render();},v=>f(v,1))));
+  },
+  steps:xgSteps,
+  draw(i,s,steps){
+    const v=this.vis,Rd=XGR[XG.round-1],Tr=Rd.trees[XG.cls],c=XG.cls;
+    const key=`${XG.cls}-${XG.depth}-${XG.round}`;
+    if(s.k==='three'||s.k==='rounds'){v.innerHTML='';lastKey='';return s.k==='three'?drawThree(v,Rd):drawRounds(v);}
+    // status pohon sampai langkah ini
+    const evStart=3,done=Math.max(0,Math.min(Tr.events.length,i-evStart+1));
+    const proc=Tr.events.slice(0,done),cur=s.e;
+    const visible=new Set(['R']),split=new Set(),leaf=new Set();
+    proc.forEach(e=>{if(e.type==='split'){split.add(e.node.id);visible.add(e.node.id+'L');visible.add(e.node.id+'R');}if(e.type==='leaf')leaf.add(e.node.id);});
+    const nodes={};(function walk(n){nodes[n.id]=n;if(n.left){walk(n.left);walk(n.right);}})(Tr.root);
+    const path=s.k==='trace'?M.leafOf(Tr.root,XG.x).map(n=>n.id):[];
+    const maxD=XG.depth,Hh=24+maxD*156+BH+14;
+    let svgEl=v.querySelector('svg.tree');
+    const fresh=!svgEl||lastKey!==key;
+    if(fresh){v.innerHTML='';const wrap=H('<div class="svgwrap"></div>');svgEl=svg(TW,Hh);svgEl.classList.add('tree');wrap.appendChild(svgEl);v.appendChild(wrap);
+      S('g',{class:'edges'},svgEl);S('g',{class:'nodes'},svgEl);const dg=S('g',{class:'dots'},svgEl);
+      M.TX.forEach((x,k)=>{const g=S('g',{class:'dot','data-k':k},dg);S('circle',{r:11,class:CF[M.TY[k]]},g);T(g,0,4,String(x).replace('-','−'),{'text-anchor':'middle'});});
+      const pr=S('g',{class:'probe',id:'probe',opacity:0},svgEl);S('path',{d:'M0 -13 13 0 0 13 -13 0z',fill:'var(--gold)',stroke:'var(--surface)','stroke-width':2},pr);
+      v.appendChild(H('<div class="xg-panel" style="margin-top:10px"></div>'));
+      this.prevVisible=new Set();lastKey=key;requestAnimationFrame(()=>{wrap.scrollLeft=(wrap.scrollWidth-wrap.clientWidth)/2;});
+    }
+    svgEl.setAttribute('viewBox',`0 0 ${TW} ${Hh}`);
+    // tepi
+    const eg=svgEl.querySelector('.edges');eg.innerHTML='';
+    visible.forEach(id=>{if(id==='R')return;const p=npos(id.slice(0,-1)),q=npos(id),left=id.endsWith('L');
+      const isNew=!this.prevVisible.has(id),on=path.includes(id);
+      S('path',{d:`M${p.x} ${p.y+BH} C${p.x} ${p.y+BH+30} ${q.x} ${q.y-30} ${q.x} ${q.y}`,class:'edge'+(isNew?' new':'')+(on?' onpath':'')},eg);
+      const par=nodes[id.slice(0,-1)],mx=(p.x+q.x)/2+(left?-22:22),my=(p.y+BH+q.y)/2-8;
+      T(eg,mx,my,left?`ya · x < ${fc(par.cut)}`:`tidak · x ≥ ${fc(par.cut)}`,{'text-anchor':left?'end':'start','font-size':12.5,'font-weight':700,class:on?'fg':'mut'});});
+    // simpul
+    const ng=svgEl.querySelector('.nodes');ng.innerHTML='';
+    const showGH=i>=2;
+    Object.values(nodes).forEach(n=>{if(!visible.has(n.id))return;const p=npos(n.id);
+      const cls=['node',split.has(n.id)?'split':'',leaf.has(n.id)?'leaf':'',cur&&cur.type==='scan'&&cur.node.id===n.id?'scan':'',path.includes(n.id)?'onpath':'',(s.k==='trace'&&!path.includes(n.id))?'ghost':''].join(' ');
+      const g=S('g',{class:cls+(this.prevVisible.has(n.id)?'':' pop')},ng);
+      S('rect',{class:'box',x:p.x-BW/2,y:p.y,width:BW,height:BH,rx:10},g);
+      T(g,p.x-BW/2+10,p.y+18,nodeName(n.id),{'font-weight':700,'font-size':13});T(g,p.x+BW/2-10,p.y+18,`n=${n.idx.length}`,{'text-anchor':'end',class:'mut mono','font-size':11});
+      if(showGH)T(g,p.x-BW/2+10,p.y+76,`G ${f(n.G,3)}  H ${f(n.H,3)}`,{class:'mono','font-size':11.5});
+      if(split.has(n.id))T(g,p.x,p.y+98,`x < ${fc(n.cut)} ?`,{'text-anchor':'middle','font-weight':700,class:'fg','font-size':14});
+      else if(leaf.has(n.id))T(g,p.x,p.y+98,`w = ${f(n.w,4)}`,{'text-anchor':'middle','font-weight':700,'font-size':14,class:n.w>0?'fb':n.w<0?'fs':''});
+      else if(cur&&cur.type==='scan'&&cur.node.id===n.id)T(g,p.x,p.y+98,'mencari split…',{'text-anchor':'middle',class:'mut','font-size':12});
+    });
+    this.prevVisible=new Set(visible);
+    // posisi titik sampel
+    const where=k=>{let id='R';while(split.has(id)){const n=nodes[id];id+=M.TX[k]<n.cut?'L':'R';}return id;};
+    const groups={};M.TX.forEach((_,k)=>{const id=where(k);(groups[id]=groups[id]||[]).push(k);});
+    svgEl.querySelectorAll('.dot').forEach(d=>{const k=+d.dataset.k,id=where(k),arr=groups[id],j=arr.indexOf(k),p=npos(id);
+      d.style.transform=`translate(${p.x+(j-(arr.length-1)/2)*26}px,${p.y+44}px)`;
+      d.style.opacity=s.k==='trace'&&!path.includes(id)?.25:1;});
+    // sampel uji
+    const pr=svgEl.querySelector('#probe');
+    if(s.k==='trace'){pr.setAttribute('opacity',1);const pts=path.map(id=>npos(id));pr.style.transition='none';pr.style.transform=`translate(${pts[0].x-BW/2-2}px,${pts[0].y+44}px)`;
+      pr.getBoundingClientRect();pr.style.transition='';
+      pts.forEach((p,k)=>later(()=>{pr.style.transform=`translate(${p.x-BW/2-2}px,${p.y+44}px)`;},250+k*650));}
+    else pr.setAttribute('opacity',0);
+    // panel bawah
+    xgPanel(v.querySelector('.xg-panel'),s,i,Rd,Tr,c,nodes,leaf,path);
+  }});
+function xgPanel(P,s,i,Rd,Tr,c,nodes,leaf,path){
+  const k=s.k;P.innerHTML='';
+  if(k==='start'||k==='gh'||k==='root'){
+    const rows=M.TX.map((x,j)=>`<tr><td>${lab(M.TY[j])} x=${String(x).replace('-','−')}</td><td class="num">${f(Rd.F[j][c],4)}</td><td class="num">${f(Rd.P[j][c],4)}</td><td class="num">${k==='start'?'·':(M.TY[j]===c?1:0)}</td><td class="num">${k==='start'?'·':sg(Tr.g[j],4)}</td><td class="num">${k==='start'?'·':f(Tr.h[j],4)}</td></tr>`).join('');
+    P.appendChild(H(`<div class="tbl-wrap"><table class="t"><thead><tr><th>Sampel</th><th>logit ${CN[c]}</th><th>p ${CN[c]}</th><th>y</th><th>g = p − y</th><th>h = 2p(1−p)</th></tr></thead><tbody>${rows}</tbody></table></div>`));
+    if(k==='root'){const n=Tr.root;P.appendChild(H(`<div class="formula" style="margin-top:8px">G = Σg = <span class="v">${f(n.G,4)}</span> · H = Σh = <span class="v">${f(n.H,4)}</span>${Math.abs(n.G)<1e-9?' · G = 0: di akar, dorongan naik dan turun saling meniadakan':''}</div>`));}
+    return;
+  }
+  if(k==='scan'){
+    const e=s.e,n=e.node,cands=e.cands,w=820,h=210,sv=svg(w,h),X=x=>70+(x+2.5)/6*680;
+    S('line',{x1:60,x2:770,y1:40,y2:40,class:'axis'},sv);
+    M.TX.forEach((x,j)=>{const inn=n.idx.includes(j);S('circle',{cx:X(x),cy:40,r:10,class:CF[M.TY[j]],opacity:inn?1:.15},sv);T(sv,X(x),44,String(x).replace('-','−'),{'text-anchor':'middle',fill:'#fff',style:'fill:#fff',class:'mono','font-size':10.5,opacity:inn?1:.2});});
+    const mxg=Math.max(1e-9,...cands.filter(c=>c.valid).map(c=>c.gain));
+    S('line',{x1:60,x2:770,y1:180,y2:180,class:'axis'},sv);
+    cands.forEach((cd,j)=>{const x=X(cd.cut),best=e.best&&cd===e.best&&cd.gain>1e-12;
+      S('line',{x1:x,x2:x,y1:22,y2:180,stroke:best?'var(--gold)':'var(--muted)','stroke-dasharray':'4 4','stroke-width':best?2:1,class:'pop',style:`animation-delay:${j*220}ms`},sv);
+      const bh=cd.valid?Math.max(2,cd.gain/mxg*95):95;
+      S('rect',{x:x-16,y:180-bh,width:32,height:bh,rx:3,fill:cd.valid?(best?'var(--gold)':'var(--hold)'):'var(--sunk)',stroke:cd.valid?'none':'var(--line)','stroke-dasharray':'3 3',class:'grow',style:`animation-delay:${j*220}ms`},sv);
+      T(sv,x,180-bh-6,cd.valid?f(cd.gain,3):'H<0,5',{'text-anchor':'middle',class:'mono'+(best?' fg':cd.valid?'':' mut'),'font-size':11,'font-weight':best?700:400});
+      T(sv,x,198,'x<'+fc(cd.cut),{'text-anchor':'middle',class:'mono mut','font-size':10.5});});
+    T(sv,60,16,`Kandidat di ${nodeName(n.id)} · tinggi batang = gain`,{class:'mut','font-size':12});
+    const wrap=H('<div class="svgwrap"></div>');wrap.appendChild(sv);P.appendChild(wrap);
+    const rows=cands.map(cd=>`<tr class="${e.best===cd&&cd.gain>1e-12?'hi':''}"><td>x &lt; ${fc(cd.cut)}</td><td class="num">${f(cd.gl,3)}</td><td class="num">${f(cd.hl,3)}</td><td class="num">${f(cd.gr,3)}</td><td class="num">${f(cd.hr,3)}</td><td class="num">${cd.valid?f(cd.gain,4):'tidak sah'}</td></tr>`).join('');
+    P.appendChild(H(`<div class="tbl-wrap"><table class="t"><thead><tr><th>Kandidat</th><th>G_L</th><th>H_L</th><th>G_R</th><th>H_R</th><th>Gain</th></tr></thead><tbody>${rows}</tbody></table></div>`));
+    P.appendChild(H('<p class="note">Gain = ½[G_L²/(H_L+λ) + G_R²/(H_R+λ) − G²/(H+λ)] − γ, dengan λ = 1, γ = 0. Gain seri: kandidat pertama dipakai.</p>'));
+    return;
+  }
+  if(k==='split'){const n=s.e.node,b=s.e.node.left,r=s.e.node.right;
+    P.appendChild(H(`<div class="formula">Gain = ½[ (${f(b.G,3)})²/(${f(b.H,3)}+1) + (${f(r.G,3)})²/(${f(r.H,3)}+1) − (${f(n.G,3)})²/(${f(n.H,3)}+1) ] = <span class="v">${f(n.gain,6)}</span><br>Kiri: ${b.idx.map(j=>'x='+M.TX[j]).join(', ')} · Kanan: ${r.idx.map(j=>'x='+M.TX[j]).join(', ')}</div>`));return;}
+  if(k==='leaf'){const n=s.e.node;P.appendChild(H(`<div class="formula">w = −G/(H + λ) = −(${f(n.G,4)})/(${f(n.H,4)} + 1) = <span class="v">${f(n.w,6)}</span> → kontribusi η·w = <span class="v">${f(.1*n.w,6)}</span></div>`));return;}
+  if(k==='leaves'){const L=Object.values(nodes).filter(n=>!n.left);
+    P.appendChild(H(`<div class="tbl-wrap"><table class="t"><thead><tr><th>Daun</th><th style="text-align:left">Sampel</th><th>G</th><th>H</th><th>w</th><th>η·w</th></tr></thead><tbody>${L.map(n=>`<tr><td>${nodeName(n.id)}</td><td style="text-align:left">${n.idx.map(j=>lab(M.TY[j])).join(' ')}</td><td class="num">${f(n.G,4)}</td><td class="num">${f(n.H,4)}</td><td class="num">${f(n.w,4)}</td><td class="num">${sg(.1*n.w,4)}</td></tr>`).join('')}</tbody></table></div>`));
+    P.appendChild(H(`<p class="note">Daun dengan w positif menaikkan logit ${CN[c]} untuk sampel yang jatuh ke sana; w negatif menurunkannya.</p>`));return;}
+  if(k==='trace'){const pth=M.leafOf(Tr.root,XG.x);
+    const txt=pth.slice(0,-1).map(n=>`${nodeName(n.id)}: ${f(XG.x,1)} < ${fc(n.cut)}? <b>${XG.x<n.cut?'ya → kiri':'tidak → kanan'}</b>`).join('<br>');
+    const lf=pth.at(-1);P.appendChild(H(`<div class="formula" style="white-space:normal">${txt||'Pohon tanpa split: langsung di akar.'}<br>Daun ${nodeName(lf.id)}: w = ${f(lf.w,4)} → logit ${CN[c]} bertambah η·w = <span class="v">${sg(.1*lf.w,4)}</span></div>`));return;}
+}
+function miniTree(parent,tree,x,col,title){
+  const s=svg(340,230),P=id=>{const d=id.length-1;let idx=0;for(const ch of id.slice(1))idx=idx*2+(ch==='R'?1:0);return {x:340*(2*idx+1)/2**(d+1),y:40+d*78};};
+  T(s,170,18,title,{'text-anchor':'middle','font-weight':700,style:`fill:${col}`});
+  const path=M.leafOf(tree.root,x).map(n=>n.id);
+  (function walk(n){const p=P(n.id);
+    if(n.left){[n.left,n.right].forEach((ch,k)=>{const q=P(ch.id),on=path.includes(ch.id);S('line',{x1:p.x,y1:p.y+13,x2:q.x,y2:q.y-13,class:'edge'+(on?' onpath':'')},s);});}
+    const on=path.includes(n.id),g=S('g',{},s);
+    S('rect',{x:p.x-35,y:p.y-13,width:70,height:26,rx:7,fill:n.left?'var(--surface)':'var(--sunk)',stroke:on?'var(--gold)':'var(--line)','stroke-width':on?2.5:1},g);
+    T(g,p.x,p.y+4,n.left?`x<${fc(n.cut)}`:f(n.w,3),{'text-anchor':'middle',class:'mono','font-size':11.5,'font-weight':on?700:400});
+    if(n.left){walk(n.left);walk(n.right);}})(tree.root);
+  parent.appendChild(s);return s;
+}
+function drawThree(v,Rd){
+  const r=XG.round,grid=H('<div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))"></div>');
+  [0,1,2].forEach(c=>{const card=H(`<div class="card pop" style="padding:6px;animation-delay:${c*200}ms"></div>`);miniTree(card,Rd.trees[c],XG.x,CV[c],`Pohon ${CN[c]} · iterasi ${r}`);grid.appendChild(card);});
+  v.appendChild(grid);
+  const before=M.predict(XGR,XG.x,r-1),after=M.predict(XGR,XG.x,r),p=M.softmax(after),best=p.indexOf(Math.max(...p));
+  const rows=[0,1,2].map(c=>{const w=M.leafOf(Rd.trees[c].root,XG.x).at(-1).w;return `<tr><td>${lab(c)}</td><td class="num">${f(before[c],4)}</td><td class="num">${sg(.1*w,4)}</td><td class="num">${f(after[c],4)}</td><td class="num">${f(p[c],4)}</td></tr>`;}).join('');
+  v.appendChild(H(`<div class="split2" style="margin-top:12px"><div class="tbl-wrap"><table class="t"><thead><tr><th>Kelas</th><th>logit sebelum</th><th>+ η·w</th><th>logit sesudah</th><th>p (softmax)</th></tr></thead><tbody>${rows}</tbody></table></div><div><div class="bars">${p.map((q,c)=>`<div class="bar"><span>${lab(c)}</span><div class="track"><div class="fill" style="width:${q*100}%;background:${CV[c]}"></div></div><span class="val">${f(q,4)}</span></div>`).join('')}</div><p class="note">x uji = ${f(XG.x,1)} → prediksi <b>${CN[best]}</b> setelah ${r} iterasi.</p></div></div>`));
+}
+function drawRounds(v){
+  const s=svg(820,170),wrap=H('<div class="svgwrap"></div>');wrap.appendChild(s);v.appendChild(wrap);
+  const steps=['logit F','p = softmax(F)','g, h per kelas','3 pohon (cari split)','F += η·w daun'];
+  steps.forEach((t,k)=>{const x=20+k*162;S('rect',{x,y:40,width:140,height:52,rx:10,fill:k===3?'var(--gold-soft)':'var(--surface)',stroke:k===3?'var(--gold)':'var(--ink)',class:'pop',style:`animation-delay:${k*120}ms`},s);T(s,x+70,71,t,{'text-anchor':'middle','font-weight':700,'font-size':13});
+    if(k<4)S('path',{d:`M${x+142} 66 h18`,stroke:'var(--muted)','stroke-width':2,'marker-end':'url(#ar2)'},s);});
+  const defs=S('defs',{},s),mk=S('marker',{id:'ar2',viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:7,markerHeight:7,orient:'auto'},defs);S('path',{d:'M0 0 10 5 0 10z',fill:'var(--muted)'},mk);
+  S('path',{d:'M738 94 C738 150 90 150 90 96',fill:'none',stroke:'var(--gold)','stroke-width':2,'stroke-dasharray':'6 4','marker-end':'url(#ar2)'},s);
+  T(s,410,160,'ulangi untuk iterasi berikutnya',{'text-anchor':'middle',class:'fg','font-weight':700});
+  const rows=[1,2,3].map(r=>{const p=M.softmax(M.predict(XGR,XG.x,r)),Rd=XGR[r-1];const acc=M.TX.filter((x,j)=>{const z=M.predict(XGR,x,r),q=M.softmax(z);return q.indexOf(Math.max(...q))===M.TY[j];}).length;
+    return `<tr class="${r===XG.round?'hi':''}"><td>Iterasi ${r}</td><td style="text-align:left;min-width:220px"><div style="display:flex;height:16px;border-radius:4px;overflow:hidden">${p.map((q,c)=>`<div style="width:${q*100}%;background:${CV[c]}"></div>`).join('')}</div></td><td class="num">${p.map(q=>f(q,3)).join(' / ')}</td><td class="num">${f(Rd.trees[1].root.G,3)}</td><td class="num">${acc}/6</td></tr>`;}).join('');
+  v.appendChild(H(`<div class="tbl-wrap"><table class="t"><thead><tr><th>Setelah</th><th style="text-align:left">p untuk x uji = ${f(XG.x,1)}</th><th>SELL / HOLD / BUY</th><th>G akar HOLD</th><th>Benar di data latih</th></tr></thead><tbody>${rows}</tbody></table></div>`));
+  v.appendChild(H('<p class="note">G akar berubah antar-iterasi karena p dihitung ulang: pohon baru belajar dari sisa kesalahan, bukan menyalin pohon lama. Penelitian: max_depth {3, 5}, learning_rate {0,05; 0,1}, n_estimators {100, 300}, subsample 0,8, colsample_bytree 0,8, λ = 1, dipilih lewat validasi internal.</p>'));
+}
+
+// ================= 05 WALK-FORWARD =================
+const FOLDS=[[2023,0],[2023,6],[2024,0],[2024,6],[2025,0],[2025,6],[2026,0]];
+CH.push({id:'walkforward',short:'Walk-forward',title:'Evaluasi kronologis: tujuh periode uji',
+  lede:'Model selalu dilatih dengan masa lalu dan diuji di masa depan. Data latih mengembang setiap periode; parameter dipilih hanya dari 18 bulan terakhir data latih.',
+  steps:()=>[{t:'Gambaran tujuh periode uji',d:'<p>Data latih awal [1 Jan 2020, 1 Jan 2023). Interval setengah terbuka dalam UTC.</p>'},
+    ...FOLDS.map((fd,k)=>({t:`Periode ${k+1}: uji ${fd[1]?'Jul–Des':k===6?'Jan–Jul':'Jan–Jun'} ${fd[0]}`,d:`<p>Latih semua data sebelum ${fd[1]?'1 Juli':'1 Januari'} ${fd[0]}. Tiga blok validasi internal enam bulanan memilih hiperparameter, lalu model dilatih ulang pada seluruh data latih.</p>`})),
+    {t:'Purge di setiap batas',d:'<p>Observasi latih yang labelnya berakhir pada atau setelah keputusan pertama blok berikutnya dibuang. Minimal satu bar H1.</p>'},
+    {t:'Di dalam satu periode: validasi internal',d:'<p>Kandidat dipilih dari rata-rata Macro-F1 tiga blok internal. Skor periode uji tidak dipakai untuk memilih apa pun.</p>'}],
+  pace:2600,
+  draw(i){
+    const v=this.vis;v.innerHTML='';const s=svg(820,360),wrap=H('<div class="svgwrap"></div>');wrap.appendChild(s);v.appendChild(wrap);
+    if(i<=7){
+      const X=t=>90+(t-2020)/(2026+7/12-2020)*700;
+      for(let y=2020;y<=2026;y++){S('line',{x1:X(y),x2:X(y),y1:24,y2:322,class:'grid'},s);T(s,X(y),340,String(y),{'text-anchor':'middle',class:'mono mut','font-size':11});}
+      FOLDS.forEach(([yr,mo],k)=>{const ts=yr+mo/12,te=k===6?2026+7/12:ts+.5,y=34+k*40,on=i===0||i===k+1,g=S('g',{opacity:on?1:.22},s);
+        T(g,80,y+18,`P${k+1}`,{'text-anchor':'end',class:'mono','font-weight':700});
+        S('rect',{x:X(2020),y,width:X(ts-1.5)-X(2020),height:26,rx:4,fill:'var(--hold)',opacity:.55},g);
+        [0,1,2].forEach(b=>S('rect',{x:X(ts-1.5+b*.5)+1,y,width:X(ts-1+b*.5)-X(ts-1.5+b*.5)-2,height:26,rx:3,fill:'var(--hold-soft)',stroke:'var(--hold)'},g));
+        S('rect',{x:X(ts),y,width:X(te)-X(ts),height:26,rx:4,fill:'var(--gold)',class:on&&i>0?'pop':''},g);
+        S('line',{x1:X(ts)-1,x2:X(ts)-1,y1:y-3,y2:y+29,stroke:'var(--sell)','stroke-width':3},g);});
+      v.appendChild(H('<div class="legend"><span><i style="background:var(--hold);opacity:.55"></i>Latih (mengembang)</span><span><i style="background:var(--hold-soft);border:1px solid var(--hold)"></i>3 blok validasi internal (18 bulan)</span><span><i style="background:var(--sell)"></i>Purge</span><span><i style="background:var(--gold)"></i>Periode uji</span></div>'));
+      if(i>0){const fd=FOLDS[i-1];v.appendChild(H(`<p class="note">Periode ${i}: blok validasi internal ${fd[1]?`Jan ${fd[0]-1} – Jun ${fd[0]}`:`Jul ${fd[0]-2} – Des ${fd[0]-1}`}. Setelah diuji, periode ini boleh masuk data latih periode berikutnya.</p>`));}
+      return;
+    }
+    if(i===8){
+      const X=k=>80+k*58;T(s,80,24,'Bar H1 di sekitar batas latih | uji. Panah = label (bar berikutnya).',{class:'mut','font-size':12});
+      S('rect',{x:X(6)-6,y:40,width:X(12)-X(6)+6,height:200,fill:'var(--gold-soft)'},s);T(s,X(9),60,'periode uji',{'text-anchor':'middle',class:'fg','font-weight':700});
+      S('line',{x1:X(6)-6,x2:X(6)-6,y1:40,y2:300,stroke:'var(--sell)','stroke-width':3},s);T(s,X(6)-6,318,'keputusan pertama di periode uji',{'text-anchor':'middle',class:'fs','font-weight':700,'font-size':12});
+      for(let k=0;k<12;k++){const purge=k===5,x=X(k);S('rect',{x:x,y:150,width:40,height:44,rx:5,fill:k>=6?'var(--gold)':'var(--hold)',opacity:purge?.25:.8},s);T(s,x+20,214,`t${k-5>=0?'+'+(k-5):k-5}`,{'text-anchor':'middle',class:'mono','font-size':11});
+        if(k<11)S('path',{d:`M${x+20} 148 C${x+20} 110 ${x+78} 110 ${x+78} 148`,fill:'none',stroke:purge?'var(--sell)':'var(--muted)','stroke-width':purge?2.5:1.2},s);
+        if(purge){S('path',{d:`M${x} 150 l40 44 M${x+40} 150 l-40 44`,stroke:'var(--sell)','stroke-width':3},s);T(s,x+20,100,'dibuang',{'text-anchor':'middle',class:'fs','font-weight':700});}}
+      T(s,80,270,'Bar latih terakhir punya label yang berakhir di dalam periode uji. Kalau dipakai, model latih "melihat" harga periode uji.',{'font-size':13});
+      return;
+    }
+    // validasi internal
+    const X=t=>90+(t)/36*700;T(s,90,22,'Contoh periode 1: 18 bulan terakhir data latih = tiga blok validasi',{class:'mut','font-size':12});
+    [0,1,2].forEach(b=>{const y=46+b*46;T(s,80,y+18,`V${b+1}`,{'text-anchor':'end',class:'mono','font-weight':700});
+      S('rect',{x:X(0),y,width:X(18+b*6)-X(0),height:26,rx:4,fill:'var(--hold)',opacity:.55,class:'pop',style:`animation-delay:${b*200}ms`},s);
+      S('rect',{x:X(18+b*6),y,width:X(24+b*6)-X(18+b*6),height:26,rx:4,fill:'var(--hold-soft)',stroke:'var(--hold)',class:'pop',style:`animation-delay:${b*200+100}ms`},s);});
+    const cand=[['C=0,01',.41],['C=0,1',.405],['C=1',.402],['C=10',.398]];
+    T(s,90,212,'Rata-rata Macro-F1 tiga blok per kandidat (ilustrasi bentuk, bukan angka penelitian)',{class:'mut','font-size':12});
+    cand.forEach(([n,sc],k)=>{const y=226+k*30,w=(sc-.38)/.04*420;S('rect',{x:180,y,width:w,height:20,rx:3,fill:k===0?'var(--gold)':'var(--hold)',class:'grow',style:`animation-delay:${k*150}ms`},s);T(s,170,y+15,n,{'text-anchor':'end',class:'mono'});});
+    T(s,620,250,'terpilih → latih ulang',{class:'fg','font-weight':700});T(s,620,270,'pada seluruh data latih',{class:'fg','font-weight':700});
+  }});
+
+// ================= 06 EVALUASI =================
+const CMX=[[42,30,18],[25,70,35],[20,28,40]];// baris benar BUY,HOLD,SELL; kolom prediksi
+const EVN=['BUY','HOLD','SELL'],EVC=[2,1,0];
+CH.push({id:'evaluasi',short:'Evaluasi',title:'Dari matriks kebingungan ke Macro-F1',
+  lede:'Contoh sintetis 308 bar uji. Urutan label mengikuti Bab 3: BUY, HOLD, SELL. Macro-F1 merata-rata F1 ketiga kelas dengan bobot sama.',
+  steps:()=>[{t:'Matriks kebingungan',d:'<p>Baris = label benar, kolom = prediksi. Diagonal = benar.</p>'},
+    ...EVN.map(n=>({t:`F1 kelas ${n}`,d:'<p>TP di diagonal. FP = sisa kolom (diprediksi kelas ini padahal bukan). FN = sisa baris (kelas ini tapi diprediksi lain).</p>'})),
+    {t:'Macro-F1 dan balanced accuracy',d:'<p>Macro-F1 = rata-rata tiga F1. Balanced accuracy = rata-rata tiga recall. Akurasi biasa dapat tertipu kelas mayoritas.</p>'},
+    {t:'Mengapa bukan akurasi?',d:'<p>Model yang selalu menebak HOLD terlihat lumayan di akurasi, tetapi Macro-F1-nya jatuh.</p>'}],
+  draw(i){
+    const v=this.vis;v.innerHTML='';const mat=i===5?[[0,90,0],[0,130,0],[0,88,0]]:CMX,m=M.metrics(mat),ci=i>=1&&i<=3?i-1:-1;
+    const g=H('<div class="cm" role="table"></div>');g.appendChild(H('<div class="hd">benar \\ prediksi</div>'));EVN.forEach(n=>g.appendChild(H(`<div class="hd">${n}</div>`)));
+    mat.forEach((row,r)=>{g.appendChild(H(`<div class="hd" style="text-align:left">${n2l(r)}</div>`));row.forEach((val,c)=>{let cls='cell';if(ci>=0){if(r===ci&&c===ci)cls+=' tp';else if(c===ci)cls+=' fp';else if(r===ci)cls+=' fn';}else if(i!==4&&r===c)cls+=' tp';g.appendChild(H(`<div class="${cls}">${val}</div>`));});});
+    function n2l(r){return lab(EVC[r]);}
+    const left=H('<div></div>');left.appendChild(g);left.appendChild(H('<div class="legend"><span><i style="background:var(--buy-soft);outline:2px solid var(--buy)"></i>TP</span><span><i style="background:var(--gold-soft)"></i>FP</span><span><i style="background:var(--sell-soft)"></i>FN</span></div>'));
+    const right=H('<div></div>');
+    if(i===0)right.appendChild(H(`<dl class="kv"><dt>Total bar uji</dt><dd>${m.n}</dd><dt>Benar (diagonal)</dt><dd>${CMX[0][0]+CMX[1][1]+CMX[2][2]}</dd><dt>Akurasi</dt><dd>${f(m.accuracy,4)}</dd></dl>`));
+    if(ci>=0){const c=m.cls[ci];right.appendChild(H(`<div class="formula pop">TP = <span class="v">${c.tp}</span> · FP = ${c.fp} · FN = ${c.fn}<br>Precision = ${c.tp}/${c.col} = <span class="v">${f(c.precision,4)}</span><br>Recall = ${c.tp}/${c.sup} = <span class="v">${f(c.recall,4)}</span><br>F1 = 2·TP/(2·TP+FP+FN) = <span class="v">${f(c.f1,4)}</span></div>`));}
+    if(i>=4){right.appendChild(H(`<div class="bars">${m.cls.map((c,k)=>`<div class="bar"><span>${n2l(k)}</span><div class="track"><div class="fill" style="width:${c.f1*100}%;background:${CV[EVC[k]]}"></div></div><span class="val">${f(c.f1,3)}</span></div>`).join('')}</div>`));
+      right.appendChild(H(`<div class="formula" style="margin-top:8px">Macro-F1 = (${m.cls.map(c=>f(c.f1,3)).join(' + ')})/3 = <span class="v">${f(m.macroF1,4)}</span><br>Balanced acc = <span class="v">${f(m.balanced,4)}</span> · Akurasi = ${f(m.accuracy,4)}</div>`));
+      if(i===5)right.appendChild(H('<p class="note">Selalu menebak HOLD: akurasi 0,42 tetapi Macro-F1 hanya 0,20. Itu sebabnya penelitian memakai Macro-F1 dan bobot kelas.</p>'));}
+    const wrap=H('<div class="split2"></div>');wrap.append(left,right);v.appendChild(wrap);
+  }});
+
+// ================= 07 HASIL ASLI =================
+const RES={"2023-H1":{"n":2807,"lr":{"K1":0.4237922723723678,"K2":0.42355496396540876,"K3":0.4132613066347537},"xgb":{"K1":0.42458263267227175,"K2":0.41331809608303754,"K3":0.42763691261516207}},"2023-H2":{"n":2829,"lr":{"K1":0.3912271704727124,"K2":0.39240669690996777,"K3":0.3893392554623958},"xgb":{"K1":0.39304857277507593,"K2":0.38469588584644354,"K3":0.38807387325142706}},"2024-H1":{"n":2808,"lr":{"K1":0.3949741208291892,"K2":0.39870067486346555,"K3":0.39509116007355893},"xgb":{"K1":0.39289739846952415,"K2":0.4006742708307795,"K3":0.3941005992042473}},"2024-H2":{"n":2870,"lr":{"K1":0.3891278025090041,"K2":0.3883122635211529,"K3":0.38706880010613115},"xgb":{"K1":0.3874310240411402,"K2":0.4003502177198752,"K3":0.39197916032239716}},"2025-H1":{"n":2735,"lr":{"K1":0.39124069474861695,"K2":0.3872470116524441,"K3":0.3894629261862581},"xgb":{"K1":0.38951103217410776,"K2":0.38692937847537356,"K3":0.39186774976575994}},"2025-H2":{"n":2746,"lr":{"K1":0.37949647686639243,"K2":0.378420280302203,"K3":0.3824112639823816},"xgb":{"K1":0.3765296531018849,"K2":0.3826923167481015,"K3":0.37950129599426113}},"2026-Jan-Jul":{"n":3103,"lr":{"K1":0.37623994571225,"K2":0.3779733232608941,"K3":0.37981915898365265},"xgb":{"K1":0.36724438400060405,"K2":0.38560501919047335,"K3":0.38337403267467046}}};
+const HS={m:'xgb'};
+CH.push({id:'hasil',short:'Hasil asli',title:'Hasil penelitian: MetaQuotes, policy primer, ambang 0,5·σ24',
+  lede:'Angka asli dari run metaquotes-demo-primary-0p5-k3 (hasil/metrik-per-fold.csv). Macro-F1 per periode uji; rerata tidak dibobot jumlah bar dan bukan uji signifikansi.',
+  init(){this.ctrls.appendChild(ctrl('Model',seg('hsM',[['lr','Regresi Logistik'],['xgb','XGBoost']],HS.m,v=>{HS.m=v;render();})));},
+  steps:()=>[{t:'K1: hanya fitur harga',d:'<p>Tujuh periode uji. Garis putus-putus 0,333 adalah acuan tebakan acak tiga kelas.</p>'},
+    {t:'Tambahkan K2 (RSI/MACD)',d:'<p>Lihat apakah garis K2 selalu di atas K1. Ternyata tidak.</p>'},
+    {t:'Selisih berpasangan K2 − K1',d:'<p>Batang per periode, pada bar uji yang sama. Hitung berapa periode positif.</p>'},
+    {t:'Tambahkan K3 (makro)',d:'<p>K3 berlaku untuk snapshot kalender retrospektif.</p>'},
+    {t:'Selisih berpasangan K3 − K2',d:'<p>Perubahan kecil dan arahnya tidak konsisten.</p>'},
+    {t:'Cara membaca hasil ini',d:'<p>Hasil kecil atau negatif tetap jawaban penelitian. Tidak ada klaim profit atau kausalitas.</p>'}],
+  draw(i){
+    const v=this.vis;v.innerHTML='';const P=Object.keys(RES),m=HS.m,s=svg(820,330),wrap=H('<div class="svgwrap"></div>');wrap.appendChild(s);v.appendChild(wrap);
+    const mean=k=>M.mean(P.map(p=>RES[p][m][k]));
+    if(i===2||i===4){
+      const a=i===2?'K2':'K3',b=i===2?'K1':'K2',d=P.map(p=>RES[p][m][a]-RES[p][m][b]),mx=.02,X=k=>110+k*95,Y=q=>160-q/mx*120;
+      S('line',{x1:80,x2:790,y1:160,y2:160,class:'axis'},s);[-.02,-.01,.01,.02].forEach(q=>{S('line',{x1:80,x2:790,y1:Y(q),y2:Y(q),class:'grid'},s);T(s,74,Y(q)+4,sg(q,2),{'text-anchor':'end',class:'mono mut','font-size':11});});
+      d.forEach((q,k)=>{S('rect',{x:X(k)-22,y:q>=0?Y(q):160,width:44,height:Math.abs(Y(q)-160),rx:3,fill:q>=0?'var(--buy)':'var(--sell)',class:'grow',style:`animation-delay:${k*90}ms`},s);
+        T(s,X(k),q>=0?Y(q)-6:Y(q)+16,sg(q,4),{'text-anchor':'middle',class:'mono','font-size':11});T(s,X(k),314,P[k].replace('-Jan-Jul',' Jan–Jul'),{'text-anchor':'middle',class:'mono mut','font-size':10.5});});
+      T(s,80,22,`Δ Macro-F1 ${a} − ${b} · ${m==='lr'?'Regresi Logistik':'XGBoost'}`,{'font-weight':700});
+      const pos=d.filter(q=>q>0).length,med=d.slice().sort((x,y)=>x-y)[3];
+      v.appendChild(H(`<dl class="kv"><dt>Rerata</dt><dd>${sg(M.mean(d),6)}</dd><dt>Median</dt><dd>${sg(med,6)}</dd><dt>Simpangan baku</dt><dd>${f(M.std(d),6)}</dd><dt>Periode positif</dt><dd>${pos} / 7</dd></dl>`));
+      return;
+    }
+    const keys=i===0?['K1']:i===1?['K1','K2']:['K1','K2','K3'],col={K1:'var(--muted)',K2:'var(--gold)',K3:'var(--k3)'};
+    const X=k=>110+k*95,Y=q=>290-(q-.32)/(.44-.32)*260;
+    [.33,.36,.39,.42].forEach(q=>{S('line',{x1:80,x2:790,y1:Y(q),y2:Y(q),class:'grid'},s);T(s,74,Y(q)+4,f(q,2),{'text-anchor':'end',class:'mono mut','font-size':11});});
+    S('line',{x1:80,x2:790,y1:Y(1/3),y2:Y(1/3),stroke:'var(--sell)','stroke-dasharray':'2 4'},s);T(s,790,Y(1/3)-6,'acak ≈ 0,333',{'text-anchor':'end',class:'fs','font-size':11});
+    P.forEach((p,k)=>T(s,X(k),314,p.replace('-Jan-Jul',' Jan–Jul'),{'text-anchor':'middle',class:'mono mut','font-size':10.5}));
+    keys.forEach((kk,j)=>{const pts=P.map((p,k)=>[X(k),Y(RES[p][m][kk])]);const path=S('path',{d:'M'+pts.map(q=>q.join(' ')).join('L'),fill:'none',stroke:col[kk],'stroke-width':kk==='K1'?2:2.6},s);
+      const L=path.getTotalLength?2000:0;if(j===keys.length-1&&L){path.style.strokeDasharray=L;path.style.strokeDashoffset=L;path.style.transition='stroke-dashoffset 1.2s ease';requestAnimationFrame(()=>requestAnimationFrame(()=>path.style.strokeDashoffset=0));}
+      pts.forEach(q=>S('circle',{cx:q[0],cy:q[1],r:3.5,fill:col[kk]},s));
+});
+    const ends=keys.map(kk=>({kk,y:Y(RES[P[6]][m][kk])})).sort((a,b)=>a.y-b.y);for(let j=1;j<ends.length;j++)ends[j].y=Math.max(ends[j].y,ends[j-1].y+14);
+    ends.forEach(e=>T(s,X(6)+10,e.y+4,e.kk,{'font-weight':700,style:`fill:${col[e.kk]}`}));
+    T(s,80,18,`Macro-F1 per periode uji · ${m==='lr'?'Regresi Logistik':'XGBoost'}`,{'font-weight':700});
+    const rows=['lr','xgb'].map(mm=>{const mn=k=>M.mean(P.map(p=>RES[p][mm][k]));return `<tr class="${mm===m?'hi':''}"><td>${mm==='lr'?'Regresi Logistik':'XGBoost'}</td><td class="num">${f(mn('K1'),6)}</td><td class="num">${i>=1?f(mn('K2'),6):'·'}</td><td class="num">${i>=3?f(mn('K3'),6):'·'}</td><td class="num">${i>=1?sg(mn('K2')-mn('K1'),6):'·'}</td><td class="num">${i>=3?sg(mn('K3')-mn('K2'),6):'·'}</td></tr>`;}).join('');
+    v.appendChild(H(`<div class="tbl-wrap"><table class="t"><thead><tr><th>Rerata 7 periode</th><th>K1</th><th>K2</th><th>K3</th><th>K2−K1</th><th>K3−K2</th></tr></thead><tbody>${rows}</tbody></table></div>`));
+    if(i===5)v.appendChild(H('<div class="cards" style="margin-top:12px"><div class="card"><h3>Yang boleh disimpulkan</h3><p style="font-size:14.5px;margin:0">Menambah RSI/MACD dan fitur makro hanya mengubah Macro-F1 sangat kecil, arahnya tidak konsisten antarperiode dan antarmodel.</p></div><div class="card"><h3>Yang tidak boleh diklaim</h3><p style="font-size:14.5px;margin:0">Keuntungan transaksi, pengaruh kausal fitur, atau validitas point-in-time penuh untuk K3. Selisih mencakup efek penyetelan ulang hiperparameter.</p></div><div class="card"><h3>Sisa menuju P2</h3><p style="font-size:14.5px;margin:0">Pembahasan per kelas dan periode, sensitivitas parameter tetap, Ultima (4 periode layak; 3 NOT TESTED), Bab 5–6.</p></div></div>'));
+  }});
+
+// ================= 08 LATIHAN =================
+const QA=[
+ ['Kenapa label tidak memakai ambang tetap, misalnya 0,1%?','Volatilitas emas berubah-ubah. Ambang 0,5·σ24 menyesuaikan diri dengan gejolak 24 jam terakhir, sehingga HOLD berarti "pergerakan kecil relatif terhadap kondisi saat itu". Pengali 0,5 dibekukan sebelum skor dibaca; 0,25 dan 1,0 hanya sensitivitas.'],
+ ['Apa yang mencegah kebocoran masa depan?','Fitur hanya memakai data sampai waktu keputusan τ_t, evaluasi kronologis (bukan acak), purge pada setiap batas, praproses dan bobot kelas di-fit dari data latih saja, dan fitur makro hanya setelah waktu rilis.'],
+ ['Kenapa memakai walk-forward, bukan k-fold acak?','Data deret waktu saling bergantung. Pembagian acak membuat model dilatih dengan masa depan lalu diuji di masa lalu, sehingga skornya terlalu optimistis.'],
+ ['Apa isi daun pohon XGBoost?','Bukan kelas, melainkan tambahan skor (logit) untuk satu kelas: w = −G/(H+λ). Prediksi akhir = softmax dari jumlah η·w semua pohon per kelas.'],
+ ['Kenapa satu iterasi XGBoost punya tiga pohon?','Objektif multi:softprob untuk tiga kelas membangun satu pohon per kelas di setiap iterasi. n_estimators = jumlah iterasi, jadi 100 iterasi = 300 pohon.'],
+ ['Gain itu apa?','Seberapa besar objektif berkurang jika simpul dibelah: ½[G_L²/(H_L+λ) + G_R²/(H_R+λ) − G²/(H+λ)] − γ. Split dipilih yang gain-nya terbesar dan anak-anaknya punya H ≥ min_child_weight.'],
+ ['Kenapa Macro-F1 sebagai metrik utama?','Kelas tidak seimbang (HOLD dominan). Macro-F1 memberi bobot sama ke BUY, HOLD, dan SELL sehingga model yang hanya menebak kelas mayoritas tidak terlihat bagus.'],
+ ['Hasilnya kecil. Apakah penelitian gagal?','Tidak. Pertanyaannya adalah seberapa besar kontribusi kelompok fitur, dan jawabannya: kecil dan tidak konsisten. Hasil negatif dilaporkan apa adanya tanpa mengubah protokol.'],
+ ['Kenapa K3 dibatasi?','Nilai actual/forecast diambil retrospektif dari kalender MT5; vintage independen tidak tersedia. Sepuluh jangkar waktu rilis cocok, tetapi hasil K3 berlaku untuk snapshot itu, bukan simulasi real-time penuh.'],
+ ['Kenapa 50% sudah tercapai?','Berita acara meminta koding 50% dan dokumentasi sampai perhitungan manual. Pipeline lengkap sudah berjalan (24 run teraudit), draf Bab 1–4 tersedia, dan perhitungan manual tersedia di Excel dan web ini. Pengesahan tetap keputusan pembimbing.'],
+];
+const QS={show:false};
+CH.push({id:'latihan',short:'Latihan',title:'Latihan tanya jawab P1',
+  lede:'Jawab dengan suara dulu, baru buka jawaban. Tombol ← → untuk berpindah soal.',pace:9000,
+  steps:()=>QA.map((q,k)=>({t:q[0]})),
+  draw(i){const v=this.vis;v.innerHTML='';QS.show=false;
+    const w=H(`<div class="qa"><div class="mono mut" style="font-size:13px">Soal ${i+1} dari ${QA.length}</div><div class="q">${QA[i][0]}</div><button class="btn" type="button" id="qaBtn" style="justify-self:start">Tampilkan jawaban</button><div class="a" hidden>${QA[i][1]}</div></div>`);
+    $('#qaBtn',w).onclick=()=>{const a=$('.a',w);a.hidden=!a.hidden;$('#qaBtn',w).textContent=a.hidden?'Tampilkan jawaban':'Sembunyikan jawaban';};v.appendChild(w);}
+});
+
+// ===== Mulai =====
+buildShell();
+const pb=$('#presentBtn');pb.onclick=()=>{const on=document.body.classList.toggle('present');pb.setAttribute('aria-pressed',on);};
+document.addEventListener('keydown',e=>{
+  const tg=e.target instanceof Element?e.target:document.body;
+  if(tg.closest('input,select,textarea'))return;
+  if(e.key==='ArrowRight'){stop();setStep(step+1);e.preventDefault();}
+  else if(e.key==='ArrowLeft'){stop();setStep(step-1);e.preventDefault();}
+  else if(e.key===' '&&!tg.closest('button')){timer?stop():play();e.preventDefault();}
+  else if(e.key==='p'||e.key==='P')pb.click();
+  else if(e.key==='Escape'&&document.body.classList.contains('present'))pb.click();
+});
+let start=location.hash.slice(1);if(!CH.some(c=>c.id===start)){try{start=localStorage.getItem('labp1-ch')||'';}catch(e){start='';}}
+go(CH.some(c=>c.id===start)?start:'peta');
+})();
+</script>
+
+</html>

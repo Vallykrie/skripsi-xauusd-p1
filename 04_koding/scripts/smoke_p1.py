@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
+REPO = ROOT.parent
 sys.path.insert(0, str(ROOT / 'src'))
 
 from thesis_experiments.features import K1_COLUMNS, build_feature_frame
@@ -38,7 +39,7 @@ def from_matrix(record):
 
 def verify_aggregates():
     checked = 0
-    files = sorted((ROOT / 'hasil').glob('*-0p*.json')) + sorted((ROOT / 'hasil').glob('*-1p0*.json'))
+    files = sorted((REPO / '05_hasil/run').glob('*-0p*.json')) + sorted((REPO / '05_hasil/run').glob('*-1p0*.json'))
     assert len(files) == 24, len(files)
     for path in files:
         summary = json.loads(path.read_text())
@@ -79,7 +80,7 @@ def verify_pair(summary, model, paired, metric, left, right, fixed):
 
 
 def synthetic_smoke():
-    raw = pd.read_csv(ROOT / 'belajar/harga-sintetis.csv')
+    raw = pd.read_csv(REPO / '02_perhitungan_manual/harga-sintetis.csv')
     raw['time'] = pd.to_datetime(raw['time'], utc=True)
     features = build_feature_frame(raw, [0] * len(raw))
     row = features.iloc[49]

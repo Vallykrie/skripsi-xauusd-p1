@@ -10,5 +10,5 @@ node_modules/
 *.joblib
 *.pkl
 .env*
-naskah/build/
+01_dokumentasi/sumber-latex/build/
 .DS_Store

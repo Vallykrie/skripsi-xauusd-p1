@@ -17,3 +17,7 @@ Dilakukan 8 Oktober 2026 pada macOS dengan interpreter proyek yang sudah tersedi
 Excel desktop native **NOT TESTED**. Reproduksi training utama dari clone publik tanpa input privat **NOT TESTED**. Penguasaan mahasiswa dan pengesahan P1 **NOT TESTED**. Tes portabel tidak membuktikan ulang provenance vendor maupun vintage kalender.
 
 PDF memakai Latin Modern Roman dan pembungkus report generik. Log menunjukkan satu overfull hbox0,571pt dan peringatan bahasa polyglossia; tinjauan visual tidak menunjukkan pemotongan isi. Ini draf kurasi publik, bukan keluaran format resmi kampus.
+
+## Setelah penyusunan ulang (12 Oktober 2026)
+
+Dari folder `04_koding/` pada macOS: `pytest` 56 lulus; Ruff lulus; `verify_agents.sh` lulus; `smoke_p1.py` 24 run, 1320 matriks/metrik dan ringkasan pasangan cocok. `node --test ../03_web_belajar/tests/lab-math.test.mjs` 7 lulus. Web diperiksa di browser: seluruh langkah sembilan bab tanpa error JavaScript, lebar 1280 dan 390 px tanpa overflow halaman. Kompilasi ulang LaTeX setelah pemindahan folder: NOT TESTED (struktur relatif `sumber-latex/` tidak berubah).
