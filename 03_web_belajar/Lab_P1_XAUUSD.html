@@ -200,9 +200,9 @@ const CLOSES=[2000,2002,2001,2004,2002,2003,2000,2002,2002,2006,2004,2005,2004,2
 const mean=a=>a.reduce((s,x)=>s+x,0)/a.length;
 const std=(a,ddof=1)=>{const m=mean(a);return Math.sqrt(a.reduce((s,x)=>s+(x-m)**2,0)/(a.length-ddof));};
 function softmax(z){const m=Math.max(...z),e=z.map(x=>Math.exp(x-m)),s=e.reduce((a,b)=>a+b,0);return e.map(x=>x/s);}
-function target(next=2017,mult=.5){
-  const returns=CLOSES.slice(1,50).map((c,i)=>Math.log(c/CLOSES[i]));
-  const win=returns.slice(-24),sigma=std(win),delta=mult*sigma,q=Math.log(next/CLOSES[49]);
+function target(next=2020,mult=.5){
+  const returns=CLOSES.slice(1,51).map((c,i)=>Math.log(c/CLOSES[i]));
+  const win=returns.slice(-24),sigma=std(win),delta=mult*sigma,q=Math.log(next/CLOSES[50]);
   return {returns,win,mean:mean(win),sigma,delta,q,label:q>delta?'BUY':q<-delta?'SELL':'HOLD'};
 }
 function ema(v,p){const out=Array(v.length).fill(null);if(v.length<p)return out;out[p-1]=mean(v.slice(0,p));const a=2/(p+1);for(let i=p;i<v.length;i++)out[i]=a*v[i]+(1-a)*out[i-1];return out;}
@@ -368,8 +368,8 @@ CH.push({id:'peta',short:'Peta P1',title:'Apa yang dinilai di P1',
     }
     if(i===1){
       const rows=[
-        ['Koding 50%','Pipeline audit harga → label → fitur K1/K2/K3 → nested walk-forward → Logistik/XGBoost → metrik. Tes lulus di repo publik.','ok','Melebihi 50%: 24 run sudah berjalan'],
-        ['Dokumentasi','Draf Bab 1–4 (PDF 40 halaman) dengan Bab 3 sebagai protokol.','ok','Tersedia'],
+        ['Koding 50%','Sembilan notebook: audit harga → label → fitur K1/K2/K3 → nested walk-forward → Logistik/XGBoost → metrik → verifikasi.','ok','Eksperimen Fase 4 berjalan penuh'],
+        ['Dokumentasi','Bab 1–3 final P0 (PDF 36 halaman); Bab 3 adalah protokol eksperimen.','ok','Tersedia'],
         ['Perhitungan manual','Excel 8 tab berumus aktif + panduan + web ini: label, RSI/MACD, praproses, Logistik, XGBoost, metrik.','ok','Tersedia'],
         ['Penguasaan mahasiswa','Mampu menjelaskan tiap langkah tanpa melihat kunci.','wait','Latihan di bab 08'],
         ['Logbook bimbingan','Catatan sah per pembimbing sebelum P1.','nt','NOT TESTED'],
@@ -402,13 +402,13 @@ CH.push({id:'peta',short:'Peta P1',title:'Apa yang dinilai di P1',
   }});
 
 // ================= 01 LABEL =================
-const LB={next:2017,mult:.5};
+const LB={next:2020,mult:.5};
 CH.push({id:'label',short:'Label',title:'Dari harga ke label BUY/HOLD/SELL',
   lede:'Label dibuat dari close bar berikutnya dengan ambang yang mengikuti volatilitas 24 jam terakhir. Angka di sini sintetis, sama dengan tab Harga_Target di Excel.',
   init(){const c=this.ctrls;c.appendChild(ctrl('Close bar berikutnya',range('lbNext',2008,2028,1,LB.next,v=>{LB.next=v;render();})));
     const sel=H('<select id="lbMult"><option value="0.25">0,25 (sensitivitas)</option><option value="0.5" selected>0,5 (utama)</option><option value="1">1,0 (sensitivitas)</option></select>');sel.onchange=()=>{LB.mult=+sel.value;render();};c.appendChild(ctrl('Pengali σ',sel));},
   steps:()=>[
-    {t:'Satu bar H1 selesai: apa yang sudah diketahui?',d:'<p>Bar ke-50 (baris Excel 56) baru ditutup di 2018. Keputusan dibuat sekarang. Close bar berikutnya belum diketahui saat prediksi.</p>'},
+    {t:'Satu bar H1 selesai: apa yang sudah diketahui?',d:'<p>Bar ke-51 (baris Excel 57) baru ditutup di 2017. Ini observasi pertama yang layak: Bab 3 mensyaratkan sedikitnya 50 bar pemanasan. Keputusan dibuat sekarang. Close bar berikutnya belum diketahui saat prediksi.</p>'},
     {t:'Log-return 24 bar terakhir',d:'<p>r<sub>t</sub> = ln(C<sub>t</sub>/C<sub>t−1</sub>). 24 return butuh 25 harga penutupan (kotak emas di grafik atas).</p>'},
     {t:'Volatilitas σ24 (STDEV.S)',d:'<p>Simpangan baku sampel, pembagi 23. Garis putus-putus menunjukkan rata-rata ± σ.</p>'},
     {t:'Ambang δ = pengali × σ24',d:'<p>Zona HOLD adalah [−δ, δ]. Pengali utama 0,5 dibekukan sebelum skor dibaca; 0,25 dan 1,0 hanya sensitivitas.</p>'},
@@ -416,21 +416,21 @@ CH.push({id:'label',short:'Label',title:'Dari harga ke label BUY/HOLD/SELL',
     {t:'Kapan tiap informasi tersedia',d:'<p>Fitur hanya memakai data sampai waktu keputusan τ<sub>t</sub>. Label baru diketahui satu jam kemudian. Inilah pencegah look-ahead.</p>'},
   ],
   draw(i){
-    const v=this.vis;v.innerHTML='';const tg=M.target(LB.next,LB.mult);const C=M.CLOSES.slice(0,50).concat([LB.next]);
+    const v=this.vis;v.innerHTML='';const tg=M.target(LB.next,LB.mult);const C=M.CLOSES.slice(0,51).concat([LB.next]);
     const s=svg(820,380),wrap=H('<div class="svgwrap"></div>');wrap.appendChild(s);v.appendChild(wrap);
     // Panel atas: harga
-    const lo=Math.min(...C,2000)-2,hi=Math.max(...C)+2,X=k=>60+k*(660/50),Y=p=>160-(p-lo)/(hi-lo)*130;
-    T(s,60,18,'Close XAUUSD sintetis (bar 1–51)',{class:'mut','font-size':12});
+    const lo=Math.min(...C,2000)-2,hi=Math.max(...C)+2,X=k=>60+k*(660/51),Y=p=>160-(p-lo)/(hi-lo)*130;
+    T(s,60,18,'Close XAUUSD sintetis (bar 1–52)',{class:'mut','font-size':12});
     [lo+2,Math.round((lo+hi)/2),hi-2].forEach(p=>{S('line',{x1:56,x2:780,y1:Y(p),y2:Y(p),class:'grid'},s);T(s,50,Y(p)+4,String(Math.round(p)),{'text-anchor':'end',class:'mono mut','font-size':11});});
-    if(i>=1)S('rect',{x:X(25)-4,y:24,width:X(49)-X(25)+8,height:142,rx:6,fill:'var(--gold-soft)',class:'pop'},s);
-    let d='';C.slice(0,50).forEach((p,k)=>d+=(k?'L':'M')+X(k)+' '+Y(p));S('path',{d,fill:'none',stroke:'var(--ink)','stroke-width':1.6},s);
-    S('circle',{cx:X(49),cy:Y(C[49]),r:5,fill:'var(--gold)'},s);T(s,X(49)-8,Y(C[49])+20,'C_t=2018',{'text-anchor':'end','font-size':12,'font-weight':700});
+    if(i>=1)S('rect',{x:X(26)-4,y:24,width:X(50)-X(26)+8,height:142,rx:6,fill:'var(--gold-soft)',class:'pop'},s);
+    let d='';C.slice(0,51).forEach((p,k)=>d+=(k?'L':'M')+X(k)+' '+Y(p));S('path',{d,fill:'none',stroke:'var(--ink)','stroke-width':1.6},s);
+    S('circle',{cx:X(50),cy:Y(C[50]),r:5,fill:'var(--gold)'},s);T(s,X(50)-8,Y(C[50])+20,'C_t=2017',{'text-anchor':'end','font-size':12,'font-weight':700});
     const ci=tg.label==='BUY'?2:tg.label==='SELL'?0:1;
-    if(i>=4){S('path',{d:`M${X(49)} ${Y(C[49])} L${X(50)} ${Y(LB.next)}`,stroke:CV[ci],'stroke-width':2,'stroke-dasharray':'4 3',fill:'none'},s);S('circle',{cx:X(50),cy:Y(LB.next),r:5,class:CF[ci]+' pop'},s);T(s,X(50)+8,Y(LB.next)+4,`C_t+1=${LB.next}`,{'font-size':12,'font-weight':700});}
-    else{S('rect',{x:X(50)-6,y:30,width:12,height:130,rx:4,fill:'var(--sunk)'},s);T(s,X(50),178,'?',{'text-anchor':'middle',class:'mut','font-weight':700});}
+    if(i>=4){S('path',{d:`M${X(50)} ${Y(C[50])} L${X(51)} ${Y(LB.next)}`,stroke:CV[ci],'stroke-width':2,'stroke-dasharray':'4 3',fill:'none'},s);S('circle',{cx:X(51),cy:Y(LB.next),r:5,class:CF[ci]+' pop'},s);T(s,X(51)+8,Y(LB.next)+4,`C_t+1=${LB.next}`,{'font-size':12,'font-weight':700});}
+    else{S('rect',{x:X(51)-6,y:30,width:12,height:130,rx:4,fill:'var(--sunk)'},s);T(s,X(51),178,'?',{'text-anchor':'middle',class:'mut','font-weight':700});}
     // Panel bawah
     const g=S('g',{transform:'translate(0,200)'},s);
-    if(i===0){T(g,60,30,'Tersedia saat keputusan: OHLC bar 1–50 → fitur.',{});T(g,60,58,'Belum tersedia: close bar 51 → hanya dipakai untuk membentuk label historis.',{class:'mut'});
+    if(i===0){T(g,60,30,'Tersedia saat keputusan: OHLC bar 1–51 → fitur.',{});T(g,60,58,'Belum tersedia: close bar 52 → hanya dipakai untuk membentuk label historis.',{class:'mut'});
       T(g,60,100,'Label tidak datang dari vendor. Kita membuatnya sendiri dari harga berikutnya.',{'font-weight':700});}
     if(i===1||i===2){
       const R=tg.win,mx=Math.max(...R.map(Math.abs))*1.15,bx=k=>70+k*29,base=80,sc=r=>r/mx*70;
@@ -457,11 +457,11 @@ CH.push({id:'label',short:'Label',title:'Dari harga ke label BUY/HOLD/SELL',
       T(g,330,140,'Fitur ≤ τ_t',{'text-anchor':'middle',class:'fb','font-weight':700});T(g,550,140,'Label diketahui di sini',{'text-anchor':'middle',class:'fg','font-weight':700});
       T(g,80,170,'Syarat data riil: bar t+1 dibuka tepat 1 jam setelah bar t, satu segmen, dan label berakhir di dalam periode uji yang sama.',{class:'mut','font-size':12});
     }
-    v.appendChild(H(`<dl class="kv" style="margin-top:6px"><dt>r_t (bar 50)</dt><dd>${f(Math.log(2018/2016),10)}</dd><dt>σ24</dt><dd>${i>=2?f(tg.sigma,10):'…'}</dd><dt>δ = ${String(LB.mult).replace('.',',')}·σ24</dt><dd>${i>=3?f(tg.delta,10):'…'}</dd><dt>q = ln(${LB.next}/2018)</dt><dd>${i>=4?f(tg.q,10):'…'}</dd><dt>Label</dt><dd>${i>=4?lab(ci):'…'}</dd></dl>`));
+    v.appendChild(H(`<dl class="kv" style="margin-top:6px"><dt>r_t (bar 51)</dt><dd>${f(Math.log(2017/2018),10)}</dd><dt>σ24</dt><dd>${i>=2?f(tg.sigma,10):'…'}</dd><dt>δ = ${String(LB.mult).replace('.',',')}·σ24</dt><dd>${i>=3?f(tg.delta,10):'…'}</dd><dt>q = ln(${LB.next}/2017)</dt><dd>${i>=4?f(tg.q,10):'…'}</dd><dt>Label</dt><dd>${i>=4?lab(ci):'…'}</dd></dl>`));
   }});
 
 // ================= 02 FITUR =================
-const FT={bar:56,age:2};
+const FT={bar:57,age:2};
 const IND=M.indicators();
 CH.push({id:'fitur',short:'Fitur K1–K3',title:'Tiga konfigurasi fitur',
   lede:'K1 hanya harga. K2 menambah RSI dan MACD. K3 menambah fitur makro yang lolos gerbang waktu. Yang dibandingkan adalah perubahan skor ketika kelompok fitur ditambahkan.',
@@ -817,10 +817,10 @@ CH.push({id:'evaluasi',short:'Evaluasi',title:'Dari matriks kebingungan ke Macro
   }});
 
 // ================= 07 HASIL ASLI =================
-const RES={"2023-H1":{"n":2807,"lr":{"K1":0.4237922723723678,"K2":0.42355496396540876,"K3":0.4132613066347537},"xgb":{"K1":0.42458263267227175,"K2":0.41331809608303754,"K3":0.42763691261516207}},"2023-H2":{"n":2829,"lr":{"K1":0.3912271704727124,"K2":0.39240669690996777,"K3":0.3893392554623958},"xgb":{"K1":0.39304857277507593,"K2":0.38469588584644354,"K3":0.38807387325142706}},"2024-H1":{"n":2808,"lr":{"K1":0.3949741208291892,"K2":0.39870067486346555,"K3":0.39509116007355893},"xgb":{"K1":0.39289739846952415,"K2":0.4006742708307795,"K3":0.3941005992042473}},"2024-H2":{"n":2870,"lr":{"K1":0.3891278025090041,"K2":0.3883122635211529,"K3":0.38706880010613115},"xgb":{"K1":0.3874310240411402,"K2":0.4003502177198752,"K3":0.39197916032239716}},"2025-H1":{"n":2735,"lr":{"K1":0.39124069474861695,"K2":0.3872470116524441,"K3":0.3894629261862581},"xgb":{"K1":0.38951103217410776,"K2":0.38692937847537356,"K3":0.39186774976575994}},"2025-H2":{"n":2746,"lr":{"K1":0.37949647686639243,"K2":0.378420280302203,"K3":0.3824112639823816},"xgb":{"K1":0.3765296531018849,"K2":0.3826923167481015,"K3":0.37950129599426113}},"2026-Jan-Jul":{"n":3103,"lr":{"K1":0.37623994571225,"K2":0.3779733232608941,"K3":0.37981915898365265},"xgb":{"K1":0.36724438400060405,"K2":0.38560501919047335,"K3":0.38337403267467046}}};
+const RES={"2023-H1":{"n":2807,"lr":{"K1":0.4237922723723678,"K2":0.4232301923835364,"K3":0.4151302056817373},"xgb":{"K1":0.4159878157463081,"K2":0.4166949392587258,"K3":0.4200646301635444}},"2023-H2":{"n":2829,"lr":{"K1":0.3917464961163155,"K2":0.3927106576777099,"K3":0.3898559949758211},"xgb":{"K1":0.4020927299977663,"K2":0.3949651397020997,"K3":0.3897368652642221}},"2024-H1":{"n":2808,"lr":{"K1":0.3956549369892605,"K2":0.3978869629858404,"K3":0.3946914811361052},"xgb":{"K1":0.3986090801845177,"K2":0.3969186437044685,"K3":0.3961103263266445}},"2024-H2":{"n":2870,"lr":{"K1":0.3884415666744714,"K2":0.3887889389057115,"K3":0.3866214789528346},"xgb":{"K1":0.3946443997987412,"K2":0.4009078555582425,"K3":0.3992828811856866}},"2025-H1":{"n":2734,"lr":{"K1":0.3899274189526685,"K2":0.387172724297099,"K3":0.3910328031062939},"xgb":{"K1":0.3933371166631469,"K2":0.38216509268556,"K3":0.3914215302922268}},"2025-H2":{"n":2744,"lr":{"K1":0.3788253967884516,"K2":0.37866905682432,"K3":0.3840224265627762},"xgb":{"K1":0.3716808252340728,"K2":0.3759640715169339,"K3":0.3778315981551907}},"2026-Jan-Jul":{"n":3101,"lr":{"K1":0.3766870295340292,"K2":0.3772405673454604,"K3":0.3799101973713165},"xgb":{"K1":0.378143880312975,"K2":0.3792967789102614,"K3":0.375816760465103}}};
 const HS={m:'xgb'};
 CH.push({id:'hasil',short:'Hasil asli',title:'Hasil penelitian: MetaQuotes, policy primer, ambang 0,5·σ24',
-  lede:'Angka asli dari run metaquotes-demo-primary-0p5-k3 (hasil/metrik-per-fold.csv). Macro-F1 per periode uji; rerata tidak dibobot jumlah bar dan bukan uji signifikansi.',
+  lede:'Angka asli dari run notebook Fase 4, 16 Oktober 2026 (05_hasil/metrik-per-periode.csv). Macro-F1 per periode uji; rerata tidak dibobot jumlah bar dan bukan uji signifikansi.',
   init(){this.ctrls.appendChild(ctrl('Model',seg('hsM',[['lr','Regresi Logistik'],['xgb','XGBoost']],HS.m,v=>{HS.m=v;render();})));},
   steps:()=>[{t:'K1: hanya fitur harga',d:'<p>Tujuh periode uji. Garis putus-putus 0,333 adalah acuan tebakan acak tiga kelas.</p>'},
     {t:'Tambahkan K2 (RSI/MACD)',d:'<p>Lihat apakah garis K2 selalu di atas K1. Ternyata tidak.</p>'},
@@ -855,7 +855,7 @@ CH.push({id:'hasil',short:'Hasil asli',title:'Hasil penelitian: MetaQuotes, poli
     T(s,80,18,`Macro-F1 per periode uji · ${m==='lr'?'Regresi Logistik':'XGBoost'}`,{'font-weight':700});
     const rows=['lr','xgb'].map(mm=>{const mn=k=>M.mean(P.map(p=>RES[p][mm][k]));return `<tr class="${mm===m?'hi':''}"><td>${mm==='lr'?'Regresi Logistik':'XGBoost'}</td><td class="num">${f(mn('K1'),6)}</td><td class="num">${i>=1?f(mn('K2'),6):'·'}</td><td class="num">${i>=3?f(mn('K3'),6):'·'}</td><td class="num">${i>=1?sg(mn('K2')-mn('K1'),6):'·'}</td><td class="num">${i>=3?sg(mn('K3')-mn('K2'),6):'·'}</td></tr>`;}).join('');
     v.appendChild(H(`<div class="tbl-wrap"><table class="t"><thead><tr><th>Rerata 7 periode</th><th>K1</th><th>K2</th><th>K3</th><th>K2−K1</th><th>K3−K2</th></tr></thead><tbody>${rows}</tbody></table></div>`));
-    if(i===5)v.appendChild(H('<div class="cards" style="margin-top:12px"><div class="card"><h3>Yang boleh disimpulkan</h3><p style="font-size:14.5px;margin:0">Menambah RSI/MACD dan fitur makro hanya mengubah Macro-F1 sangat kecil, arahnya tidak konsisten antarperiode dan antarmodel.</p></div><div class="card"><h3>Yang tidak boleh diklaim</h3><p style="font-size:14.5px;margin:0">Keuntungan transaksi, pengaruh kausal fitur, atau validitas point-in-time penuh untuk K3. Selisih mencakup efek penyetelan ulang hiperparameter.</p></div><div class="card"><h3>Sisa menuju P2</h3><p style="font-size:14.5px;margin:0">Pembahasan per kelas dan periode, sensitivitas parameter tetap, Ultima (4 periode layak; 3 NOT TESTED), Bab 5–6.</p></div></div>'));
+    if(i===5)v.appendChild(H('<div class="cards" style="margin-top:12px"><div class="card"><h3>Yang boleh disimpulkan</h3><p style="font-size:14.5px;margin:0">Menambah RSI/MACD dan fitur makro hanya mengubah Macro-F1 sangat kecil, arahnya tidak konsisten antarperiode dan antarmodel.</p></div><div class="card"><h3>Yang tidak boleh diklaim</h3><p style="font-size:14.5px;margin:0">Keuntungan transaksi, pengaruh kausal fitur, atau validitas point-in-time penuh untuk K3. Selisih mencakup efek penyetelan ulang hiperparameter.</p></div><div class="card"><h3>Sisa menuju P2</h3><p style="font-size:14.5px;margin:0">Pembahasan per kelas dan periode, sensitivitas ambang dan parameter tetap, serta Bab 4–6 dari hasil notebook.</p></div></div>'));
   }});
 
 // ================= 08 LATIHAN =================
@@ -869,7 +869,7 @@ const QA=[
  ['Kenapa Macro-F1 sebagai metrik utama?','Kelas tidak seimbang (HOLD dominan). Macro-F1 memberi bobot sama ke BUY, HOLD, dan SELL sehingga model yang hanya menebak kelas mayoritas tidak terlihat bagus.'],
  ['Hasilnya kecil. Apakah penelitian gagal?','Tidak. Pertanyaannya adalah seberapa besar kontribusi kelompok fitur, dan jawabannya: kecil dan tidak konsisten. Hasil negatif dilaporkan apa adanya tanpa mengubah protokol.'],
  ['Kenapa K3 dibatasi?','Nilai actual/forecast diambil retrospektif dari kalender MT5; vintage independen tidak tersedia. Sepuluh jangkar waktu rilis cocok, tetapi hasil K3 berlaku untuk snapshot itu, bukan simulasi real-time penuh.'],
- ['Kenapa 50% sudah tercapai?','Berita acara meminta koding 50% dan dokumentasi sampai perhitungan manual. Pipeline lengkap sudah berjalan (24 run teraudit), draf Bab 1–4 tersedia, dan perhitungan manual tersedia di Excel dan web ini. Pengesahan tetap keputusan pembimbing.'],
+ ['Kenapa 50% sudah tercapai?','Berita acara meminta koding 50% dan dokumentasi sampai perhitungan manual. Eksperimen Fase 4 sudah berjalan penuh lewat sembilan notebook yang bisa dijalankan ulang, Bab 1–3 final P0 tersedia, dan perhitungan manual tersedia di Excel dan web ini. Pengesahan tetap keputusan pembimbing.'],
 ];
 const QS={show:false};
 CH.push({id:'latihan',short:'Latihan',title:'Latihan tanya jawab P1',

@@ -1,6 +1,6 @@
 \chapter{METODOLOGI}
 
-Bab ini menjelaskan protokol penelitian yang digunakan untuk mengukur perubahan kinerja klasifikasi arah XAUUSD setelah penambahan kelompok fitur teknikal dan makroekonomi. Seluruh ambang, periode, fitur, dan hiperparameter ditetapkan sebagai pilihan desain sebelum eksperimen utama, bukan sebagai nilai optimum yang telah dibuktikan. Arsip uji kelayakan yang tersedia menjadi bukti bahwa penelitian dapat dilanjutkan, tetapi hasilnya tidak diperlakukan sebagai hasil eksperimen utama ataupun sebagai data uji prospektif yang belum pernah dilihat.
+Bab ini menjelaskan protokol penelitian yang diusulkan untuk mengukur perubahan kinerja klasifikasi arah XAUUSD setelah penambahan kelompok fitur teknikal dan makroekonomi. Seluruh ambang, periode, fitur, dan hiperparameter ditetapkan sebagai pilihan desain sebelum eksperimen utama, bukan sebagai nilai optimum yang telah dibuktikan. Arsip uji kelayakan yang tersedia menjadi bukti bahwa penelitian dapat dilanjutkan, tetapi hasilnya tidak diperlakukan sebagai hasil eksperimen utama ataupun sebagai data uji prospektif yang belum pernah dilihat.
 
 \section{Tipe Penelitian}
 
@@ -12,7 +12,7 @@ Strategi penelitian berupa eksperimen komparatif dengan penambahan kelompok fitu
 
 Perubahan skor Konfigurasi 2 terhadap Konfigurasi 1 ($K2-K1$) dan Konfigurasi 3 terhadap Konfigurasi 2 ($K3-K2$) dihitung secara berpasangan pada bar uji, periode uji, model, dan metrik yang sama. Pada analisis utama, setiap konfigurasi memperoleh penyetelan hiperparameter sendiri menggunakan data latih. Dengan demikian, selisih skor mengukur perubahan bersyarat akibat penambahan kelompok fitur beserta penyetelan ulang model, bukan pengaruh murni atau kausal fitur tersebut. Analisis sensitivitas dengan hiperparameter tetap digunakan untuk membantu memisahkan kedua unsur itu.
 
-Alur penelitian ditunjukkan pada Gambar \ref{fig:alur-penelitian}. Protokol dibekukan sebelum eksperimen baru dijalankan dan sebelum skor periode uji diperiksa.
+Alur penelitian yang direncanakan ditunjukkan pada Gambar \ref{fig:alur-penelitian}. Protokol dibekukan sebelum eksperimen baru dijalankan dan sebelum skor periode uji diperiksa.
 
 \begin{figure}[htbp]
     \centering
@@ -36,7 +36,7 @@ Alur penelitian ditunjukkan pada Gambar \ref{fig:alur-penelitian}. Protokol dibe
         \draw[flow] (inner) -- (outer);
         \draw[flow] (outer) -- (compare);
     \end{tikzpicture}
-    \caption{Alur penelitian}
+    \caption{Alur penelitian yang diusulkan}
     \label{fig:alur-penelitian}
 \end{figure}
 
@@ -77,7 +77,7 @@ Penelitian tidak memerlukan lokasi fisik atau laboratorium tertentu karena penyi
     \end{tabular}
 \end{table}
 
-Perangkat lunak lingkungan persiapan diringkas pada Tabel \ref{tab:perangkat-lunak}. Versi sistem operasi, Python, pustaka, dan Git pada pelaksanaan akhir dicatat bersama artefak eksperimen. Lingkungan sumber historis arsip harga tetap dicatat secara terpisah, yaitu Windows 11 dengan Python 3.12.10, NumPy 2.5.1, pandas 3.0.5, scikit-learn 1.9.0, dan XGBoost 2.1.4; pencatatan lingkungan macOS tidak menggantikan provenance tersebut.
+Perangkat lunak lingkungan persiapan diringkas pada Tabel \ref{tab:perangkat-lunak}. Versi sistem operasi, Python, pustaka, dan Git pada pelaksanaan akhir akan dicatat kembali bersama artefak eksperimen. Lingkungan sumber historis arsip harga tetap dicatat secara terpisah, yaitu Windows 11 dengan Python 3.12.10, NumPy 2.5.1, pandas 3.0.5, scikit-learn 1.9.0, dan XGBoost 2.1.4; pencatatan lingkungan macOS tidak menggantikan provenance tersebut.
 
 \begin{table}[htbp]
     \centering
@@ -270,7 +270,28 @@ Setiap eksekusi menyimpan hash data masukan dan keluaran, versi perangkat lunak,
 
 Ancaman validitas utama berasal dari ketiadaan snapshot \emph{point-in-time} independen yang merekam perubahan nilai kalender. Nilai \emph{actual} dan \emph{forecast} historis yang diperoleh secara retrospektif dari MT5 mungkin mencerminkan koreksi setelah publikasi. Oleh sebab itu, hasil K3 berlaku untuk snapshot kalender beku yang digunakan dan tidak disetarakan dengan simulasi waktu nyata yang sepenuhnya \emph{point-in-time}. Ancaman lain meliputi jarangnya peristiwa makroekonomi, perubahan rezim harga, karakteristik data pada server MetaQuotes-Demo, serta ketergantungan antarperiode uji. Kesimpulan dibatasi pada XAUUSD H1 dari MetaQuotes-Demo, rentang waktu, definisi label, dua model, dan konfigurasi fitur yang dinyatakan pada penelitian ini.
 
-\section{Ketertelusuran Pelaksanaan}
-Protokol metode pada bab ini berasal dari proposal yang telah dibekukan. Perubahan penyajian menjadi laporan skripsi tidak mengubah definisi target, ambang, fitur, waktu keputusan, periode uji, prapemrosesan, atau penyetelan model. Identitas lingkungan dan artefak beku dicatat pada manifes pelaksanaan. Hasil evaluasi Fase 4 yang dijalankan pada 21--22 September 2026 disajikan pada Bab 4, terpisah dari hasil uji kelayakan historis.
+\section{Jadwal Penelitian}
 
-Jadwal kemajuan akademik dikelola dalam roadmap penelitian: target kerja P1 pada 20 Oktober 2026 dalam rentang 19--25 Oktober, P2 pada 23--27 November, dan persiapan Seminar Hasil pada 28 November--11 Desember. Tanggal tersebut merupakan target kerja; status penilaian dan jadwal pelaksanaan ditetapkan bersama pembimbing serta akademik.
+Jadwal penelitian disusun agar Penilaian Kemajuan 2 (P2) selesai sebelum Desember 2026. Waktu setelah P2 dialokasikan untuk menindaklanjuti masukan Pembimbing, menyelesaikan naskah dan artikel ilmiah, memenuhi persyaratan administratif, serta mempersiapkan Seminar Hasil. Eksperimen K3 dan analisis $K3-K2$ ditetapkan sebagai luaran penelitian. Rencana pelaksanaan penelitian ditunjukkan pada Tabel \ref{tab:jadwal-penelitian}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Jadwal pelaksanaan penelitian}
+    \label{tab:jadwal-penelitian}
+    \small
+    \setlength{\tabcolsep}{3pt}
+    \begin{tabular}{>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{6.1cm}}
+        \hline
+        Kegiatan & Periode & Target \\
+        \hline
+        P0 dan pembekuan protokol & 21 September 2026 & Protokol serta target P1--P2 disepakati \\
+        Implementasi pipeline & 22 September--4 Oktober 2026 & Pipeline validasi kronologis teruji \\
+        Eksperimen K1--K2 & 5--18 Oktober 2026 & Prediksi, metrik, dan analisis sensitivitas \\
+        Analisis awal dan P1 & 19--25 Oktober 2026 & Capaian sedikitnya 50\% dan ringkasan $K2-K1$ \\
+        Eksperimen K3 & 26 Oktober--8 November 2026 & Prediksi, metrik, dan analisis $K3-K2$ \\
+        Analisis dan penulisan & 9--22 November 2026 & Hasil, pembahasan, dan draf naskah lengkap \\
+        Finalisasi dan P2 & 23--27 November 2026 & Capaian sedikitnya 80\% dan berita acara P2 \\
+        Persiapan Seminar Hasil & 28 November--11 Desember 2026 & Naskah final, artikel, berkas, dan presentasi \\
+        \hline
+    \end{tabular}
+\end{table}

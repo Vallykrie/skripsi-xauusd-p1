@@ -7,15 +7,15 @@ const src=html.match(/<script id="lab-math">([\s\S]*?)<\/script>/)[1];
 const M=new Function('module',src+';return LabMath;')(undefined);
 const near=(a,b,e=1e-9)=>assert.ok(Math.abs(a-b)<e,`${a} != ${b}`);
 
-test('label bar 50 sesuai workbook',()=>{
-  const t=M.target(2017,.5);
-  near(t.sigma,0.0010630483,1e-10);near(t.delta,0.0005315242,1e-10);near(t.q,-0.0004956630,1e-10);
-  assert.equal(t.label,'HOLD');assert.equal(M.target(2020,.5).label,'BUY');
+test('label bar 51 (observasi layak pertama) sesuai workbook',()=>{
+  const t=M.target(2020,.5);
+  near(t.sigma,0.0010629949,1e-10);near(t.delta,0.0005314974,1e-10);near(t.q,0.0014862524,1e-10);
+  assert.equal(t.label,'BUY');assert.equal(M.target(2018,.5).label,'HOLD');assert.equal(M.target(2015,.5).label,'SELL');
 });
 test('RSI dan MACD sesuai workbook',()=>{
   const I=M.indicators();
-  near(I.rsi[14],60,1e-9);near(I.rsi[15],64.577657,1e-6);near(I.rsi[49],61.23487934,1e-7);
-  near(I.macd[49]/M.CLOSES[49],0.0011834227,1e-10);near(I.sig[49]/M.CLOSES[49],0.0011542325,1e-10);
+  near(I.rsi[14],60,1e-9);near(I.rsi[15],64.577657,1e-6);near(I.rsi[50],58.73572475,1e-7);
+  near(I.macd[50]/M.CLOSES[50],0.0011625092,1e-10);near(I.sig[50]/M.CLOSES[50],0.0011563457,1e-10);
 });
 test('satu langkah Logistik sesuai workbook',()=>{
   const L=M.logistic();near(L.sd,1.707825128,1e-9);near(L.beta[2],0.234216018,1e-9);

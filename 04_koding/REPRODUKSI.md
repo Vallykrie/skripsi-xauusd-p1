@@ -4,26 +4,17 @@ Semua perintah dijalankan dari folder `04_koding/`.
 
 ## Tiga tingkat pemeriksaan
 
-1. **Portabel:** pytest, Ruff, verify_agents, smoke_p1. Menguji kode dan formula pembelajaran tanpa MT5 atau data privat.
-2. **Agregat:** smoke_p1 menghitung ulang macro-F1 dan balanced accuracy dari matriks kebingungan setiap fold; memeriksa pasangan dan ringkasan. Ini tidak membuktikan ulang harga, timestamp atau prediksi per bar.
-3. **Penuh:** memerlukan raw price, kalender, bukti sesi, price audit, manifest, fitur dan prediksi privat dengan checksum asli. Pada clone publik tanpa input tersebut: NOT TESTED. Jangan mengganti input dengan angka sintetis sambil mempertahankan klaim penelitian.
+1. **Portabel:** `pytest`, Ruff, `verify_agents.sh`, `smoke_p1.py`. Menguji kode pipeline lama dengan data sintetis, menghitung ulang ringkasan selisih berpasangan di `05_hasil/` dari metrik per periode, dan memeriksa contoh manual bar ke-51.
+2. **Notebook:** `notebooks/fase4/` 00–08 dengan input di `data/`. Ini menjalankan ulang eksperimen penuh dari data mentah. Uji 16 Oktober 2026 pada salinan paket ini (di luar git): notebook 00–05 menghasilkan artefak antara yang identik byte demi byte dengan run resmi, dan notebook 08 lulus termasuk uji determinisme.
+3. **Rantai bukti asli:** konfigurasi beku dan kode notebook di-commit pada repo penelitian sebelum skor dibaca (commit `0a671a3`); manifes run mencatat commit itu dengan `worktree_bersih = True`. Salinan di repo ini tidak membawa riwayat Git tersebut.
 
-## Jalur pipeline asli (jika input privat yang sah tersedia)
+## Catatan
 
-```bash
-python scripts/run_phase4_price_audit.py
-python scripts/write_phase4_run_manifest.py
-python scripts/run_phase4_full_data_features.py
-python scripts/run_phase4_models.py --source metaquotes-demo --policy primary --threshold 0.5
-python scripts/audit_phase4_macro_gate.py
-python scripts/run_phase4_models.py --include-k3 --source metaquotes-demo --policy primary --threshold 0.5
-python scripts/verify_phase4_model_results.py data/interim/phase4/model-results/metaquotes-demo-primary-0p5-k3
-```
-
-Manifest publik adalah salinan historis yang disanitasi dengan menghapus awalan jalur workstation. Hash publik berbeda; hash asli tercatat pada `../lampiran/PROVENANCE.json`. Untuk pemeriksaan rantai hash penuh, gunakan manifest privat asli bersama artefak privat. Manifest publik bukan manifest baru clone publik. Jangan menimpa manifest historis atau membuat scores_read=false seolah-olah skor belum pernah dibaca. Untuk reproduksi baru, simpan output di checkout terpisah, catat bahwa ini replikasi setelah skor diketahui, dan preservasi checksum/protokol historis. run_manifest.py menolak working tree kotor.
-
-Input tidak dapat direkonstruksi dari checksum saja. Kalender adalah snapshot vendor dengan batasan revisi, bukan arsip vintage independen. Ekstraksi data baru tidak termasuk paket P1; login MT5 dilakukan manusia melalui GUI tanpa menuliskan kredensial. Seluruh API transaksi dilarang.
+- Run ulang di salinan ini adalah replikasi setelah skor diketahui, bukan run beku baru. Jangan mengubah `configs/phase4-p0.toml` lalu menyajikannya sebagai protokol yang sama.
+- Kalender MT5 adalah snapshot vendor dengan batasan revisi, bukan arsip vintage independen.
+- Ekstraksi data baru tidak termasuk paket P1. Login MT5 dilakukan manusia melalui GUI tanpa menuliskan kredensial. Seluruh API transaksi dilarang.
+- Skrip pipeline lama (`scripts/run_phase4_*.py`) memerlukan artefak audit privat run lama dan tidak dipakai untuk hasil yang dilaporkan.
 
 ## Excel
 
-Workbook dibangun dengan artifact-tool, formula dihitung ulang dan diperiksa terhadap Python/kode fitur. Sel kuning adalah input; teks menunjukkan kondisi warm-up/tidak layak. Aplikasi Excel desktop belum diuji bila tidak dicatat secara eksplisit pada `../lampiran/VERIFIKASI.md`. Workbook meminta pengguna mengikuti contoh kontinu; simulator tidak menggantikan audit gap/fold produksi.
+Workbook dihitung ulang dengan LibreOffice setelah perubahan 16 Oktober 2026 (contoh manual digeser ke bar ke-51, tab `Hasil_Asli` diganti hasil notebook). Nilai bar ke-51 dicocokkan dengan Python dan dengan `smoke_p1.py`. Aplikasi Excel desktop: NOT TESTED.

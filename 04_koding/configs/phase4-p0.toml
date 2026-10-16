@@ -1,0 +1,107 @@
+# Konfigurasi beku run Fase 4 lingkup P0 (notebook)
+#
+# Sumber protokol: docs/latex-proposal/chapters/bab3-metodologi.tex (final P0).
+# Dibekukan 16 Oktober 2026 sebelum skor run ini dibaca. Menggantikan
+# configs/phase4-experiments.toml sebagai konfigurasi run yang dilaporkan.
+# Perbedaan dari konfigurasi lama:
+#   - hanya sumber MetaQuotes-Demo (Ultima di luar protokol P0);
+#   - hanya policy gap primer (holiday-reset di luar protokol P0);
+#   - pemanasan mengikuti teks Bab 3: observasi dipakai mulai bar ke-51
+#     dalam segmen (sedikitnya 50 bar valid sebelumnya);
+#   - purge dihitung dari waktu keputusan pertama observasi layak pada blok
+#     validasi/uji berikutnya, sesuai teks Bab 3.
+
+[experiment]
+name = "xauusd-direction-phase4-p0"
+branch = "research/phase-4-experiments"
+timezone = "UTC"
+seed = 42
+
+[inputs.harga]
+name = "metaquotes-demo"
+path = "data/research/windows-feasibility-2026-08-09/metaquotes-demo/market.csv"
+sha256 = "30684142acadd612ade567eb7d2b52d6c9a4019655b515fd4c5f7e1456c7542a"
+
+[inputs.kalender]
+name = "mt5-economic-calendar-private"
+path = "data/raw/macro_calendar/mt5-economic-calendar-2020-2026.csv"
+sha256 = "0e538e47593a57dad1af43eff79a02d714468693fe39b42c7733f49cd8b46f65"
+
+[inputs.jadwal_gap]
+# Rezim sesi MetaQuotes dan penutupan bursa yang dibekukan 16 September 2026.
+# Hanya bagian sources.metaquotes-demo yang dipakai.
+path = "configs/phase4-market-gaps.toml"
+sha256 = "e77fd095781bbbcc1f92d3f20e9cb76c9a696b7124ba2f29ddd5d9a7d7823074"
+
+[audit]
+expected_rows = 38799
+expected_total_gaps = 1705
+expected_unexplained_gaps = 9
+expected_segments = 10
+
+[label]
+horizon_hours = 1
+volatility_window = 24
+threshold_utama = 0.5
+threshold_sensitivitas = [0.25, 1.0]
+class_order = ["SELL", "HOLD", "BUY"]
+confusion_order = ["BUY", "HOLD", "SELL"]
+majority_tie_order = ["BUY", "HOLD", "SELL"]
+
+[fitur]
+warmup_bars_before = 50
+first_usable_segment_bar = 51
+rsi_period = 14
+macd_fast = 12
+macd_slow = 26
+macd_signal = 9
+k1 = ["return_lag_0", "return_lag_1", "return_lag_2", "return_lag_3", "return_lag_4", "return_lag_5", "log_close_open", "log_high_low", "sigma_24"]
+teknikal = ["rsi_14", "macd_line_norm", "macd_signal_norm", "macd_hist_norm"]
+
+[makro]
+numeric_codes = ["US_CPI_MM", "US_CPI_YY", "US_CORE_CPI_MM", "US_CORE_CPI_YY", "US_NFP", "US_UNEMPLOYMENT"]
+flag_only_codes = ["US_RATE", "US_FOMC"]
+age_cap_hours = 168
+within_hours = [1, 6, 24]
+anchors_utc = [
+  ["US_NFP", "2020-01-10T13:30:00Z"],
+  ["US_CPI_MM", "2020-01-14T13:30:00Z"],
+  ["US_NFP", "2020-07-02T12:30:00Z"],
+  ["US_CPI_MM", "2020-07-14T12:30:00Z"],
+  ["US_NFP", "2020-11-06T13:30:00Z"],
+  ["US_CPI_MM", "2020-11-12T13:30:00Z"],
+  ["US_FOMC", "2024-01-31T19:00:00Z"],
+  ["US_NFP", "2024-07-05T12:30:00Z"],
+  ["US_CPI_MM", "2024-07-11T12:30:00Z"],
+  ["US_FOMC", "2024-07-31T18:00:00Z"],
+]
+
+[validasi]
+inner_validation_months = 18
+inner_block_months = 6
+periode_uji = [
+  ["2023-H1", "2023-01-01T00:00:00Z", "2023-07-01T00:00:00Z"],
+  ["2023-H2", "2023-07-01T00:00:00Z", "2024-01-01T00:00:00Z"],
+  ["2024-H1", "2024-01-01T00:00:00Z", "2024-07-01T00:00:00Z"],
+  ["2024-H2", "2024-07-01T00:00:00Z", "2025-01-01T00:00:00Z"],
+  ["2025-H1", "2025-01-01T00:00:00Z", "2025-07-01T00:00:00Z"],
+  ["2025-H2", "2025-07-01T00:00:00Z", "2026-01-01T00:00:00Z"],
+  ["2026-Jan-Jul", "2026-01-01T00:00:00Z", "2026-08-01T00:00:00Z"],
+]
+
+[model.regresi_logistik]
+penalty = "l2"
+solver = "lbfgs"
+max_iter = 2000
+c_values = [0.01, 0.1, 1.0, 10.0]
+
+[model.xgboost]
+objective = "multi:softprob"
+max_depth = [3, 5]
+learning_rate = [0.05, 0.1]
+n_estimators = [100, 300]
+subsample = 0.8
+colsample_bytree = 0.8
+reg_lambda = 1.0
+tree_method = "hist"
+n_jobs = 1

@@ -8,11 +8,11 @@ Berita acara P0 yang diberikan mahasiswa: konsultasi 21 September 2026, peneliti
 
 | Target | Bukti paket | Status dan batas |
 |---|---|---|
-| Rumusan masalah dan landasan | `01_dokumentasi` Bab 1–2 | draf substantif; review pembimbing belum terverifikasi |
-| Dokumentasi metode | Bab 3, `04_koding/METODOLOGI.md`, `04_koding/configs` | tersedia; protokol tidak ditentukan ulang oleh skor |
-| Kode pengolahan data/fitur | `04_koding/src/thesis_experiments`, `04_koding/tests` | tersedia; tes publik memakai data sintetis |
-| Kode model dan evaluasi | `04_koding/src/thesis_experiments/` models.py, folds.py, evaluation.py | tersedia; nested chronological evaluation |
-| Hasil awal | Bab 4, `05_hasil/` | agregat 24 run tersedia; input/prediksi privat |
+| Rumusan masalah dan landasan | `01_dokumentasi` Bab 1–2 (final P0) | sudah dipresentasikan pada P0 |
+| Dokumentasi metode | Bab 3 final P0, `04_koding/METODOLOGI.md`, `04_koding/configs/phase4-p0.toml` | tersedia; konfigurasi dibekukan sebelum skor dibaca |
+| Kode pengolahan data/fitur | `04_koding/notebooks/fase4/` 00–05 | tersedia; dijalankan penuh dari data mentah |
+| Kode model dan evaluasi | `04_koding/notebooks/fase4/` 06–08 | tersedia; walk-forward bertingkat, verifikasi dan determinisme lulus |
+| Hasil eksperimen | `05_hasil/`, notebook 07 | lengkap untuk lingkup Bab 3; 0 kegagalan evaluasi; bab hasil belum ditulis |
 | Perhitungan manual | `02_perhitungan_manual/` dan `03_web_belajar/` | return/label, RSI/MACD, praproses, bobot, softmax/pelatihan Logistik, satu iterasi XGBoost multikelas, metrik, selisih fitur |
 | Pemahaman mahasiswa | latihan dengan kunci jawaban | kemampuan menjelaskan mandiri: NOT TESTED |
 | Penilaian minimum 50% | dinilai terhadap target P0 | pengesahan pembimbing: NOT TESTED |
@@ -28,4 +28,4 @@ Jangan menghitung 50% berdasarkan jumlah file, baris kode, atau jumlah bab. Beri
 4. Walk-forward, purge, pemilihan parameter, dan hasil asli (3 menit).
 5. Batasan K3, review naskah, logbook, dan rencana P2 (2 menit).
 
-Sebelum P1: selesaikan latihan tanpa melihat jawaban, cocokkan substansi dengan kedua pembimbing, perbaiki draf Bab 4, lengkapi logbook sah dan jadwalkan P1. Menuju P2: perdalam pembahasan per kelas/periode/literatur, revisi Bab 5–6, serta lengkapi artikel dan administrasi. Nilai kecil bukan alasan mengubah protokol untuk mengejar skor.
+Sebelum P1: pelajari notebook 00–08 dan latihan tanpa melihat jawaban, cocokkan substansi dengan kedua pembimbing, lengkapi logbook sah dan jadwalkan P1. Menuju P2: tulis Bab 4 hasil dan Bab 5 pembahasan dari notebook (per kelas, periode, literatur, serta besarnya variasi prosedur), Bab 6, artikel, dan administrasi. Nilai kecil bukan alasan mengubah protokol untuk mengejar skor.

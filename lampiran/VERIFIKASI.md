@@ -21,3 +21,11 @@ PDF memakai Latin Modern Roman dan pembungkus report generik. Log menunjukkan sa
 ## Setelah penyusunan ulang (12 Oktober 2026)
 
 Dari folder `04_koding/` pada macOS: `pytest` 56 lulus; Ruff lulus; `verify_agents.sh` lulus; `smoke_p1.py` 24 run, 1320 matriks/metrik dan ringkasan pasangan cocok. `node --test ../03_web_belajar/tests/lab-math.test.mjs` 7 lulus. Web diperiksa di browser: seluruh langkah sembilan bab tanpa error JavaScript, lebar 1280 dan 390 px tanpa overflow halaman. Kompilasi ulang LaTeX setelah pemindahan folder: NOT TESTED (struktur relatif `sumber-latex/` tidak berubah).
+
+## Pembaruan ke notebook Fase 4 (16 Oktober 2026)
+
+Pada macOS dari folder `04_koding/`: `pytest` 56 lulus; Ruff lulus (termasuk notebook); `verify_agents.sh` lulus; `smoke_p1.py` menghitung ulang 24 ringkasan pasangan di `05_hasil/` dari 231 baris metrik dan memeriksa contoh manual bar ke-51. `node --test ../03_web_belajar/tests/lab-math.test.mjs` 7 lulus.
+
+Notebook 00–05 dan 08 dijalankan pada salinan `04_koding/` di luar git: artefak antara (gap, fitur, fitur makro, dataset, blok validasi) identik byte demi byte dengan run resmi di repo penelitian, dan uji determinisme notebook 08 lulus. Notebook 06 (±16 menit) tidak dijalankan ulang pada salinan ini; keluaran tersimpan berasal dari run resmi.
+
+Excel dihitung ulang dengan LibreOffice; nilai bar ke-51 (σ24 0,0010629949; δ 0,0005314974; q 0,0014862524; BUY; RSI 58,73572475) cocok dengan Python. PDF Bab 1–3 dikompilasi XeLaTeX/Biber, 29 halaman, satu overfull hbox 0,571 pt, contact sheet seluruh halaman ditinjau. Excel desktop native, penguasaan mahasiswa, dan pengesahan P1: NOT TESTED.

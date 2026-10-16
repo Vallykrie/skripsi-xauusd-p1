@@ -36,3 +36,17 @@ Tambahan: `03_web_belajar/` (web animasi offline beserta tesnya) dan `06_present
 ## Notebook dan data vendor (12 Oktober 2026)
 
 Repo berstatus privat (satu kolaborator: pemilik). Atas permintaan mahasiswa, `04_koding/notebook/` ditambahkan beserta `data/` (harga XAUUSD H1 MetaQuotes-Demo SHA-256 `30684142…542a` dan kalender MT5 SHA-256 `0e538e47…6f65`, sama dengan konfigurasi beku) dan `output/`. Ketentuan redistribusi MetaQuotes/MT5 belum diperiksa (NOT TESTED); hapus `data/`, `output/`, dan output sel sebelum repo dijadikan publik. Notebook menghasilkan ulang 42 Macro-F1 run `metaquotes-demo-primary-0p5-k3` dengan selisih maksimum 5,6×10⁻¹⁷.
+
+## Pembaruan ke notebook Fase 4 (16 Oktober 2026)
+
+Atas permintaan mahasiswa, isi paket diselaraskan dengan run notebook Fase 4 di repo penelitian (konfigurasi beku `configs/phase4-p0.toml`, commit beku `0a671a3`), yang menggantikan run 21–22 September. Run lama memuat sumber Ultima dan policy holiday-reset yang berada di luar protokol Bab 3 final P0. Perubahan:
+
+| Sebelum | Sesudah |
+|---|---|
+| `01_dokumentasi/P1_Dokumentasi_Bab1-4.pdf` | `01_dokumentasi/P1_Dokumentasi_Bab1-3.pdf` (Bab 1–3 final P0); `bab4-hasil.tex` dihapus |
+| `04_koding/notebook/` (4 notebook reproduksi run lama, `data/`, `output/`) | `04_koding/notebooks/fase4/` (9 notebook run resmi) dan `04_koding/data/` (input sama, path sesuai konfigurasi) |
+| `05_hasil/run/` (24 run), `metrik-per-fold.csv`, `HASIL_LENGKAP.md` | Lima CSV keluaran notebook 07 dan `README.md` |
+| Contoh manual bar ke-50 (Excel, panduan, web, tes) | Bar ke-51, sesuai teks Bab 3 "setelah sedikitnya 50 bar" |
+| `smoke_p1.py` memeriksa 24 JSON run lama | Menghitung ulang ringkasan di `05_hasil/` |
+
+Input vendor tetap byte-identik: harga SHA-256 `30684142…542a`, kalender SHA-256 `0e538e47…6f65`. `PROVENANCE.json` di bawah tetap mencatat keadaan 8 Oktober sebagai riwayat; hash berkas versi 16 Oktober dicatat pada kunci `pembaruan_2026_10_16`.

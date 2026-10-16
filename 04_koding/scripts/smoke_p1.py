@@ -1,8 +1,7 @@
-"""Verify public aggregates and run a bounded synthetic feature/model example."""
+"""Verify the 05_hasil summaries and run a bounded synthetic feature/model example."""
 
 from __future__ import annotations
 
-import json
 import statistics
 import sys
 from pathlib import Path
@@ -26,68 +25,54 @@ def close(actual, expected):
         assert np.isclose(actual, expected, rtol=0, atol=1e-12), (actual, expected)
 
 
-def from_matrix(record):
-    matrix = np.array(record['confusion_matrix'], dtype=float)
-    tp = np.diag(matrix)
-    row, col = matrix.sum(axis=1), matrix.sum(axis=0)
-    f1 = np.divide(2 * tp, row + col, out=np.zeros(3), where=(row + col) > 0)
-    recall = tp / row if (row > 0).all() else None
-    close(f1.mean(), record['macro_f1'])
-    close(float(recall.mean()) if recall is not None else None, record['balanced_accuracy'])
-    assert int(matrix.sum()) == record['n']
+def skor_konfig(m, konfig, analisis):
+    """K1 always uses the tuned run; in the fixed-parameter analysis K2/K3 reuse K1 parameters."""
+    pilih = 'disetel' if konfig == 'K1' else analisis
+    return m[(m['konfigurasi'] == konfig) & (m['analisis'] == pilih)].set_index('periode')['macro_f1']
 
 
-def verify_aggregates():
+def verify_results():
+    """Recompute the paired summaries in 05_hasil from the per-period metrics."""
+    hasil = REPO / '05_hasil'
+    metrik = pd.read_csv(hasil / 'metrik-per-periode.csv')
+    assert len(metrik) == 3 * (7 + 2 * 3 * 7 + 2 * 2 * 7), len(metrik)
+    assert metrik['macro_f1'].between(0, 1).all()
+    nama = {'regresi_logistik': 'Regresi Logistik', 'xgboost': 'XGBoost'}
     checked = 0
-    files = sorted((REPO / '05_hasil/run').glob('*-0p*.json')) + sorted((REPO / '05_hasil/run').glob('*-1p0*.json'))
-    assert len(files) == 24, len(files)
-    for path in files:
-        summary = json.loads(path.read_text())
-        for fold in summary['folds']:
-            for configs in fold['models'].values():
-                for rec in configs.values():
-                    for field in ('scores', 'fixed_scores'):
-                        if rec.get(field) is not None:
-                            from_matrix(rec[field])
-                            counts = rec[field]['class_counts']
-                            assert np.array(rec[field]['confusion_matrix']).sum(axis=1).tolist() == [counts[c] for c in summary['confusion_order']]
-                            checked += 1
-        for model, pairs in summary['paired'].items():
-            for field, left, right, fixed in [('macro_f1', 'K1', 'K2', False), ('balanced_accuracy', 'K1', 'K2', False), ('fixed_macro_f1', 'K1', 'K2', True), ('fixed_balanced_accuracy', 'K1', 'K2', True)]:
-                verify_pair(summary, model, pairs[field], field.replace('fixed_', ''), left, right, fixed)
-            for key, fixed in [('k3_minus_k2', False), ('k3_minus_k2_fixed', True)]:
-                if key in pairs:
-                    for metric in ('macro_f1', 'balanced_accuracy'):
-                        verify_pair(summary, model, pairs[key][metric], metric, 'K2', 'K3', fixed)
-    print(f'24 run agregat: {checked} matriks/metrik cocok; ringkasan pasangan cocok.')
-
-
-def verify_pair(summary, model, paired, metric, left, right, fixed):
-    field = 'fixed_scores' if fixed else 'scores'
-    deltas = []
-    for fold in summary['folds']:
-        cfg = fold['models'][model]
-        a, b = cfg.get(left, {}).get(field), cfg.get(right, {}).get(field)
-        if a and b and a[metric] is not None and b[metric] is not None:
-            deltas.append(b[metric] - a[metric])
-    assert paired['total_folds'] == 7
-    assert paired['paired_folds'] == len(deltas)
-    assert np.allclose(deltas, paired['deltas'], rtol=0, atol=1e-12)
-    close(statistics.mean(deltas) if deltas else None, paired['mean'])
-    close(statistics.median(deltas) if deltas else None, paired['median'])
-    close(statistics.stdev(deltas) if len(deltas) > 1 else None, paired['sample_std'])
-    assert paired['positive_folds'] == sum(x > 0 for x in deltas)
+    for berkas, ambang_list, analisis in [('delta-utama.csv', [0.5], 'disetel'),
+                                          ('sensitivitas-ambang.csv', [0.25, 1.0], 'disetel'),
+                                          ('sensitivitas-parameter-tetap.csv', [0.5, 0.25, 1.0], 'parameter_tetap_k1')]:
+        ringkas = pd.read_csv(hasil / berkas)
+        if 'metrik' in ringkas:
+            ringkas = ringkas[ringkas['metrik'] == 'macro_f1']
+        for ambang in ambang_list:
+            for model, label in nama.items():
+                m = metrik[(metrik['ambang'] == ambang) & (metrik['model'] == model)]
+                for kiri, kanan in (('K1', 'K2'), ('K2', 'K3')):
+                    d = (skor_konfig(m, kanan, analisis) - skor_konfig(m, kiri, analisis)).dropna()
+                    baris = ringkas[(ringkas['model'] == label) & (ringkas['perubahan'] == f'{kanan} − {kiri}')]
+                    if 'ambang' in ringkas:
+                        baris = baris[baris['ambang'] == ambang]
+                    assert len(baris) == 1, (berkas, ambang, model, kiri, kanan)
+                    baris = baris.iloc[0]
+                    close(d.mean(), baris['rerata'])
+                    close(d.median(), baris['median'])
+                    close(statistics.stdev(d), baris['simpangan_baku'])
+                    assert baris['periode_positif'] == f'{int((d > 0).sum())}/{len(d)}'
+                    assert baris['pasangan'] == f'{len(d)}/7'
+                    checked += 1
+    print(f'05_hasil: {len(metrik)} baris metrik, {checked} ringkasan pasangan dihitung ulang dan cocok.')
 
 
 def synthetic_smoke():
     raw = pd.read_csv(REPO / '02_perhitungan_manual/harga-sintetis.csv')
     raw['time'] = pd.to_datetime(raw['time'], utc=True)
     features = build_feature_frame(raw, [0] * len(raw))
-    row = features.iloc[49]
-    assert row['target_label'] == 'HOLD'
-    close(row['sigma_24'], 0.0010630483439471705)
-    close(row['rsi_14'], 61.234879339527616)
-    close(row['macd_hist_norm'], 0.000029190170120937428)
+    row = features.iloc[50]  # bar ke-51, observasi layak pertama pada contoh manual
+    assert row['target_label'] == 'BUY'
+    close(row['sigma_24'], 0.0010629948989485491)
+    close(row['rsi_14'], 58.735724750440404)
+    close(row['macd_hist_norm'], 0.000006163530420619676)
     eligible = features.loc[features.feature_eligible & features.target_eligible].copy()
     assert set(eligible.target_label) == {'BUY', 'HOLD', 'SELL'}
     # Only a plumbing check: small synthetic train/test, no reported research score.
@@ -101,5 +86,5 @@ def synthetic_smoke():
 
 
 if __name__ == '__main__':
-    verify_aggregates()
+    verify_results()
     synthetic_smoke()

@@ -351,5 +351,29 @@
     "original_sha256": "63f3e5e168181acc4511429f4cc46d96c5ebd213c6875183d0d8e1f3f1f69d7a",
     "public_sha256": "dfefa0e8fca5d37b0231393677eee7c6c69732b1a2b0624ad3552173a86feff3",
     "change": "Only summary_path absolute workstation prefix removed; historical manifest remains private for hash-exact full replication."
+  },
+  "pembaruan_2026_10_16": {
+    "sumber": "repo penelitian research/phase-4-experiments; konfigurasi beku configs/phase4-p0.toml pada commit 0a671a3; run notebook 16 Oktober 2026",
+    "alasan": "Run lama memuat sumber Ultima dan policy holiday-reset di luar protokol Bab 3 final P0; notebook mengikuti teks Bab 3 (pemanasan bar ke-51, purge dari keputusan pertama blok)",
+    "berkas": {
+      "01_dokumentasi/P1_Dokumentasi_Bab1-3.pdf": "8d4697124caa0706585c4d14c99a13075871366e4729fef4358856424645b3f5",
+      "02_perhitungan_manual/Perhitungan_Manual_P1.xlsx": "6c566825e0d84e031491342b2630ab8d8b30f9d98f5f9b220d4b24354adef722",
+      "03_web_belajar/Lab_P1_XAUUSD.html": "795d4cbeaa54680c2061e4dafe3cb95d189d3bcd2ac846de041dbb67a36850a3",
+      "04_koding/configs/phase4-p0.toml": "c8075480fcacd510d2f3e775d8d224d0a6b75af2af5876e142513adba92ad082",
+      "04_koding/notebooks/fase4/00_pembekuan_dan_input.ipynb": "68607e47596bf564077834d76b932683305341a5739480c13f3750f4068ced9c",
+      "04_koding/notebooks/fase4/01_audit_harga_dan_gap.ipynb": "a34d24f7da8fc6cb59803aafa45f154091f09229cd99785731eb2b46772f29ed",
+      "04_koding/notebooks/fase4/02_label_target.ipynb": "1a7614edaab8b4b79df6ba3c0e6acb882e2f2d3d6dadaea13d7a720680f002f9",
+      "04_koding/notebooks/fase4/03_fitur_harga_teknikal.ipynb": "3aac43aeb4d6435396e6ec555a9b46baecd3bf61fd6e0bd92a0061b8a64b39d9",
+      "04_koding/notebooks/fase4/04_fitur_makro.ipynb": "35f898cd327a7803e2b8d5be3d21f151160a46053e224699d16649ba48d29a02",
+      "04_koding/notebooks/fase4/05_skema_validasi.ipynb": "3fe52903e059ac72dc4c8923a4dfc6d613f8a59a307b27a979a8b10c0d638f65",
+      "04_koding/notebooks/fase4/06_pelatihan_model.ipynb": "125764a9f18d0b72e0089ace391ab2e2972943167ac3064efd42821704f9d81f",
+      "04_koding/notebooks/fase4/07_evaluasi_hasil.ipynb": "57ef8989c6046af356af26bea58a018f3864a2ee85b60dc5f12b78461066d5c1",
+      "04_koding/notebooks/fase4/08_verifikasi.ipynb": "6dad355d3b36199c3adcba8e07162be68cfea9d8af3080b52cca17bd3f99c334",
+      "05_hasil/delta-utama.csv": "fbc8382a9bccc06b6bba7aad51c7d97c37e04d0b26a30523000a25635fddc81a",
+      "05_hasil/metrik-per-periode.csv": "e40b2ea4eefc40172b91783c51022e6d81af5cfef7328f9fde5ff6d67b1549c2",
+      "05_hasil/rerata-utama.csv": "0af6a5aec3e74ea3b4f4b19bfed6aadda8a943ec605912cc41def3e9a45026fa",
+      "05_hasil/sensitivitas-ambang.csv": "eddcc735ef8c103dd71761165aedd67bd31f4a1bf62f0793339658148629b886",
+      "05_hasil/sensitivitas-parameter-tetap.csv": "0919ca984c68b206e9d4dbc3f8fe1d2cb100d3520af6ee41bd466b62b14de6e7"
+    }
   }
 }

@@ -15,27 +15,27 @@ BUY berarti naik melampaui ambang, SELL turun melampaui ambang, HOLD perubahan d
 
 ## 2. Return, volatilitas dan label
 
-Buka `Harga_Target`. Bar pertama dimulai pada 5 Januari 2026 00:00 UTC, bar selanjutnya satu jam kemudian. Bar ke-50 terdapat pada **baris Excel 56**. Jika open time-nya 7 Januari 01:00, keputusan dibuat 02:00, dan label baru diketahui 03:00 setelah bar selanjutnya selesai.
+Buka `Harga_Target`. Bar pertama dimulai pada 5 Januari 2026 00:00 UTC, bar selanjutnya satu jam kemudian. Bar ke-51 terdapat pada **baris Excel 57**; ini observasi pertama yang layak karena Bab 3 mensyaratkan sedikitnya 50 bar pemanasan (bar 1–50, baris 7–56, bertanda WARM-UP). Jika open time-nya 7 Januari 01:00, keputusan dibuat 02:00, dan label baru diketahui 03:00 setelah bar selanjutnya selesai.
 
 ### Log-return
 
 $$r_t=\ln(C_t/C_{t-1}).$$
 
-Contoh close 2016 ke 2018: `LN(2018/2016)` = **0,0009915717**, sekitar 0,09916%. Excel `F56=LN(E56/E55)`. Nilai ini adalah return historis yang sudah diketahui, bukan target masa depan.
+Contoh close 2018 ke 2017: `LN(2017/2018)` = **−0,0004956630**, sekitar −0,04957%. Excel `F57=LN(E57/E56)`. Nilai ini adalah return historis yang sudah diketahui, bukan target masa depan.
 
 ### Volatilitas historis
 
-Ambil 24 return terakhir F33:F56. Ini membutuhkan 25 harga penutupan untuk membentuk 24 perubahan.
+Ambil 24 return terakhir F34:F57. Ini membutuhkan 25 harga penutupan untuk membentuk 24 perubahan.
 
 $$\bar r=\frac{\sum_{i=1}^{24}r_i}{24},\qquad \sigma_{24}=\sqrt{\frac{\sum_{i=1}^{24}(r_i-\bar r)^2}{23}}.$$
 
-`G56=AVERAGE(F33:F56)` = 0,0001655083. `H56=STDEV.S(F33:F56)` = **0,0010630483**. Pembagi 23 berasal dari simpangan baku sampel. Jangan memakai STDEV.P untuk volatilitas target ini.
+`G57=AVERAGE(F34:F57)` = 0,0001655905. `H57=STDEV.S(F34:F57)` = **0,0010629949**. Pembagi 23 berasal dari simpangan baku sampel. Jangan memakai STDEV.P untuk volatilitas target ini.
 
 ### Ambang dan label satu bar
 
 $$\delta_t=0{,}5\sigma_{24};\qquad q_{t+1}=\ln(C_{t+1}/C_t).$$
 
-Pada baris 56: δ = **0,0005315242**. Close berikutnya 2017, sehingga `J56=LN(2017/2018)` = **−0,0004956630**.
+Pada baris 57: δ = **0,0005314974**. Close berikutnya 2020, sehingga `J57=LN(2020/2017)` = **0,0014862524**.
 
 | Kondisi | Label |
 |---|---|
@@ -43,15 +43,15 @@ Pada baris 56: δ = **0,0005315242**. Close berikutnya 2017, sehingga `J56=LN(20
 | q < −δ | SELL |
 | −δ ≤ q ≤ δ | HOLD |
 
-Karena −0,0005315242 ≤ −0,0004956630 ≤ 0,0005315242, labelnya **HOLD**. Harga turun sedikit; label tetap HOLD karena penurunan belum melewati ambang.
+Karena 0,0014862524 > 0,0005314974, labelnya **BUY**: kenaikan berikutnya melewati ambang atas.
 
-**Coba:** ubah `E57` dari 2017 menjadi **2020**. q menjadi `LN(2020/2018)` ≈ 0,0009905895, melebihi δ sehingga `L56` menjadi **BUY**. Kembalikan 2017 setelah latihan. High/low/open tidak digunakan untuk langkah label ini; bila menjadikan tabel sebagai input kode produksi, relasi OHLC juga harus diperbaiki agar sah.
+**Coba:** ubah `E58` dari 2020 menjadi **2018**. q menjadi `LN(2018/2017)` ≈ 0,0004956630, berada di antara −δ dan δ sehingga `L57` menjadi **HOLD**. Dengan **2015**, q ≈ −0,0009920636 < −δ sehingga label **SELL**. Kembalikan 2020 setelah latihan. High/low/open tidak digunakan untuk langkah label ini; bila menjadikan tabel sebagai input kode produksi, relasi OHLC juga harus diperbaiki agar sah.
 
-Sel `B4` mengubah pengali untuk melihat sensitivitas; dalam penelitian utama nilainya tetap 0,5, tidak dipilih dari skor terbaik. 0,25 dan 1,0 adalah run terpisah. Sigma nol membuat observasi tidak layak. Bar terakhir tidak memiliki target. Pemanasan baru selesai setelah 50 bar. Di data riil target juga harus tepat satu jam, satu segmen, dan berakhir sebelum batas akhir fold.
+Sel `B4` mengubah pengali untuk melihat sensitivitas; dalam penelitian utama nilainya tetap 0,5, tidak dipilih dari skor terbaik. 0,25 dan 1,0 adalah run terpisah. Sigma nol membuat observasi tidak layak. Bar terakhir tidak memiliki target. Pemanasan: observasi baru dipakai setelah sedikitnya 50 bar, jadi bar ke-51 adalah yang pertama layak. Di data riil target juga harus tepat satu jam, satu segmen, dan berakhir sebelum batas akhir fold.
 
 ### Sembilan fitur K1
 
-Enam lag r_t sampai r_(t−5), `LN(C/O)`, `LN(H/L)`, dan σ24. Contoh bentuk bar ada di kolom M; rentang bar = `LN(C56/D56)` karena C=High dan D=Low pada tabel ini. Target q bukan fitur. K2 menambahkan RSI dan tiga komponen MACD.
+Enam lag r_t sampai r_(t−5), `LN(C/O)`, `LN(H/L)`, dan σ24. Contoh bentuk bar ada di kolom M; rentang bar = `LN(C57/D57)` karena C=High dan D=Low pada tabel ini. Target q bukan fitur. K2 menambahkan RSI dan tiga komponen MACD.
 
 ## 3. RSI memakai perubahan harga, bukan log-return
 
@@ -67,7 +67,7 @@ Bar berikutnya gain=3, loss=0. Wilder:
 
 $$\overline g_{baru}=(13\overline g+3)/14=1{,}209184;\quad\overline\ell_{baru}=(13\overline\ell+0)/14=0{,}663265.$$
 
-RSI baru ≈ **64,577657**. Lanjutkan rekursi hingga baris 56; hasilnya **61,23487934**. Tidak menghitung ulang SMA 14 pada setiap bar. Jika gain/loss rata-rata sama-sama nol, RSI=50; loss nol saja memberi 100; gain nol saja memberi 0.
+RSI baru ≈ **64,577657**. Lanjutkan rekursi hingga baris 57 (bar ke-51); hasilnya **58,73572475**. Tidak menghitung ulang SMA 14 pada setiap bar. Jika gain/loss rata-rata sama-sama nol, RSI=50; loss nol saja memberi 100; gain nol saja memberi 0.
 
 ## 4. EMA dan MACD
 
@@ -77,7 +77,7 @@ $$EMA_p(t)=\alpha C_t+(1-\alpha)EMA_p(t-1),\quad\alpha=2/(p+1).$$
 
 EMA12 pertama di `I18=AVERAGE(B7:B18)`. EMA26 pertama di `J32=AVERAGE(B7:B32)`. Setelah keduanya tersedia, MACD = EMA12−EMA26 (`K32`). Sinyal9 pertama di `L40=AVERAGE(K32:K40)`, kemudian α=2/10=0,2. Histogram=MACD−sinyal.
 
-Pada baris 56: MACD/C = **0,0011834227**, sinyal/C = **0,0011542325**, hist/C = **0,00002919017**. Workbook memperlihatkan EMA dan selisih mentah agar mudah diikuti; kode model memakai ketiga komponen yang dibagi close. RSI tetap pada skala 0–100. Setelah gap tak terjelaskan, seluruh seed dimulai ulang dan warm-up 50 bar diterapkan lagi.
+Pada baris 57: MACD/C = **0,0011625092**, sinyal/C = **0,0011563457**, hist/C = **0,00000616353**. Workbook memperlihatkan EMA dan selisih mentah agar mudah diikuti; kode model memakai ketiga komponen yang dibagi close. RSI tetap pada skala 0–100. Setelah gap tak terjelaskan, seluruh seed dimulai ulang dan pemanasan 50 bar diterapkan lagi (observasi mulai bar ke-51 segmen).
 
 ## 5. Praproses dan bobot kelas
 
@@ -174,7 +174,7 @@ Latih awal [1 Jan2020,1 Jan2023). Uji pertama [1 Jan2023,1 Jul2023). Fold beriku
 
 Untuk fold pertama, validasi internal terdiri dari Jul–Des2021, Jan–Jun2022, Jul–Des2022. Kandidat C/XGBoost dipilih berdasarkan **rata-rata tiga macro-F1 internal**. Kegagalan satu blok membuat kandidat tidak sah; tidak memakai rata-rata dua blok tersisa. Setelah dipilih, latih ulang seluruh train luar, baru prediksi test. Skor test tidak memilih parameter.
 
-Contoh purge: keputusan latih 23:00, akhir target 00:00; keputusan pertama test 00:00. Observasi latih tersebut dibuang karena akhir label **sama dengan** keputusan pertama test. Keputusan latih 22:00 dengan akhir target23:00 masih sah. Target test yang berakhir tepat batas akhir interval juga dikeluarkan. Riwayat fitur yang sudah terjadi boleh digunakan untuk pemanasan.
+Contoh purge: keputusan latih 23:00, akhir target 00:00; keputusan pertama test 00:00. Observasi latih tersebut dibuang karena akhir label **sama dengan** keputusan pertama test. Keputusan latih 22:00 dengan akhir target23:00 masih sah. Target test yang berakhir tepat batas akhir interval juga dikeluarkan. Riwayat fitur yang sudah terjadi boleh digunakan untuk pemanasan. Pada data riil, "keputusan pertama test" adalah waktu keputusan observasi layak pertama di blok itu; misalnya periode 2023-H1 dimulai 1 Januari, tetapi keputusan pertamanya 3 Januari 2023 02:00 UTC karena pasar tutup saat libur tahun baru.
 
 **Mengapa tidak random split?** Bar masa depan bisa masuk train untuk memprediksi masa lalu. Median/scaler dapat membawa informasi distribusi masa depan. Protokol kronologis menjaga urutan ketersediaan informasi; tidak menjamin skor tinggi.
 
@@ -204,15 +204,15 @@ Jika sebuah kelas benar tidak muncul, recall tidak terdefinisi sehingga balanced
 
 ## 11. Mengukur kontribusi kelompok fitur
 
-Untuk satu model dan fold pada bar/label yang sama:
+Untuk satu model dan periode uji pada bar/label yang sama:
 
 $$\Delta_{teknikal}=F1(K2)-F1(K1),\quad\Delta_{makro}=F1(K3)-F1(K2).$$
 
-Tab `Hasil_Asli` berisi **hasil penelitian aktual** MetaQuotes, policy primary, pengali0,5. Logistik fold2023-H1: K1=0,4237922724;K2=0,4235549640;selisih=**−0,0002373084**. Tambahan teknikal menurunkan skor sedikit pada fold itu.
+Tab `Hasil_Asli` berisi **hasil penelitian aktual** dari run notebook Fase 4 (16 Oktober 2026): MetaQuotes-Demo, ambang 0,5. Logistik periode 2023-H1: K1=0,4237922724; K2=0,4232301924; selisih=**−0,0005620800**. Tambahan teknikal menurunkan skor sedikit pada periode itu.
 
-Rata-rata tujuh selisih tanpa bobot jumlah bar: Logistik K2−K1=+0,0000738187, XGBoost=+0,0032886411. Fold positif3/7 dan4/7. K3−K2 Logistik=−0,0014516204, XGBoost=+0,0003240627. Angka ini tidak sama dengan contoh matriks sintetis di atas.
+Rata-rata tujuh selisih tanpa bobot jumlah bar: Logistik K2−K1=+0,0000891404, XGBoost=−0,0010833324; periode positif 4/7 dan 4/7. K3−K2 Logistik=−0,0006335018, XGBoost=+0,0004788672; periode positif 3/7 dan 3/7. Angka ini tidak sama dengan contoh matriks sintetis di atas.
 
-Rerata fold tidak sama dengan F1 dari matriks gabungan semua fold. Simpangan baku ringkasan memakai pembagi n−1; tidak dihitung untuk satu pasangan. Ultima hanya4/7 fold layak; tiga awal **NOT TESTED** karena sejarah terlalu pendek untuk validasi internal. Jangan membagi empat skor dengan7 seolah-olah tiga yang tidak diuji berskor0.
+Rerata periode tidak sama dengan F1 dari matriks gabungan semua periode. Simpangan baku ringkasan memakai pembagi n−1; tidak dihitung untuk satu pasangan. Bila suatu periode gagal dievaluasi, periode itu tetap dihitung dalam penyebut tujuh dan tidak diberi skor nol.
 
 Selisih kecil dan tidak konsisten tetap menjawab pertanyaan penelitian. Hiperparameter setiap konfigurasi disetel ulang, sehingga ini perubahan bersyarat fitur + retuning. Sensitivitas parameter tetap membantu memisahkan kedua unsur; tidak mengubahnya menjadi bukti sebab-akibat.
 

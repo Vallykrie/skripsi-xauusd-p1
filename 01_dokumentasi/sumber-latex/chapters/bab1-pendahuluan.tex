@@ -11,9 +11,9 @@ Penambahan fitur belum tentu selalu meningkatkan kinerja karena dapat menambah d
 
 Resolusi satu jam (H1) dipilih untuk mengamati dinamika intrahari dengan jumlah pengamatan yang lebih banyak daripada data harian. Penggunaan data H1 untuk XAUUSD memiliki preseden pada penelitian \textcite{arif2026multivariate}, yang meramalkan harga penutupan dengan LSTM dan validasi deret waktu bergulir. Pada konteks berbeda, \textcite{hisyam2025implementasi} menggunakan XGBoost dan \emph{walk-forward validation} untuk meramalkan harga emas Antam harian. Penelitian ini menerapkan Regresi Logistik Multinomial sebagai pembanding linear dan XGBoost sebagai pembanding nonlinear pada setiap konfigurasi fitur. Kedua model membantu membaca perubahan kinerja setelah penambahan fitur; perbedaan skor antarmodel ditafsirkan secara deskriptif, bukan sebagai uji linearitas data.
 
-Pengukuran perubahan kinerja juga harus mengikuti urutan waktu. Pembagian data deret waktu secara acak dapat menyebabkan kebocoran informasi masa depan (\emph{look-ahead bias}) dan menghasilkan penilaian yang tidak mewakili penggunaan pada data baru. Penelitian ini karena itu menggunakan evaluasi \emph{walk-forward} dengan jeda antara data pelatihan dan pengujian. Macro-F1 digunakan sebagai metrik utama karena distribusi kelas BUY, HOLD, dan SELL dapat tidak seimbang, sedangkan balanced accuracy digunakan sebagai metrik pendamping.
+Pengukuran perubahan kinerja juga harus mengikuti urutan waktu. Pembagian data deret waktu secara acak dapat menyebabkan kebocoran informasi masa depan (\emph{look-ahead bias}) dan menghasilkan penilaian yang tidak mewakili penggunaan pada data baru. Penelitian ini karena itu akan menggunakan evaluasi \emph{walk-forward} dengan jeda antara data pelatihan dan pengujian. Macro-F1 akan digunakan sebagai metrik utama karena distribusi kelas BUY, HOLD, dan SELL dapat tidak seimbang, sedangkan balanced accuracy digunakan sebagai metrik pendamping.
 
-Berdasarkan uraian tersebut, penelitian ini mengukur perubahan kinerja klasifikasi arah XAUUSD H1 setelah fitur teknikal dan makroekonomi ditambahkan secara bertahap. Konfigurasi harga (K1), harga dan teknikal (K2), serta harga, teknikal, dan makroekonomi (K3) dibandingkan menggunakan Regresi Logistik Multinomial dan XGBoost pada periode uji kronologis yang sama. Perubahan $K2-K1$ dan $K3-K2$ dibaca dalam masing-masing model, sedangkan perbedaan respons kedua model dijelaskan secara deskriptif. Kontribusi fitur ditafsirkan secara kondisional terhadap data, model, periode, dan prosedur penyetelan yang digunakan. Konfigurasi fitur makroekonomi (K3) dievaluasi menggunakan arsip kalender beku MetaTrader 5, sedangkan keterbatasan \emph{snapshot} retrospektif tanpa arsip \emph{vintage} independen membatasi interpretasi kinerja untuk penerapan waktu nyata.
+Berdasarkan uraian tersebut, penelitian ini akan mengukur perubahan kinerja klasifikasi arah XAUUSD H1 setelah fitur teknikal dan makroekonomi ditambahkan secara bertahap. Konfigurasi harga (K1), harga dan teknikal (K2), serta harga, teknikal, dan makroekonomi (K3) akan dibandingkan menggunakan Regresi Logistik Multinomial dan XGBoost pada periode uji kronologis yang sama. Perubahan $K2-K1$ dan $K3-K2$ dibaca dalam masing-masing model, sedangkan perbedaan respons kedua model dijelaskan secara deskriptif. Kontribusi fitur akan ditafsirkan secara kondisional terhadap data, model, periode, dan prosedur penyetelan yang digunakan. Konfigurasi fitur makroekonomi (K3) dievaluasi menggunakan arsip kalender beku MetaTrader 5, sedangkan keterbatasan \emph{snapshot} retrospektif tanpa arsip \emph{vintage} independen membatasi interpretasi kinerja untuk penerapan waktu nyata.
 
 \section{Rumusan Masalah}
 Berdasarkan latar belakang tersebut, rumusan masalah penelitian ini adalah sebagai berikut.
@@ -49,12 +49,10 @@ Agar pembahasan tetap terarah, penelitian ini dibatasi sebagai berikut.
 \end{enumerate}
 
 \section{Sistematika Pembahasan}
-Skripsi ini disusun dalam enam bab sebagai berikut.
+Proposal skripsi ini disusun dalam tiga bab sebagai berikut.
 \begin{enumerate}
     \item BAB 1 PENDAHULUAN menjelaskan latar belakang, rumusan masalah, tujuan, manfaat, batasan masalah, dan sistematika pembahasan.
-    \item BAB 2 LANDASAN KEPUSTAKAAN membahas penelitian terdahulu serta teori objek, fitur, model, dan evaluasi penelitian.
-    \item BAB 3 METODOLOGI menjelaskan protokol pengumpulan dan audit data, target, konfigurasi fitur, pelatihan, serta evaluasi kronologis.
-    \item BAB 4 HASIL menyajikan hasil audit, sampel evaluasi, kinerja model, perubahan berpasangan, dan analisis sensitivitas.
-    \item BAB 5 PEMBAHASAN menghubungkan hasil dengan rumusan masalah, konsistensi kontribusi kelompok fitur, penelitian terdahulu, dan ancaman validitas.
-    \item BAB 6 PENUTUP memuat kesimpulan serta saran berdasarkan hasil dan keterbatasan penelitian.
+    \item BAB 2 LANDASAN KEPUSTAKAAN membahas penelitian terdahulu dan teori yang mendasari objek, fitur, model, serta evaluasi penelitian.
+    \item BAB 3 METODOLOGI menjelaskan rancangan penelitian, pengumpulan dan penyiapan data, pembentukan target dan konfigurasi fitur, pelatihan model, prosedur evaluasi, serta jadwal penelitian.
 \end{enumerate}
+Naskah skripsi selanjutnya akan dilengkapi dengan bab hasil dan pembahasan serta bab penutup.

@@ -13,6 +13,6 @@ node_modules/
 01_dokumentasi/sumber-latex/build/
 .DS_Store
 
-# Notebook P1: data vendor dan output sengaja disertakan karena repo privat
-!04_koding/notebook/data/
-!04_koding/notebook/output/*.parquet
+# Notebook Fase 4: input vendor sengaja disertakan karena repo privat; hasil run tidak di-commit
+!04_koding/data/
+04_koding/data/interim/
