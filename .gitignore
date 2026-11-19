@@ -1,18 +1,7 @@
-.venv/
-__pycache__/
-.pytest_cache/
-.ruff_cache/
-*.egg-info/
-data/
-outputs/
-node_modules/
-*.parquet
-*.joblib
-*.pkl
-.env*
-01_dokumentasi/sumber-latex/build/
 .DS_Store
-
-# Notebook Fase 4: input vendor sengaja disertakan karena repo privat; hasil run tidak di-commit
-!04_koding/data/
-04_koding/data/interim/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+02_Koding/data/interim/
