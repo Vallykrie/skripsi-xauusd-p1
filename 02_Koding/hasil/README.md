@@ -1,6 +1,6 @@
-# Hasil Penelitian (Sinkron dengan Bab 4 Draf 17 Nov 2026)
+# Hasil Penelitian (Protokol Bab 3–4)
 
-Seluruh angka di bawah ini berasal langsung dari keluaran [`07_evaluasi_hasil.ipynb`](../notebooks/07_evaluasi_hasil.ipynb) menggunakan data XAUUSD H1 *server* MetaQuotes-Demo sesuai protokol Bab 3.
+Seluruh angka di bawah ini berasal langsung dari keluaran [`07_evaluasi_hasil.ipynb`](../notebooks/07_evaluasi_hasil.ipynb) menggunakan data XAUUSD H1 *server* MetaQuotes-Demo sesuai rancangan Bab 3 dan Bab 4.
 
 | Berkas | Isi |
 |---|---|
@@ -10,7 +10,7 @@ Seluruh angka di bawah ini berasal langsung dari keluaran [`07_evaluasi_hasil.ip
 | [`sensitivitas-ambang.csv`](sensitivitas-ambang.csv) | K2−K1 dan K3−K2 pada pengali ambang 0,25 dan 1,0 |
 | [`sensitivitas-parameter-tetap.csv`](sensitivitas-parameter-tetap.csv) | K2−K1 dan K3−K2 saat K2/K3 memakai *hyperparameter* terpilih K1 |
 
-## Ringkasan Data, Pemeriksaan Celah, dan Kalender (Bab 4.1–4.2)
+## Ringkasan Data, Pemeriksaan Celah, dan Kalender (Subbab 3.6)
 
 - **Data harga:** 38.799 bar H1 (2 Januari 2020 06.00 UTC – 31 Juli 2026 22.00 UTC); 1.705 celah (1.627 penutupan terjadwal, 69 libur bursa CME, 9 celah tidak terjelaskan → 10 segmen indikator).
 - **Kelayakan sampel bersama:** fitur layak 38.333 bar, target layak 36.872 bar, irisan keduanya (**himpunan sampel bersama**) **36.649 bar**.
@@ -18,7 +18,7 @@ Seluruh angka di bawah ini berasal langsung dari keluaran [`07_evaluasi_hasil.ip
 - **Kalender MT5:** 706 peristiwa ekonomi AS dalam 8 kelompok peristiwa → membentuk 46 fitur makroekonomi (total K3 = 59 kolom). Tidak ada fitur yang dibuang sepanjang tujuh periode uji.
 - **Pelaksanaan pemodelan:** 0 baris latih terbuang *purge*, 0 dari 756 kandidat *hyperparameter* gagal, dan 0 periode dengan *balanced accuracy* tidak terdefinisi.
 
-## Rerata Kinerja Tujuh Periode Uji (Ambang Utama $0{,}5\sigma_{t,24}$, Bab 4.3.1)
+## Rerata Kinerja Tujuh Periode Uji (Ambang Utama $0{,}5\sigma_{t,24}$)
 
 | Model | Konfigurasi | *Macro-F1* | *Balanced accuracy* |
 |---|---|---:|---:|
@@ -30,7 +30,7 @@ Seluruh angka di bawah ini berasal langsung dari keluaran [`07_evaluasi_hasil.ip
 | XGBoost | K3 (+ makro) | 0,392895 | 0,397445 |
 | Pembanding kelas mayoritas | — | 0,216652 | 0,333333 |
 
-## Perubahan Berpasangan *Macro-F1* (Ambang Utama, Bab 4.4.1)
+## Perubahan Berpasangan *Macro-F1* (Ambang Utama)
 
 | Model | Perubahan | Rerata | Median | Simp. baku | Periode positif |
 |---|---|---:|---:|---:|---:|
@@ -41,7 +41,7 @@ Seluruh angka di bawah ini berasal langsung dari keluaran [`07_evaluasi_hasil.ip
 
 Selisih dihitung berpasangan per periode pada bar uji yang sama tanpa pembobotan jumlah bar dan bukan uji signifikansi.
 
-## Periode Uji dan Sampel (Total Uji = 19.893 Bar, Bab 4.1.3)
+## Periode Uji dan Sampel (Total Uji = 19.893 Bar)
 
 | Periode | Rentang (UTC, akhir tidak termasuk) | Latih | Uji | BUY / HOLD / SELL |
 |---|---|---:|---:|---|
@@ -53,7 +53,7 @@ Selisih dihitung berpasangan per periode pada bar uji yang sama tanpa pembobotan
 | 2025-H2 | 1 Jul 2025 – 1 Jan 2026 | 30.803 | 2.744 | 837 / 1.218 / 689 |
 | 2026 Jan–Jul | 1 Jan – 1 Agu 2026 | 33.548 | 3.101 | 809 / 1.501 / 791 |
 
-## Ringkasan *Confusion Matrix* Gabungan & Sensitivitas (Bab 4.3.3, 4.4.2, 4.5)
+## Ringkasan *Confusion Matrix* Gabungan & Sensitivitas
 
 - ***Recall* gabungan (19.893 bar uji):** Regresi Logistik mencatat *recall* BUY 0,267–0,271, HOLD 0,575–0,602, dan SELL 0,312–0,338; XGBoost mencatat BUY 0,301–0,309, HOLD 0,524–0,529, dan SELL 0,357–0,364 (pembanding kelas mayoritas selalu menebak HOLD).
 - **Sensitivitas *hyperparameter* tetap (ambang 0,5):** Regresi Logistik K2−K1 +0,000764 (5/7) dan K3−K2 −0,001368 (3/7); XGBoost K2−K1 −0,001877 (2/7) dan K3−K2 +0,001104 (3/7).

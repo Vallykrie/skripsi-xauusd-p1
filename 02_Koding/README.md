@@ -1,18 +1,18 @@
 # 02 · Koding Penelitian
 
-Folder ini memuat alur kode penelitian dari pemeriksaan data mentah hingga evaluasi hasil akhir pada Bab 4 [`Skripsi_Bab1-4_draf_2026-11-17.pdf`](../01_Naskah_Skripsi/Skripsi_Bab1-4_draf_2026-11-17.pdf). Seluruh keluaran sel pada notebook `01`–`07` telah tersimpan sehingga dapat ditinjau langsung maupun dijalankan ulang.
+Folder ini memuat alur kode penelitian dari pemeriksaan data mentah hingga evaluasi hasil akhir sesuai rancangan Bab 3 dan Bab 4 pada [`Skripsi_Bab1-4_draf_2026-11-26.pdf`](../01_Naskah_Skripsi/Skripsi_Bab1-4_draf_2026-11-26.pdf). Seluruh keluaran sel pada notebook `01`–`07` telah tersimpan sehingga dapat ditinjau langsung maupun dijalankan ulang.
 
 ## Pemetaan Notebook ke Naskah Skripsi
 
 | Notebook | Isi Langkah Penelitian | Subbab Skripsi |
 |---|---|---|
-| [`01_audit_harga_dan_gap.ipynb`](notebooks/01_audit_harga_dan_gap.ipynb) | Pemeriksaan data harga H1, pengelompokan 1.705 celah data, dan pembentukan 10 segmen indikator | 3.6.1, 4.1.1 |
-| [`02_label_target.ipynb`](notebooks/02_label_target.ipynb) | Penentuan waktu keputusan $\tau_t$, volatilitas $\sigma_{24}$, dan pelabelan BUY/HOLD/SELL (ambang 0,5; 0,25; 1,0) | 3.5, 4.1.2 |
-| [`03_fitur_harga_teknikal.ipynb`](notebooks/03_fitur_harga_teknikal.ipynb) | Pembentukan 9 fitur harga (K1) serta 4 fitur RSI(14) dan MACD (K2); kelayakan mulai bar ke-51 per segmen | 3.7.1, 3.7.2, 4.1.2 |
-| [`04_fitur_makro.ipynb`](notebooks/04_fitur_makro.ipynb) | Validasi waktu kalender MT5 (10 jangkar UTC lintas DST) dan pembentukan 46 fitur makro (K3 = 59 kolom) | 3.6.2, 3.7.3, 4.2 |
-| [`05_skema_validasi.ipynb`](notebooks/05_skema_validasi.ipynb) | Pembentukan himpunan sampel bersama (36.649 bar), 7 periode uji, 3 blok validasi internal, dan aturan *purge* | 3.8, 3.9.1, 3.9.2, 4.1.3 |
-| [`06_pelatihan_model.ipynb`](notebooks/06_pelatihan_model.ipynb) | Standardisasi/imputasi data latih, *tuning* *hyperparameter*, pelatihan Regresi Logistik Multinomial dan XGBoost | 3.9.2–3.9.4, 4.3.4 |
-| [`07_evaluasi_hasil.ipynb`](notebooks/07_evaluasi_hasil.ipynb) | Perhitungan *macro-F1*, *balanced accuracy*, perubahan berpasangan K2−K1 dan K3−K2, *confusion matrix*, serta sensitivitas | 3.10, 4.3–4.5 |
+| [`01_audit_harga_dan_gap.ipynb`](notebooks/01_audit_harga_dan_gap.ipynb) | Pemeriksaan data harga H1, pengelompokan 1.705 celah data, dan pembentukan 10 segmen indikator | 3.6.1, 4.2.1 |
+| [`02_label_target.ipynb`](notebooks/02_label_target.ipynb) | Penentuan waktu keputusan $\tau_t$, volatilitas $\sigma_{24}$, dan pelabelan BUY/HOLD/SELL (ambang 0,5; 0,25; 1,0) | 4.2.2, 4.3.2 |
+| [`03_fitur_harga_teknikal.ipynb`](notebooks/03_fitur_harga_teknikal.ipynb) | Pembentukan 9 fitur harga (K1) serta 4 fitur RSI(14) dan MACD (K2); kelayakan mulai bar ke-51 per segmen | 4.2.3, 4.3.2–4.3.3 |
+| [`04_fitur_makro.ipynb`](notebooks/04_fitur_makro.ipynb) | Validasi waktu kalender MT5 (10 jangkar UTC lintas DST) dan pembentukan 46 fitur makro (K3 = 59 kolom) | 3.6.2, 4.2.3, 4.3.4 |
+| [`05_skema_validasi.ipynb`](notebooks/05_skema_validasi.ipynb) | Pembentukan himpunan sampel bersama (36.649 bar), 7 periode uji, 3 blok validasi internal, dan aturan *purge* | 3.6.3, 4.2.4, 4.4 |
+| [`06_pelatihan_model.ipynb`](notebooks/06_pelatihan_model.ipynb) | Standardisasi/imputasi data latih, *tuning* *hyperparameter*, pelatihan Regresi Logistik Multinomial dan XGBoost | 4.2.4, 4.3.5–4.3.6, 4.4 |
+| [`07_evaluasi_hasil.ipynb`](notebooks/07_evaluasi_hasil.ipynb) | Perhitungan *macro-F1*, *balanced accuracy*, perubahan berpasangan K2−K1 dan K3−K2, *confusion matrix*, serta sensitivitas | 4.2.5, 4.3.7, 4.4 |
 
 ## Struktur Isi `02_Koding/`
 

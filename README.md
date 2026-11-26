@@ -8,7 +8,7 @@ Repositori ini disusun khusus untuk Penilaian Kemajuan 1 (P1) agar pembimbing da
 
 | Folder | Isi Utama | Tautan |
 |---|---|---|
-| `01_Naskah_Skripsi/` | Draf naskah skripsi Bab 1–6 format resmi FILKOM UB (63 halaman; mencakup Bab 4 Perancangan, Bab 5 Implementasi, dan Bab 6 Hasil dan Pembahasan bagian hasil pengujian) | [`Skripsi_Bab1-6_draf_2026-11-20.pdf`](01_Naskah_Skripsi/Skripsi_Bab1-6_draf_2026-11-20.pdf) |
+| `01_Naskah_Skripsi/` | Draf naskah skripsi Bab 1–4 format resmi FILKOM UB (43 halaman; mencakup Bab 1 Pendahuluan, Bab 2 Landasan Kepustakaan, Bab 3 Metodologi, dan Bab 4 Perancangan beserta diagram alir dan perhitungan manual) | [`Skripsi_Bab1-4_draf_2026-11-26.pdf`](01_Naskah_Skripsi/Skripsi_Bab1-4_draf_2026-11-26.pdf) |
 | `02_Koding/` | Tujuh notebook penelitian (`01`–`07`), konfigurasi protokol, data input, dan 5 tabel hasil penelitian | [`02_Koding/README.md`](02_Koding/README.md) · [`02_Koding/hasil/README.md`](02_Koding/hasil/README.md) |
 | `03_Perhitungan_Manual/` | Workbook Excel berumus aktif (8 tab), panduan langkah demi langkah + latihan, dan data sintetis | [`Panduan_Perhitungan_Manual.md`](03_Perhitungan_Manual/Panduan_Perhitungan_Manual.md) · [`Perhitungan_Manual_P1.xlsx`](03_Perhitungan_Manual/Perhitungan_Manual_P1.xlsx) |
 
